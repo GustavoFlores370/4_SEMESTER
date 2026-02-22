@@ -1,0 +1,645 @@
+%% Lab Report for EEET2493_labreport_template.tex
+%% V1.0
+%% 2019/01/16
+%% This is the template for a Lab report following an IEEE paper. Modified by Francisco Tovar after Michael Sheel original document.
+
+
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+\documentclass[journal]{IEEEtran}
+
+% *** CITATION PACKAGES ***
+\usepackage[style=ieee]{biblatex} 
+\bibliography{example_bib.bib}    %your file created using JabRef
+
+% *** MATH PACKAGES ***
+\usepackage{amsmath}
+\usepackage{comment}
+
+\usepackage{tabularx} % en el preámbulo
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf, textfont=normalfont}
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+\usepackage{url}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{graphicx}  %needed to include png, eps figures
+\usepackage{float}  % used to fix location of images i.e.\begin{figure}[H]
+
+\begin{document}
+
+
+% paper title
+\title{Práctica Diodos. Curva Característica del Diodo\\ \small{Práctica No. 1}}
+
+% author names and affiliations
+\author{
+    \IEEEauthorblockN{Flores Cornejo Gustavo Mauricio, Muñoz Reyes Arturo Yabet, Morales Vásquez Miguel Ehecatl}\\
+    \IEEEauthorblockA{\textit{Unidad Profesional Interdisciplinaria en Ingeniería y Tecnologías Avanzadas, IPN}}
+}
+        
+% The report headers
+\markboth{1MV12 Fundamentos de Electrónica. Práctica 1, Febrero 2026}%do not delete next lines
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract}
+    SI
+\end{abstract}
+
+\section{Introducción}
+% Here we have the typical use of a "W" for an initial drop letter
+% and "RITE" in caps to complete the first word.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+\IEEEPARstart{L}{os} Circuitos RC 
+
+\section{Marco teórico}
+
+\subsection*{Conceptos básicos de los elementos del circuito} \cite{ref2}\subsubsection*{Resistencia} La resistencia es un componente eléctrico que se opone al paso de la corriente. Su función en el circuito es limitar la intensidad de la corriente y disipar energía en forma de calor. El comportamiento de la resistencia se rige por la ley de Ohm, que establece que: \[ V = I R \] \subsubsection*{Capacitor} El capacitor es un dispositivo que almacena energía en forma de carga eléctrica dentro de un campo eléctrico. Su capacidad se define como: \[ C = \frac{q}{V} \] donde $q$ es la carga acumulada y $V$ la diferencia de potencial. La unidad de medida es el faradio (F). \subsection*{Carga y descarga de un capacitor} Cuando un capacitor se conecta a una fuente de voltaje a través de una resistencia, este se carga progresivamente, alcanzando una carga máxima: \[ Q = C \varepsilon \]  Durante estos procesos, la corriente y el voltaje en los elementos cambian en función del tiempo, con comportamientos exponenciales de crecimiento (carga) o decaimiento (descarga). \subsection*{Constante de tiempo $\tau = RC$} La constante de tiempo de un circuito RC se define como el producto de la resistencia y la capacitancia: \[ \tau = R \cdot C \] Representa el tiempo característico con el que varía la carga y la corriente. En $t = \tau$, el capacitor alcanza aproximadamente el 63.2\% de su carga máxima en un proceso de carga, o bien, en una descarga, desciende al 36.8\% de su valor inicial. Gráficamente, esto se interpreta como la rapidez con que se carga o descarga el capacitor. \subsection*{Ecuaciones diferenciales del circuito RC}\cite{ref1} El comportamiento del circuito se analiza con la ley de voltajes de Kirchhoff, que da lugar a ecuaciones diferenciales de primer orden: \[ \varepsilon - IR - \frac{q}{C} = 0 \] Al resolver esta ecuación se obtienen las expresiones que describen el voltaje y la corriente: Voltaje en el condensador: \[ V_C(t) = \varepsilon \left(1 - e^{-\tfrac{t}{\tau}} \right) \] Voltaje en la resistencia: \[ V_R(t) = \varepsilon e^{-\tfrac{t}{\tau}} \] Corriente: \[ I(t) = I_0 e^{-\tfrac{t}{\tau}} \] \subsection*{Respuesta natural y forzada del voltaje en el capacitor} \subsubsection*{Respuesta natural} Se obtiene cuando el capacitor estaba inicialmente cargado y se descarga a través de la resistencia sin la acción de una fuente. El voltaje se describe como: \[ v_c(t) = V_0 e^{-\tfrac{t}{\tau}} \] donde $V_0$ es el voltaje inicial en el capacitor y $\tau = R \cdot C$. \subsubsection*{Respuesta forzada} Se presenta cuando el capacitor está conectado a una fuente de voltaje y evoluciona desde un voltaje inicial $V_0$ hasta un valor final $V_f$. La expresión general es: \[ v_c(t) = (V_0 - V_f) e^{-\tfrac{t}{RC}} + V_f \] Esta forma incluye ambos casos: \begin{itemize} \item Si $V_f = 0$, se reduce a la respuesta natural. \item Si $V_0 = 0$ y $V_f = \varepsilon$, representa la carga del capacitor. \end{itemize} \subsection*{Análisis en régimen transitorio y estacionario} El régimen transitorio corresponde al intervalo de tiempo en que el capacitor se está cargando o descargando, donde las magnitudes varían exponencialmente. En el régimen estacionario, cuando $t \to \infty$, el capacitor se comporta como un circuito abierto, manteniendo un voltaje constante en sus placas y anulando la corriente en la resistencia. Las condiciones iniciales y finales son fundamentales: en la carga, el capacitor parte descargado y llega a un valor máximo $Q = C \varepsilon$; en la descarga, parte de una carga inicial y tiende a cero conforme pasa el tiempo.
+\subsection*{¿Qué es el factor D?}
+Según \cite{ref3}, el factor D o factor de potencia es una medida de eficiencia del sistema eléctrico, ya que indica el aprovechamiento de la energía para transformarla en trabajo. Los receptores eléctricos convierten la energía en otra forma (mecánica, luminosa, calorífica, etc.), pero no toda la energía demandada se transforma en energía útil.\\
+La energía demandada se llama potencia aparente, mientras que la parte que realmente se convierte en energía útil es la potencia activa. En el proceso también existe energía que no se convierte en activa, sino que se utiliza en la formación de campos magnéticos; a ésta se le llama potencia reactiva.\\
+El factor de potencia es la relación entre potencia aparente y potencia activa. Mientras más cercana sea la activa a la aparente, el factor de potencia será más próximo a 1, que es el ideal.
+
+\subsection*{Comparación de capacitores}
+En el mercado, existen diversos tipos de capacitores, todos ellos de distintos valores comerciales. En la Tabla~\ref{tablaCapacitores} se muestran algunos de los tipos de capacitores más comunes, según GSL Industrias~\cite{ref4}.
+ 
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|l|X|}
+\hline
+\textbf{Tipo de capacitor} & \textbf{Descripción} \\ \hline
+Electrolíticos de Aluminio & Dos tiras de aluminio con electrolito. Alta capacitancia (0.1$\mu$F a 500,000$\mu$F). \\ \hline
+Tantalio & Compacto, estable, baja fuga e inductancia. \\ \hline
+Cerámico & Bajo costo, baja inductancia, útil en alta frecuencia. \\ \hline
+Poliéster (película) & 1nF–15$\mu$F, buena aislación, coeficiente de temperatura alto. \\ \hline
+Polipropileno & Alta resistencia y tolerancia. Usado en supresión de ruido. \\ \hline
+Poliestireno & Valores bajos (10pF–47nF), alta aislación, útil en filtros y temporización. \\ \hline
+Policarbonato & 100pF–10$\mu$F, estable ante temperatura, buena tolerancia. \\ \hline
+Mica de plata & Capa de plata en mica, estable y resistente, baja capacitancia. \\ \hline
+Papel & Láminas metálicas con dieléctrico de papel, 500pF–50$\mu$F, alto voltaje. \\ \hline
+\end{tabularx}
+\caption{Tipos de capacitores en el mercado}
+\label{tablaCapacitores}
+\end{table}
+
+
+\section{Materiales}
+Para el circuito mostrado en la "Figura~\ref{fig:circuito_base}”, emplearemos:
+\begin{itemize}
+    \item 1 diodo 1N4148
+    \item 2 resistencias de 470 $\Omega$
+    \item 1 resistencia de 1 $\Omega$
+    \item 1 inductor de 100 mH
+    \item Protoboard
+    \item Alambre para protoboard
+\end{itemize}
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/circuito_base.png}
+\caption{Circuito RC a analizar.}
+\label{fig:circuito_base}
+\end {center}
+\end{figure}
+\end{comment}
+
+La resistencia R3 se empleará como \textbf{shunt}, por lo que no se incluirá en el análisis del circuito. Además el modelo real de una bobina para bajas frecuencias es el de una bobina en serie con una resistencia (214.73 $\Omega$ en nuestro caso), por lo que el circuito a analizar será el de la "Figura~\ref{fig:circuito_analisis}” donde R3 es la resistencia interna de la bobina.
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/circuito_analisis.png}
+\caption{Circuito a analizar.}
+\label{fig:circuito_analisis}
+\end {center}
+\end{figure}
+\end{comment}
+
+\section{Análisis del circuito}
+
+\subsection{Respuesta Forzada}
+Analizaremos lo que ocurre de 0 a T/2, cuando la señal de entrada sea de 10v.\\
+\textbf{1. Considerar que el inductor tiene una carga inicial de cero volts, y que en $t=0$ el sistema pasará de respuesta natural a respuesta forzada.}\\
+
+\textbf{2. Analizar por medio de Thevenin la resistencia equivalente en los nodos (5 – 2).}
+
+En la "Figura~\ref{fig:thevenin}” podemos obtener la resistencia que ve el inductor:
+
+\begin{align}
+    R_{TH} &= R_1 \parallel R_2 \nonumber + R3 \\
+           &= \frac{470\, \Omega}{2} + 214.73 \Omega\nonumber \\
+           &= 449.73 \, \Omega
+    \label{equation:theF}
+\end{align}
+
+\begin{comment}
+    
+\end{abstract}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/thevenin.png}
+\caption{Resistencia de Thevenin en $t = 0$}
+\label{fig:thevenin}
+\end {center}
+\end{figure}
+\end{comment}
+
+\textbf{3. Determinar la $\tau$ del sistema.}
+La constante de tiempo $\tau$ del circuito RL es calculada como el cociente de la inductancia entre la resistencia que ve la bobina  (Ec.~\ref{equation:theF}).
+
+\begin{align}
+    \tau &= \frac{L}{R_{TH}} \nonumber \\
+           &= \frac{100 mH}{449.73\Omega} \nonumber \\
+           &= 222.35 \mu S
+    \label{equation:tau_calcF}
+\end{align}
+
+\textbf{4. Analizar el voltaje del inductor para $t\ge0$. Deberá considerar que el inductor tiene una resistencia interna, y que por ley de ohm el voltaje no será cero en estado permanente.}
+
+\begin{comment}
+    
+\end{abstract}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/vth.png}
+\caption{Circuito para obtener el Voltaje Thevenin en $t = 0$}
+\label{fig:vthFig}
+\end {center}
+\end{figure}
+\end{comment}
+
+Continuando con el análisis de Thevenin, consideramos una caída de 0.7 volts en el diodo y en base a la "Figura~\ref{fig:vthFig}”
+el voltaje que ve el inductor es:
+
+\begin{align}
+    V_{TH} &= (V1 -0.7v)\frac{R1}{R1+R2} \nonumber \\
+           &= (10 -0.7v) \frac{470\Omega}{470\Omega+470\Omega}\nonumber \\
+           &= 4.65 V
+    \label{equation:vth}
+\end{align}
+
+Con el voltaje obtenido en la Ec.~\ref{equation:vth}, la corriente final en el inductor será:
+
+\begin{align}
+    I_{f} &= \frac{V_{TH}}{R_{TH}} \nonumber \\
+           &= \frac{4.65V}{449.73\Omega}\nonumber \\
+           &= 10.34 mA
+    \label{equation:if}
+\end{align}
+
+La \textbf{respuesta de un circuito RL} se describe como:
+
+\begin{equation}
+    V_{L}(t) = -R(I_{o} - I_{f}) e^\frac{-t}{\tau}
+    \label{equation:volt_ind_resp}
+\end{equation}
+
+Con los valores obtenidos en las ecuaciones ~\ref{equation:if} y~\ref{equation:tau_calcF}, podemos reemplazarlos en la Ec.~\ref{equation:volt_ind_resp}, obteniendo la Ec.~\ref{equation:vitF}:
+
+\begin{align}
+    V_{L}(t) &= -449.73\Omega (-10.34 mA) e^\frac{-t}{222.35\mu S}\nonumber \\
+        &= 4.65 e^\frac{-t}{222.35\mu S} V
+    \label{equation:vitF}
+\end{align}
+
+Sin embargo, la Ec.~\ref{equation:vitF} esta incompleta, porque a medida que $t \to \infty$, $V_{L} = 0$. Lo anterior es incorrecto porque la bobina tiene una resistencia interna R3. Esto se solucionará más adelante.\\
+
+\textbf{5. Analizar la corriente del inductor para $t\ge0$, de igual manera que en el inciso anterior, deberá considerar la resistencia interna.}\\
+La corriente que fluye en el inductor se expresa en la Ec.~\ref{equation:iitF}
+
+\begin{align}
+    I_{L}(t) &= I_{F}(1 - e^\frac{-t}{\tau}) A\nonumber \\
+    I_{L}(t) &= 10.34m(1 - e^\frac{-t}{222.35\mu S}) A\nonumber \\
+    \label{equation:iitF}
+\end{align}
+
+Como el modelo real de la bobina implica el inductor en serie con su resistencia interna (R3 en la "Figura~\ref{fig:circuito_analisis}”), podemos obtener el voltaje real como la suma del voltaje del inductor (Ec.~\ref{equation:vitF}) con el voltaje de su resistencia interna (calculado con la Ec.~\ref{equation:iitF}) en función del tiempo: 
+
+\begin{align}
+    V_{L}(t) &= 4.65 e^\frac{-t}{222.35\mu S} + R_{3} I_{L}(t)\nonumber \\
+        &= 4.65 e^\frac{-t}{222.35\mu S} + 214.73\Omega (10.34m(1 - e^\frac{-t}{222.35\mu S}) A) V\nonumber \\
+        &=  2.43 e^\frac{-t}{222.35\mu S} + 2.22 V
+    \label{equation:vitFR}
+\end{align}
+
+Si observamos en la Ec.~\ref{equation:vitFR}, a medida que $t \to \infty$, $V_{L} = 2.22 V$. Esta ecuación ya considerá su resistencia interna.\\
+
+
+\subsection{Respuesta Natural}
+Analizaremos lo que ocurre de T/2 a T, cuando la señal de entrada sea de 0v.\\
+
+\textbf{6. Analizar cual es el voltaje del inductor en T/2 ($t=0$). Deberá considerar que el inductor tiene una resistencia interna.}\\
+Como trabajamos a 5 Hz con una señal del 50\% de trabajo, el tiempo que el sistema pasa en respuesta natural y forzada es:
+
+\begin{align}
+    T &= \frac{1}{5 Hz}\cdot\frac{1}{2}\nonumber \\
+      &= 100 ms\nonumber \\
+    \label{equation:time}
+\end{align}
+
+Reemplazando el resultado obtenido en la Ec.~\ref{equation:time} en la Ec.~\ref{equation:vitFR} obtenemos:
+
+\begin{align}
+    V_{L}(0.1) &= 2.43 e^\frac{-0.1}{222.35\mu S} + 2.22 V\nonumber \\
+        &=  2.22 V
+    \label{equation:vitFR/2}
+\end{align}
+
+\textbf{7. Analizar por medio de thevenin la resistencia equivalente del sistema en los nodos (5 – 2).}\\
+
+\begin{comment}
+    
+\end{abstract}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/circuito_natural.png}
+\caption{Circuito equivalente para la respuesta natural (T/2 a T)}
+\label{fig:circuito_natural}
+\end {center}
+\end{figure}
+\end{comment}
+
+Con base en la "Figura~\ref{fig:circuito_natural}”, la resistencia de thevenin será:
+
+\begin{align}
+    R_{TH} &= R_1 + R3 \\
+           &= 470\Omega + 214.73 \Omega\nonumber \\
+           &= 684.73\Omega
+    \label{equation:theN}
+\end{align}
+
+Con base a la (Ec.~\ref{equation:theN}), $\tau$ ahora será:
+\begin{align}
+    \tau &= \frac{L}{R_{TH}} \nonumber \\
+           &= \frac{100 mH}{684.73\Omega} \nonumber \\
+           &= 146.04 \mu S
+    \label{equation:tau_calcN}
+\end{align}
+
+\textbf{8. Determinar el v(t) e i(t) para $t\ge0$.}\\
+Con base a la Ec.~\ref{equation:if} y la Ec.~\ref{equation:tau_calcN}, la corriente en el inductor en respuesta natural se obtiene en la Ec.~\ref{equation:iitN}.
+
+\begin{align}
+    I_{L}(t) &= I_{o} e^\frac{-t}{\tau}\nonumber \\
+             &= 10.34m\cdot e^\frac{-t}{146.04 \mu S} A
+    \label{equation:iitN}
+\end{align}
+
+Ahora, la respuesta natural del voltaje del inductor, sin considerar la resistencia interna del mismo, es:
+
+\begin{align}
+    V_{L}(t) &= -I_{o} R e^\frac{-t}{\tau} V\nonumber \\
+             &= -10.34mA\cdot 470 \Omega\cdot e^\frac{-t}{\tau}\nonumber \\
+             &= -4.86e^\frac{-t}{146.04 \mu S} V
+    \label{equation:vitN}
+\end{align}
+
+Al igual que en la respuesta forzada, debemos sumar a la Ec.~\ref{equation:vitN} el voltaje de la resistencia interna en función de la Ec.~\ref{equation:iitN}.
+
+\begin{align}
+    V_{L}(t) &= -4.86e^\frac{-t}{146.04 \mu S} V + R_{3} I_{L}(t) \nonumber \\
+             &= -4.86e^\frac{-t}{146.04 \mu S} V + (214.73\Omega) (10.34m\cdot e^\frac{-t}{146.04 \mu S} A)\nonumber \\
+             &= -4.86e^\frac{-t}{146.04 \mu S} V + 2.22e^\frac{-t}{146.04 \mu S}\nonumber \\
+             &= -2.64e^\frac{-t}{146.04 \mu S} V
+    \label{equation:vitNR}
+\end{align}
+
+La Ec.~\ref{equation:vitNR} representa el voltaje del inductor junto con su resistencia interna. Además obtenemos el comportamiento del inductor, pues cambia su polaridad al pasar de respuesta forzada a natural, teniendo un voltaje negativo para mantener el sentido de la corriente.\\
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/g_i_t.png}
+\caption{Gráfica teórica de la corriente en respuesta natural y forzada.}
+\label{fig:git}
+\end {center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/g_v_t.png}
+\caption{Gráfica teórica del voltaje en respuesta natural y forzada.}
+\label{fig:gvt}
+\end {center}
+\end{figure}
+\end{comment}
+
+En la "Fig.~\ref{fig:git}" observamos la gráfica de la corriente en base a las ecuaciones~\ref{equation:iitF} y ~\ref{equation:iitN} que obtuvimos. La "Fig.~\ref{fig:gvt}" observamos el voltaje en el inductor en base a las ecuaciones~\ref{equation:vitFR} y ~\ref{equation:vitNR}. Aquí vemos claramente el cambio de voltaje que tiene el inductor para mantener el sentido de la corriente.\\
+
+\textbf{9. Analizar qué tipo de respuesta se obtendría si se aumenta la frecuencia del sistema a 1KHz , y luego a 50KHz.}
+
+\textbf{Respuesta a 1kHz.} 
+A una frecuencia de 1kHz, el tiempo disponible para la respuesta forzada y natural es:
+
+\begin{align}
+    T &= \frac{1}{1000 Hz}\cdot\frac{1}{2}\nonumber \\
+      &= 500 \mu S\nonumber \\
+    \label{equation:time1k}
+\end{align}
+
+Para la respuesta forzada no cambian las ecuaciones, si evaluamos las ecuaciones ~\ref{equation:iitF} y~\ref{equation:vitFR} en el tiempo de la Ec.~\ref{equation:time1k} obtenemos:
+
+\begin{align}
+    V_{L}(t) &=  2.43 e^\frac{-500 \mu S}{222.35\mu S} + 2.22 V\nonumber \\
+        &=  2.476 V
+    \label{equation:vitFR1kf}
+\end{align}
+
+\begin{align}
+    I_{L}(t) &= 10.34m(1 - e^\frac{-500\mu S}{222.35\mu S}) A\nonumber \\
+    &= 9.248 mA
+    \label{equation:iitF1kf}
+\end{align}
+
+En base a las ecuaciones~\ref{equation:vitFR1kf} y~\ref{equation:iitF1kf} Para la respuesta natural las ecuaciones resultantes serían:
+
+\begin{align}
+    I_{L}(t) &= I_{o} e^\frac{-t}{\tau}\nonumber \\
+             &= 9.248m\cdot e^\frac{-t}{146.04 \mu S} A
+    \label{equation:iitN1khz}
+\end{align}
+
+\begin{align}
+    V_{L}(t) &= -I_{o} R e^\frac{-t}{\tau} V + R_{3} I_{L}(t)\nonumber \\
+             &= -4.346e^\frac{-t}{146.04 \mu S} V + 1.985 e^\frac{-t}{146.04 \mu S} V\nonumber \\
+             &= -2.36e^\frac{-t}{146.04 \mu S} V
+    \label{equation:vitNR1khz}
+\end{align}
+
+\begin{comment} 
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=5 cm, angle = 90]{images/1khz.JPG}
+\caption{Respuesta del circuito RL a 1kHz.}
+\label{fig:1khz}
+\end {center}
+\end{figure}
+\end{comment}
+
+En la "Fig.~\ref{fig:1khz}" vemos la respuesta de la corriente en el canal 1, y el voltaje del inductor en el canal 2.\\
+
+\textbf{Respuesta a 50kHz.} 
+A una frecuencia de 50kHz, el tiempo disponible para la respuesta forzada y natural es:
+
+\begin{align}
+    T &= \frac{1}{50k Hz}\cdot\frac{1}{2}\nonumber \\
+      &= 10 \mu S\nonumber \\
+    \label{equation:time50k}
+\end{align}
+
+Para la respuesta forzada no cambian las ecuaciones, si evaluamos las ecuaciones ~\ref{equation:iitF} y~\ref{equation:vitFR} en el tiempo de la Ec.~\ref{equation:time50k} obtenemos:
+
+\begin{align}
+    V_{L}(t) &=  2.43 e^\frac{-10 \mu S}{222.35\mu S} + 2.22 V\nonumber \\
+        &=  4.54 V
+    \label{equation:vitFR50kf}
+\end{align}
+
+\begin{align}
+    I_{L}(t) &= 10.34m(1 - e^\frac{-10\mu S}{222.35\mu S}) A\nonumber \\
+    &= 453.85 \mu A
+    \label{equation:iitF50kf}
+\end{align}
+
+En base a las ecuaciones~\ref{equation:vitFR50kf} y~\ref{equation:iitF50kf} Para la respuesta natural las ecuaciones resultantes serían:
+
+\begin{align}
+    I_{L}(t) &= I_{o} e^\frac{-t}{\tau}\nonumber \\
+             &= 453.85\mu\cdot e^\frac{-t}{146.04 \mu S} A
+    \label{equation:iitN50khz}
+\end{align}
+
+\begin{align}
+    V_{L}(t) &= -I_{o} R e^\frac{-t}{\tau} V + R_{3} I_{L}(t)\nonumber \\
+             &= -0.213e^\frac{-t}{146.04 \mu S} V + 97.45 m\cdot e^\frac{-t}{146.04 \mu S} V\nonumber \\
+             &= -115.54 m\cdot e^\frac{-t}{146.04 \mu S} V
+    \label{equation:vitNR50khz}
+\end{align}
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=5 cm, angle = 90]{images/50khz.JPG}
+\caption{Respuesta del circuito RL a 50kHz.}
+\label{fig:50khz}
+\end {center}
+\end{figure}
+\end{comment}
+
+En la "Fig.~\ref{fig:50khz}" vemos la respuesta de la corriente en el canal 1, y el voltaje del inductor en el canal 2.\\
+
+\textbf{10. Deduzca la importancia del diodo en el circuito, y verifique si en algún momento la
+corriente o voltaje de la bobina podría afectar la fuente.}\\
+
+
+\section{Simulación}
+Usando \textbf{Multisim} (ver circuito simulado en la "Fig.~\ref{fig:ev_simu}" del Apéndice A), configuramos una simulación transitoria de 0 a 0.2 segundos, lo correspondiente de 0 a T. Los resultados obtenidos de corriente y voltaje los vemos en las "Figuras~\ref{fig:isimu} y ~\ref{fig:vsimu}”
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/simu_ii.png}
+\caption{Gráfica de la simulación de corriente contra tiempo del inductor.}
+\label{fig:isimu}
+\end {center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/simu_vi.png}
+\caption{Gráfica de la simulación de voltaje contra tiempo del inductor.}
+\label{fig:vsimu}
+\end {center}
+\end{figure}
+\end{comment}
+
+La gráfica mostrada en la "Figura~\ref{fig:isimu}” se asemeja a la gráfica teórica de la "Figura~\ref{fig:git}”, vemos como en la respuesta forzada alcanza una corriente de 10.34 mA y llegar a 0 para la natural.
+El voltaje en el inductor simulado iguál tiene un pico de 4.85 v para mantenerse despues en 2.2 V, el voltaje en su resistencia interna, cuando ya esta cargado completamente. Al cambiar a natural, el voltaje "brinca" de 2.2v a -2.64 v en un instante. Vemos en la "Figura~\ref{fig:vsimu}” como se generá un voltaje inverso en la bobina que mantiene el sentido de corriente.
+
+\section{Resultados}
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=6cm, angle = 90]{images/osc_volt.JPG}
+\caption{Mediciones del voltaje del inductor en el circuito físico.}
+\label{fig:oscv}
+\end {center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=6cm, angle = 90]{images/osc_curr.JPG}
+\caption{Mediciones de la corriente en la bobina en el circuito físico.}
+\label{fig:oscc}
+\end {center}
+\end{figure}
+\end{comment}
+
+Como vemos en la "Figura~\ref{fig:oscv}” y la "Figura~\ref{fig:oscc}”, las señales que obtuvimos de corriente y voltaje se asemejan a las obtenidas teóricamente y en la simulación.
+
+\subsection{Respuesta Forzada}
+En base a las Ecuaciones ~\ref{equation:vitFR} y ~\ref{equation:iitF}, y a las mediciones del osciloscopio, generamos la "Tabla~\ref{tablaF}". Aquí vemos que el voltaje en el inductor no puede llegar a 0v, como se describe en las ecuaciones, y este se mantendrá constante para 5 $\tau$ o más. La corriente igualmente llega a un valor constante.
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
+\hline
+ & V(t) para t $\ge$ 0 Calculado & I(t) para t $\ge$ 0 Calculado & V(t) para t $\ge$ 0 Medido & I(t) para t $\ge$ 0 Medido \\ \hline
+$\tau$  & 3.11 v & 6.54 mA & 2.88 v & 7.4 mA \\ \hline
+$2\tau$ & 2.54 v & 8.94 mA  & 2.44 v & 9.6 mA \\ \hline
+$3\tau$ & 2.34 v & 9.83 mA  & 2.20 v & 10.4 mA \\ \hline
+$4\tau$ & 2.26 v & 10.15 mA   & 2.16 v & 10.4 mA \\ \hline
+$5\tau$ & 2.24 v & 10.27 mA   & 2.12 v & 10.6 mA \\ \hline
+$6\tau$ & 2.22 v & 10.31 mA  & 2.12 v & 10.8 mA \\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de respuesta forzada del inductor}
+\label{tablaF}
+\end{table}
+
+Comprobamos que la respuesta forzada se guía por las ecuaciones ~\ref{equation:vitFR} y ~\ref{equation:iitF}.
+
+\subsection{Respuesta Natural}
+
+En base a las Ecuaciones ~\ref{equation:vitNR} y ~\ref{equation:iitN}, y a las mediciones del osciloscopio, generamos la "Tabla~\ref{tablaN}"
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
+\hline
+ & V(t) para t $\ge$ 0 Calculado & I(t) para t $\ge$ 0 Calculado & V(t) para t $\ge$ 0 Medido & I(t) para t $\ge$ 0 Medido \\ \hline
+$\tau$  & -0.971 v & 3.80 mA  & -1.40 v & 5.4 mA \\ \hline
+$2\tau$ & -0.357 v & 1.40 mA  & -0.60 v & 1.8 mA \\ \hline
+$3\tau$ & -0.131 v & 0.51 mA  & -0.32 v & 1.2 mA \\ \hline
+$4\tau$ & -0.048 v & 0.19 mA  & -0.08 v & 0.8 mA \\ \hline
+$5\tau$ & -0.017 v & 0.07 mA  & 0 v   & 0 A \\ \hline
+$6\tau$ & -0.006 v & 0.03 mA  & 0 v   & 0 A \\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de respuesta del inductor, respuesta natural}
+\label{tablaN}
+\end{table}
+
+Nuevamente no observamos discrepancias significativas. Además el signo negativo en el voltaje implica que la polaridad se invirtió.
+
+\section{Conclusiones}
+\begin{itemize}
+    \item \textbf{Flores Cornejo Gustavo Mauricio.}
+    \newline LA práctica que aquí se reporta tiene como finalidad de observar en el osciloscopio el comportamiento del voltaje y la corriente en un capacitor. Para el desarrollo y visualización adecuada se tuvo que modificar los valores como lo es la frecuencia, la frecuencia señalada en la práctica era tan grande que el comportamiento de la gráfica de voltaje en el capacitor mostraba cómo el capacitor no alcanzaba a cargarse y descargarse adecuadamente. Dados los cálculos mostrados en esta práctica se observa que se espera un voltaje máximo de cinco volts en el capacitor para 7$\mathcal{T}$, para lograr que el capacitor alcanzara dicha carga se disminuyó el valor de la frecuencia propuesta en la práctica. De esta manera mediante las ecuaciones que definen al V y I del capacitor y comparándolas con la respuesta mostrada en el osciloscopio podemos determinar la veracidad de nuestros cálculos y análisis de circuitos RC.
+
+    
+    \item \textbf{Morales Escobar Jesús.}
+    \newline Al término de la práctica se comprendió que un inductor es un elemento no lineal, donde, el voltaje entre sus terminales depende de su inductancia como de la corriente que lo atraviesa en función del tiempo. Contrario al capacitor, el inductor almacena la energía en un campo magnético, y cuando está completamente cargado, actuá como un corto circuito. En la respuesta natural, este campo magnético colapsa convirtiendose en corriente eléctrica.
+
+    Sin embargo, hablamos de una bobina ideal, pues realmente tiene una resistencia interna en serie (a bajas frecuencias), por lo que nunca será un cortocircuito y esto deberá considerarse para el análisis.
+    
+    Cuando un inductor pasa a respuesta natural, por su naturaleza la corriente seguirá el sentido original, por lo que se genera un voltaje inverso en sus terminales, que podría dañar la fuente sin la protección necesaria.
+    
+    Los resultados obtenidos comprueban las ecuaciones analizadas para la respuesta del inductor, tanto forzada, como natural. 
+    
+    \item \textbf{Prado Tepoz Josue Uriel.} 
+    \newline En la presente práctica se logró el análisis con respecto al tiempo del comportamiento de un capacitor dentro de un circuito RC. Se analizó cómo el capacitor se carga y mantiene su voltaje constante en un tiempo prolongado, así como su comportamiento cuando se descarga. Se observó, a su vez, cómo es que actúa la corriente del capacitor, dando corrientes negativas cuando la corriente cambiaba de posición y pasaba de una respuesta forzada a una natural.
+Se pudo analizar el comportamiento con respecto a la constante de tiempo RC; sin embargo, hubo problemas al analizar con los datos especificados dentro de la práctica original, pues se tuvieron que cambiar parámetros para que se pudiera cargar y descargar por completo el capacitor y analizar correctamente su comportamiento.
+En general, la práctica permitió ver el funcionamiento y comportamiento de un capacitor en lapsos de tiempo definidos.
+\end{itemize}
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+\appendices
+\section{Evidencias}
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/ev_ev.png}
+\caption{Evidencia de evaluación de práctica.}
+\label{fig:ev_ev}
+\end {center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{images/ev_simulacion.png}
+\caption{Circuito a simular, la resistencia interna se configuró a la medida en la bobina real.}
+\label{fig:ev_simu}
+\end {center}
+\end{figure}
+\end{comment}
+
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+%use following command to generate the list of cited references
+
+\printbibliography
+
+% that's all folks
+\end{document}
