@@ -98,7 +98,8 @@ The results make it possible to validate the mathematical model given by the Sho
 \IEEEPARstart{E}l trabajo presente pretende reforzar las bases teóricas que rigen el comportamiento de un diodo, aplicarlas en práctica y entender los resultados físicos obtenidos. Para esto, se trabajará con dos diodos de silicio, el 1N4001 y el 1N4148.
 La importancia de esta práctica es entender cómo y de qué manera pueden ser implementados estos componentes en circuitos electrónicos, además de comprender cómo los parámetros de éstos cambian al alterar algunos factores como lo es la temperatura.
 Durante el desarrollo del trabajo presente se analizará y comprenderá la diferencia al analizar al diodo como un elemento ideal y como un elemento real que alteran los resultados finales.
-Al término de esta práctica se espera que sea evidente el comportamiento de un diodo, tanto en su región de polarización directa como la de la polarización inversa.
+Al término de esta práctica se espera que sea evidente el comportamiento de un diodo, tanto en su región de polarización directa como la de la polarización inversa, además de poder analizar circuitos donde se implementen este tipo de componentes para poder 
+desglozar el funcionamiento y alteraciones en la salida.
 
 \section{Objetivos}
 La presente práctica tiene como objetivo conocer las curvas de I-V del diodo en sus regiones directa e inversa, y comprobar las curvas del diodo como semiconductor.
@@ -157,20 +158,6 @@ La esencia del diodo reside en la unión de dos tipos de estructuras cristalinas
 \subsection{Comportamiento capacitivo del diodo}
 
 Además de su comportamiento como rectificador, el diodo presenta capacitancia interna debido a la estructura de la unión p-n. Esto implica que, especialmente en señales de corriente alterna y altas frecuencias, el diodo puede comportarse como un capacitor dependiente del voltaje aplicado.
-
-Existen dos tipos principales de capacitancia en el diodo:
-
-\subsubsection{Capacitancia de transición o de unión}
-
-Se presenta principalmente en polarización inversa. La región de agotamiento actúa como dieléctrico, mientras que las regiones p y n funcionan como placas conductoras. Desde el punto de vista físico, el diodo puede modelarse como un capacitor cuya capacitancia depende del ancho de la región de agotamiento.
-
-La expresión aproximada es:
-
-\[
-C_j = \frac{\varepsilon A}{W}
-\]
-
-donde $W$ es el ancho de la región de agotamiento. Como $W$ aumenta con el voltaje inverso $V_R$, la capacitancia disminuye aproximadamente como:
 
 \[
 C_j \propto \frac{1}{\sqrt{V_R}}
@@ -562,7 +549,9 @@ Finalmente, el análisis comparativo permitió entender que, aunque ambos diodos
     mayor estabilidad frente al calor en comparación con el diodo 1N4148. Estos resultados subrayan la importancia de considerar tanto las especificaciones eléctricas como el comportamiento térmico al seleccionar semiconductores para aplicaciones en mecatrónica.
 
     \item \textbf{Morales Vásquez Miguel Ehecatl.} 
-    \newline 
+    \newline Tras la realización de esta práctica, se validó experimentalmente que el diodo semiconductor no presenta un comportamiento lineal, ya que requiere superar un voltaje de umbral (entre 0.5 y 0.7V para silicio) para permitir el flujo de corriente. 
+    A través del contraste entre los modelos 1N4001 y 1N4148, se comprobó que mientras el primero es óptimo para rectificación de potencia por su capacidad de corriente, el segundo destaca en aplicaciones de alta frecuencia debido a su reducido tiempo de recuperación inversa. 
+    Finalmente, el uso del osciloscopio en modo XY y la aplicación de la Ecuación de Shockley permitieron verificar cómo variables externas, especialmente la temperatura, alteran la barrera de potencial y la corriente de fuga, consolidando la comprensión de estos dispositivos en condiciones reales de operación
 
 \end{itemize}
 
@@ -614,6 +603,17 @@ Finalmente, el análisis comparativo permitió entender que, aunque ambos diodos
 %use following command to generate the list of cited references
 
 \printbibliography
+
+\begin{thebibliography}{00}
+\bibitem{boylestad}
+R. L. Boylestad and L. Nashelsky, \textit{Electronic Devices and Circuit Theory}, 10th ed. Upper Saddle River, NJ, USA: Prentice Hall, 2009.
+
+\bibitem{1N4001}
+onsemi, ``1N4001 -- 1.0 A Standard Recovery Rectifier,'' Datasheet, 2023. [Online]. Available: https://www.onsemi.com/pdf/datasheet/1n4001-d.pdf. [Accessed: Feb. 24, 2026].
+
+\bibitem{1N4148}
+onsemi, ``1N4148 -- Small Signal Switching Diode,'' Datasheet, 2023. [Online]. Available: https://www.onsemi.com/pdf/datasheet/1n4148-d.pdf. [Accessed: Feb. 24, 2026].
+\end{thebibliography}
 
 % that's all folks
 \end{document}

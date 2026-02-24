@@ -220,8 +220,6 @@ INPUT .\IMAGENES\CE_POLARIDA_DIRECTA.jpeg
 INPUT .\IMAGENES\CE_POLARIDA_DIRECTA.jpeg
 INPUT .\IMAGENES\CE_POLARIDA_DIRECTA.jpeg
 INPUT .\IMAGENES\CE_POLARIDA_DIRECTA.jpeg
-INPUT C:\Users\gusfl\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
-INPUT C:\Users\gusfl\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT .\IMAGENES\I-V_DIODO40001.jpeg
 INPUT .\IMAGENES\I-V_DIODO40001.jpeg
 INPUT .\IMAGENES\I-V_DIODO40001.jpeg
@@ -233,6 +231,8 @@ INPUT C:\Users\gusfl\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT C:\Users\gusfl\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
 INPUT C:\Users\gusfl\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy9.tfm
 INPUT C:\Users\gusfl\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex9.tfm
+INPUT C:\Users\gusfl\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
+INPUT C:\Users\gusfl\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT .\IMAGENES\I-V_DIODO4148.jpeg
 INPUT .\IMAGENES\I-V_DIODO4148.jpeg
 INPUT .\IMAGENES\I-V_DIODO4148.jpeg
@@ -296,6 +296,8 @@ INPUT .\IMAGENES\EVIDENCIA.jpeg
 INPUT .\IMAGENES\EVIDENCIA.jpeg
 INPUT .\IMAGENES\EVIDENCIA.jpeg
 INPUT .\IMAGENES\EVIDENCIA.jpeg
+INPUT C:\Users\gusfl\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmri7t.vf
+INPUT C:\Users\gusfl\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
 INPUT c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\%OUTDIR%\1MV12_FE_P01_FCGM_MRAY_MVME.aux
 INPUT c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\%OUTDIR%\1MV12_FE_P01_FCGM_MRAY_MVME.run.xml
 OUTPUT c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\%OUTDIR%\1MV12_FE_P01_FCGM_MRAY_MVME.run.xml
