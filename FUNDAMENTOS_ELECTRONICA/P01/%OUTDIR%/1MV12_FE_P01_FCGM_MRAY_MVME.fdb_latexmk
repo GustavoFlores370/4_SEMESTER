@@ -1,13 +1,16 @@
 # Fdb version 4
-["biber build/1MV12_FE_P01_FCGM_MRAY_MVME"] 0 "build/1MV12_FE_P01_FCGM_MRAY_MVME.bcf" "build/1MV12_FE_P01_FCGM_MRAY_MVME.bbl" "build/1MV12_FE_P01_FCGM_MRAY_MVME" 1771912094.96726 0
-  "build/1MV12_FE_P01_FCGM_MRAY_MVME.bcf" 0 -1 0 "pdflatex"
+["biber %OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME"] 0 "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.bcf" "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.bbl" "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME" 1771951738.47386 0
+  "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.bcf" 0 -1 0 "pdflatex"
   "example_bib.bib" 0 -1 0 ""
   (generated)
-  "build/1MV12_FE_P01_FCGM_MRAY_MVME.bbl"
-  "build/1MV12_FE_P01_FCGM_MRAY_MVME.blg"
+  "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.bbl"
+  "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.blg"
   (rewritten before read)
-["pdflatex"] 1771912093.06299 "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P01/1MV12_FE_P01_FCGM_MRAY_MVME.tex" "build/1MV12_FE_P01_FCGM_MRAY_MVME.pdf" "1MV12_FE_P01_FCGM_MRAY_MVME" 1771912094.96861 0
-  "1MV12_FE_P01_FCGM_MRAY_MVME.tex" 1771912092 28760 49b024d9c80f6fa3743b120d467d76b0 ""
+["pdflatex"] 1771951737.1098 "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P01/1MV12_FE_P01_FCGM_MRAY_MVME.tex" "build/1MV12_FE_P01_FCGM_MRAY_MVME.pdf" "1MV12_FE_P01_FCGM_MRAY_MVME" 1771951738.4751 0
+  "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.aux" 1771951738 6666 f78b95f2937bb6386f88d08649973cfd "pdflatex"
+  "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.bbl" 0 -1 0 "biber %OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME"
+  "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.run.xml" 1771951738 2564 262b37d0664920be10b45563da16559e "pdflatex"
+  "1MV12_FE_P01_FCGM_MRAY_MVME.tex" 1771951736 32814 d286b7ddc08bfb7bd98502ee80fcb2e6 ""
   "C:/Users/gusfl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1771791479 132483 2e52014374ddd3923615883c91895bfe ""
   "C:/Users/gusfl/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1744831132 13148213 1cd3a947c02a3b6b0072ce30da7c46ab ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -41,6 +44,7 @@
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb" 1247596667 36094 798f80770b3b148ceedd006d487db67c ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
+  "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247596667 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
@@ -115,14 +119,11 @@
   "IMAGENES/OSCILOSCOPIO_XY.jpeg" 1771902224 122241 d13355ef964dd01aeef6905fcea1e6cc ""
   "IMAGENES/SIMULACION_4001.jpeg" 1771905922 203661 18d34c881486eca49e0691e5466fc3fb ""
   "IMAGENES/SIMULACION_4148.jpeg" 1771905940 227356 2cdb4769a2b1a95528b2a3ab27289c5a ""
-  "build/1MV12_FE_P01_FCGM_MRAY_MVME.aux" 1771912094 5785 5f6d4b5268bdbcc70d187f087c18b029 "pdflatex"
-  "build/1MV12_FE_P01_FCGM_MRAY_MVME.bbl" 0 -1 0 "biber build/1MV12_FE_P01_FCGM_MRAY_MVME"
-  "build/1MV12_FE_P01_FCGM_MRAY_MVME.run.xml" 1771912094 2564 262b37d0664920be10b45563da16559e "pdflatex"
-  "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P01/1MV12_FE_P01_FCGM_MRAY_MVME.tex" 1771912092 28760 49b024d9c80f6fa3743b120d467d76b0 ""
+  "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P01/1MV12_FE_P01_FCGM_MRAY_MVME.tex" 1771951736 32814 d286b7ddc08bfb7bd98502ee80fcb2e6 ""
   (generated)
-  "build/1MV12_FE_P01_FCGM_MRAY_MVME.aux"
-  "build/1MV12_FE_P01_FCGM_MRAY_MVME.bcf"
-  "build/1MV12_FE_P01_FCGM_MRAY_MVME.log"
+  "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.aux"
+  "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.bcf"
+  "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.log"
+  "%OUTDIR%/1MV12_FE_P01_FCGM_MRAY_MVME.run.xml"
   "build/1MV12_FE_P01_FCGM_MRAY_MVME.pdf"
-  "build/1MV12_FE_P01_FCGM_MRAY_MVME.run.xml"
   (rewritten before read)

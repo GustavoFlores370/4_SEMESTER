@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  23 FEB 2026 22:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  24 FEB 2026 10:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -501,7 +501,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 \@quotelevel=\count422
 \@quotereset=\count423
- (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\build\1MV12_FE_P01_FCGM_MRAY_MVME.aux)
+ (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\%OUTDIR%\1MV12_FE_P01_FCGM_MRAY_MVME.aux)
 \openout1 = `1MV12_FE_P01_FCGM_MRAY_MVME.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
@@ -558,161 +558,212 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\gusfl\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-<IMAGENES/CB_DIODO4001.jpeg, id=1, 548.0475pt x 446.66875pt>
-File: IMAGENES/CB_DIODO4001.jpeg Graphic file (type jpg)
-<use IMAGENES/CB_DIODO4001.jpeg>
-Package pdftex.def Info: IMAGENES/CB_DIODO4001.jpeg  used on input line 101.
-(pdftex.def)             Requested size: 232.19843pt x 189.24896pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
-[]|$\OML/cmm/m/it/8 R[]$
- []
-
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--166
-[]|$\OML/cmm/m/it/8 R[]$
- []
-
-<IMAGENES/CE_POLARIDA_DIRECTA.jpeg, id=2, 1606.0pt x 1205.50375pt>
-File: IMAGENES/CE_POLARIDA_DIRECTA.jpeg Graphic file (type jpg)
-<use IMAGENES/CE_POLARIDA_DIRECTA.jpeg>
-Package pdftex.def Info: IMAGENES/CE_POLARIDA_DIRECTA.jpeg  used on input line 175.
-(pdftex.def)             Requested size: 232.19843pt x 174.28772pt.
 
 
 [1{C:/Users/gusfl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
- <./IMAGENES/CB_DIODO4001.jpeg> <./IMAGENES/CE_POLARIDA_DIRECTA.jpeg>]
-<IMAGENES/I-V_DIODO40001.jpeg, id=17, 362.35374pt x 621.32124pt>
+]
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+[]|\OT1/ptm/b/n/8 1N4148
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+[]|$\OMS/cmsy/m/n/8 ^^Y$\OT1/ptm/m/n/8 0.7V (M[]ax
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+[]|$\OMS/cmsy/m/n/8 ^^Y$\OT1/ptm/m/n/8 0.6V a 0.7V
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+\OT1/ptm/m/n/8 (M[]ax 1V a
+ []
+
+
+Underfull \hbox (badness 4954) in paragraph at lines 202--202
+[]|\OT1/ptm/m/n/8 3W (t[]^^Ppico con
+ []
+
+
+Underfull \hbox (badness 2197) in paragraph at lines 219--219
+[]|\OT1/ptm/m/n/8 Ca[]^^Pda de tensi[]on muy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]|\OT1/ptm/m/n/8 Fuentes con-mu-tadas,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]|\OT1/ptm/m/n/8 Emite fo-tones cuando
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]|\OT1/ptm/m/n/8 Genera cor-ri-ente al
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+\OT1/ptm/m/n/8 vari-able me-di-ante
+ []
+
+<IMAGENES/CB_DIODO4001.jpeg, id=16, 548.0475pt x 446.66875pt>
+File: IMAGENES/CB_DIODO4001.jpeg Graphic file (type jpg)
+<use IMAGENES/CB_DIODO4001.jpeg>
+Package pdftex.def Info: IMAGENES/CB_DIODO4001.jpeg  used on input line 229.
+(pdftex.def)             Requested size: 232.19843pt x 189.24896pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[2]
+Underfull \hbox (badness 2150) in paragraph at lines 250--252
+[]\OT1/ptm/m/n/10 En esta primera secci[]on se mostrar[]an los re-sul-ta-dos
+ []
+
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+[]|$\OML/cmm/m/it/8 R[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--323
+[]|$\OML/cmm/m/it/8 R[]$
+ []
+
+<IMAGENES/CE_POLARIDA_DIRECTA.jpeg, id=23, 1606.0pt x 1205.50375pt>
+File: IMAGENES/CE_POLARIDA_DIRECTA.jpeg Graphic file (type jpg)
+<use IMAGENES/CE_POLARIDA_DIRECTA.jpeg>
+Package pdftex.def Info: IMAGENES/CE_POLARIDA_DIRECTA.jpeg  used on input line 332.
+(pdftex.def)             Requested size: 232.19843pt x 174.28772pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[3 <./IMAGENES/CB_DIODO4001.jpeg>]
+<IMAGENES/I-V_DIODO40001.jpeg, id=29, 362.35374pt x 621.32124pt>
 File: IMAGENES/I-V_DIODO40001.jpeg Graphic file (type jpg)
 <use IMAGENES/I-V_DIODO40001.jpeg>
-Package pdftex.def Info: IMAGENES/I-V_DIODO40001.jpeg  used on input line 192.
+Package pdftex.def Info: IMAGENES/I-V_DIODO40001.jpeg  used on input line 349.
 (pdftex.def)             Requested size: 144.47937pt x 247.7372pt.
-<IMAGENES/I-V_DIODO4148.jpeg, id=18, 350.30875pt x 621.32124pt>
+<IMAGENES/I-V_DIODO4148.jpeg, id=30, 350.30875pt x 621.32124pt>
 File: IMAGENES/I-V_DIODO4148.jpeg Graphic file (type jpg)
 <use IMAGENES/I-V_DIODO4148.jpeg>
-Package pdftex.def Info: IMAGENES/I-V_DIODO4148.jpeg  used on input line 200.
+Package pdftex.def Info: IMAGENES/I-V_DIODO4148.jpeg  used on input line 357.
 (pdftex.def)             Requested size: 144.47937pt x 256.26025pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
+Underfull \hbox (badness 10000) in paragraph at lines 383--383
 []|$\OML/cmm/m/it/8 R[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
 []|$\OML/cmm/m/it/8 R[]$
  []
 
 
 
-[2 <./IMAGENES/I-V_DIODO40001.jpeg> <./IMAGENES/I-V_DIODO4148.jpeg>]
-<IMAGENES/CE_POLARIDAD_INVERSA.jpeg, id=25, 1606.0pt x 1109.14375pt>
+[4 <./IMAGENES/CE_POLARIDA_DIRECTA.jpeg> <./IMAGENES/I-V_DIODO40001.jpeg> <./IMAGENES/I-V_DIODO4148.jpeg>]
+<IMAGENES/CE_POLARIDAD_INVERSA.jpeg, id=36, 1606.0pt x 1109.14375pt>
 File: IMAGENES/CE_POLARIDAD_INVERSA.jpeg Graphic file (type jpg)
 <use IMAGENES/CE_POLARIDAD_INVERSA.jpeg>
-Package pdftex.def Info: IMAGENES/CE_POLARIDAD_INVERSA.jpeg  used on input line 252.
+Package pdftex.def Info: IMAGENES/CE_POLARIDAD_INVERSA.jpeg  used on input line 409.
 (pdftex.def)             Requested size: 232.19843pt x 160.35631pt.
-<IMAGENES/I-V_DIODO40001_INVERSO.jpeg, id=26, 367.3725pt x 621.32124pt>
+<IMAGENES/I-V_DIODO40001_INVERSO.jpeg, id=37, 367.3725pt x 621.32124pt>
 File: IMAGENES/I-V_DIODO40001_INVERSO.jpeg Graphic file (type jpg)
 <use IMAGENES/I-V_DIODO40001_INVERSO.jpeg>
-Package pdftex.def Info: IMAGENES/I-V_DIODO40001_INVERSO.jpeg  used on input line 274.
+Package pdftex.def Info: IMAGENES/I-V_DIODO40001_INVERSO.jpeg  used on input line 431.
 (pdftex.def)             Requested size: 154.80157pt x 261.81587pt.
-<IMAGENES/I-V_DIODO4148_INVERSO.jpeg, id=27, 367.3725pt x 621.32124pt>
+<IMAGENES/I-V_DIODO4148_INVERSO.jpeg, id=38, 367.3725pt x 621.32124pt>
 File: IMAGENES/I-V_DIODO4148_INVERSO.jpeg Graphic file (type jpg)
 <use IMAGENES/I-V_DIODO4148_INVERSO.jpeg>
-Package pdftex.def Info: IMAGENES/I-V_DIODO4148_INVERSO.jpeg  used on input line 281.
+Package pdftex.def Info: IMAGENES/I-V_DIODO4148_INVERSO.jpeg  used on input line 438.
 (pdftex.def)             Requested size: 154.80157pt x 261.81587pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-<IMAGENES/OSCILOSCOPIO_1.jpeg, id=28, 1312.905pt x 985.6825pt>
+<IMAGENES/OSCILOSCOPIO_1.jpeg, id=39, 1312.905pt x 985.6825pt>
 File: IMAGENES/OSCILOSCOPIO_1.jpeg Graphic file (type jpg)
 <use IMAGENES/OSCILOSCOPIO_1.jpeg>
-Package pdftex.def Info: IMAGENES/OSCILOSCOPIO_1.jpeg  used on input line 295.
+Package pdftex.def Info: IMAGENES/OSCILOSCOPIO_1.jpeg  used on input line 452.
 (pdftex.def)             Requested size: 232.19843pt x 174.3169pt.
 
 
-[3 <./IMAGENES/CE_POLARIDAD_INVERSA.jpeg> <./IMAGENES/I-V_DIODO40001_INVERSO.jpeg> <./IMAGENES/I-V_DIODO4148_INVERSO.jpeg>]
-<IMAGENES/OSCILOSCOPIO_XY.jpeg, id=32, 1324.95pt x 973.6375pt>
+[5 <./IMAGENES/CE_POLARIDAD_INVERSA.jpeg> <./IMAGENES/I-V_DIODO40001_INVERSO.jpeg> <./IMAGENES/I-V_DIODO4148_INVERSO.jpeg>]
+<IMAGENES/OSCILOSCOPIO_XY.jpeg, id=43, 1324.95pt x 973.6375pt>
 File: IMAGENES/OSCILOSCOPIO_XY.jpeg Graphic file (type jpg)
 <use IMAGENES/OSCILOSCOPIO_XY.jpeg>
-Package pdftex.def Info: IMAGENES/OSCILOSCOPIO_XY.jpeg  used on input line 305.
+Package pdftex.def Info: IMAGENES/OSCILOSCOPIO_XY.jpeg  used on input line 462.
 (pdftex.def)             Requested size: 232.19843pt x 170.62682pt.
-<IMAGENES/SIMULACION_4001.jpeg, id=33, 1606.0pt x 791.95876pt>
+<IMAGENES/SIMULACION_4001.jpeg, id=44, 1606.0pt x 791.95876pt>
 File: IMAGENES/SIMULACION_4001.jpeg Graphic file (type jpg)
 <use IMAGENES/SIMULACION_4001.jpeg>
-Package pdftex.def Info: IMAGENES/SIMULACION_4001.jpeg  used on input line 319.
+Package pdftex.def Info: IMAGENES/SIMULACION_4001.jpeg  used on input line 476.
 (pdftex.def)             Requested size: 232.19843pt x 114.49875pt.
 
 
-<IMAGENES/SIMULACION_4148.jpeg, id=34, 1606.0pt x 788.9475pt>
+<IMAGENES/SIMULACION_4148.jpeg, id=45, 1606.0pt x 788.9475pt>
 File: IMAGENES/SIMULACION_4148.jpeg Graphic file (type jpg)
 <use IMAGENES/SIMULACION_4148.jpeg>
-Package pdftex.def Info: IMAGENES/SIMULACION_4148.jpeg  used on input line 327.
+Package pdftex.def Info: IMAGENES/SIMULACION_4148.jpeg  used on input line 484.
 (pdftex.def)             Requested size: 232.19843pt x 114.0634pt.
 
 
-[4 <./IMAGENES/OSCILOSCOPIO_1.jpeg> <./IMAGENES/OSCILOSCOPIO_XY.jpeg> <./IMAGENES/SIMULACION_4001.jpeg> <./IMAGENES/SIMULACION_4148.jpeg>]
+[6 <./IMAGENES/OSCILOSCOPIO_1.jpeg> <./IMAGENES/OSCILOSCOPIO_XY.jpeg> <./IMAGENES/SIMULACION_4001.jpeg> <./IMAGENES/SIMULACION_4148.jpeg>]
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--411
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 412--414
+Underfull \hbox (badness 10000) in paragraph at lines 564--566
 
  []
 
-<IMAGENES/EVIDENCIA.jpeg, id=38, 1249.66875pt x 1604.99625pt>
+<IMAGENES/EVIDENCIA.jpeg, id=49, 1249.66875pt x 1604.99625pt>
 File: IMAGENES/EVIDENCIA.jpeg Graphic file (type jpg)
 <use IMAGENES/EVIDENCIA.jpeg>
-Package pdftex.def Info: IMAGENES/EVIDENCIA.jpeg  used on input line 439.
+Package pdftex.def Info: IMAGENES/EVIDENCIA.jpeg  used on input line 591.
 (pdftex.def)             Requested size: 232.19843pt x 298.21764pt.
 
-LaTeX Warning: Empty bibliography on input line 464.
+LaTeX Warning: Empty bibliography on input line 616.
 
 
 
-[5 <./IMAGENES/EVIDENCIA.jpeg>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\build\1MV12_FE_P01_FCGM_MRAY_MVME.aux)
+[7 <./IMAGENES/EVIDENCIA.jpeg>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\%OUTDIR%\1MV12_FE_P01_FCGM_MRAY_MVME.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                1MV12_FE_P01_FCGM_MRAY_MVME
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to '1MV12_FE_P01_FCGM_MRAY_MVME.run.xml'.
 \openout1 = `1MV12_FE_P01_FCGM_MRAY_MVME.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12623 strings out of 469959
- 242243 string characters out of 5469834
- 1071953 words of memory out of 5000000
- 39294 multiletter control sequences out of 15000+600000
+ 12627 strings out of 469959
+ 242350 string characters out of 5469834
+ 1077043 words of memory out of 5000000
+ 39298 multiletter control sequences out of 15000+600000
  669333 words of font info for 112 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  63i,14n,66p,1268b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\build\1MV12_FE_P01_FCGM_MRAY_MVME.pdf (5 pages, 1314603 bytes).
+<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\%OUTDIR%\1MV12_FE_P01_FCGM_MRAY_MVME.pdf (7 pages, 1381187 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
+ 129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

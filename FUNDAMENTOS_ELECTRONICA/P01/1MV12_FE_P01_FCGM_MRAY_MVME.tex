@@ -81,7 +81,12 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-    SI
+    This laboratory practice aims primarily to analyze the current–voltage (I–V) characteristic curves of the semiconductor diode in its forward and reverse bias regions. Two different devices were used—the 1N4001 rectifier and the 1N4148 fast-switching diode—to compare their operating parameters.
+
+The study is divided into four phases: static verification using a multimeter, manual acquisition of I–V data, dynamic visualization through an oscilloscope in XY mode, and analysis of thermal behavior through simulation.
+
+The results make it possible to validate the mathematical model given by the Shockley equation, demonstrating the nonlinear nature of the component and the critical influence of temperature on the threshold voltage and reverse saturation current.
+
 \end{abstract}
 
 \section{Introducción}
@@ -90,9 +95,132 @@
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 
-\IEEEPARstart{L}{os} Circuitos RC 
+\IEEEPARstart{E}l trabajo presente pretende reforzar las bases teóricas que rigen el comportamiento de un diodo, aplicarlas en práctica y entender los resultados físicos obtenidos. Para esto, se trabajará con dos diodos de silicio, el 1N4001 y el 1N4148.
+La importancia de esta práctica es entender cómo y de qué manera pueden ser implementados estos componentes en circuitos electrónicos, además de comprender cómo los parámetros de éstos cambian al alterar algunos factores como lo es la temperatura.
+Durante el desarrollo del trabajo presente se analizará y comprenderá la diferencia al analizar al diodo como un elemento ideal y como un elemento real que alteran los resultados finales.
+Al término de esta práctica se espera que sea evidente el comportamiento de un diodo, tanto en su región de polarización directa como la de la polarización inversa.
 
+\section{Objetivos}
+La presente práctica tiene como objetivo conocer las curvas de I-V del diodo en sus regiones directa e inversa, y comprobar las curvas del diodo como semiconductor.
 \section{Marco teórico}
+\subsection{Diodo.} 
+El diodo es un dispositivo semiconductor de dos terminales que permite el flujo de corriente en una sola dirección, actuando esencialmente como un interruptor unidireccional. Los diodos tienen una polaridad determinada por su ánodo (terminal positiva) y su cátodo (terminal negativa).
+
+Si observamos el diagrama esquemático del diodo, la flecha apunta en sentido contrario al flujo real de electrones, esto debido a que es más fácil interpretar el flujo de la corriente adoptando el sentido convencional, facilitando así los cálculos y deducciones.
+
+\subsection{Polarización.}
+Decimos que un diodo tiene polarización directa cuando permite el paso de la corriente, lo cual ocurre cuando hay un potencial mayor en el ánodo que en el cátodo (superando el voltaje de umbral). Contrariamente, se tiene una polarización inversa cuando actúa como un aislante, impidiendo el paso de la corriente y actuando como un interruptor abierto. 
+
+\subsection{Polarización Inversa.}
+Cuando el ánodo del diodo se conecta al potencial negativo de la fuente y el cátodo al positivo, el dispositivo se encuentra en \textbf{polarización inversa}. En esta condición, el campo eléctrico externo se suma al campo interno de la unión p-n, provocando que la región de agotamiento se ensanche. Como consecuencia, aumenta la barrera de potencial y se dificulta aún más el paso de portadores mayoritarios.
+
+En un diodo ideal, la corriente en polarización inversa sería exactamente cero. Sin embargo, en un diodo real siempre existe una pequeña corriente denominada \textbf{corriente de saturación inversa} o \textbf{corriente de fuga} ($I_S$). Esta corriente se debe principalmente al movimiento de portadores minoritarios que atraviesan la unión debido a la energía térmica del material semiconductor.
+
+La ecuación completa del diodo describe este comportamiento:
+
+\begin{equation} I_D = I_S \left( e^{\frac{V_D}{n V_T}} - 1 \right) \end{equation}
+Esta ecuación es llamada la Ecuación de Shockley y ayuda para describir de manera matemática el comportamiento del dido.
+Donde:
+\begin{itemize}
+    \item $I_S$ (Corriente de saturación inversa): Es la corriente mínima que fluye cuando el diodo está polarizado en inversa.
+    
+    \item $V_T$ (Voltaje térmico): Es el parámetro clave que vincula la energía térmica con el comportamiento eléctrico. Se calcula como:
+    
+    \[
+        V_T = \frac{kT}{q}
+    \]
+\end{itemize}
+Su funcionamiento del diodo es altamente sensible a los cambios térmicos debido a la naturaleza de los materiales semiconductores. 
+Por ejemplo, el voltaje térmico actúa como un factor de escala dentro del exponente, lo que significa que define la pendiente de la 
+curva una vez superado el voltaje de umbral. De igual forma la corriente de fuga es extremadamente sensible al calor; un aumento de 
+temperatura incrementa drásticamente esta corriente de fuga.
+
+Para valores negativos grandes de $V_D$, el término exponencial tiende a cero y la corriente se aproxima a:
+
+\[
+I \approx -I_S
+\]
+
+\subsection{Voltaje de umbral.}
+Esla tensión a partir de la cual la corriente empieza a incrementarse rápidamente. Típicamente es de 0.7V para los diodos de silicio y 0.3 para los diodos de germanio.
+
+\subsection{Inspección de un diodo.}
+Para saber si un diodo es funcional configurado en la función de prueba de diodos. En este modo, el instrumento produce un pequeño voltaje entre sus terminales, al aplicar este potencial en polarización directa se obtiene una caída de tensión entre 0.5 a 0.8 V. También es factible comprobar la resistencia que tiene el diodo, un buen diodo polarizado directamente debería dar una lectura entre 10 a 1,000 ohm (dependiendo de la escala). Por el contrario, en polarización inversa el diodo debe registrar una lectura de circuito abierto (indicado como “OL”), esto indica que no deja pasar corriente en ese sentido.
+
+
+\subsection{Dopaje de un diodo y diferencias.}
+La esencia del diodo reside en la unión de dos tipos de estructuras cristalinas, dopadas de distinta manera, es decir, se le han añadido de forma controlada
+ pequeñas cantidades de impurezas. El material tipo P cuenta con una abundancia de "huecos" (ausencia de electrones), mientras que el material tipo N posee un
+  exceso de electrones libres Dependiendo de su construcción física y dopaje, se obtendrán distintos comportamientos y capacidades. Por ejemplo, al comparar la 
+  familia 1N4000 (diodos rectificadores) con diodos de conmutación rápida como el 1N4148, se obtienen las siguientes diferencias.
+
+\subsection{Comportamiento capacitivo del diodo}
+
+Además de su comportamiento como rectificador, el diodo presenta capacitancia interna debido a la estructura de la unión p-n. Esto implica que, especialmente en señales de corriente alterna y altas frecuencias, el diodo puede comportarse como un capacitor dependiente del voltaje aplicado.
+
+Existen dos tipos principales de capacitancia en el diodo:
+
+\subsubsection{Capacitancia de transición o de unión}
+
+Se presenta principalmente en polarización inversa. La región de agotamiento actúa como dieléctrico, mientras que las regiones p y n funcionan como placas conductoras. Desde el punto de vista físico, el diodo puede modelarse como un capacitor cuya capacitancia depende del ancho de la región de agotamiento.
+
+La expresión aproximada es:
+
+\[
+C_j = \frac{\varepsilon A}{W}
+\]
+
+donde $W$ es el ancho de la región de agotamiento. Como $W$ aumenta con el voltaje inverso $V_R$, la capacitancia disminuye aproximadamente como:
+
+\[
+C_j \propto \frac{1}{\sqrt{V_R}}
+\]
+
+Esta capacitancia es relevante en:
+
+\begin{itemize}
+    \item Circuitos de alta frecuencia.
+    \item Aplicaciones de radiofrecuencia (RF).
+    \item Velocidad de conmutación.
+\end{itemize}
+
+El 1N4148 posee menor capacitancia de unión que el 1N4001, lo que contribuye a su mayor rapidez de respuesta.
+
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
+\hline
+\textbf{Parámetro} & \textbf{1N4001 (Rectificador)} & \textbf{1N4148 (Señal/Rápido)} \\ \hline
+Voltaje de activación (VD) & $\approx$0.7V (Máx 1.1V a 1A) & $\approx$0.6V a 0.7V (Máx 1V a 10mA) \\ \hline
+Voltaje Pico Inverso (VRRM) & 50V & 100V \\ \hline
+Corriente Máx. Directa (IF) & 1.0A & 150mA a 300mA \\ \hline
+Corriente Pico Inverso (IR) & 5$\mu$A (muy baja) & 25nA (extremadamente baja) \\ \hline
+Frecuencia / Velocidad & Baja (60Hz) & Muy Alta (trr < 4ns) \\ \hline
+Potencia de operación (PD) & 3W (típico con disipación) & 500mW \\ \hline
+Temperatura de operación & -65$^\circ$C a +175$^\circ$C & -65$^\circ$C a +200$^\circ$C \\ \hline
+\end{tabularx}
+\caption{Comparación de especificaciones entre un diodo 1N4001 y un 1N4148.}
+\label{tablaComparacionDiodos}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|}
+\hline
+\textbf{Tipo de Diodo} & \textbf{Funcionamiento Clave} & \textbf{Aplicaciones Comunes} \\ \hline
+Rectificador & Pasa grandes corrientes en una sola dirección. & Fuentes de alimentación, cargadores. \\ \hline
+De Señal & Conmutación extremadamente rápida. & Procesamiento de datos, lógica digital. \\ \hline
+Zener & Conduce en inversa a un voltaje específico y estable. & Reguladores de voltaje, protección de circuitos. \\ \hline
+Schottky & Caída de tensión muy baja (0.2V) y alta velocidad. & Fuentes conmutadas, paneles solares. \\ \hline
+LED & Emite fotones cuando circula corriente. & Indicadores, iluminación, pantallas. \\ \hline
+Fotodiodo & Genera corriente al recibir luz. & Sensores de luz, receptores de control remoto. \\ \hline
+Varactor & Actúa como un capacitor variable mediante voltaje. & Sintonizadores de radio y TV (RF). \\ \hline
+\end{tabularx}
+\caption{Clasificación de diodos en base a sus aplicaciones.}
+\label{tablaClasificacionDiodos}
+\end{table}
+
 
 \section{Materiales}
 
@@ -118,8 +246,37 @@ comportamiento del diodo a diferentes valores de voltaje de entrada. Cabe aclara
 hechos a base de silicio.
 
 \section{Análisis y Resultados del circuito}
-\subsection{Polarización Directa}
+\subsection{Características Básicas.}
+En esta primera sección se mostrarán los resultados obtenidos de realizar las mediciones básicas que caracterizan a cada uno de los diodos, como los es Voltaje de Umbral, medido con la función de 
+prueba de diododos del multímetro para una polarización directa y una invesa para ambos casos. Además de medir la impedancia presente en el diodo para ambas fases mencionadas anteriormente.
 
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Diodo} & \textbf{Voltaje de Umbral (V)} & \textbf{Resistencia ($\Omega$)}\\ \hline
+1N4001 & 0.544 & 0\\ \hline
+1N4148 & 0.540 & 0\\ \hline
+\end{tabularx}
+\caption{Mediciones Básicas en Polaridad Directa.}
+\label{PolaridadDirecta}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Diodo} & \textbf{Voltaje de Umbral (V)} & \textbf{Resistencia ($\Omega$)}\\ \hline
+1N4001 & 0 & 1.80M\\ \hline
+1N4148 & 0 & 1.74M\\ \hline
+\end{tabularx}
+\caption{Mediciones Básicas en Polaridad Inversa.}
+\label{PolaridadInversa}
+\end{table}
+Esta parte es importante, pues con estas mediciones nos podemos dar cuenta si alguno de nuestro componentes está dañado, pues si registramos lecturas de Voltaje de Umbral 
+fuera del rango 0.5V - 0.7V o si registramos una resistencia pequeña en la polarización inversa como lo indica la tabla del fabricante véase Tabla \ref{tablaComparacionDiodos}. 
+
+\subsection{Polarización Directa}
 Para esta primera parte se realizaron las mediciones de voltaje, corriente y resistencia estática de los diodos dada una polarización directa.
 Partiendo de los valores de $V_D$ y $I_D$ es fácil calcular la resistencia estática del diodo, partiendo de la ley de ohm, obtenemos:
 \begin{equation}
@@ -389,13 +546,6 @@ unión es más pequeña y, por ende, más sensible a cambios térmicos drástico
     conducir a no conducir) en tiempos muy cortos (nanosegundos).
 \end{itemize}
 
-
-
-
-
-
-
-
 \section{Conclusiones}
 \begin{itemize}
     \item \textbf{Flores Cornejo Gustavo Mauricio.}
@@ -407,7 +557,9 @@ unión es más pequeña y, por ende, más sensible a cambios térmicos drástico
 Finalmente, el análisis comparativo permitió entender que, aunque ambos diodos están fabricados en silicio, su diseño y aplicación influyen en su sensibilidad térmica y comportamiento eléctrico.
     
     \item \textbf{Muñoz Reyes Arturo Yabet.}
-    \newline 
+    \newline En conclusión, esta práctica comprobó de manera efectiva el comportamiento unidireccional y las características eléctricas de los diodos 1N4001 y 1N4148. Mediante mediciones se comprobó su funcionamiento en polarización directa e inversa, confirmando 
+    que requieren un voltaje de activación típico de entre 0.6 V y 0.7 V para conducir la corriente. Finalmente, las simulaciones con variaciones de temperatura demostraron la sensibilidad térmica de estos componentes, destacando que el diodo  1N4001 mantiene una 
+    mayor estabilidad frente al calor en comparación con el diodo 1N4148. Estos resultados subrayan la importancia de considerar tanto las especificaciones eléctricas como el comportamiento térmico al seleccionar semiconductores para aplicaciones en mecatrónica.
 
     \item \textbf{Morales Vásquez Miguel Ehecatl.} 
     \newline 
