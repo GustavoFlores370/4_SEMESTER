@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  22 FEB 2026 14:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  23 FEB 2026 22:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -558,173 +558,132 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\gusfl\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
+<IMAGENES/CB_DIODO4001.jpeg, id=1, 548.0475pt x 446.66875pt>
+File: IMAGENES/CB_DIODO4001.jpeg Graphic file (type jpg)
+<use IMAGENES/CB_DIODO4001.jpeg>
+Package pdftex.def Info: IMAGENES/CB_DIODO4001.jpeg  used on input line 101.
+(pdftex.def)             Requested size: 232.19843pt x 189.24896pt.
 
-LaTeX Warning: Citation 'ref2' on page 1 undefined on input line 97.
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
+[]|$\OML/cmm/m/it/8 R[]$
+ []
 
 
-LaTeX Warning: Citation 'ref1' on page 1 undefined on input line 97.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
+[]|$\OML/cmm/m/it/8 R[]$
+ []
 
-
-LaTeX Warning: Citation 'ref3' on page 1 undefined on input line 99.
-
+<IMAGENES/CE_POLARIDA_DIRECTA.jpeg, id=2, 1606.0pt x 1205.50375pt>
+File: IMAGENES/CE_POLARIDA_DIRECTA.jpeg Graphic file (type jpg)
+<use IMAGENES/CE_POLARIDA_DIRECTA.jpeg>
+Package pdftex.def Info: IMAGENES/CE_POLARIDA_DIRECTA.jpeg  used on input line 175.
+(pdftex.def)             Requested size: 232.19843pt x 174.28772pt.
 
 
 [1{C:/Users/gusfl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
-]
+ <./IMAGENES/CB_DIODO4001.jpeg> <./IMAGENES/CE_POLARIDA_DIRECTA.jpeg>]
+<IMAGENES/I-V_DIODO40001.jpeg, id=17, 362.35374pt x 621.32124pt>
+File: IMAGENES/I-V_DIODO40001.jpeg Graphic file (type jpg)
+<use IMAGENES/I-V_DIODO40001.jpeg>
+Package pdftex.def Info: IMAGENES/I-V_DIODO40001.jpeg  used on input line 192.
+(pdftex.def)             Requested size: 144.47937pt x 247.7372pt.
+<IMAGENES/I-V_DIODO4148.jpeg, id=18, 350.30875pt x 621.32124pt>
+File: IMAGENES/I-V_DIODO4148.jpeg Graphic file (type jpg)
+<use IMAGENES/I-V_DIODO4148.jpeg>
+Package pdftex.def Info: IMAGENES/I-V_DIODO4148.jpeg  used on input line 200.
+(pdftex.def)             Requested size: 144.47937pt x 256.26025pt.
 
-LaTeX Warning: Citation 'ref4' on page 2 undefined on input line 104.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 4479) in paragraph at lines 120--120
-[]|\OT1/ptm/m/n/8 100pF{10$\OML/cmm/m/it/8 ^^V$\OT1/ptm/m/n/8 F, es-table ante tem-per-atura,
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+[]|$\OML/cmm/m/it/8 R[]$
  []
 
 
-LaTeX Warning: Reference `fig:circuito_base' on page 2 undefined on input line 127.
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:circuito_analisis' on page 2 undefined on input line 147.
-
-Excluding 'comment' comment.
-Underfull \hbox (badness 10000) in paragraph at lines 162--164
-
- []
-
-
-
-
-LaTeX Warning: Reference `fig:thevenin' on page 2 undefined on input line 167.
-
-Excluding 'comment' comment. Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:vthFig' on page 2 undefined on input line 212.
-
-
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
-
- []
-
-
-LaTeX Warning: Reference `fig:circuito_analisis' on page 3 undefined on input line 257.
-
-
-Overfull \hbox (0.72449pt too wide) detected at line 264
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 270--271
-
- []
-
-
-Underfull \hbox (badness 1603) in paragraph at lines 289--290
-[]\OT1/ptm/b/n/10 7. Analizar por medio de thevenin la re-sisten-cia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
-
- []
-
-Excluding 'comment' comment.
-
-
-LaTeX Warning: Reference `fig:circuito_natural' on page 3 undefined on input line 303.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 348--349
-
- []
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:git' on page 3 undefined on input line 368.
-
-
-LaTeX Warning: Reference `fig:gvt' on page 3 undefined on input line 368.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
-
+Underfull \hbox (badness 10000) in paragraph at lines 241--241
+[]|$\OML/cmm/m/it/8 R[]$
  []
 
 
 
-[3] Excluding 'comment' comment.
+[2 <./IMAGENES/I-V_DIODO40001.jpeg> <./IMAGENES/I-V_DIODO4148.jpeg>]
+<IMAGENES/CE_POLARIDAD_INVERSA.jpeg, id=25, 1606.0pt x 1109.14375pt>
+File: IMAGENES/CE_POLARIDAD_INVERSA.jpeg Graphic file (type jpg)
+<use IMAGENES/CE_POLARIDAD_INVERSA.jpeg>
+Package pdftex.def Info: IMAGENES/CE_POLARIDAD_INVERSA.jpeg  used on input line 252.
+(pdftex.def)             Requested size: 232.19843pt x 160.35631pt.
+<IMAGENES/I-V_DIODO40001_INVERSO.jpeg, id=26, 367.3725pt x 621.32124pt>
+File: IMAGENES/I-V_DIODO40001_INVERSO.jpeg Graphic file (type jpg)
+<use IMAGENES/I-V_DIODO40001_INVERSO.jpeg>
+Package pdftex.def Info: IMAGENES/I-V_DIODO40001_INVERSO.jpeg  used on input line 274.
+(pdftex.def)             Requested size: 154.80157pt x 261.81587pt.
+<IMAGENES/I-V_DIODO4148_INVERSO.jpeg, id=27, 367.3725pt x 621.32124pt>
+File: IMAGENES/I-V_DIODO4148_INVERSO.jpeg Graphic file (type jpg)
+<use IMAGENES/I-V_DIODO4148_INVERSO.jpeg>
+Package pdftex.def Info: IMAGENES/I-V_DIODO4148_INVERSO.jpeg  used on input line 281.
+(pdftex.def)             Requested size: 154.80157pt x 261.81587pt.
 
-LaTeX Warning: Reference `fig:1khz' on page 4 undefined on input line 420.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+<IMAGENES/OSCILOSCOPIO_1.jpeg, id=28, 1312.905pt x 985.6825pt>
+File: IMAGENES/OSCILOSCOPIO_1.jpeg Graphic file (type jpg)
+<use IMAGENES/OSCILOSCOPIO_1.jpeg>
+Package pdftex.def Info: IMAGENES/OSCILOSCOPIO_1.jpeg  used on input line 295.
+(pdftex.def)             Requested size: 232.19843pt x 174.3169pt.
+
+
+[3 <./IMAGENES/CE_POLARIDAD_INVERSA.jpeg> <./IMAGENES/I-V_DIODO40001_INVERSO.jpeg> <./IMAGENES/I-V_DIODO4148_INVERSO.jpeg>]
+<IMAGENES/OSCILOSCOPIO_XY.jpeg, id=32, 1324.95pt x 973.6375pt>
+File: IMAGENES/OSCILOSCOPIO_XY.jpeg Graphic file (type jpg)
+<use IMAGENES/OSCILOSCOPIO_XY.jpeg>
+Package pdftex.def Info: IMAGENES/OSCILOSCOPIO_XY.jpeg  used on input line 305.
+(pdftex.def)             Requested size: 232.19843pt x 170.62682pt.
+<IMAGENES/SIMULACION_4001.jpeg, id=33, 1606.0pt x 791.95876pt>
+File: IMAGENES/SIMULACION_4001.jpeg Graphic file (type jpg)
+<use IMAGENES/SIMULACION_4001.jpeg>
+Package pdftex.def Info: IMAGENES/SIMULACION_4001.jpeg  used on input line 319.
+(pdftex.def)             Requested size: 232.19843pt x 114.49875pt.
+
+
+<IMAGENES/SIMULACION_4148.jpeg, id=34, 1606.0pt x 788.9475pt>
+File: IMAGENES/SIMULACION_4148.jpeg Graphic file (type jpg)
+<use IMAGENES/SIMULACION_4148.jpeg>
+Package pdftex.def Info: IMAGENES/SIMULACION_4148.jpeg  used on input line 327.
+(pdftex.def)             Requested size: 232.19843pt x 114.0634pt.
+
+
+[4 <./IMAGENES/OSCILOSCOPIO_1.jpeg> <./IMAGENES/OSCILOSCOPIO_XY.jpeg> <./IMAGENES/SIMULACION_4001.jpeg> <./IMAGENES/SIMULACION_4148.jpeg>]
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--411
 
  []
 
 
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:50khz' on page 4 undefined on input line 470.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 470--471
+Underfull \hbox (badness 10000) in paragraph at lines 412--414
 
  []
 
+<IMAGENES/EVIDENCIA.jpeg, id=38, 1249.66875pt x 1604.99625pt>
+File: IMAGENES/EVIDENCIA.jpeg Graphic file (type jpg)
+<use IMAGENES/EVIDENCIA.jpeg>
+Package pdftex.def Info: IMAGENES/EVIDENCIA.jpeg  used on input line 439.
+(pdftex.def)             Requested size: 232.19843pt x 298.21764pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 473--474
-
- []
-
-
-LaTeX Warning: Reference `fig:ev_simu' on page 4 undefined on input line 477.
-
-
-LaTeX Warning: Reference `fig:isimu' on page 4 undefined on input line 477.
-
-
-LaTeX Warning: Reference `fig:vsimu' on page 4 undefined on input line 477.
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:isimu' on page 4 undefined on input line 497.
-
-
-LaTeX Warning: Reference `fig:git' on page 4 undefined on input line 497.
-
-
-LaTeX Warning: Reference `fig:vsimu' on page 4 undefined on input line 498.
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:oscv' on page 4 undefined on input line 520.
-
-
-LaTeX Warning: Reference `fig:oscc' on page 4 undefined on input line 520.
+LaTeX Warning: Empty bibliography on input line 464.
 
 
 
-[4]
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Empty bibliography on input line 642.
-
-
-
-[5] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\build\1MV12_FE_P01_FCGM_MRAY_MVME.aux)
+[5 <./IMAGENES/EVIDENCIA.jpeg>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\build\1MV12_FE_P01_FCGM_MRAY_MVME.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -743,17 +702,17 @@ Package logreq Info: Writing requests to '1MV12_FE_P01_FCGM_MRAY_MVME.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12740 strings out of 469959
- 243124 string characters out of 5469834
- 1077337 words of memory out of 5000000
- 39416 multiletter control sequences out of 15000+600000
- 666570 words of font info for 106 fonts, out of 8000000 for 9000
+ 12623 strings out of 469959
+ 242243 string characters out of 5469834
+ 1071953 words of memory out of 5000000
+ 39294 multiletter control sequences out of 15000+600000
+ 669333 words of font info for 112 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 63i,11n,66p,3778b,871s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\build\1MV12_FE_P01_FCGM_MRAY_MVME.pdf (5 pages, 215763 bytes).
+ 63i,14n,66p,1268b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P01\build\1MV12_FE_P01_FCGM_MRAY_MVME.pdf (5 pages, 1314603 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
+ 96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
