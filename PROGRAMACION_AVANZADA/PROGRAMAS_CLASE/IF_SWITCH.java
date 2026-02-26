@@ -18,6 +18,7 @@ public class IF_SWITCH {
         //EJERCICIO USANDO IF-ELSE
         String NOMBRE;
         String SEXO;
+        lee.nextLine(); 
         System.out.println("Escribe tu nombre: ");
         NOMBRE= lee.nextLine();
         System.out.println("Escribe tu sexo: ");

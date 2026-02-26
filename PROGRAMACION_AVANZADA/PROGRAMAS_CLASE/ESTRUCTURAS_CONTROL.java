@@ -23,7 +23,7 @@ public class ESTRUCTURAS_CONTROL {
                 System.out.println("EJERCICIO USANDO CICLO FOR");
                 System.out.println("\nEscribe el monto a invertir: ");
                 monto = lee.nextDouble();
-                System.out.println("Escribe el porcentaje de interés anal: ");
+                System.out.println("Escribe el porcentaje de interés anual: ");
                 interes = lee.nextDouble();
                 System.out.println("Escribe el número de años a invertir: ");
                 años = lee.nextInt();
