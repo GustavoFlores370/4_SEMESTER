@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber build/1MV12_FE_FCGM_MRAY_MVME"] 0 "build/1MV12_FE_FCGM_MRAY_MVME.bcf" "build/1MV12_FE_FCGM_MRAY_MVME.bbl" "build/1MV12_FE_FCGM_MRAY_MVME" 1772903906.56325 0
+["biber build/1MV12_FE_FCGM_MRAY_MVME"] 0 "build/1MV12_FE_FCGM_MRAY_MVME.bcf" "build/1MV12_FE_FCGM_MRAY_MVME.bbl" "build/1MV12_FE_FCGM_MRAY_MVME" 1772904493.67575 0
   "build/1MV12_FE_FCGM_MRAY_MVME.bcf" 0 -1 0 "pdflatex"
   "example_bib.bib" 0 -1 0 ""
   (generated)
   "build/1MV12_FE_FCGM_MRAY_MVME.bbl"
   "build/1MV12_FE_FCGM_MRAY_MVME.blg"
   (rewritten before read)
-["pdflatex"] 1772903904.55033 "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE_FCGM_MRAY_MVME.tex" "build/1MV12_FE_FCGM_MRAY_MVME.pdf" "1MV12_FE_FCGM_MRAY_MVME" 1772903906.56436 0
-  "1MV12_FE_FCGM_MRAY_MVME.tex" 1772903903 34072 17ae2f688d8d268ea4d3fa7c595fb8e8 ""
+["pdflatex"] 1772904490.72791 "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE_FCGM_MRAY_MVME.tex" "build/1MV12_FE_FCGM_MRAY_MVME.pdf" "1MV12_FE_FCGM_MRAY_MVME" 1772904493.67734 0
+  "1MV12_FE_FCGM_MRAY_MVME.tex" 1772904485 34072 17ae2f688d8d268ea4d3fa7c595fb8e8 ""
   "C:/Users/gusfl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1771791479 132483 2e52014374ddd3923615883c91895bfe ""
   "C:/Users/gusfl/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1744831132 13148213 1cd3a947c02a3b6b0072ce30da7c46ab ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -99,10 +99,10 @@
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty" 1730400552 14552 27664839421e418b87f56fa4c6f66b1a ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1730400552 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "build/1MV12_FE_FCGM_MRAY_MVME.aux" 1772903905 4199 d90563147108a350e9267c103f0a47d5 "pdflatex"
+  "build/1MV12_FE_FCGM_MRAY_MVME.aux" 1772904492 4199 d90563147108a350e9267c103f0a47d5 "pdflatex"
   "build/1MV12_FE_FCGM_MRAY_MVME.bbl" 0 -1 0 "biber build/1MV12_FE_FCGM_MRAY_MVME"
-  "build/1MV12_FE_FCGM_MRAY_MVME.run.xml" 1772903905 2536 631e4f43f551c0bb188acce4728fc36f "pdflatex"
-  "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE_FCGM_MRAY_MVME.tex" 1772903903 34072 17ae2f688d8d268ea4d3fa7c595fb8e8 ""
+  "build/1MV12_FE_FCGM_MRAY_MVME.run.xml" 1772904492 2536 631e4f43f551c0bb188acce4728fc36f "pdflatex"
+  "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE_FCGM_MRAY_MVME.tex" 1772904485 34072 17ae2f688d8d268ea4d3fa7c595fb8e8 ""
   (generated)
   "build/1MV12_FE_FCGM_MRAY_MVME.aux"
   "build/1MV12_FE_FCGM_MRAY_MVME.bcf"
