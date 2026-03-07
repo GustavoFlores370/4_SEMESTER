@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  7 MAR 2026 11:39
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  7 MAR 2026 11:33
->>>>>>> a50fd854ff5a636f05d83e55fa3376e0005c8ca2
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  7 MAR 2026 11:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE__P02_FCGM_MRAY_MVME.tex
-(c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE__P02_FCGM_MRAY_MVME.tex
+**c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE_FCGM_MRAY_MVME.tex
+(c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE_FCGM_MRAY_MVME.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
 (C:\Users\gusfl\AppData\Local\Programs\MiKTeX\tex/latex/ieeetran\IEEEtran.cls
@@ -505,8 +501,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 \@quotelevel=\count422
 \@quotereset=\count423
- (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.aux)
-\openout1 = `1MV12_FE__P02_FCGM_MRAY_MVME.aux'.
+ (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE_FCGM_MRAY_MVME.aux)
+\openout1 = `1MV12_FE_FCGM_MRAY_MVME.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
 LaTeX Font Info:    ... okay on input line 62.
@@ -532,12 +528,12 @@ File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `1MV12_FE__P02_FCGM_MRAY_MVME.bcf'.
+\openout3 = `1MV12_FE_FCGM_MRAY_MVME.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '1MV12_FE__P02_FCGM_MRAY_MVME.bbl' not found.
+Package biblatex Info: ... file '1MV12_FE_FCGM_MRAY_MVME.bbl' not found.
 
-No file 1MV12_FE__P02_FCGM_MRAY_MVME.bbl.
+No file 1MV12_FE_FCGM_MRAY_MVME.bbl.
 Package biblatex Info: Reference section=0 on input line 62.
 Package biblatex Info: Reference segment=0 on input line 62.
 Package caption Info: Begin \AtBeginDocument code.
@@ -620,100 +616,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--206
 \OT1/ptm/m/n/8 vari-able me-di-ante
  []
 
-<IMAGENES/PRUEBA.jpg, id=16, 1927.2pt x 1084.05pt>
-File: IMAGENES/PRUEBA.jpg Graphic file (type jpg)
-<use IMAGENES/PRUEBA.jpg>
-Package pdftex.def Info: IMAGENES/PRUEBA.jpg  used on input line 216.
-(pdftex.def)             Requested size: 232.19843pt x 130.6097pt.
+Excluding 'comment' comment.
 
-Underfull \hbox (badness 2150) in paragraph at lines 237--239
+LaTeX Warning: Reference `fig:circuito_base1' on page 2 undefined on input line 224.
+
+
+LaTeX Warning: Reference `fig:circuito_base1' on page 2 undefined on input line 233.
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 239--241
 []\OT1/ptm/m/n/10 En esta primera secci[]on se mostrar[]an los re-sul-ta-dos
  []
 
 
 
-[2 <./IMAGENES/PRUEBA.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
 []|$\OML/cmm/m/it/8 R[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--310
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+[]|$\OML/cmm/m/it/8 R[]$
+ []
+
+Excluding 'comment' comment.
+
+LaTeX Warning: Reference `fig:ce_polaridad_directa' on page 3 undefined on input line 331.
+
+
+
+Excluding 'comment' comment.
+
+LaTeX Warning: Reference `fig:iv_diodo4001_directa' on page 3 undefined on input line 361.
+
+
+LaTeX Warning: Reference `fig:iv_diodo4148_directa' on page 3 undefined on input line 361.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
 []|$\OML/cmm/m/it/8 R[]$
  []
 
 
-Underfull \vbox (badness 1655) has occurred while \output is active []
-
-
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:ce_polaridad_directa' on page 3 undefined on input line 329.
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:iv_diodo4001_directa' on page 3 undefined on input line 359.
-
-
-LaTeX Warning: Reference `fig:iv_diodo4148_directa' on page 3 undefined on input line 359.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 379--379
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
 []|$\OML/cmm/m/it/8 R[]$
  []
 
+Excluding 'comment' comment. Excluding 'comment' comment.
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--394
-[]|$\OML/cmm/m/it/8 R[]$
- []
-
+LaTeX Warning: Reference `fig:iv_diodo4001_inversa' on page 3 undefined on input line 448.
 
 
-[3] Excluding 'comment' comment. Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:iv_diodo4001_inversa' on page 4 undefined on input line 446.
+LaTeX Warning: Reference `fig:iv_diodo4148_inversa' on page 3 undefined on input line 448.
 
 
-LaTeX Warning: Reference `fig:iv_diodo4148_inversa' on page 4 undefined on input line 446.
 
-Excluding 'comment' comment.
+[3] Excluding 'comment' comment.
 
-LaTeX Warning: Reference `fig:osc_tiempo' on page 4 undefined on input line 463.
+LaTeX Warning: Reference `fig:osc_tiempo' on page 4 undefined on input line 465.
 
 Excluding 'comment' comment.
 
-LaTeX Warning: Reference `fig:osc_xy' on page 4 undefined on input line 476.
+LaTeX Warning: Reference `fig:osc_xy' on page 4 undefined on input line 478.
 
 
-LaTeX Warning: Reference `fig:iv_diodo4001_directa' on page 4 undefined on input line 476.
+LaTeX Warning: Reference `fig:iv_diodo4001_directa' on page 4 undefined on input line 478.
 
 
-LaTeX Warning: Reference `fig:iv_diodo4148_directa' on page 4 undefined on input line 476.
-
-
+LaTeX Warning: Reference `fig:iv_diodo4148_directa' on page 4 undefined on input line 478.
 
 Excluding 'comment' comment.
 
-[4]
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Empty bibliography on input line 632.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--640
+[4] Excluding 'comment' comment.
+
+LaTeX Warning: Empty bibliography on input line 634.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--642
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4001-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 642--643
+Underfull \hbox (badness 10000) in paragraph at lines 644--645
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4148-
  []
 
 
 
-[5] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.aux)
+
+
+[5
+
+] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE_FCGM_MRAY_MVME.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -722,22 +719,22 @@ L3 programming layer <2025-03-26>
 
 LaTeX Warning: There were undefined references.
 
-Package logreq Info: Writing requests to '1MV12_FE__P02_FCGM_MRAY_MVME.run.xml'.
-\openout1 = `1MV12_FE__P02_FCGM_MRAY_MVME.run.xml'.
+Package logreq Info: Writing requests to '1MV12_FE_FCGM_MRAY_MVME.run.xml'.
+\openout1 = `1MV12_FE_FCGM_MRAY_MVME.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12547 strings out of 469959
- 239485 string characters out of 5469834
- 1086807 words of memory out of 5000000
- 39221 multiletter control sequences out of 15000+600000
+ 12533 strings out of 469959
+ 239060 string characters out of 5469834
+ 1088770 words of memory out of 5000000
+ 39207 multiletter control sequences out of 15000+600000
  669332 words of font info for 109 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 63i,14n,66p,1269b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 63i,14n,66p,1264b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.pdf (5 pages, 459751 bytes).
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE_FCGM_MRAY_MVME.pdf (5 pages, 213343 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
