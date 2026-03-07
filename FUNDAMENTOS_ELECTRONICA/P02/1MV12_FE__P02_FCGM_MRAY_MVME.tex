@@ -63,7 +63,7 @@
 
 
 % paper title
-\title{Rectificadores de media onda, onda completa y recortadores\\ \small{Práctica No. 2}}
+\title{Rectificadores de Media Onda, Onda Completa y Recortadores\\ \small{Práctica No. 2}}
 
 % author names and affiliations
 \author{
@@ -81,12 +81,8 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-    This laboratory practice aims primarily to analyze the current–voltage (I–V) characteristic curves of the semiconductor diode in its forward and reverse bias regions. Two different devices were used—the 1N4001 rectifier and the 1N4148 fast-switching diode—to compare their operating parameters.
-
-The study is divided into four phases: static verification using a multimeter, manual acquisition of I–V data, dynamic visualization through an oscilloscope in XY mode, and analysis of thermal behavior through simulation.
-
-The results make it possible to validate the mathematical model given by the Shockley equation, demonstrating the nonlinear nature of the component and the critical influence of temperature on the threshold voltage and reverse saturation current.
-
+    This laboratory practice analyzes the behavior of semiconductor diodes in three fundamental electronic circuits: half-wave rectifiers, full-wave rectifiers, and clipping circuits. The objective is to observe how diodes allow current to flow in only one direction and how this property can be used to convert alternating current (AC) into pulsating direct current (DC) and to limit voltage 
+    levels in electrical signals. Through circuit implementation and signal analysis, the output waveforms of each configuration are studied and compared with theoretical expectations. The experiment demonstrates the practical applications of diodes in power conversion and signal conditioning within electronic systems.
 \end{abstract}
 
 \section{Introducción}
@@ -95,120 +91,220 @@ The results make it possible to validate the mathematical model given by the Sho
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 
-\IEEEPARstart{E}l trabajo presente pretende reforzar las bases teóricas que rigen el comportamiento de un diodo, aplicarlas en práctica y entender los resultados físicos obtenidos. Para esto, se trabajará con dos diodos de silicio, el 1N4001 y el 1N4148.
-La importancia de esta práctica es entender cómo y de qué manera pueden ser implementados estos componentes en circuitos electrónicos, además de comprender cómo los parámetros de éstos cambian al alterar algunos factores como lo es la temperatura.
-Durante el desarrollo del trabajo presente se analizará y comprenderá la diferencia al analizar al diodo como un elemento ideal y como un elemento real que alteran los resultados finales.
-Al término de esta práctica se espera que sea evidente el comportamiento de un diodo, tanto en su región de polarización directa como la de la polarización inversa, además de poder analizar circuitos donde se implementen este tipo de componentes para poder 
-desglozar el funcionamiento y alteraciones en la salida.
+\IEEEPARstart{E}n la práctica pasada se revisó y desarrolló el comportamiento del diodo como componente rectificador de señales. Observamos cómo para corrientes en un sentido específico y para voltajes mayores a 0.7V el diodo se comporta como un interruptor idealmente (puesto en práctica observamos que existe una caída de tensión de 0.7V para diodos de silicio).
+Entonces, partiendo de esto sabemos que podemos alterar el comportamiento de la señal de salida con ayudad de estos componentes. En la presente práctica se desglosa la importancia y el funcionamiento de los diodos como elementos rectificadores de media y de onda completa además de su función como recortadores. Para ello es importante tener en claro los conceptos básicos
+del comportamiento del diodo observado en la práctica pasada además de apoyarnos de la teoría para comprender qué son los rectificadores y los recortadores. Para los rectificadores es importante recalcar su uso en diferentes dispositivos, pues, en ocasiones deseamos que dada una señal variable en el tiempo obtengamos a la salida únicamente la fase positiva, para ello se amplean este
+tipo de arreglos donde se mantiene a la salida un voltaje positivo y para fases negativas se "elimina" el voltaje. En cuanto a los rectificadores de onda completa en vez de "eliminar" el voltaje negativo del sistema lo invierte para obtener a la salida un voltaje positivo, es decir, modifica en su totalidad la onda de entrada.
+Para los Recortadores son redes que se emplean para "recortar" una parte de una señal sin distorsionar la parte restante de la forma de onda aplicada.
 
 \section{Objetivos}
-La presente práctica tiene como objetivo conocer las curvas de I-V del diodo en sus regiones directa e inversa, y comprobar las curvas del diodo como semiconductor.
+1. Analizar y comprobar el comportamiento de los diodos como rectificadores de media
+onda y onda completa.
+
+2. Implementar un rectificador de onda completa con puente de diodos con y sin
+derivación central.
 \section{Marco teórico}
-\subsection{Diodo.} 
-El diodo es un dispositivo semiconductor de dos terminales que permite el flujo de corriente en una sola dirección, actuando esencialmente como un interruptor unidireccional. Los diodos tienen una polaridad determinada por su ánodo (terminal positiva) y su cátodo (terminal negativa).
+\subsection{El diodo semiconductor}
 
-Si observamos el diagrama esquemático del diodo, la flecha apunta en sentido contrario al flujo real de electrones, esto debido a que es más fácil interpretar el flujo de la corriente adoptando el sentido convencional, facilitando así los cálculos y deducciones.
+Un diodo es un dispositivo electrónico semiconductor formado por la unión de dos materiales tipo P y N, conocida como unión PN. Su principal característica es que permite el paso de corriente eléctrica principalmente en un solo sentido, lo cual lo convierte en un elemento fundamental para la rectificación de señales.
 
-\subsection{Polarización.}
-Decimos que un diodo tiene polarización directa cuando permite el paso de la corriente, lo cual ocurre cuando hay un potencial mayor en el ánodo que en el cátodo (superando el voltaje de umbral). Contrariamente, se tiene una polarización inversa cuando actúa como un aislante, impidiendo el paso de la corriente y actuando como un interruptor abierto. 
+Cuando el diodo se conecta en polarización directa, la barrera de potencial disminuye y permite el flujo de corriente. En cambio, cuando se encuentra en polarización inversa, la barrera aumenta y la corriente es prácticamente nula, excepto por una pequeña corriente de fuga.
 
-\subsection{Polarización Inversa.}
-Cuando el ánodo del diodo se conecta al potencial negativo de la fuente y el cátodo al positivo, el dispositivo se encuentra en \textbf{polarización inversa}. En esta condición, el campo eléctrico externo se suma al campo interno de la unión p-n, provocando que la región de agotamiento se ensanche. Como consecuencia, aumenta la barrera de potencial y se dificulta aún más el paso de portadores mayoritarios.
+El comportamiento corriente-voltaje del diodo puede describirse mediante la ecuación de Shockley:
 
-En un diodo ideal, la corriente en polarización inversa sería exactamente cero. Sin embargo, en un diodo real siempre existe una pequeña corriente denominada \textbf{corriente de saturación inversa} o \textbf{corriente de fuga} ($I_S$). Esta corriente se debe principalmente al movimiento de portadores minoritarios que atraviesan la unión debido a la energía térmica del material semiconductor.
+\begin{equation}
+I_D = I_S \left( e^{\frac{V_D}{nV_T}} - 1 \right)
+\end{equation}
 
-La ecuación completa del diodo describe este comportamiento:
-
-\begin{equation} I_D = I_S \left( e^{\frac{V_D}{n V_T}} - 1 \right) \end{equation}
-Esta ecuación es llamada la Ecuación de Shockley y ayuda para describir de manera matemática el comportamiento del dido.
-Donde:
-\begin{itemize}
-    \item $I_S$ (Corriente de saturación inversa): Es la corriente mínima que fluye cuando el diodo está polarizado en inversa.
-    
-    \item $V_T$ (Voltaje térmico): Es el parámetro clave que vincula la energía térmica con el comportamiento eléctrico. Se calcula como:
-    
-    \[
-        V_T = \frac{kT}{q}
-    \]
-\end{itemize}
-Su funcionamiento del diodo es altamente sensible a los cambios térmicos debido a la naturaleza de los materiales semiconductores. 
-Por ejemplo, el voltaje térmico actúa como un factor de escala dentro del exponente, lo que significa que define la pendiente de la 
-curva una vez superado el voltaje de umbral. De igual forma la corriente de fuga es extremadamente sensible al calor; un aumento de 
-temperatura incrementa drásticamente esta corriente de fuga.
-
-Para valores negativos grandes de $V_D$, el término exponencial tiende a cero y la corriente se aproxima a:
-
-\[
-I \approx -I_S
-\]
-
-\subsection{Voltaje de umbral.}
-Esla tensión a partir de la cual la corriente empieza a incrementarse rápidamente. Típicamente es de 0.7V para los diodos de silicio y 0.3 para los diodos de germanio.
-
-\subsection{Inspección de un diodo.}
-Para saber si un diodo es funcional configurado en la función de prueba de diodos. En este modo, el instrumento produce un pequeño voltaje entre sus terminales, al aplicar este potencial en polarización directa se obtiene una caída de tensión entre 0.5 a 0.8 V. También es factible comprobar la resistencia que tiene el diodo, un buen diodo polarizado directamente debería dar una lectura entre 10 a 1,000 ohm (dependiendo de la escala). Por el contrario, en polarización inversa el diodo debe registrar una lectura de circuito abierto (indicado como “OL”), esto indica que no deja pasar corriente en ese sentido.
-
-
-\subsection{Dopaje de un diodo y diferencias.}
-La esencia del diodo reside en la unión de dos tipos de estructuras cristalinas, dopadas de distinta manera, es decir, se le han añadido de forma controlada
- pequeñas cantidades de impurezas. El material tipo P cuenta con una abundancia de "huecos" (ausencia de electrones), mientras que el material tipo N posee un
-  exceso de electrones libres Dependiendo de su construcción física y dopaje, se obtendrán distintos comportamientos y capacidades. Por ejemplo, al comparar la 
-  familia 1N4000 (diodos rectificadores) con diodos de conmutación rápida como el 1N4148, se obtienen las siguientes diferencias.
-
-\subsection{Comportamiento capacitivo del diodo}
-
-Además de su comportamiento como rectificador, el diodo presenta capacitancia interna debido a la estructura de la unión p-n. Esto implica que, especialmente en señales de corriente alterna y altas frecuencias, el diodo puede comportarse como un capacitor dependiente del voltaje aplicado.
-
-\[
-C_j \propto \frac{1}{\sqrt{V_R}}
-\]
-
-Esta capacitancia es relevante en:
+donde:
 
 \begin{itemize}
-    \item Circuitos de alta frecuencia.
-    \item Aplicaciones de radiofrecuencia (RF).
-    \item Velocidad de conmutación.
+\item $I_D$ = corriente a través del diodo
+\item $I_S$ = corriente de saturación inversa
+\item $V_D$ = voltaje en el diodo
+\item $n$ = factor de idealidad (entre 1 y 2)
+\item $V_T$ = voltaje térmico (aproximadamente 26 mV a temperatura ambiente)
 \end{itemize}
 
-El 1N4148 posee menor capacitancia de unión que el 1N4001, lo que contribuye a su mayor rapidez de respuesta.
+Debido a su capacidad de conducir en un solo sentido, los diodos se utilizan en aplicaciones como rectificadores, limitadores o recortadores de señal, reguladores y detectores de señal.
+
+\subsection{Rectificador de media onda}
+
+Un rectificador de media onda es el circuito más simple para convertir una señal alterna (AC) en una señal unidireccional (DC). Este circuito utiliza un solo diodo conectado en serie con una carga.
+
+Durante el semiciclo positivo de la señal de entrada, el diodo se polariza directamente y permite el paso de corriente hacia la carga. Durante el semiciclo negativo, el diodo se polariza inversamente y bloquea el flujo de corriente.
+
+Si la señal de entrada es sinusoidal, puede representarse como:
+
+\begin{equation}
+v_i(t) = V_m \sin(\omega t)
+\label{eq:sin}
+\end{equation}
+
+Entonces el voltaje de salida del rectificador de media onda es:
+
+\begin{equation}
+v_o(t)=
+\begin{cases}
+V_m \sin(\omega t), & \text{si } \sin(\omega t) > 0 \\
+0, & \text{si } \sin(\omega t) < 0
+\end{cases}
+\end{equation}
+
+El valor promedio del voltaje de salida está dado por:
+
+\begin{equation}
+V_{DC} = \frac{V_m}{\pi}
+\end{equation}
+
+donde $V_m$ es el valor máximo de la señal de entrada.
+
+Este tipo de rectificador tiene la desventaja de utilizar solo la mitad de la señal de entrada, por lo que su eficiencia es relativamente baja.
+
+\subsection{Rectificador de onda completa}
+
+El rectificador de onda completa permite aprovechar ambos semiciclos de la señal de entrada, produciendo una señal pulsante que siempre es positiva.
+
+Existen dos configuraciones principales: el rectificador con transformador con derivación central y el rectificador tipo puente de diodos. En el caso del puente rectificador, cuatro diodos se conectan de tal manera que durante cada semiciclo dos diodos conducen mientras los otros dos permanecen en polarización inversa.
+
+El voltaje de salida puede expresarse como:
+
+\begin{equation}
+v_o(t) = |V_m \sin(\omega t)|
+\end{equation}
+
+El valor promedio del voltaje rectificado es:
+
+\begin{equation}
+V_{DC} = \frac{2V_m}{\pi}
+\end{equation}
+
+Comparado con el rectificador de media onda, este circuito duplica aproximadamente el voltaje promedio, además de mejorar la eficiencia del proceso de rectificación.
+
+Otra ventaja importante es que la frecuencia del rizado en la salida es el doble de la frecuencia de entrada, lo que facilita el filtrado para obtener una señal más cercana a una corriente continua.
+
+\subsection{Diodos como recortadores}
+
+Los circuitos recortadores, también llamados limitadores o \textit{clippers}, utilizan diodos para eliminar o limitar ciertas partes de una señal eléctrica sin alterar significativamente el resto de la forma de onda.
+
+El principio de operación se basa en que el diodo conduce únicamente cuando el voltaje supera un cierto nivel, lo que permite cortar la señal por encima o por debajo de un determinado voltaje.
+
+Para un recortador simple con diodo ideal, la salida puede representarse como:
+
+\begin{equation}
+v_o(t)=
+\begin{cases}
+v_i(t), & \text{si } v_i(t) < V_{ref} \\
+V_{ref}, & \text{si } v_i(t) \ge V_{ref}
+\end{cases}
+\end{equation}
+
+donde $V_{ref}$ es el voltaje de referencia que determina el nivel de recorte.
+
+En diodos reales debe considerarse el voltaje de conducción, aproximadamente:
+
+\begin{equation}
+V_D \approx 0.7 \, \text{V}
+\end{equation}
+
+para diodos de silicio.
+
+Los circuitos recortadores pueden clasificarse en recortadores positivos, que eliminan la parte positiva de la señal, recortadores negativos, que eliminan la parte negativa, y recortadores sesgados, que utilizan una fuente de referencia para establecer un nivel de recorte distinto de cero.
+
+Estos circuitos se emplean en protección de circuitos, acondicionamiento de señales y limitación de voltaje en sistemas electrónicos.
+\subsection{Cálculo de voltajes en señales eléctricas}
+
+\subsubsection{Cálculo del voltaje RMS}
+
+El valor eficaz o \textit{Root Mean Square} (RMS) de una señal eléctrica representa el valor equivalente de voltaje continuo que produciría la misma potencia en una resistencia que una señal alterna. Este valor es ampliamente utilizado para caracterizar señales periódicas en sistemas eléctricos y electrónicos.
+
+El voltaje RMS de una señal periódica se define como:
+
+\begin{equation}
+V_{rms} = \sqrt{\frac{1}{T}\int_{0}^{T} v^2(t)\, dt}
+\end{equation}
+
+donde:
+
+\begin{itemize}
+\item $v(t)$ es la señal de voltaje en función del tiempo
+\item $T$ es el periodo de la señal
+\end{itemize}
+
+Para una señal sinusoidal definida como en la ecuación \ref{eq:sin}.
+
+el voltaje RMS es:
+
+\begin{equation}
+V_{rms} = \frac{V_m}{\sqrt{2}}
+\end{equation}
+
+donde $V_m$ es el valor máximo o amplitud de la señal.
 
 
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
-\hline
-\textbf{Parámetro} & \textbf{1N4001 (Rectificador)} & \textbf{1N4148 (Señal/Rápido)} \\ \hline
-Voltaje de activación (VD) & $\approx$0.7V (Máx 1.1V a 1A) & $\approx$0.6V a 0.7V (Máx 1V a 10mA) \\ \hline
-Voltaje Pico Inverso (VRRM) & 50V & 100V \\ \hline
-Corriente Máx. Directa (IF) & 1.0A & 150mA a 300mA \\ \hline
-Corriente Pico Inverso (IR) & 5$\mu$A (muy baja) & 25nA (extremadamente baja) \\ \hline
-Frecuencia / Velocidad & Baja (60Hz) & Muy Alta (trr < 4ns) \\ \hline
-Potencia de operación (PD) & 3W (típico con disipación) & 500mW \\ \hline
-Temperatura de operación & -65$^\circ$C a +175$^\circ$C & -65$^\circ$C a +200$^\circ$C \\ \hline
-\end{tabularx}
-\caption{Comparación de especificaciones entre un diodo 1N4001 y un 1N4148.}
-\label{tablaComparacionDiodos}
-\end{table}
+\subsubsection{Voltaje Promedio de Rectificador de media onda}
+El voltaje promedio representa el valor medio de una señal durante un periodo completo.
 
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|}
-\hline
-\textbf{Tipo de Diodo} & \textbf{Funcionamiento Clave} & \textbf{Aplicaciones Comunes} \\ \hline
-Rectificador & Pasa grandes corrientes en una sola dirección. & Fuentes de alimentación, cargadores. \\ \hline
-De Señal & Conmutación extremadamente rápida. & Procesamiento de datos, lógica digital. \\ \hline
-Zener & Conduce en inversa a un voltaje específico y estable. & Reguladores de voltaje, protección de circuitos. \\ \hline
-Schottky & Caída de tensión muy baja (0.2V) y alta velocidad. & Fuentes conmutadas, paneles solares. \\ \hline
-LED & Emite fotones cuando circula corriente. & Indicadores, iluminación, pantallas. \\ \hline
-Fotodiodo & Genera corriente al recibir luz. & Sensores de luz, receptores de control remoto. \\ \hline
-Varactor & Actúa como un capacitor variable mediante voltaje. & Sintonizadores de radio y TV (RF). \\ \hline
-\end{tabularx}
-\caption{Clasificación de diodos en base a sus aplicaciones.}
-\label{tablaClasificacionDiodos}
-\end{table}
+En un rectificador de media onda solo se aprovecha un semiciclo de la señal sinusoidal. El voltaje promedio se calcula mediante:
 
+\begin{equation}
+V_{DC} = \frac{1}{T}\int_{0}^{T} v_o(t)\, dt
+\end{equation}
 
+Para una señal sinusoidal rectificada de media onda el resultado es:
+
+\begin{equation}
+V_{DC} = \frac{V_m}{\pi}
+\end{equation}
+
+donde $V_m$ es el valor máximo de la señal de entrada.
+
+\subsubsection{Voltaje Promedio deRectificador de onda completa}
+
+En el rectificador de onda completa se utilizan ambos semiciclos de la señal de entrada. En este caso el voltaje promedio es:
+
+\begin{equation}
+V_{DC} = \frac{2V_m}{\pi}
+\end{equation}
+
+Este valor es aproximadamente el doble del obtenido en el rectificador de media onda, lo que permite una conversión más eficiente de corriente alterna a corriente continua.
+
+\subsubsection{Voltaje RMS de una señal compuesta (AC + DC)}
+
+Una señal compuesta puede estar formada por una componente de corriente continua (DC) y una componente de corriente alterna (AC). En este caso, el voltaje RMS total se calcula considerando ambas contribuciones.
+
+La expresión general es:
+
+\begin{equation}
+V_{rms} = \sqrt{V_{DC}^{2} + V_{AC(rms)}^{2}}
+\end{equation}
+
+donde:
+
+\begin{itemize}
+\item $V_{DC}$ es el valor de la componente continua
+\item $V_{AC(rms)}$ es el valor RMS de la componente alterna
+\end{itemize}
+
+Este cálculo es importante en circuitos donde las señales tienen un desplazamiento de nivel o \textit{offset} de corriente continua.
+
+\subsection{Voltaje RMS de una señal rectificada}
+
+Cuando una señal sinusoidal se rectifica, su valor RMS cambia dependiendo del tipo de rectificación.
+
+Para una señal sinusoidal rectificada de media onda, el voltaje RMS es:
+
+\begin{equation}
+V_{rms} = \frac{V_m}{2}
+\end{equation}
+
+Mientras que para una señal rectificada de onda completa el voltaje RMS es igual al de la señal sinusoidal original:
+
+\begin{equation}
+V_{rms} = \frac{V_m}{\sqrt{2}}
+\end{equation}
+
+Esto ocurre porque en la rectificación de onda completa se conservan ambos semiciclos de la señal, únicamente invirtiendo el semiciclo negativo.
 \section{Materiales}
 
 \begin{figure}[H]%[!ht]
