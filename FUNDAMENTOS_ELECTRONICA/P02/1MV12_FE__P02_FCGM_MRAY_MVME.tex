@@ -232,250 +232,281 @@ La fuente V1 mostrada en la "Figura~\ref{fig:circuito_base1}” es una fuente va
 comportamiento del diodo a diferentes valores de voltaje de entrada. Cabe aclarar que los diodos con los que se trabajará están 
 hechos a base de silicio.
 
-\section{Análisis y Resultados del circuito}
-\subsection{Características Básicas.}
-En esta primera sección se mostrarán los resultados obtenidos de realizar las mediciones básicas que caracterizan a cada uno de los diodos, como los es Voltaje de Umbral, medido con la función de 
-prueba de diododos del multímetro para una polarización directa y una invesa para ambos casos. Además de medir la impedancia presente en el diodo para ambas fases mencionadas anteriormente.
+\section{Análisis y Resultados}
+\subsection{Comprtamiento del transformador}
+En esta sección se presentan y analizan las mediciones fundamentales del transformador reductor. Iniciamos con la 
+identificación de los devanados (primario y secundario) y su derivación central a partir de la medición de sus resistencias. 
+Posteriormente, con el equipo energizado, se documentan los voltajes RMS para determinar su relación de transformación. 
+Finalmente, se verifica el desfasamiento de 180 grados entre las terminales, comprobando la suma de potenciales de extremo a extremo.
+
+Para la caracterización inicial sin energizar, se midió la resistencia de las terminales para identificar los devanados. 
+El devanado primario registró una resistencia de 112.4 $\Omega $. Por su parte, el devanado secundario presentó una resistencia total 
+de 1.8 $\Omega $ medido de extremo a extremo. Al medir desde los extremos hacia la derivación central, se obtuvo una lectura de 0.9 $\Omega $, 
+lo cual representa exactamente la mitad de la medición total y confirma la simetría del componente.
+
+Posteriormente, al conectar el transformador a la toma de corriente de 120 $Vrms$ , se registró un voltaje de salida en el primario de $V_p = 120 Vrms$ (igual al de la fuente)
+y en el secundario presentó un voltaje de $V_s = 13.21 Vrms$ de extremo a extremo. Con los datos obtenidos, podemos determinar el valor de la relacion de transformación (n)
+del componente, para esto se calculó la proporción entre el voltaje suministrado al devanado primario ($Vp$) y el voltaje medido en el devanado secundario ($V_s$). Obtenemos:
+
+\[
+        n = \frac{V_p}{V_s} = \frac{120}{13.21} = {9.08}
+\]
+
+Con esto podemos observar la relación de reducción, es decir, el cálculo arroja una relación de transformación de aproximadamente 9:1. Lo cual indica físicamente que por cada 9 espiras 
+en el devanado primario, existe 1 espira en el secundario, confirmando la naturaleza reductora del transformador utilizado.
+
+Al utilizar la derivación central del secundario como punto de referencia común (tierra) para el osciloscopio, se midieron simultáneamente los voltajes de las dos terminales restantes. 
+Se pudo comprobar gráficamente un desfasamiento exacto de 180 grados  entre ambas señales como se muestra en la Figura \ref{fig:desfasamiento}.
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/TRANSFORMADOR.png}
+\caption{Desfasamiento de 180 grados en el transformador.}
+\label{fig:desfasamiento}
+\end {center}
+\end{figure}
+
+Este desfasamiento ocurre debido a la polaridad relativa inducida en la bobina. Según la Ley de Faraday, el flujo magnético alterno induce una diferencia de potencial a lo largo de 
+todo el devanado secundario. Al "anclar" el centro físico de la bobina a 0V, el voltaje total se divide en dos mitades. En el instante en que la terminal superior es empujada hacia un 
+potencial positivo máximo, la terminal inferior es forzada hacia un potencial negativo máximo de la misma magnitud para mantener la diferencia de potencial total. El resultado son dos 
+señales senoidales que son el "espejo" la una de la otra.
+
+Para corroborar la relación entre las señales, se procedió a medir con el osciloscopio la señal de extremo a extremo del secundario, omitiendo la derivación central.Cálculos teóricos: 
+Por Ley de Voltajes de Kirchhoff, el voltaje total ($V_{total}$) es la diferencia de potencial entre la terminal superior ($V_A$) y la terminal inferior ($V_B$). Como se demostró en el inciso anterior 
+que están desfasadas 180°, se cumple que $V_B(t) = -V_A(t)$. Por lo tanto, la sumatoria es:
+
+\[
+        V_{total} = V_A - V_B = V_A - (-V_A) = 2V_A
+\]
+
+Como se observó en la medición anterior, el voltaje pico en ambos canales respecto a la derivación central es de aproximadamente 9.3 V. Por consiguiente, por principio de suma de potenciales, la medición 
+de extremo a extremo en el devanado secundario debe reflejar una amplitud equivalente al doble, alcanzando un valor pico cercano a los 18.6 V. Esta relación teórica se verifica de manera experimental en 
+la Figura \ref{fig:comprobacion}
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Comprobacion.png}
+\caption{Medicion de extremo a extremo en el transformador.}
+\label{fig:comprobacion}
+\end {center}
+\end{figure}
+
+Al analizar la gráfica obtenida en el osciloscopio, la amplitud de la señal senoidal es exactamente el doble de la amplitud que se visualizó al medir solo una mitad contra la derivación central. 
+Esto valida de forma práctica el principio de superposición y la naturaleza del desfasamiento de 180 grados inducido magnéticamente.
+
+\subsection{Análisis del comportamiento del circuito 1}
+En esta sección se evalúa el comportamiento de los diodos rectificadores utilizando la configuración de la Figura 1. Se determinaron los valores teóricos y prácticos del voltaje en la resistencia 
+de carga ($R_1$), así como el voltaje de pico inverso (PIV) que soportan los semiconductores en estado de no conducción.
+
+Para calcular el valtaje de la resistencia $R_1$, tomamos en cuenta los datos de las mediciones previas del transformador, en el cual se determinó que el voltaje eficaz total es de 13.21 Vrms (de extremo a extremo). 
+Al utilizar la derivación central como referencia común, el voltaje eficaz para cada mitad del secundario es de 6.605 $V_{rms}$. El voltaje pico ($V_p$) proporcionado por cada canal hacia los diodos se calcula como:
+
+\[
+        V_p = 6.605 \cdot \sqrt{2}  = 9.34V
+\]
+
+Considerando el modelo práctico del diodo de silicio, el cual presenta una caída de tensión de aproximadamente 0.7V en polarización directa, el voltaje pico teórico esperado en la resistencia de carga ($V_{R1}$) es:
+
+\[
+    V_{R1} = 9.34 \text{ V} - 0.7 \text{ V} = 8.64 \text{ V}
+\]
+
+Al realizar la medición del voltaje $V_{R1}$ utilizando el osciloscopio, se obtuvieron los resultados de la forma de onda que se muestran en la Figura \ref{fig:voltajeResistencia}.
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeResistencia.png}
+\caption{Voltaje en la resistencia $R_1$}
+\label{fig:voltajeResistencia}
+\end {center}
+\end{figure}
+
+Para validar experimentalmente el análisis matemático, se efectuaron mediciones adicionales empleando un multímetro. A continuación, en la Tabla \ref{tablaComparativa}, se presenta una comparativa que contrasta 
+los valores teóricos calculados para el voltaje en la resistencia de carga $R_1$ con las mediciones experimentales obtenidas tanto en el osciloscopio como con el multímetro.
 
 \begin{table}[H]
 \centering
 \begin{tabularx}{\columnwidth}{|c|X|X|X|}
 \hline
-\textbf{Diodo} & \textbf{Voltaje de Umbral (V)} & \textbf{Resistencia ($\Omega$)}\\ \hline
-1N4001 & 0.544 & 0\\ \hline
-1N4148 & 0.540 & 0\\ \hline
+\textbf{Datos obtenidos} & \textbf{$V_prom$ (V)} & \textbf{$V_{rms}$ (V)} & \textbf{$V_{pp}$ (V)}\\ \hline
+Multímetro & 5.17 & 5.89  & 8.03\\ \hline
+Cálculos & 5.50 & 6.10  & 8.64\\ \hline
+Osciloscopio & 5.464 & 6.107 & 8.560\\ \hline
 \end{tabularx}
-\caption{Mediciones Básicas en Polaridad Directa.}
-\label{PolaridadDirecta}
+\caption{Comparacion de voltajes calculados y medidos de $R_1$.}
+\label{tablaComparativa}
 \end{table}
 
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|}
-\hline
-\textbf{Diodo} & \textbf{Voltaje de Umbral (V)} & \textbf{Resistencia ($\Omega$)}\\ \hline
-1N4001 & 0 & 1.80M\\ \hline
-1N4148 & 0 & 1.74M\\ \hline
-\end{tabularx}
-\caption{Mediciones Básicas en Polaridad Inversa.}
-\label{PolaridadInversa}
-\end{table}
-Esta parte es importante, pues con estas mediciones nos podemos dar cuenta si alguno de nuestro componentes está dañado, pues si registramos lecturas de Voltaje de Umbral 
-fuera del rango 0.5V - 0.7V o si registramos una resistencia pequeña en la polarización inversa como lo indica la tabla del fabricante véase Tabla \ref{tablaComparacionDiodos}. 
-
-\subsection{Polarización Directa}
-Para esta primera parte se realizaron las mediciones de voltaje, corriente y resistencia estática de los diodos dada una polarización directa.
-Partiendo de los valores de $V_D$ y $I_D$ es fácil calcular la resistencia estática del diodo, partiendo de la ley de ohm, obtenemos:
-\begin{equation}
-R_{\text{estática}} = \frac{V_D}{I_D}
-\end{equation}
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
-\hline
-\textbf{V1 (V)} & \textbf{$I_D$ (mA)} & \textbf{$V_D$ (V)} & \textbf{$V_\text{R1}$ (V)} & \textbf{$R_\text{Estatica}$ (Ohms)}\\ \hline
-0.0 & 0.000 & 0.000  & 0.000 &  INFINITA\\ \hline
-0.3 & 0.000 & 0.286  & 0.000 &  INFINITA\\ \hline
-0.5 & 0.092 & 0.477  & 0.021 &  5184.8\\ \hline
-0.7 & 0.342 & 0.536  & 0.074 &  1567.3\\ \hline
-1.0 & 1.191 & 0.596  & 0.257 &  500.42\\ \hline
-1.5 & 3.730 & 0.651  & 0.805 &  174.53\\ \hline
-2.0 & 5.780 & 0.678  & 1.238 &  117.3\\ \hline
-3.0 & 10.02 & 0.696  & 2.160 &  69.461\\ \hline
-5.0 & 18.55 & 0.720  & 3.990 &  38.814\\ \hline
-7.0 & 27.50 & 0.740  & 5.880 &  26.909\\ \hline
-10.0& 40.90 & 0.750  & 8.690 &  19.337\\ \hline
-\end{tabularx}
-\caption{Tabla de mediciones del diodo 1N4001.}
-\label{tablaDiodo4001}
-\end{table}
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
-\hline
-\textbf{V1 (V)} & \textbf{$I_D$ (mA)} & \textbf{$V_D$ (V)} & \textbf{$V_\text{R1}$ (V)} & \textbf{$R_\text{Estatica}$ (Ohms)}\\ \hline
-0.0 & 0.000 & 0.000  & 0.000 &  INFINITA\\ \hline
-0.3 & 0.000 & 0.300  & 0.000 &  INFINITA\\ \hline
-0.5 & 0.080 & 0.479  & 0.020 &  5184.8\\ \hline
-0.7 & 0.560 & 0.570  & 0.127 &  1567.3\\ \hline
-1.0 & 1.650 & 0.623  & 0.375 &  500.42\\ \hline
-1.5 & 3.650 & 0.662  & 0.825 &  174.53\\ \hline
-2.0 & 5.780 & 0.686  & 1.300 &  117.3\\ \hline
-3.0 & 9.990 & 0.718  & 2.250 &  69.461\\ \hline
-5.0 & 18.63 & 0.750  & 4.180 &  38.814\\ \hline
-7.0 & 27.40 & 0.780  & 6.130 &  26.909\\ \hline
-10.0& 40.70 & 0.810  & 9.060 &  18.337\\ \hline
-\end{tabularx}
-\caption{Tabla de mediciones del diodo 1N4148.}
-\label{tablaDiodo4148}
-\end{table}
-
-Los resultados mostrados son comprobables visualizando el circuito equivalente, pues, como sabemos el diodo se comporta como circuito abierto
-hasta alcanzar su voltaje de umbral (aproximadamente 0.7V para diodos de silicio), después de esto, el diodo se comporta como un corto circuito, lo que se refleja en las tablas anteriores.
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/CE_POLARIDA_DIRECTA.jpeg}
-\caption{Circuito Equivalente con Polaridad Directa.}
-\label{fig:ce_polaridad_directa}
-\end {center}
-\end{figure}
-\end{comment}
-
-
-Dado el circuito mostrado en la "Figura~\ref{fig:ce_polaridad_directa}", podemos hacer un análisis de mallas para comprobar los valores obtenido en el voltaje de resistencia.
-\[
-- V_1 + V_D + V_R = 0
-\]
-\begin{equation}
-V_R = V_1 - V_D
-\end{equation}
-
-Los resultados obtenidos para ambos diodos son bastante similares, lo cual es un resultado predecible, pues, ambos diodos son de silicio por lo que el voltaje de umbral
-es parecido. Para visualizar de el comportamiento de cada uno de los diodos y el flujo de corriente conforme aumenta el voltaje en diodo se muestra la siguiente gráfica:
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.28\textwidth]{IMAGENES/I-V_DIODO40001.jpeg}
-\caption{Diagrama $V_D$-$I_D$ (IN4001) en polaridad directa.}
-\label{fig:iv_diodo4001_directa}
-\end {center}
-\end{figure}
-
-
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.28\textwidth]{IMAGENES/I-V_DIODO4148.jpeg}
-\caption{Diagrama $V_D$-$I_D$ (IN4148) en polaridad directa.}
-\label{fig:iv_diodo4148_directa}
-\end {center}
-\end{figure}
-\end{comment}
-
-En las gráficas de la "Figura~\ref{fig:iv_diodo4001_directa}" y la "Figura~\ref{fig:iv_diodo4148_directa}", se puede observar el comportamiento típico de un diodo, donde, al alcanzar el voltaje de umbral, la corriente comienza a aumentar exponencialmente, lo que se refleja en la curva característica del diodo.
-Existe una ligrea diferencia entre las curvas del diodo 1N4001 y el 1N4148, esto se debe a que como vimos en la información del fabricante, el diodo 1N4148 es un diodo de conmutación rápida.
-
-
-
-\subsection{Polarización Inversa}
-
-Una vez reallizadas las mediciones con polaridad directa, se invirtió la polaridad de la fuente variable para visualizar en las mediciones el comportamiento
-del diodo en polaridad inversa. Obteniendo los siguientes resultados:
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
-\hline
-\textbf{V1 (V)} & \textbf{$I_D$ (mA)} & \textbf{$V_D$ (V)} & \textbf{$V_\text{R1}$ (V)} & \textbf{$R_\text{Estatica}$ (Ohms)}\\ \hline
--0.2 & 0.000 & -0.18  & 0.000 &  INFINITA\\ \hline
--1.0 & 0.000 & -0.99  & 0.000 &  INFINITA\\ \hline
--1.5 & 0.000 & -1.47  & 0.000 &  INFINITA\\ \hline
--2.0 & 0.000 & -1.99  & 0.000 &  INFINITA\\ \hline
--10.0 & 0.000 & -9.96  & 0.000 & INFINITA\\ \hline
-\end{tabularx}
-\caption{Tabla de mediciones del diodo 1N4001 con polaridad inversa.}
-\label{tablaDiodo4001Inv}
-\end{table}
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
-\hline
-\textbf{V1 (V)} & \textbf{$I_D$ (mA)} & \textbf{$V_D$ (V)} & \textbf{$V_\text{R1}$ (V)} & \textbf{$R_\text{Estatica}$ (Ohms)}\\ \hline
--0.2 & 0.000 & -0.20  & 0.000 &  INFINITA\\ \hline
--1.0 & 0.000 & -0.99  & 0.000 &  INFINITA\\ \hline
--1.5 & 0.000 & -1.498  & 0.000 &  INFINITA\\ \hline
--2.0 & 0.000 & -1.99  & 0.000 &  INFINITA\\ \hline
--10.0 & 0.000 & -9.99  & 0.000 & INFINITA\\ \hline
-\end{tabularx}
-\caption{Tabla de mediciones del diodo 1N4148 con polaridad inversa.}
-\label{tablaDiodo4148Inv}
-\end{table}
-
-
-Los datos anteriores son comprobables visualizando el circuito equivalente al invertir la polaridad de la fuente, pues, como sabemos el diodo 
-se comporta como un circuito abierto (no circula corriente), podemos hacer un análisis de mallas para comprobar que el voltaje en el diodo es igual al voltaje de la fuente, y que no hay caída de voltaje en la resistencia, lo que se refleja en las tablas anteriores.
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/CE_POLARIDAD_INVERSA.jpeg}
-\caption{Circuito Equivalente con Polaridad Inversa.}
-\label{fig:ce_polaridad_inversa}
-\end {center}
-\end{figure}
-\end{comment}
+Ahora vamos a comprobar el voltaje inverso de ambos diodos dentro del circuito. Para esto utilizamos la ley de kirchoff (dos mallas), para realizar el análisis para D1 tenemos que hacerlo desde el semiciclo negativo, ya 
+que es donde este no conduce. En este estado, el diodo $D_1$ entra en estado de bloqueo ($I_{D1}=0$), mientras que el diodo $D_2$ conduce, asumiendo una caída de tensión típica de $V_{D2} = 0.7 V$. Con esto establecemos la
+siguiente relación:
 
 \[
-- V_1 + V_D + I R = 0
+    -V_1 - V_2 - V_{D1} + V_{D2} = 0
 \]
-Como el diodo está polarizado en inversa:
+Donde $V_1$ es el voltaje del primer inductor y $V_2$ es el del segundo inductor.
+
+Sustituyendo los valores ya anteriormente calculados ($V_1 = V_1 = 9.34 V_{rms}$). Obtenemos
+
 \[
-I = 0
+    V_{D1} = -2(9.34)+0.5 = -17.98 V
 \]
+
+Por lo tanto, el voltaje inverso teórico que soporta el semiconductor en estado de no conducción es de aproximadamente $-17.98 \text{ V}$. (La de ambos diodos)
+
+Para demostrar experimentalmente este comportamiento en el osciloscopio, se configuró la función matemática (MATH) para calcular la diferencia de potencial, estableciendo el Canal A en el cátodo y el Canal B en el ánodo 
+del diodo (A-B). Los resultados de esta configuración se observan en la Figura \ref{fig:voltajeInverso}.
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje_D1.png} 
+\caption{Medición diferencial del voltaje en el diodo $D_1$.}
+\label{fig:voltajeInverso}
+\end{center}
+\end{figure}
+
+A continuación, se presenta una tabla comparativa entre el valor teórico calculado y la medición extraída del osciloscopio.
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|}
+\hline
+\textbf{Método de obtención} & \textbf{Voltaje Inverso (V)} \\ \hline
+Cálculo Teórico & -17.98 \\ \hline
+Osciloscopio (MATH) & -18.20 \\ \hline
+\end{tabularx}
+\caption{Comparación del voltaje inverso en el diodo $D_1$.}
+\label{tab:comparacion_PIV}
+\end{table}
+
+En la gráfica diferencial obtenida (trazo rojo), se comprueba de manera visual y cuantitativa el comportamiento bidireccional del componente. Durante el semiciclo positivo, el diodo conduce y la diferencia de potencial 
+es mínima (cercana a los 0.7 V de la barrera de potencial). Sin embargo, durante el semiciclo negativo, la señal desciende hacia la región negativa. La diferencia observada entre el valor teórico ($-17.98 \text{ V}$) y el experimental 
+se atribuye a la tolerancia de los componentes, la resolución del muestreo digital del osciloscopio al usar la función matemática a esa escala, y a las ligeras caídas de tensión en las líneas de conexión.
+
+Para complementar la caracterización del semiconductor, se procedió a determinar la corriente que atraviesa el diodo $D_1$ durante su estado de conducción (semiciclo positivo).
+La corriente pico ($I_{D1}$) en el circuito se define por la Ley de Ohm, considerando el voltaje pico en la carga ($V_R1$) y el valor de la resistencia $R_1$ ($220 \Omega$ ). Tomando el voltaje pico real previamente calculado (8.64 V), se tiene:
 \[
-- V_1 + V_D = 0
+    I_{D1 } = \frac{V_{R1}}{220} = \frac{8.64}{220} = 0.0392 A
 \]
-\begin{equation}
-V_D = V_1
-\end{equation}
-Las gráficas $V_D$ vs $I_D$ para esta fase de polarización son evidentes al ver que para todo tiempo en ciclo negativo no existe corriente en diodo
 
-\begin{comment}
+Dado que cada diodo en esta configuración conduce únicamente durante medio ciclo de la señal alterna, la corriente promedio ($I_{prom}$) y la corriente eficaz ($I_{rms}$) que soporta individualmente el componente se calculan con las fórmulas 
+de rectificación de media onda:
+
+\[
+    I_{prom} = \frac{I_{D1}}{\pi} = \frac{0.0392}{\pi} = 12.47 mA
+\]
+
+\[
+    I_{rms} = \frac{I_{D1}}{2} = \frac{0.0392}{2} = 19.60 mA
+\]
+
+Debido a que el osciloscopio mide diferencias de potencial y no corriente directa, se implementó una técnica de medición indirecta. Se insertó una resistencia de prueba de $1 \ \Omega$ en serie con el diodo $D_1$ . Por la Ley de Ohm ($V = I \cdot R$), 
+al ser la resistencia igual a la unidad, el voltaje medido diferencialmente en sus terminales es numéricamente igual a la corriente que fluye por la rama. Podemos observar la grafica en la Figura \ref{fig:corrienteDiodo}
+
 \begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.3\textwidth]{IMAGENES/I-V_DIODO40001_INVERSO.jpeg}
-\caption{Diagrama $I_D$-$V_D$ del diodo 1N4001 en polaridad inversa.}
-\label{fig:iv_diodo4001_inversa}
-\end {center}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/CorrienteDiodo.png} 
+\caption{Forma de onda de la corriente en el diodo $D_1$.}
+\label{fig:corrienteDiodo}
+\end{center}
 \end{figure}
 
+El diodo entra en conducción únicamente durante el semiciclo positivo de la señal de alimentación (trazo azul), alcanzando una amplitud máxima ligeramente inferior a una división completa (aproximadamente 40 mV). Dado que la resistencia de prueba es de 
+1 $\Omega$ , este valor se traduce directamente en una corriente pico de aproximadamente 40 mA, lo cual comprueba y valida el valor teórico calculado previamente de 39.2 mA.
+
+\subsection{Análisis de comportamiento del circuito 2}
+
+Haciendo un análisis rápido en el segundo circuito podemos darnos cuenta que el su comportamiento no es muy diferente al anterior, ya que ambos mantienen la misma configuracion con la unica diferencia de que este último tiene los diodos con la polaridad invertida,
+lo cual nos indica que ahora el diodo $D_1$ conduce en el semiciclo negativo y el diodo $D_2$ en el positivo. Para comprobarlo, utilizamos el osciloscopio para ver el comportamineto del diodo $D_1$ de manera gráfica.
+
 \begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.3\textwidth]{IMAGENES/I-V_DIODO4148_INVERSO.jpeg}
-\caption{Diagrama $I_D$-$V_D$ del diodo 1N4148 en polaridad inversa.}
-\label{fig:iv_diodo4148_inversa}
-\end {center}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeInverso.png} 
+\caption{Forma de onda de la corriente en el diodo $D_1$ en el circuito 2.}
+\label{fig:corrienteDiodo2}
+\end{center}
 \end{figure}
-\end{comment}
 
-Cabe aclarar que las gráficas de la "Figura~\ref{fig:iv_diodo4001_inversa}" y la "Figura~\ref{fig:iv_diodo4148_inversa}" son gráficas que muestran el comportamiento ideal de un diodo ante una polarización 
-inversa, pues, como lo veremos en la siguiente sección, en la realidad, el diodo presenta una corriente de fuga que altera el comportamiento ideal mostrado en las gráficas anteriores, sin embargo, esta corriente de fuga es tan pequeña que no se refleja en las mediciones realizadas.
+Los valores teóricos esperados son exactamente los mismos. $V_{R1} = 8.64 \Omega $
 
-\subsection{Respuesta del Diodo en el Osciloscopio}
+\subsection{Análisis de comportamiento del circuito 3}
 
-Para el circuito propuesto anteriormente se modificó para su análisis en el osciloscopio, se retiró la fuente variable y se conectó al generador de funciones 
-con una señal de entrada de 10 Vpp, a una frecuencia de 1kHz y con un C.T del 99\%.
+En esta sección se evalúa la topología de puente de Graetz (4 diodos). Esta configuración prescinde de la derivación central del transformador, utilizando el devanado secundario en su totalidad para alimentar la carga $R_1$.
 
-\begin{comment}
+Al utilizar los extremos del secundario, el voltaje eficaz de entrada al puente es de 13.21 $V_{rms}$, lo que equivale a un voltaje pico total de: 
+
+\[
+    V = 13.21 V_{rms} \cdot \sqrt{2} = 18.68 V
+\]
+
+En un puente de diodos, la corriente siempre atraviesa dos semiconductores simultáneamente en cada semiciclo (D1 y D2 en el positivo; D3 y D4 en el negativo) . Por tanto, la caída de tensión en los diodos es de 1.4 V (0.7 V+0.7 V).
+El voltaje pico teórico en la resistencia de carga ($R_1 = 220 \Omega$) es:
+
+\[
+    V_{R1} = 18.68 V -1.4 V = 17.28 V
+\]
+
+Aplicando las ecuaciones matemáticas para una señal rectificada de onda completa, los valores teóricos esperados son:
+
+\[
+    V_{prom} = \frac{V_{R1}}{\pi} = \frac{17.28}{\pi} = 5.50 V
+\]
+
+\[
+    V_{rms} = \frac{V_{R1}}{2\sqrt{2}} = \frac{17.28}{2\sqrt{2}} = 6.10 V
+\]
+
+Para las corrientes:
+
+\[
+    I_{prom} = \frac{V_{prom}}{220} = \frac{5.50}{220} = 0.025 V
+\]
+
+\[
+    I_{rms} = \frac{V_{rms}}{220} = \frac{6.10}{220} = 0.027 V
+\]
+
+Al analizarlo en el osciloscopio obtenemos las siguientes imagenes.
+
 \begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/OSCILOSCOPIO_1.jpeg}
-\caption{Respuesta del diodo en función del tiempo.}
-\label{fig:osc_tiempo}
-\end {center}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje.png} 
+\caption{Voltaje en $R_1$ circuito 2}
+\label{fig:VoltajeR1}
+\end{center}
 \end{figure}
-\end{comment}
-En la "Figura~\ref{fig:osc_tiempo}", se puede observar en azul la señal de entrada del generador de funciones, y en amarillo el comportamiento del voltaje en el diodo.
-Analizando la señal se puede observar y corroborar de los datos calculados el comportamiento del diodo, donde para ciclos de polaridad directa el diodo alcanza una caída de 
-tensión aproxima de 0.7V, mientras que para la polaridad inversa el voltaje en diodo es el mismo que el voltaje de la fuente.
 
-\begin{comment}
+Podemos observar la siguiente tabla que compara los resultados calculados y medidos con el osciloscopio y el multimetro
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X}
+\hline
+\textbf{Datos obtenidos} & \textbf{$V_prom$ (V)} & \textbf{$V_{rms}$ (V)} & \textbf{$V_{p}$ (V)}\\ \hline
+Multímetro & 4.56 & 5.31  & 7.52\\ \hline
+Cálculos & 5.50 & 6.10 & 8.64\\ \hline
+Osciloscopio & 4.58 & 5.33 & 7.76\\ \hline
+\end{tabularx}
+\caption{Comparacion de voltajes calculados y medidos de $R_1$.}
+\label{tablaComparativa2}
+\end{table}
+
+Durante el semiciclo en el que un par de diodos bloquea el paso de corriente (por ejemplo, $D_1$ apagado mientras $D_3$ y $D_4$ conducen), el voltaje inverso que debe soportar el diodo apagado se determina por mallas. 
+En la configuración de puente, el diodo en inversa queda en paralelo con el devanado secundario y el diodo que está conduciendo en esa misma rama. Obtenemos:
+
+\[
+    V_{D1} = V + V_D = 18.68 V - 0.7 V = 17.98 V 
+\]
+
+En el osciloscopio se puede ver de la siguiente manera:
+
 \begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/OSCILOSCOPIO_XY.jpeg}
-\caption{Gráfica de voltaje vs corriente del diodo en osciloscopio.}
-\label{fig:osc_xy}
-\end {center}
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeD1_2.png} 
+\caption{Voltaje en $R_1$ circuito 2}
+\label{fig:VoltajeR1_2}
+\end{center}
 \end{figure}
-\end{comment}
-En la "Figura~\ref{fig:osc_xy}", podemos observar un comportamiento similar a las "Figura~\ref{fig:iv_diodo4001_directa}" y "Figura~\ref{fig:iv_diodo4148_directa}" para la fase de 
-polaridad directa, sin embargo, recordemos que el osciloscopio no mide de manera directa corrientes, por lo que observamos en el eje y de la gráfica en realidad es el voltaje en la resistencia que es directamente proporcional 
-a la corriente del circuito. 
 
 \section{Simulación}
 
