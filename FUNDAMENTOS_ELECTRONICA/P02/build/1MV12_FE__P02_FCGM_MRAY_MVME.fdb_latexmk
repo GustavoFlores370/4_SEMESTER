@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber build/1MV12_FE__P02_FCGM_MRAY_MVME"] 0 "build/1MV12_FE__P02_FCGM_MRAY_MVME.bcf" "build/1MV12_FE__P02_FCGM_MRAY_MVME.bbl" "build/1MV12_FE__P02_FCGM_MRAY_MVME" 0 0
+["biber build/1MV12_FE__P02_FCGM_MRAY_MVME"] 0 "build/1MV12_FE__P02_FCGM_MRAY_MVME.bcf" "build/1MV12_FE__P02_FCGM_MRAY_MVME.bbl" "build/1MV12_FE__P02_FCGM_MRAY_MVME" 1772911923.63778 0
   "build/1MV12_FE__P02_FCGM_MRAY_MVME.bcf" 0 -1 0 "pdflatex"
   "example_bib.bib" 0 -1 0 ""
   (generated)
   "build/1MV12_FE__P02_FCGM_MRAY_MVME.bbl"
   "build/1MV12_FE__P02_FCGM_MRAY_MVME.blg"
   (rewritten before read)
-["pdflatex"] 1772904804.71004 "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE__P02_FCGM_MRAY_MVME.tex" "build/1MV12_FE__P02_FCGM_MRAY_MVME.pdf" "1MV12_FE__P02_FCGM_MRAY_MVME" 1772904806.81614 0
-  "1MV12_FE__P02_FCGM_MRAY_MVME.tex" 1772904782 34033 caf0c733e0065121e203a73d863427fa ""
+["pdflatex"] 1772911922.27673 "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE__P02_FCGM_MRAY_MVME.tex" "build/1MV12_FE__P02_FCGM_MRAY_MVME.pdf" "1MV12_FE__P02_FCGM_MRAY_MVME" 1772911923.63854 0
+  "1MV12_FE__P02_FCGM_MRAY_MVME.tex" 1772911921 35615 26340d344b45dbdc1cc8602aa90029e9 ""
   "C:/Users/gusfl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1771791479 132483 2e52014374ddd3923615883c91895bfe ""
   "C:/Users/gusfl/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1744831132 13148213 1cd3a947c02a3b6b0072ce30da7c46ab ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -38,9 +38,7 @@
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247596667 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
-  "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb" 1136874948 44729 fea0975e20ec51c992338362f05f1146 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb" 1136874948 44656 0cbca70e0534538582128f6b54593cca ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb" 1136874948 46026 687528a208fbfc1f00832bb96cccebbb ""
@@ -99,11 +97,11 @@
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty" 1730400552 14552 27664839421e418b87f56fa4c6f66b1a ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1730400552 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "IMAGENES/PRUEBA.jpg" 1772904712 245472 810b79f5eb5f8921c1e48fafc7466132 ""
-  "build/1MV12_FE__P02_FCGM_MRAY_MVME.aux" 1772904806 4380 084be0a23c4ac92c8562b7d0c75d64f0 "pdflatex"
+  "IMAGENES/PRUEBA.jpg" 1772906023 245472 810b79f5eb5f8921c1e48fafc7466132 ""
+  "build/1MV12_FE__P02_FCGM_MRAY_MVME.aux" 1772911923 4498 69331cedafd83aa9ca98c1737120e5ed "pdflatex"
   "build/1MV12_FE__P02_FCGM_MRAY_MVME.bbl" 0 -1 0 "biber build/1MV12_FE__P02_FCGM_MRAY_MVME"
-  "build/1MV12_FE__P02_FCGM_MRAY_MVME.run.xml" 1772904806 2571 60b0b9236766570f06996393a0b97d30 "pdflatex"
-  "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE__P02_FCGM_MRAY_MVME.tex" 1772904782 34033 caf0c733e0065121e203a73d863427fa ""
+  "build/1MV12_FE__P02_FCGM_MRAY_MVME.run.xml" 1772911923 2571 60b0b9236766570f06996393a0b97d30 "pdflatex"
+  "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P02/1MV12_FE__P02_FCGM_MRAY_MVME.tex" 1772911921 35615 26340d344b45dbdc1cc8602aa90029e9 ""
   (generated)
   "build/1MV12_FE__P02_FCGM_MRAY_MVME.aux"
   "build/1MV12_FE__P02_FCGM_MRAY_MVME.bcf"
