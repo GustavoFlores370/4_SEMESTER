@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  7 MAR 2026 22:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  7 MAR 2026 22:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -679,29 +679,23 @@ Underfull \vbox (badness 1009) has occurred while \output is active []
 
 [7 <./IMAGENES/VoltajeInverso.png> <./IMAGENES/Circuito_Base3.png> <./IMAGENES/Voltaje.png>] Excluding 'comment' comment.
 
+Excluding 'comment' comment.
+
+LaTeX Warning: Empty bibliography on input line 740.
 
 
-[8 <./IMAGENES/VoltajeD1_2.png>] Excluding 'comment' comment.
-
-LaTeX Warning: Empty bibliography on input line 802.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 809--810
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4001-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 812--813
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4148-
  []
 
 
 
-
-
-[9
-
-] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.aux)
+[8 <./IMAGENES/VoltajeD1_2.png>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -719,9 +713,9 @@ Here is how much of TeX's memory you used:
  1144 hyphenation exceptions out of 8191
  63i,12n,66p,1269b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.pdf (9 pages, 8104533 bytes).
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.pdf (8 pages, 8099314 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
+ 134 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

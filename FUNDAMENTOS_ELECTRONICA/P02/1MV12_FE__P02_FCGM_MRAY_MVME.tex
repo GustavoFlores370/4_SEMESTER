@@ -649,7 +649,6 @@ En el osciloscopio se puede ver de la siguiente manera:
 
 \section{Simulación}
 
-En esta sección se mostrará la simulación para el diodo IN4001 y 1N4148 para observar el comportamiento de voltaje y corriente en diodo al alterar la temperatura en ambos casos.
 
 \begin{comment}
 \begin{figure}[H]%[!ht]
@@ -670,74 +669,13 @@ En esta sección se mostrará la simulación para el diodo IN4001 y 1N4148 para 
 \end{comment}
 
 
-\section*{a) Análisis de las regiones directa e inversa}
-
-Analizar las variaciones de las regiones inversas y directas que existen en ambos 
-diodos, y describir lo observado a medida que aumenta la temperatura.
-
-En la región inversa de ambos diodos, a simple vista la corriente parece mantenerse como 
-una línea recta constante en $0\,A$. Sin embargo, al ampliar la escala dentro de la simulación, 
-se nota la presencia de pequeñas corrientes de fuga (la línea no es completamente plana). 
-
-En el caso del 1N4148, a medida que aumenta la temperatura, la corriente inversa 
-comienza a incrementarse incluso antes de llegar a los $0\,V$.
-
-Por otro lado, en las regiones directas se puede apreciar cómo en el 1N4001 la corriente 
-crece de manera estable. Además, es evidente que, a mayor temperatura, el diodo 
-disminuye su barrera de potencial y no necesita tanto voltaje para empezar a conducir 
-corriente.
-
-\section*{b) Comparación del comportamiento térmico}
-
-Comparar el comportamiento de ambos diodos y determinar cuál tiene un 
-comportamiento más lineal con respecto a la temperatura.
-
-Se puede observar en las gráficas cómo las curvas del 1N4001 se mantienen prácticamente 
-paralelas entre sí en todos los casos de temperatura; es decir, mantiene un comportamiento 
-lineal constante sin importar los incrementos térmicos. 
-
-Por otro lado, el 1N4148 no se mantiene constante, sino que la pendiente de la curva cambia 
-drásticamente entre cada variación de temperatura.
-
-En conclusión, el diodo 1N4001 tiene un comportamiento más lineal y predecible con 
-respecto a la temperatura en su región de conducción. Esto se debe a que es un diodo 
-rectificador de potencia (diseñado para manejar mayores corrientes y disipar calor de forma 
-estable), mientras que el 1N4148 es un diodo de pequeña señal y conmutación rápida, cuya 
-unión es más pequeña y, por ende, más sensible a cambios térmicos drásticos.
-
-\section*{d) Rangos de operación y aplicaciones}
-
-\subsection*{Diodo Rectificador 1N4001}
-
-\begin{itemize}
-    \item \textbf{Rango de temperatura de operación (según hoja de datos):} $-55\,^{\circ}C$ a $+150\,^{\circ}C$ (temperatura de la unión).
-    \item \textbf{Aplicaciones:} Uso general. Está diseñado para rectificar corriente alterna a 
-    corriente directa a bajas frecuencias (como en fuentes de alimentación de 50/60 Hz), 
-    protección contra polaridad inversa y en circuitos donde se manejan corrientes de 
-    hasta $1\,A$ y voltajes de conmutación no muy rápidos.
-\end{itemize}
-
-\subsection*{Diodo de Señal 1N4148}
-
-\begin{itemize}
-    \item \textbf{Rango de temperatura de operación (según hoja de datos):} $-65\,^{\circ}C$ a $+150\,^{\circ}C$ 
-    (en algunos empaques de vidrio soporta hasta $+200\,^{\circ}C$).
-    \item \textbf{Aplicaciones:} Conmutación rápida (\textit{fast switching}). Se utiliza en procesamiento de 
-    señales de alta frecuencia, circuitos lógicos digitales, multiplicadores de voltaje de 
-    pequeña señal y en sistemas donde se requiere que el diodo cambie de estado (de 
-    conducir a no conducir) en tiempos muy cortos (nanosegundos).
-\end{itemize}
-
 \section{Conclusiones}
 \begin{itemize}
     \item \textbf{Flores Cornejo Gustavo Mauricio.}
-    \newline En la presente práctica se pone en evidencia el comportamiento de 2 tipos de diodos de silicio, por lo que su comportamiento, como se puede ver en el desarrollo de la 
-    práctica, es muy similar. Esta práctica sirve como base para comprender mucha de la parte teórica del diodo, como lo es su variación de parámetros al alterar la temperatura, además de visualizar el comportamiento de un diodo 
-    real y comparalo con el comportamiento ideal. Como lo vimos en la sección del osciloscopio podemos observar una diagonal que representa el comportamiento del diodo cuando se encunetra polarizado inversamente, aquí retomamos el concepto 
-    de la corriente de fuga que presenta el diodo. Mientras que el diodo ideal presenta una transición abrupta entre conducción y no conducción, el diodo real muestra una curva exponencial en la región directa y pequeñas corrientes en la región inversa. Como se observó en la sección del osciloscopio, la presencia de una línea diagonal en la región de polarización inversa retoma el concepto de la corriente de fuga, demostrando que el dispositivo no se comporta como un interruptor perfecto.
-
-Finalmente, el análisis comparativo permitió entender que, aunque ambos diodos están fabricados en silicio, su diseño y aplicación influyen en su sensibilidad térmica y comportamiento eléctrico.
-    
+    \newline En la presente práctica se revisó el usos de diodos como componentes rectificadores de media onda, de onda completa y como recortadores. Apoyándonos de la parte teórica revisada en clase podemos hacer un análisis teórico para poder corroborar los resultados 
+    mostrados en laboratorio. Esta práctica fue importante porque pudimos visualizar cómo el uso de estos componentes alteran la onda de salida a nuestra conveniencia eliminando o modificando alguna de las fases de nuestra señal sinusoidal. Para poder visualizar la corriente que circulaba por el diodo cuando
+    este conducía fue necesario utilizar una resistencia de 1 ohm, esto con la finalidad de medir el voltaje en esa resistencia que por ley de ohm era directamente proporcional a la corriente que fluctuaba por el diodo.
+    Además, fue úti utilizar el transformador para poder realizar mediciones de rms, promedio y pico además de darnos la facilidad de poder utilizar la derivación central.
     \item \textbf{Muñoz Reyes Arturo Yabet.}
     \newline En conclusión, esta práctica comprobó de manera efectiva el comportamiento unidireccional y las características eléctricas de los diodos 1N4001 y 1N4148. Mediante mediciones se comprobó su funcionamiento en polarización directa e inversa, confirmando 
     que requieren un voltaje de activación típico de entre 0.6 V y 0.7 V para conducir la corriente. Finalmente, las simulaciones con variaciones de temperatura demostraron la sensibilidad térmica de estos componentes, destacando que el diodo  1N4001 mantiene una 
