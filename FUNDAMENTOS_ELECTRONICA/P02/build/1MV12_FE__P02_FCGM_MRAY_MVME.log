@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  7 MAR 2026 13:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  7 MAR 2026 19:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -575,125 +575,126 @@ File: IMAGENES/PRUEBA.jpg Graphic file (type jpg)
 Package pdftex.def Info: IMAGENES/PRUEBA.jpg  used on input line 312.
 (pdftex.def)             Requested size: 232.19843pt x 130.6097pt.
 
-Underfull \hbox (badness 2150) in paragraph at lines 333--335
-[]\OT1/ptm/m/n/10 En esta primera secci[]on se mostrar[]an los re-sul-ta-dos
+
+<IMAGENES/TRANSFORMADOR.png, id=21, 1171.37625pt x 861.2175pt>
+File: IMAGENES/TRANSFORMADOR.png Graphic file (type png)
+<use IMAGENES/TRANSFORMADOR.png>
+Package pdftex.def Info: IMAGENES/TRANSFORMADOR.png  used on input line 359.
+(pdftex.def)             Requested size: 232.19843pt x 170.71608pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[3 <./IMAGENES/PRUEBA.jpg>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 372.
+ (C:\Users\gusfl\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+<IMAGENES/Comprobacion.png, id=26, 1204.5pt x 895.345pt>
+File: IMAGENES/Comprobacion.png Graphic file (type png)
+<use IMAGENES/Comprobacion.png>
+Package pdftex.def Info: IMAGENES/Comprobacion.png  used on input line 384.
+(pdftex.def)             Requested size: 232.19843pt x 172.5901pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+<IMAGENES/VoltajeResistencia.png, id=27, 1200.485pt x 883.3pt>
+File: IMAGENES/VoltajeResistencia.png Graphic file (type png)
+<use IMAGENES/VoltajeResistencia.png>
+Package pdftex.def Info: IMAGENES/VoltajeResistencia.png  used on input line 414.
+(pdftex.def)             Requested size: 232.19843pt x 170.84782pt.
+
+
+[4 <./IMAGENES/TRANSFORMADOR.png> <./IMAGENES/Comprobacion.png>]
+<IMAGENES/Voltaje_D1.png, id=33, 1201.48875pt x 883.3pt>
+File: IMAGENES/Voltaje_D1.png Graphic file (type png)
+<use IMAGENES/Voltaje_D1.png>
+Package pdftex.def Info: IMAGENES/Voltaje_D1.png  used on input line 458.
+(pdftex.def)             Requested size: 232.19843pt x 170.69957pt.
+
+
+
+Underfull \hbox (badness 1694) in paragraph at lines 488--490
+[]\OT1/ptm/m/n/10 Dado que cada diodo en esta con-fig-u-raci[]on con-duce
  []
 
 
 
+[5 <./IMAGENES/VoltajeResistencia.png> <./IMAGENES/Voltaje_D1.png>]
+<IMAGENES/CorrienteDiodo.png, id=42, 1200.485pt x 883.3pt>
+File: IMAGENES/CorrienteDiodo.png Graphic file (type png)
+<use IMAGENES/CorrienteDiodo.png>
+Package pdftex.def Info: IMAGENES/CorrienteDiodo.png  used on input line 504.
+(pdftex.def)             Requested size: 232.19843pt x 170.84782pt.
+<IMAGENES/VoltajeInverso.png, id=43, 1200.485pt x 883.3pt>
+File: IMAGENES/VoltajeInverso.png Graphic file (type png)
+<use IMAGENES/VoltajeInverso.png>
+Package pdftex.def Info: IMAGENES/VoltajeInverso.png  used on input line 520.
+(pdftex.def)             Requested size: 232.19843pt x 170.84782pt.
 
-LaTeX Warning: Reference `tablaComparacionDiodos' on page 3 undefined on input line 360.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--385
-[]|$\OML/cmm/m/it/8 R[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 406--406
-[]|$\OML/cmm/m/it/8 R[]$
- []
-
-
-Underfull \vbox (badness 1655) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[3 <./IMAGENES/PRUEBA.jpg>] Excluding 'comment' comment.
+<IMAGENES/Voltaje.png, id=44, 1172.38pt x 889.3225pt>
+File: IMAGENES/Voltaje.png Graphic file (type png)
+<use IMAGENES/Voltaje.png>
+Package pdftex.def Info: IMAGENES/Voltaje.png  used on input line 569.
+(pdftex.def)             Requested size: 232.19843pt x 176.12439pt.
 
-LaTeX Warning: Reference `fig:ce_polaridad_directa' on page 4 undefined on input line 425.
+
+[6 <./IMAGENES/CorrienteDiodo.png> <./IMAGENES/VoltajeInverso.png>]
+<IMAGENES/VoltajeD1_2.png, id=50, 1186.4325pt x 899.36pt>
+File: IMAGENES/VoltajeD1_2.png Graphic file (type png)
+<use IMAGENES/VoltajeD1_2.png>
+Package pdftex.def Info: IMAGENES/VoltajeD1_2.png  used on input line 601.
+(pdftex.def)             Requested size: 232.19843pt x 176.01262pt.
+ Excluding 'comment' comment.
+
+
+
+[7 <./IMAGENES/Voltaje.png> <./IMAGENES/VoltajeD1_2.png>]
 
 Excluding 'comment' comment.
 
-LaTeX Warning: Reference `fig:iv_diodo4001_directa' on page 4 undefined on input line 455.
+LaTeX Warning: Empty bibliography on input line 759.
 
 
-LaTeX Warning: Reference `fig:iv_diodo4148_directa' on page 4 undefined on input line 455.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--475
-[]|$\OML/cmm/m/it/8 R[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
-[]|$\OML/cmm/m/it/8 R[]$
- []
-
-
-
-Excluding 'comment' comment. Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:iv_diodo4001_inversa' on page 4 undefined on input line 542.
-
-
-LaTeX Warning: Reference `fig:iv_diodo4148_inversa' on page 4 undefined on input line 542.
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:osc_tiempo' on page 4 undefined on input line 559.
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:osc_xy' on page 4 undefined on input line 572.
-
-
-LaTeX Warning: Reference `fig:iv_diodo4001_directa' on page 4 undefined on input line 572.
-
-
-LaTeX Warning: Reference `fig:iv_diodo4148_directa' on page 4 undefined on input line 572.
-
-
-
-[4] Excluding 'comment' comment.
-
-
-
-[5] Excluding 'comment' comment.
-
-LaTeX Warning: Empty bibliography on input line 728.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 735--736
+Underfull \hbox (badness 10000) in paragraph at lines 766--767
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4001-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 738--739
+Underfull \hbox (badness 10000) in paragraph at lines 769--770
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4148-
  []
 
 
 
-
-
-[6
-
-] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.aux)
+[8] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to '1MV12_FE__P02_FCGM_MRAY_MVME.run.xml'.
 \openout1 = `1MV12_FE__P02_FCGM_MRAY_MVME.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12549 strings out of 469959
- 239521 string characters out of 5469834
- 1077784 words of memory out of 5000000
- 39223 multiletter control sequences out of 15000+600000
- 669332 words of font info for 109 fonts, out of 8000000 for 9000
+ 12634 strings out of 469959
+ 241725 string characters out of 5469834
+ 1060895 words of memory out of 5000000
+ 39301 multiletter control sequences out of 15000+600000
+ 669157 words of font info for 112 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 63i,14n,66p,1269b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.pdf (6 pages, 450113 bytes).
+ 63i,12n,66p,1269b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.pdf (8 pages, 8040247 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
+ 127 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
