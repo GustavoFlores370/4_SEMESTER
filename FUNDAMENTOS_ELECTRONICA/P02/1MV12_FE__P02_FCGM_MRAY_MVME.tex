@@ -309,24 +309,25 @@ Esto ocurre porque en la rectificación de onda completa se conservan ambos semi
 
 \begin{figure}[H]%[!ht]
 \begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/PRUEBA.jpg}
-\caption{Circuito con diodo 1N4001.}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base.png}
+\caption{Circuito Rectificador de Media Onda.}
 \label{fig:circuito_base1}
 \end {center}
 \end{figure}
 
 Para el circuito mostrado en la "Figura~\ref{fig:circuito_base1}”, emplearemos:
 \begin{itemize}
-    \item 1 Diodo 1N4001
-    \item 1 Diodo 1N4148
-    \item 1 Resistencia de 220 $\Omega$
-    \item Protoboard
+    \item 4 Diodos 1N4002
+    \item 4 Resistencias de 330 $\Omega$
+    \item 1 Resistencia de 1 $\Omega$
+    \item 1 Transformador reductor con derivación central a 12 Vrms
+    \item 1 Protoboard
     \item Cable para protoboard
 \end{itemize}
 
-La fuente V1 mostrada en la "Figura~\ref{fig:circuito_base1}” es una fuente variable que nos ayudará a analizar el 
-comportamiento del diodo a diferentes valores de voltaje de entrada. Cabe aclarar que los diodos con los que se trabajará están 
-hechos a base de silicio.
+En la "Figura~\ref{fig:circuito_base1}", podemos observar que se utilizan diodos 1N4001, por cuestiones de practicidad y de seguridad se emplearán diodos 1N4002 que soportan hata un voltaje inverso de 100V y una
+corriente de hasta 1A. Cabe aclarar, que el circuito mostrado se propone como un rectificador de media onda, sin embargo, al conectar la derivación central del transformador y colocar los diodos como se muestra obtenemos 
+en realidad un rectificador de onda completa.
 
 \section{Análisis y Resultados}
 \subsection{Comprtamiento del transformador}
@@ -352,7 +353,7 @@ Con esto podemos observar la relación de reducción, es decir, el cálculo arro
 en el devanado primario, existe 1 espira en el secundario, confirmando la naturaleza reductora del transformador utilizado.
 
 Al utilizar la derivación central del secundario como punto de referencia común (tierra) para el osciloscopio, se midieron simultáneamente los voltajes de las dos terminales restantes. 
-Se pudo comprobar gráficamente un desfasamiento exacto de 180 grados  entre ambas señales como se muestra en la Figura \ref{fig:desfasamiento}.
+Se pudo comprobar gráficamente un desfasamiento exacto de 180 grados  entre ambas señales como se muestra en la "Figura~\ref{fig:desfasamiento}".
 
 \begin{figure}[H]%[!ht]
 \begin {center}
@@ -372,7 +373,10 @@ Por Ley de Voltajes de Kirchhoff, el voltaje total ($V_{total}$) es la diferenci
 que están desfasadas 180°, se cumple que $V_B(t) = -V_A(t)$. Por lo tanto, la sumatoria es:
 
 \[
-        V_{total} = V_A - V_B = V_A - (-V_A) = 2V_A
+        V_{total} = V_A - V_B = V_A - (-V_A)
+\]
+\[
+        V_{total} = 2V_A
 \]
 
 Como se observó en la medición anterior, el voltaje pico en ambos canales respecto a la derivación central es de aproximadamente 9.3 V. Por consiguiente, por principio de suma de potenciales, la medición 
@@ -417,7 +421,11 @@ Al realizar la medición del voltaje $V_{R1}$ utilizando el osciloscopio, se obt
 \end {center}
 \end{figure}
 
-Para validar experimentalmente el análisis matemático, se efectuaron mediciones adicionales empleando un multímetro. A continuación, en la Tabla \ref{tablaComparativa}, se presenta una comparativa que contrasta 
+La "Figura~\ref{fig:voltajeResistencia}" demuestra lo que anteriormente se mencionaba, si bien el circuito se propone como un ejemplo de rectificador de media onda, podemos observar que para toda la onda sinusoidal de entrada 
+se rectifica en un voltaje positivo. En otras palabras, el circuito propuesto es en realidad un rectificar de onda completa, dado que para la fase positiva el diodo 1 permite conducir la correinte y para la fase negativa el diodo 2
+es el que permite el paso de corriente en el mismo sentido a la resistencia R1.
+
+Para validar experimentalmente el análisis matemático, se efectuaron mediciones adicionales empleando un multímetro. A continuación, en la "Tabla~\ref{tablaComparativa}", se presenta una comparativa que contrasta 
 los valores teóricos calculados para el voltaje en la resistencia de carga $R_1$ con las mediciones experimentales obtenidas tanto en el osciloscopio como con el multímetro.
 
 \begin{table}[H]
@@ -451,15 +459,28 @@ Sustituyendo los valores ya anteriormente calculados ($V_1 = V_1 = 9.34 V_{rms}$
 Por lo tanto, el voltaje inverso teórico que soporta el semiconductor en estado de no conducción es de aproximadamente $-17.98 \text{ V}$. (La de ambos diodos)
 
 Para demostrar experimentalmente este comportamiento en el osciloscopio, se configuró la función matemática (MATH) para calcular la diferencia de potencial, estableciendo el Canal A en el cátodo y el Canal B en el ánodo 
-del diodo (A-B). Los resultados de esta configuración se observan en la Figura \ref{fig:voltajeInverso}.
+del diodo (A-B). Los resultados de esta configuración se observan en la "Figura~\ref{fig:voltajeInverso}" y en la "Figura~\ref{fig:zoomvoltajeInverso}".
 
 \begin{figure}[H]%[!ht]
 \begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje_D1.png} 
+\includegraphics[width=0.45\textwidth]{IMAGENES/RECT_MEDIA_COM2.jpeg} 
 \caption{Medición diferencial del voltaje en el diodo $D_1$.}
 \label{fig:voltajeInverso}
 \end{center}
 \end{figure}
+
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje_D1.png} 
+\caption{Acercamiento en la medición diferencial del voltaje en el diodo $D_1$.}
+\label{fig:zoomvoltajeInverso}
+\end{center}
+\end{figure}
+
+Los resultados son los esperados, para la fase positiva el diodo $D_1$ circula corriente por lo que veremos en el osciloscopio
+la típica caída de tensión de 0.7V, y para la fase negativa el diodo no circula corriente por lo que veremos el PIV que es aproximadamente 
+el mismo qu el voltaje de entrada.
 
 A continuación, se presenta una tabla comparativa entre el valor teórico calculado y la medición extraída del osciloscopio.
 
@@ -474,10 +495,6 @@ Osciloscopio (MATH) & -18.20 \\ \hline
 \caption{Comparación del voltaje inverso en el diodo $D_1$.}
 \label{tab:comparacion_PIV}
 \end{table}
-
-En la gráfica diferencial obtenida (trazo rojo), se comprueba de manera visual y cuantitativa el comportamiento bidireccional del componente. Durante el semiciclo positivo, el diodo conduce y la diferencia de potencial 
-es mínima (cercana a los 0.7 V de la barrera de potencial). Sin embargo, durante el semiciclo negativo, la señal desciende hacia la región negativa. La diferencia observada entre el valor teórico ($-17.98 \text{ V}$) y el experimental 
-se atribuye a la tolerancia de los componentes, la resolución del muestreo digital del osciloscopio al usar la función matemática a esa escala, y a las ligeras caídas de tensión en las líneas de conexión.
 
 Para complementar la caracterización del semiconductor, se procedió a determinar la corriente que atraviesa el diodo $D_1$ durante su estado de conducción (semiciclo positivo).
 La corriente pico ($I_{D1}$) en el circuito se define por la Ley de Ohm, considerando el voltaje pico en la carga ($V_R1$) y el valor de la resistencia $R_1$ ($220 \Omega$ ). Tomando el voltaje pico real previamente calculado (8.64 V), se tiene:
@@ -497,7 +514,7 @@ de rectificación de media onda:
 \]
 
 Debido a que el osciloscopio mide diferencias de potencial y no corriente directa, se implementó una técnica de medición indirecta. Se insertó una resistencia de prueba de $1 \ \Omega$ en serie con el diodo $D_1$ . Por la Ley de Ohm ($V = I \cdot R$), 
-al ser la resistencia igual a la unidad, el voltaje medido diferencialmente en sus terminales es numéricamente igual a la corriente que fluye por la rama. Podemos observar la grafica en la Figura \ref{fig:corrienteDiodo}
+al ser la resistencia igual a la unidad, el voltaje medido diferencialmente en sus terminales es numéricamente igual a la corriente que fluye por la rama. Podemos observar la grafica en la "Figura~\ref{fig:corrienteDiodo}".
 
 \begin{figure}[H]%[!ht]
 \begin{center}
@@ -512,20 +529,46 @@ El diodo entra en conducción únicamente durante el semiciclo positivo de la se
 
 \subsection{Análisis de comportamiento del circuito 2}
 
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base2.png} 
+\caption{Circuito Base 2.}
+\label{fig:circuitobase2}
+\end{center}
+\end{figure}
+
+
 Haciendo un análisis rápido en el segundo circuito podemos darnos cuenta que el su comportamiento no es muy diferente al anterior, ya que ambos mantienen la misma configuracion con la unica diferencia de que este último tiene los diodos con la polaridad invertida,
 lo cual nos indica que ahora el diodo $D_1$ conduce en el semiciclo negativo y el diodo $D_2$ en el positivo. Para comprobarlo, utilizamos el osciloscopio para ver el comportamineto del diodo $D_1$ de manera gráfica.
 
 \begin{figure}[H]%[!ht]
 \begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeInverso.png} 
+\includegraphics[width=0.45\textwidth]{IMAGENES/RECT_MEDIA_COM.jpeg} 
 \caption{Forma de onda de la corriente en el diodo $D_1$ en el circuito 2.}
 \label{fig:corrienteDiodo2}
 \end{center}
 \end{figure}
 
-Los valores teóricos esperados son exactamente los mismos. $V_{R1} = 8.64 \Omega $
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeInverso.png} 
+\caption{Acercamiento a la forma de onda de la corriente en el diodo $D_1$ en el circuito 2.}
+\label{fig:zoomcorrienteDiodo2}
+\end{center}
+\end{figure}
+
+Los valores teóricos esperados son exactamente los mismos. $V_{R1} = 8.64V$
 
 \subsection{Análisis de comportamiento del circuito 3}
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base3.png} 
+\caption{Circuito Base 3}
+\label{fig:circuitobase3}
+\end{center}
+\end{figure}
 
 En esta sección se evalúa la topología de puente de Graetz (4 diodos). Esta configuración prescinde de la derivación central del transformador, utilizando el devanado secundario en su totalidad para alimentar la carga $R_1$.
 
@@ -567,7 +610,7 @@ Al analizarlo en el osciloscopio obtenemos las siguientes imagenes.
 \begin{figure}[H]%[!ht]
 \begin{center}
 \includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje.png} 
-\caption{Voltaje en $R_1$ circuito 2}
+\caption{Voltaje en $R_1$ circuito 3}
 \label{fig:VoltajeR1}
 \end{center}
 \end{figure}
