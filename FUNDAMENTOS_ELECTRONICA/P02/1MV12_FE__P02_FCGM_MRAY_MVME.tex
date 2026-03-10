@@ -310,7 +310,7 @@ Esto ocurre porque en la rectificación de onda completa se conservan ambos semi
 \begin{figure}[H]%[!ht]
 \begin {center}
 \includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base.png}
-\caption{Circuito Rectificador de Media Onda.}
+\caption{Circuito Rectificador de Onda Completa con derivación central con dos diodos 1.}
 \label{fig:circuito_base1}
 \end {center}
 \end{figure}
@@ -463,7 +463,7 @@ del diodo (A-B). Los resultados de esta configuración se observan en la "Figura
 
 \begin{figure}[H]%[!ht]
 \begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/RECT_MEDIA_COM2.jpeg} 
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeInverso_Circuito2.jpg} 
 \caption{Medición diferencial del voltaje en el diodo $D_1$.}
 \label{fig:voltajeInverso}
 \end{center}
@@ -532,7 +532,7 @@ El diodo entra en conducción únicamente durante el semiciclo positivo de la se
 \begin{figure}[H]%[!ht]
 \begin{center}
 \includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base2.png} 
-\caption{Circuito Base 2.}
+\caption{Circuito Rectificador de onda completa con derivación central con dos diodos 2.}
 \label{fig:circuitobase2}
 \end{center}
 \end{figure}
@@ -565,7 +565,7 @@ Los valores teóricos esperados son exactamente los mismos. $V_{R1} = 8.64V$
 \begin{figure}[H]%[!ht]
 \begin{center}
 \includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base3.png} 
-\caption{Circuito Base 3}
+\caption{Circuito rectificador de onda completa sin derivación central}
 \label{fig:circuitobase3}
 \end{center}
 \end{figure}
@@ -619,7 +619,7 @@ Podemos observar la siguiente tabla que compara los resultados calculados y medi
 
 \begin{table}[H]
 \centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X}
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
 \hline
 \textbf{Datos obtenidos} & \textbf{$V_{prom}$ (V)} & \textbf{$V_{rms}$ (V)} & \textbf{$V_{p}$ (V)}\\ \hline
 Multímetro & 5.38 & 11.59  & 16.39\\ \hline
@@ -655,6 +655,177 @@ especificación de voltaje inverso máximo.
 
 Este circuito también corresponde a un rectificador de onda completa con 4 diodos, la diferencia es que ahora lo analizaramenos el comportamiento de este utilizando la derivacion central del transformador
 como la tierra.
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base4.png} 
+\caption{Circuito rectificador de onda completa con derivación central}
+\label{fig:circuitobase4}
+\end{center}
+\end{figure}
+Se hace la aclaración de que para el circuito mostrado en la "Figura~\ref{fig:circuitobase4}" se propone una resistencia de 100 $\Omega$, sin mebargo, la empleada en laboratorio fue una resistencia de 82 $\Omega$, por lo que los cálculos y lo mostrado en
+el osciloscopio será con base a este valor.
+Es de inmediato notar que la resistencia $R_1$ y $R_2$ se encuentran en paralelo, esta aclaración facilitará el análisis del circuuito para conocer los voltajes en las resistencias que a priori sabemos que es el mismo.
+Mediante mallas calculamos los voltajes:
+
+Ecuaciones de malla:
+
+\[
+-9.34V + 0.7 + V_{R1} = 0
+\]
+
+\[
+-9.34V - V_{R2} + 0.7 = 0
+\]
+
+Despejando:
+
+\[
+V_{R1} = 8.64V
+\]
+
+\[
+V_{R2} = -8.64V
+\]
+
+Corrientes:
+
+\[
+I_{R1} = \frac{8.64}{220} = 0.039A = 39\,mA
+\]
+
+\[
+I_{R2} = \frac{8.64}{82} = 0.105A = 105\,mA
+\]
+
+
+Analizando los voltajes RMS y promedio obtenemos:
+Para onda completa:
+
+\subsubsection{Voltaje Promedio.}
+\[
+V_{prom} = \frac{2}{\pi} V_m = \frac{2}{\pi}(8.64V)
+\]
+\[
+V_{prom} = 5.50V
+\]
+
+\subsubsection{Voltaje RMS.}
+El voltaje RMS se define para una señal sinusoidal como:
+\[
+V_{rms} = \frac{V_m}{\sqrt{2}} = \frac{8.64V}{\sqrt{2}}
+\]
+\[
+V_{rms} = 6.11V
+\]
+
+\subsubsection{Corriente promedio.}
+
+\[
+I_{R1prom} = \frac{V_{prom}}{R} = \frac{5.50\,\text{V}}{220\,\Omega}
+\]
+\[
+I_{R1prom} = 24.19_{mA}
+\]
+
+\[
+I_{R2prom} = \frac{V_{prom}}{R} = \frac{-5.50\,\text{V}}{82\,\Omega}
+\]
+\[
+I_{R2prom} = -66.84_{mA}
+\]
+
+\subsubsection{Corriente RMS}
+
+\[
+I_{R1rms} = \frac{V_{rms}}{R} = \frac{6.11\,\text{V}}{220\,\Omega}
+\]
+
+\[
+I_{R1rms} = 26.87_{mA}
+\]
+
+\[
+I_{R2rms} = \frac{V_{rms}}{R} = \frac{-6.11\,\text{V}}{82\,\Omega}
+\]
+
+\[
+I_{R2rms} = -74.24_{mA}
+\]
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeR1_R2_Circuito4.jpg} 
+\caption{Voltaje en $R_1$ y $R_2$}
+\label{fig:voltajeR1R2}
+\end{center}
+\end{figure}
+En la "Figura~\ref{fig:voltajeR1R2}" se comprueba lo esperado en los cálculos y análisis del circuito, la $R_2$ está polarizada inversamente respecto
+a la referencia, por lo que podemos visualizar un desfase de 180°.
+
+Los cálculos realizados son comprobables midiendo directamente con el multímetro. Veáse "Figura~\ref{fig:multímetro}" en Anéxos donde se muestra la manera de medición que 
+se tomó para medir corriente.
+Cabe mencionar que para medir la corriente rms con el multímetro es necesario medir primero corriente en AC y después medir corriente en DC, para poder aplicar la siguiente 
+fórmula:
+\begin{equation}
+I_{\mathrm{RMS}} = \sqrt{I_{\mathrm{DC}}^{2} + I_{\mathrm{AC,RMS}}^{2}}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Datos obtenidos} & \textbf{$I_{prom}$ (mA)} & \textbf{$I_{rms}$ (mA)} & \textbf{$I_p$ (mA)}\\ \hline
+Multímetro  & 23.30 & 26.69 & 37.75\\ \hline
+Cálculos    & 24.19 & 27.77 & 39.00\\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de corrientes en $R_1$.}
+\label{tablaComparativa3}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Datos obtenidos} & \textbf{$I_{prom}$ (mA)} & \textbf{$I_{rms}$ (mA)} & \textbf{$I_p$ (mA)}\\ \hline
+Multímetro  & -60.74 & -69.62 & -98.46\\ \hline
+Cálculos    & -66.84 & -74.24 & -105.0\\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de corrientes en $R_2$.}
+\label{tablaComparativa4}
+\end{table}
+
+Una vez analizado el comportamiento de este circuito rectificador de onda completa, no está de más analizar el comportamiento del 
+diodo para cuando se comporta como circuito abierto y para cuando se comporta como corto, a priori podemos decir que el comportamiento esperado es 
+que para fases donde el diodo conduce vamos a obervar una caída de tensión de 0.7V para diodos de silicio y para fases donde el diodo no conuce vamos
+a observar aproximadamente el voltaje de la fuente.
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeDiodo_circuito4.jpg} 
+\caption{Voltaje en $D_1$.}
+\label{fig:voltajeD1}
+\end{center}
+\end{figure}
+
+Analíticamente podemos corroborar el voltaje inverso pico, sabemos que en el $D_1$ en el cátodo tenemos un voltaje 
+equivalente al entregado por la fuente y en ánodo tenemos el voltaje de la resistencia, por lo que procedemos:
+
+\[
+V_k = 9.34V
+\]
+\[
+V_A = -8.64V
+\]
+\[
+V_D = V_k - V_A
+\]
+\[
+V_D = 9.34 - (-8.64)
+\]
+\[
+V_D = 17.98V
+\]
+
 
 
 \section{Simulación}
@@ -717,6 +888,30 @@ como la tierra.
 
 \appendices
 \section{Evidencias}
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Medicion_Multimetro.jpg} 
+\caption{Medición con Multímetro los voltajes y corrientes en $R_1$ y $R_2$.}
+\label{fig:multímetro}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Corriente_Multimetro.jpg} 
+\caption{Lectura de corriente en $R_1$.}
+\label{fig:corrientemultímetro}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/EVALUACION_LAB.jpeg} 
+\caption{Evaluación en laboratorio.}
+\label{fig:evaluación}
+\end{center}
+\end{figure}
 
 \begin{comment}
 \begin{figure}[H]%[!ht]

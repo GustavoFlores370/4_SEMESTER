@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  7 MAR 2026 22:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  10 MAR 2026 12:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -582,9 +582,6 @@ File: IMAGENES/TRANSFORMADOR.png Graphic file (type png)
 Package pdftex.def Info: IMAGENES/TRANSFORMADOR.png  used on input line 360.
 (pdftex.def)             Requested size: 232.19843pt x 170.71608pt.
 
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
-
 
 [3 <./IMAGENES/Circuito_Base.png>]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 373.
@@ -610,41 +607,41 @@ Package pdftex.def Info: IMAGENES/VoltajeResistencia.png  used on input line 418
 
 [4 <./IMAGENES/TRANSFORMADOR.png> <./IMAGENES/Comprobacion.png>]
 
-<IMAGENES/RECT_MEDIA_COM2.jpeg, id=34, 1200.485pt x 883.3pt>
-File: IMAGENES/RECT_MEDIA_COM2.jpeg Graphic file (type jpg)
-<use IMAGENES/RECT_MEDIA_COM2.jpeg>
-Package pdftex.def Info: IMAGENES/RECT_MEDIA_COM2.jpeg  used on input line 466.
+<IMAGENES/VoltajeInverso_Circuito2.jpg, id=34, 1200.485pt x 883.3pt>
+File: IMAGENES/VoltajeInverso_Circuito2.jpg Graphic file (type jpg)
+<use IMAGENES/VoltajeInverso_Circuito2.jpg>
+Package pdftex.def Info: IMAGENES/VoltajeInverso_Circuito2.jpg  used on input line 466.
 (pdftex.def)             Requested size: 232.19843pt x 170.84782pt.
-<IMAGENES/Voltaje_D1.png, id=35, 1201.48875pt x 883.3pt>
+<IMAGENES/Voltaje_D1.png, id=35, 1200.485pt x 883.3pt>
 File: IMAGENES/Voltaje_D1.png Graphic file (type png)
 <use IMAGENES/Voltaje_D1.png>
 Package pdftex.def Info: IMAGENES/Voltaje_D1.png  used on input line 475.
-(pdftex.def)             Requested size: 232.19843pt x 170.69957pt.
+(pdftex.def)             Requested size: 232.19843pt x 170.84782pt.
 
 
-[5 <./IMAGENES/VoltajeResistencia.png> <./IMAGENES/RECT_MEDIA_COM2.jpeg> <./IMAGENES/Voltaje_D1.png>]
+[5 <./IMAGENES/VoltajeResistencia.png> <./IMAGENES/VoltajeInverso_Circuito2.jpg> <./IMAGENES/Voltaje_D1.png>]
 Underfull \hbox (badness 1694) in paragraph at lines 505--507
 []\OT1/ptm/m/n/10 Dado que cada diodo en esta con-fig-u-raci[]on con-duce
  []
 
-<IMAGENES/CorrienteDiodo.png, id=44, 1200.485pt x 883.3pt>
+<IMAGENES/CorrienteDiodo.png, id=45, 1200.485pt x 883.3pt>
 File: IMAGENES/CorrienteDiodo.png Graphic file (type png)
 <use IMAGENES/CorrienteDiodo.png>
 Package pdftex.def Info: IMAGENES/CorrienteDiodo.png  used on input line 521.
 (pdftex.def)             Requested size: 232.19843pt x 170.84782pt.
-<IMAGENES/Circuito_Base2.png, id=45, 450.18187pt x 260.47313pt>
+<IMAGENES/Circuito_Base2.png, id=46, 450.18187pt x 260.47313pt>
 File: IMAGENES/Circuito_Base2.png Graphic file (type png)
 <use IMAGENES/Circuito_Base2.png>
 Package pdftex.def Info: IMAGENES/Circuito_Base2.png  used on input line 534.
 (pdftex.def)             Requested size: 232.19843pt x 134.34984pt.
 
 
-<IMAGENES/RECT_MEDIA_COM.jpeg, id=46, 1200.485pt x 883.3pt>
+<IMAGENES/RECT_MEDIA_COM.jpeg, id=47, 1200.485pt x 883.3pt>
 File: IMAGENES/RECT_MEDIA_COM.jpeg Graphic file (type jpg)
 <use IMAGENES/RECT_MEDIA_COM.jpeg>
 Package pdftex.def Info: IMAGENES/RECT_MEDIA_COM.jpeg  used on input line 546.
 (pdftex.def)             Requested size: 232.19843pt x 170.84782pt.
-<IMAGENES/VoltajeInverso.png, id=47, 1200.485pt x 883.3pt>
+<IMAGENES/VoltajeInverso.png, id=48, 1200.485pt x 883.3pt>
 File: IMAGENES/VoltajeInverso.png Graphic file (type png)
 <use IMAGENES/VoltajeInverso.png>
 Package pdftex.def Info: IMAGENES/VoltajeInverso.png  used on input line 555.
@@ -655,47 +652,102 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [6 <./IMAGENES/CorrienteDiodo.png> <./IMAGENES/Circuito_Base2.png> <./IMAGENES/RECT_MEDIA_COM.jpeg>]
-<IMAGENES/Circuito_Base3.png, id=53, 374.14781pt x 206.27063pt>
+<IMAGENES/Circuito_Base3.png, id=54, 374.14781pt x 206.27063pt>
 File: IMAGENES/Circuito_Base3.png Graphic file (type png)
 <use IMAGENES/Circuito_Base3.png>
 Package pdftex.def Info: IMAGENES/Circuito_Base3.png  used on input line 567.
 (pdftex.def)             Requested size: 232.19843pt x 128.01234pt.
 
 
-<IMAGENES/Voltaje.png, id=54, 1172.38pt x 889.3225pt>
+<IMAGENES/Voltaje.png, id=55, 1204.5pt x 897.3525pt>
 File: IMAGENES/Voltaje.png Graphic file (type png)
 <use IMAGENES/Voltaje.png>
 Package pdftex.def Info: IMAGENES/Voltaje.png  used on input line 612.
-(pdftex.def)             Requested size: 232.19843pt x 176.12439pt.
-<IMAGENES/VoltajeD1_2.png, id=55, 1186.4325pt x 899.36pt>
+(pdftex.def)             Requested size: 232.19843pt x 172.97708pt.
+<IMAGENES/VoltajeD1_2.png, id=56, 1202.4925pt x 899.36pt>
 File: IMAGENES/VoltajeD1_2.png Graphic file (type png)
 <use IMAGENES/VoltajeD1_2.png>
 Package pdftex.def Info: IMAGENES/VoltajeD1_2.png  used on input line 644.
-(pdftex.def)             Requested size: 232.19843pt x 176.01262pt.
+(pdftex.def)             Requested size: 232.19843pt x 173.65224pt.
 
-Underfull \vbox (badness 1009) has occurred while \output is active []
+Underfull \vbox (badness 1102) has occurred while \output is active []
 
 
 
-[7 <./IMAGENES/VoltajeInverso.png> <./IMAGENES/Circuito_Base3.png> <./IMAGENES/Voltaje.png>] Excluding 'comment' comment.
+[7 <./IMAGENES/VoltajeInverso.png> <./IMAGENES/Circuito_Base3.png> <./IMAGENES/Voltaje.png>]
+<IMAGENES/Circuito_Base4.png, id=64, 864.98157pt x 278.54062pt>
+File: IMAGENES/Circuito_Base4.png Graphic file (type png)
+<use IMAGENES/Circuito_Base4.png>
+Package pdftex.def Info: IMAGENES/Circuito_Base4.png  used on input line 660.
+(pdftex.def)             Requested size: 232.19843pt x 74.7692pt.
+
+
+<IMAGENES/VoltajeR1_R2_Circuito4.jpg, id=65, 1192.455pt x 899.36pt>
+File: IMAGENES/VoltajeR1_R2_Circuito4.jpg Graphic file (type jpg)
+<use IMAGENES/VoltajeR1_R2_Circuito4.jpg>
+Package pdftex.def Info: IMAGENES/VoltajeR1_R2_Circuito4.jpg  used on input line 757.
+(pdftex.def)             Requested size: 232.19843pt x 175.1206pt.
+
+
+[8 <./IMAGENES/VoltajeD1_2.png> <./IMAGENES/Circuito_Base4.png>]
+<IMAGENES/VoltajeDiodo_circuito4.jpg, id=71, 1180.41pt x 899.36pt>
+File: IMAGENES/VoltajeDiodo_circuito4.jpg Graphic file (type jpg)
+<use IMAGENES/VoltajeDiodo_circuito4.jpg>
+Package pdftex.def Info: IMAGENES/VoltajeDiodo_circuito4.jpg  used on input line 804.
+(pdftex.def)             Requested size: 232.19843pt x 176.90462pt.
+
+Underfull \vbox (badness 6188) has occurred while \output is active []
+
+
 
 Excluding 'comment' comment.
 
-LaTeX Warning: Empty bibliography on input line 740.
+[9 <./IMAGENES/VoltajeR1_R2_Circuito4.jpg> <./IMAGENES/VoltajeDiodo_circuito4.jpg>]
+<IMAGENES/Medicion_Multimetro.jpg, id=75, 2489.3pt x 3319.40125pt>
+File: IMAGENES/Medicion_Multimetro.jpg Graphic file (type jpg)
+<use IMAGENES/Medicion_Multimetro.jpg>
+Package pdftex.def Info: IMAGENES/Medicion_Multimetro.jpg  used on input line 894.
+(pdftex.def)             Requested size: 232.19843pt x 309.62296pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+<IMAGENES/Corriente_Multimetro.jpg, id=76, 2489.3pt x 3319.40125pt>
+File: IMAGENES/Corriente_Multimetro.jpg Graphic file (type jpg)
+<use IMAGENES/Corriente_Multimetro.jpg>
+Package pdftex.def Info: IMAGENES/Corriente_Multimetro.jpg  used on input line 902.
+(pdftex.def)             Requested size: 232.19843pt x 309.62296pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[10 <./IMAGENES/Medicion_Multimetro.jpg>]
+<IMAGENES/EVALUACION_LAB.jpeg, id=80, 1222.5675pt x 1606.0pt>
+File: IMAGENES/EVALUACION_LAB.jpeg Graphic file (type jpg)
+<use IMAGENES/EVALUACION_LAB.jpeg>
+Package pdftex.def Info: IMAGENES/EVALUACION_LAB.jpeg  used on input line 910.
+(pdftex.def)             Requested size: 232.19843pt x 305.02065pt.
+ Excluding 'comment' comment.
+
+LaTeX Warning: Empty bibliography on input line 945.
+
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 952--953
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4001-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 750--751
+Underfull \hbox (badness 10000) in paragraph at lines 955--956
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4148-
  []
 
 
 
-[8 <./IMAGENES/VoltajeD1_2.png>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.aux)
+[11 <./IMAGENES/Corriente_Multimetro.jpg> <./IMAGENES/EVALUACION_LAB.jpeg>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -705,17 +757,17 @@ Package logreq Info: Writing requests to '1MV12_FE__P02_FCGM_MRAY_MVME.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12666 strings out of 469959
- 242830 string characters out of 5469834
- 1060991 words of memory out of 5000000
- 39333 multiletter control sequences out of 15000+600000
+ 12716 strings out of 469959
+ 244653 string characters out of 5469834
+ 1061183 words of memory out of 5000000
+ 39383 multiletter control sequences out of 15000+600000
  669157 words of font info for 112 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  63i,12n,66p,1269b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.pdf (8 pages, 8099314 bytes).
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.pdf (11 pages, 8883010 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
+ 151 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
