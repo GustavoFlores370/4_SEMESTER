@@ -592,17 +592,17 @@ Aplicando las ecuaciones matemáticas para una señal rectificada de onda comple
 \]
 
 \[
-    V_{rms} = \frac{V_{R1}}{2\sqrt{2}} = \frac{17.28}{2\sqrt{2}} = 6.10 V
+    V_{rms} = \frac{V_{R1}}{2\sqrt{2}} = \frac{17.28}{\sqrt{2}} = 12.21 V
 \]
 
 Para las corrientes:
 
 \[
-    I_{prom} = \frac{V_{prom}}{220} = \frac{5.50}{220} = 0.025 V
+    I_{prom} = \frac{V_{prom}}{220} = \frac{5.50}{220} = 0.025 A
 \]
 
 \[
-    I_{rms} = \frac{V_{rms}}{220} = \frac{6.10}{220} = 0.027 V
+    I_{rms} = \frac{V_{rms}}{220} = \frac{12.21}{220} = 0.055 A
 \]
 
 Al analizarlo en el osciloscopio obtenemos las siguientes imagenes.
@@ -621,10 +621,10 @@ Podemos observar la siguiente tabla que compara los resultados calculados y medi
 \centering
 \begin{tabularx}{\columnwidth}{|c|X|X|X}
 \hline
-\textbf{Datos obtenidos} & \textbf{$V_prom$ (V)} & \textbf{$V_{rms}$ (V)} & \textbf{$V_{p}$ (V)}\\ \hline
-Multímetro & 4.56 & 5.31  & 7.52\\ \hline
-Cálculos & 5.50 & 6.10 & 8.64\\ \hline
-Osciloscopio & 4.58 & 5.33 & 7.76\\ \hline
+\textbf{Datos obtenidos} & \textbf{$V_{prom}$ (V)} & \textbf{$V_{rms}$ (V)} & \textbf{$V_{p}$ (V)}\\ \hline
+Multímetro & 5.38 & 11.59  & 16.39\\ \hline
+Cálculos & 5.50 & 12.21 & 17.28\\ \hline
+Osciloscopio & 5.41 & 12.02 & 17.0\\ \hline
 \end{tabularx}
 \caption{Comparacion de voltajes calculados y medidos de $R_1$.}
 \label{tablaComparativa2}
@@ -642,10 +642,20 @@ En el osciloscopio se puede ver de la siguiente manera:
 \begin{figure}[H]%[!ht]
 \begin{center}
 \includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeD1_2.png} 
-\caption{Voltaje en $R_1$ circuito 2}
-\label{fig:VoltajeR1_2}
+\caption{Voltaje en $D_1$ circuito 3}
+\label{fig:VoltajeD1_3}
 \end{center}
 \end{figure}
+
+Como podemos observar la diferencia fundamental entre el circuito 1 con respecto al circuito 3, radica en la exigencia física para los componentes, es deci, que para proporcionar el mismo voltaje pico a la resistencia de carga, 
+los diodos en el circuito 1 deben ser capaces de soportar el doble de voltaje inverso en comparación con los diodos del puente en el circuito 3. El puente de diodos es más eficiente en este aspecto porque permite usar diodos con una menor 
+especificación de voltaje inverso máximo.
+
+\subsection{Análisis de comportamiento del circuito 4}
+
+Este circuito también corresponde a un rectificador de onda completa con 4 diodos, la diferencia es que ahora lo analizaramenos el comportamiento de este utilizando la derivacion central del transformador
+como la tierra.
+
 
 \section{Simulación}
 
