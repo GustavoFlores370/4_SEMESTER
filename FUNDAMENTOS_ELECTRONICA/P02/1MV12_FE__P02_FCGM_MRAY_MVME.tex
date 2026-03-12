@@ -829,7 +829,22 @@ V_D = 17.98V
 
 
 \section{Simulación}
-
+La gráfica muestra la potencia instantánea en la resistencia $R_1$. Al ser un rectificador de onda completa, la frecuencia de la potencia se duplica respecto a la de la fuente ($120\text{ Hz}$), ya que tanto el semiciclo positivo como el negativo entregan energía a la carga. Se observa un valor pico de potencia cercano a los $11\text{ W}$ y una forma de onda senoidal desplazada (siempre positiva), lo que indica que no hay flujo de potencia negativo hacia la fuente; toda la energía es consumida por la resistencia en forma de pulsos continuos de corriente directa pulsante.
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Simulacion1.jpeg} 
+\caption{Potencia en $R_1$.}
+\label{fig:potenciaInstantaneR1}
+\end{center}
+\end{figure}
+En esta simulación se confirma la naturaleza cuadrática de la potencia ($P = \frac{V^2}{R}$). Los valles de la gráfica llegan exactamente a $0\text{ W}$, coincidiendo con los puntos de cruce por cero del voltaje de entrada, mientras que los puntos máximos representan el instante de mayor transferencia energética. Al no existir un filtro capacitivo, la potencia es puramente pulsante, lo que significa que el valor promedio de la potencia (potencia media) será aproximadamente la mitad del valor pico observado ($\approx 5.5\text{ W}$), validando el comportamiento teórico de una carga resistiva bajo rectificación total.
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Simulacion2.jpeg} 
+\caption{Transferencia de potencia a $R_1$.}
+\label{fig:transferenciaDePotenciaR1}
+\end{center}
+\end{figure}
 
 \begin{comment}
 \begin{figure}[H]%[!ht]
@@ -849,7 +864,6 @@ V_D = 17.98V
 \end{figure}
 \end{comment}
 
-
 \section{Conclusiones}
 \begin{itemize}
     \item \textbf{Flores Cornejo Gustavo Mauricio.}
@@ -857,15 +871,12 @@ V_D = 17.98V
     mostrados en laboratorio. Esta práctica fue importante porque pudimos visualizar cómo el uso de estos componentes alteran la onda de salida a nuestra conveniencia eliminando o modificando alguna de las fases de nuestra señal sinusoidal. Para poder visualizar la corriente que circulaba por el diodo cuando
     este conducía fue necesario utilizar una resistencia de 1 ohm, esto con la finalidad de medir el voltaje en esa resistencia que por ley de ohm era directamente proporcional a la corriente que fluctuaba por el diodo.
     Además, fue úti utilizar el transformador para poder realizar mediciones de rms, promedio y pico además de darnos la facilidad de poder utilizar la derivación central.
+    \newline 
     \item \textbf{Muñoz Reyes Arturo Yabet.}
-    \newline En conclusión, esta práctica comprobó de manera efectiva el comportamiento unidireccional y las características eléctricas de los diodos 1N4001 y 1N4148. Mediante mediciones se comprobó su funcionamiento en polarización directa e inversa, confirmando 
-    que requieren un voltaje de activación típico de entre 0.6 V y 0.7 V para conducir la corriente. Finalmente, las simulaciones con variaciones de temperatura demostraron la sensibilidad térmica de estos componentes, destacando que el diodo  1N4001 mantiene una 
-    mayor estabilidad frente al calor en comparación con el diodo 1N4148. Estos resultados subrayan la importancia de considerar tanto las especificaciones eléctricas como el comportamiento térmico al seleccionar semiconductores para aplicaciones en mecatrónica.
-
+    \newline En conclusión, esta práctica nos permitió comprobar físicamente los comportamientos de los transformadores y diodos. Logramos medir la reducción de voltaje y ver el desfasamiento de 180 grados en el osciloscopio dentro del transformador. Comprobamos que los rectificadores de onda completa son más eficientes porque aprovechan todo el ciclo de la fuente, y notamos que el voltaje cae un poco más al usar un puente de diodos (hay un momento pequeño que no da voltaje). Al final, nuestros cálculos matemáticos nos ayudron a entender mejor cómo se comportan estos componentes de manera ideal y lo logramos contrastar con un comportamiento real (qué tiene ciertas pérdidas por diversos factores)
+    \newline 
     \item \textbf{Morales Vásquez Miguel Ehecatl.} 
-    \newline Tras la realización de esta práctica, se validó experimentalmente que el diodo semiconductor no presenta un comportamiento lineal, ya que requiere superar un voltaje de umbral (entre 0.5 y 0.7V para silicio) para permitir el flujo de corriente. 
-    A través del contraste entre los modelos 1N4001 y 1N4148, se comprobó que mientras el primero es óptimo para rectificación de potencia por su capacidad de corriente, el segundo destaca en aplicaciones de alta frecuencia debido a su reducido tiempo de recuperación inversa. 
-    Finalmente, el uso del osciloscopio en modo XY y la aplicación de la Ecuación de Shockley permitieron verificar cómo variables externas, especialmente la temperatura, alteran la barrera de potencial y la corriente de fuga, consolidando la comprensión de estos dispositivos en condiciones reales de operación
+    \newline En esta práctica se validó de manera experimental la versatilidad del diodo semiconductor en aplicaciones de rectificación y acondicionamiento de señales. A través de la implementación de los circuitos de media onda y onda completa, fue posible contrastar la teoría matemática con el comportamiento real de los componentes, observando que factores como la caída de tensión interna del diodo ($\approx 0.7\text{ V}$) y las pérdidas en el transformador generan variaciones sutiles pero importantes en los valores RMS y promedio calculados. Un aprendizaje clave fue el uso de la derivación central y el puente de diodos, donde se demostró que la rectificación de onda completa ofrece una transferencia de potencia más constante y eficiente al aprovechar ambos semiciclos de la señal senoidal. Finalmente, el uso de técnicas de medición indirecta para la corriente y el análisis de voltajes inversos permitieron comprender las limitaciones operativas de los diodos, habilidades fundamentales para el diseño de fuentes de alimentación y sistemas de control de potencia en la ingeniería mecatrónica.
 
 \end{itemize}
 
