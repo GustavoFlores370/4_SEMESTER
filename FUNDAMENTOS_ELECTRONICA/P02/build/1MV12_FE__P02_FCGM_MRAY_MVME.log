@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  10 MAR 2026 12:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  12 MAR 2026 14:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -700,48 +700,76 @@ Underfull \vbox (badness 6188) has occurred while \output is active []
 
 
 
-Excluding 'comment' comment.
+<IMAGENES/Simulacion1.jpeg, id=72, 792.9625pt x 423.5825pt>
+File: IMAGENES/Simulacion1.jpeg Graphic file (type jpg)
+<use IMAGENES/Simulacion1.jpeg>
+Package pdftex.def Info: IMAGENES/Simulacion1.jpeg  used on input line 835.
+(pdftex.def)             Requested size: 232.19843pt x 124.0315pt.
+<IMAGENES/Simulacion2.jpeg, id=73, 795.97375pt x 422.57875pt>
+File: IMAGENES/Simulacion2.jpeg Graphic file (type jpg)
+<use IMAGENES/Simulacion2.jpeg>
+Package pdftex.def Info: IMAGENES/Simulacion2.jpeg  used on input line 843.
+(pdftex.def)             Requested size: 232.19843pt x 123.27332pt.
 
-[9 <./IMAGENES/VoltajeR1_R2_Circuito4.jpg> <./IMAGENES/VoltajeDiodo_circuito4.jpg>]
-<IMAGENES/Medicion_Multimetro.jpg, id=75, 2489.3pt x 3319.40125pt>
+
+[9 <./IMAGENES/VoltajeR1_R2_Circuito4.jpg> <./IMAGENES/VoltajeDiodo_circuito4.jpg> <./IMAGENES/Simulacion1.jpeg>] Excluding 'comment' comment.
+Underfull \hbox (badness 1527) in paragraph at lines 869--875
+\OT1/ptm/m/n/10 en lab-o-ra-to-rio. Esta pr[]actica fue im-por-tante porque
+ []
+
+
+Underfull \hbox (badness 3769) in paragraph at lines 869--875
+\OT1/ptm/m/n/10 al-teran la onda de sal-ida a nues-tra con-ve-nien-cia
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 869--875
+\OT1/ptm/m/n/10 se[]nal si-nu-soidal. Para poder vi-su-alizar la cor-ri-ente
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--875
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 875--878
+
+ []
+
+
+
+<IMAGENES/Medicion_Multimetro.jpg, id=78, 2489.3pt x 3319.40125pt>
 File: IMAGENES/Medicion_Multimetro.jpg Graphic file (type jpg)
 <use IMAGENES/Medicion_Multimetro.jpg>
-Package pdftex.def Info: IMAGENES/Medicion_Multimetro.jpg  used on input line 894.
+Package pdftex.def Info: IMAGENES/Medicion_Multimetro.jpg  used on input line 905.
 (pdftex.def)             Requested size: 232.19843pt x 309.62296pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-<IMAGENES/Corriente_Multimetro.jpg, id=76, 2489.3pt x 3319.40125pt>
+<IMAGENES/Corriente_Multimetro.jpg, id=79, 2489.3pt x 3319.40125pt>
 File: IMAGENES/Corriente_Multimetro.jpg Graphic file (type jpg)
 <use IMAGENES/Corriente_Multimetro.jpg>
-Package pdftex.def Info: IMAGENES/Corriente_Multimetro.jpg  used on input line 902.
+Package pdftex.def Info: IMAGENES/Corriente_Multimetro.jpg  used on input line 913.
 (pdftex.def)             Requested size: 232.19843pt x 309.62296pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-[10 <./IMAGENES/Medicion_Multimetro.jpg>]
-<IMAGENES/EVALUACION_LAB.jpeg, id=80, 1222.5675pt x 1606.0pt>
+[10 <./IMAGENES/Simulacion2.jpeg> <./IMAGENES/Medicion_Multimetro.jpg>]
+<IMAGENES/EVALUACION_LAB.jpeg, id=83, 1222.5675pt x 1606.0pt>
 File: IMAGENES/EVALUACION_LAB.jpeg Graphic file (type jpg)
 <use IMAGENES/EVALUACION_LAB.jpeg>
-Package pdftex.def Info: IMAGENES/EVALUACION_LAB.jpeg  used on input line 910.
+Package pdftex.def Info: IMAGENES/EVALUACION_LAB.jpeg  used on input line 921.
 (pdftex.def)             Requested size: 232.19843pt x 305.02065pt.
  Excluding 'comment' comment.
 
-LaTeX Warning: Empty bibliography on input line 945.
+LaTeX Warning: Empty bibliography on input line 956.
 
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 952--953
+Underfull \hbox (badness 10000) in paragraph at lines 963--964
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4001-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 955--956
+Underfull \hbox (badness 10000) in paragraph at lines 966--967
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4148-
  []
 
@@ -757,17 +785,17 @@ Package logreq Info: Writing requests to '1MV12_FE__P02_FCGM_MRAY_MVME.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12716 strings out of 469959
- 244653 string characters out of 5469834
- 1061183 words of memory out of 5000000
- 39383 multiletter control sequences out of 15000+600000
+ 12732 strings out of 469959
+ 245156 string characters out of 5469834
+ 1061232 words of memory out of 5000000
+ 39399 multiletter control sequences out of 15000+600000
  669157 words of font info for 112 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  63i,12n,66p,1269b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.pdf (11 pages, 8883010 bytes).
+<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P02\build\1MV12_FE__P02_FCGM_MRAY_MVME.pdf (11 pages, 8975266 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
+ 158 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
