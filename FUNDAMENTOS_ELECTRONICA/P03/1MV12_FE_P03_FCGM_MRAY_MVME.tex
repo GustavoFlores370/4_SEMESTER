@@ -357,24 +357,122 @@ a la corriente del circuito.
 
 \section{Simulación}
 
-En esta sección se mostrará la simulación para el diodo IN4001 y 1N4148 para observar el comportamiento de voltaje y corriente en diodo al alterar la temperatura en ambos casos.
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/SIMULACION_4001.jpeg}
-\caption{Simulación del diodo 1N4001 con variación de temperatura.}
-\label{fig:sim_4001}
-\end {center}
-\end{figure}
+En esta sección se mostrará la simulación para los diferentes circuitos realizados en la práctica utilizando los valores previamente calculados, recopilando la información obtenida en una tabla que nos permita comparar los resultados.
+
+\subsection{Circuito 1. Valores máximos y mínimos de $RL$}
+Simulación con resistencia mínima calculada $RL_{min} = 66.7 \Omega$
 
 \begin{figure}[H]%[!ht]
 \begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/SIMULACION_4148.jpeg}
-\caption{Simulación del diodo 1N4148 con variación de temperatura.}
-\label{fig:sim_4148}
+\includegraphics[width=0.45\textwidth]{IMAGENES/SIM_1.png}
+\caption{Circuito 1, resistencia mínima.}
+\label{fig:SIM_1}
 \end {center}
 \end{figure}
-\end{comment}
+
+Resultados obtenidos:
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Componente} & \textbf{$I$ (mA)} & \textbf{$V$ (V)} & \textbf{$P$ (W)}\\ \hline
+$RL$ & 149.12 & 9.95  & 1.48\\ \hline
+$DZ$ & 1.403 & 9.95  & 0.0139\\ \hline
+$R_{\text{control}}$ & 150.53 & 15.053  & 2.26\\ \hline
+\end{tabularx}
+\caption{Tabla de resultados $RL_{min}$.}
+\label{tablaSIM1}
+\end{table}
+
+Simulación con resistencia máxima calculada $RL_{max} = 169 \Omega$
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/SIM_2.png}
+\caption{Circuito 1, resistencia máxima.}
+\label{fig:SIM_2}
+\end {center}
+\end{figure}
+
+Resultados obtenidos:
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Componente} & \textbf{$I$ (mA)} & \textbf{$V$ (V)} & \textbf{$P$ (W)}\\ \hline
+$RL$ & 59.35 & 10.03  & 0.595\\ \hline
+$DZ$ & 90.348 & 10.03  & 0.906\\ \hline
+$R_{\text{control}}$ & 149.7 & 14.97  & 2.24\\ \hline
+\end{tabularx}
+\caption{Tabla de resultados $RL_{max}$.}
+\label{tablaSIM2}
+\end{table}
+
+Como podemos observar, en los calculos anteriores asumimos un voltaje en el diodo de 10V consstantes. Sin embargo, en la simulación muestra que el voltaje varía entre 9.95V y 10.03V. 
+Debido a esto, la corriente en los componentes también se ve afectada, variando ligeramente en lugar de mantenerse fija en 150 mA. Y por último, en el cáñculo teórico para $RL_{min}$
+se forzó al zener a operar con su corriente de codo ideal de 0.25 mA, sin embargo, en la simulación, la corriente real que fluye por el diodo es de 1.405 mA, indicando que el  modelo SPICE
+del componente requeire un poco más de corriente que la ideal para sotenter la regulación cerca de los 10V.
+
+\subsection{Circuito 2. Valores máximos y mínimos de $V1$}
+Simulación con voltaje mínimo calculado $V1_{min} = 12.525 V$
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/SIM_3.png}
+\caption{Circuito 2, voltaje mínimo.}
+\label{fig:SIM_3}
+\end {center}
+\end{figure}
+
+Resultados obtenidos:
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Componente} & \textbf{$I$ (mA)} & \textbf{$V$ (V)} & \textbf{$P$ (W)}\\ \hline
+$RL$ & 24.813 & 9.925  & 0.246\\ \hline
+$DZ$ & 1.185 & 9.925  & 0.011\\ \hline
+$R_{\text{control}}$ & 25.998 & 2.6  & 0.067\\ \hline
+\end{tabularx}
+\caption{Tabla de resultados $V1_{min}$.}
+\label{tablaSIM3}
+\end{table}
+
+Simulación con voltaje máximo calculado $V1_{max} = 21.6 V$
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/SIM_4.png}
+\caption{Circuito 2, voltaje máximo.}
+\label{fig:SIM_4}
+\end {center}
+\end{figure}
+
+Resultados obtenidos:
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Componente} & \textbf{$I$ (mA)} & \textbf{$V$ (V)} & \textbf{$P$ (W)}\\ \hline
+$RL$ & 25.094 & 10.037  & 0.251\\ \hline
+$DZ$ & 90.532 & 10.037  & 0.908\\ \hline
+$R_{\text{control}}$ & 115.625 & 11.563  & 1.33\\ \hline
+\end{tabularx}
+\caption{Tabla de resultados $V1_{max}$.}
+\label{tablaSIM4}
+\end{table}
+
+Podemos observar en este caso que al aplicar el $V1_{min}$ calculado, el voltaje en la resistencia de carga $RL$ no alcanza los 10 V, quedandose muy cerca en 9.925 V. Como consecuencia, la corriente en la carga varía 
+dando un resultado de 24.813 mA, en lugar de los 25 mA que se esperaba. Por otro lado, al probar el $V1_{max}$ el voltaje regulado superó ligeramente el valor nominal, obteniendo un valor de 10.037 V, lo que
+resulta en que el diodo zener absorve una corriente de 90.523 mA, lo que es un valor cercano al esperado teorico de 91 mA, validandio el diseño para el caso de estrés máximo.
+
+En conclusión, los cácluculos teóricos son una buena herramienta para aproximar los valores de diseños como las resistencias de protección y rangos de voltaje, pero en la realidad, en las aplicaciones críticas se debe contemplar la
+resistencia dinámica del componente para predecir las caídas de voltaje reales y las corrientes que fluirán por el circuito, para así evitar daños en los componentes o un mal funcionamiento del circuito.
+
 
 \section*{a) Análisis de las regiones directa e inversa}
 
