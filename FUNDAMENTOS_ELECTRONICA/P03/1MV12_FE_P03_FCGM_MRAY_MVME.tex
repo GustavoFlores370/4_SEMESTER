@@ -81,7 +81,7 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
- 
+    This technical report presents the experimental and simulation analysis of the P-N junction under various operating conditions, with a specific emphasis on the performance of the Zener diode as a voltage regulator. Through the characterization of 1N4001 and 1N4148 devices, as well as reference Zener diodes, critical parameters such as threshold voltage, leakage current, and dynamic resistance ($Z_Z$) were evaluated. Results obtained via oscilloscope and digital multimeter allowed the validation of linear-approximation models for large-signal analysis, demonstrating that output voltage stability is strictly governed by the operating limits of knee current ($I_{ZK}$) and maximum reverse current ($I_{ZM}$). Finally, the thermal sensitivity of the components was compared, concluding that the robustness of the 1N4001 provides superior linearity against temperature increments compared to high-speed switching diodes.
 \end{abstract}
 
 \section{Introducción}
@@ -89,12 +89,18 @@
 % and "RITE" in caps to complete the first word.
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
-
-\IEEEPARstart{E}l 
-
+\IEEEPARstart{E}l estudio de los dispositivos semiconductores es fundamental para comprender 
+el control y la conversión de energía en circuitos electrónicos de potencia y señal.
+El diodo Zener, a diferencia de los rectificadores convencionales, posee un diseño 
+optimizado mediante niveles de dopaje controlados que le permiten operar de forma
+segura en la región de ruptura inversa. Este fenómeno, regido por los mecanismos de
+ruptura Zener (predominante en $V_Z < 5V$) y de avalancha (dominante en $V_Z > 5V$), 
+permite al dispositivo mantener un potencial eléctrico casi constante a pesar de variaciones
+ignificativas en la corriente de entrada. \newline \newline En esta práctica, se aborda la transición entre 
+la conducción directa e inversa, analizando cómo las aproximaciones de línea recta y los circuitos equivalentes facilitan el diseño de reguladores de voltaje estables. El análisis se extiende a la respuesta dinámica del componente, donde la resistencia de codo define la precisión de la regulación frente a cambios en la carga ($R_L$). Mediante el uso de herramientas de simulación SPICE y mediciones de laboratorio, se pretende corroborar que el diseño de un regulador eficiente exige una selección rigurosa de la resistencia de control para mantener el punto de operación dentro del área segura de disipación de potencia, garantizando así la integridad del sistema electrónico.
 
 \section{Objetivos}
-
+El objetivo principal de esta práctica es facultar al estudiante en la comprensión y aplicación del diodo Zener mediante el análisis de sus diversas zonas de polarización. De manera específica, se busca desarrollar la capacidad de diseñar circuitos reguladores de tensión, validando mediante el cálculo teórico y la comprobación experimental en laboratorio los intervalos operativos críticos de voltaje de entrada ($V_i$) y resistencia de carga ($R_L$). Con ello, se pretende que el alumno logre predecir y establecer comportamientos específicos en redes de regulación, garantizando la estabilidad del sistema dentro de los límites de potencia permitidos.
 
 \section{Marco teórico}
 \subsection{Region Zener}
@@ -118,7 +124,7 @@ de avalancha y ocurre en una región de ruptura .
 
 \begin{figure}[H]%[!ht]
 \begin {center}
-\includegraphics[width=0.30\textwidth]{IMAGENES/Unión pn polarizada en inversa.png}
+\includegraphics[width=0.40\textwidth]{IMAGENES/Unión pn polarizada en inversa.png}
 \caption{Union p-n en polarización inversa.}
 \label{fig:pn en inversa}
 \end {center}
@@ -147,7 +153,7 @@ en la Figura 3.
 \begin{figure}[H]%[!ht]
 \begin {center}
 \includegraphics[width=0.40\textwidth]{IMAGENES/CircuitosAproximados_Zener.png}
-\caption{Union pn en polarización inversa}
+\caption{Circuitos equivalentes en cada región.}
 \label{fig:Circutios aproximados Zener}
 \end {center}
 \end{figure}
@@ -162,8 +168,8 @@ corriente de operación.
 
 \begin{figure}[H]%[!ht]
 \begin {center}
-\includegraphics[width=0.40\textwidth]{IMAGENES/CircuitosAproximados_Zener.png}
-\caption{Union pn en polarización inversa}
+\includegraphics[width=0.47\textwidth]{IMAGENES/CaracteristicasZener.png}
+\caption{Características de diodo Zener en cada región.}
 \label{fig:Zener grafica ideal }
 \end {center}
 \end{figure}
@@ -176,9 +182,20 @@ en esta zona, el Zener la utiliza para regular voltaje, Es vital respetar los va
 el "codo" de la curva, conocidos como voltaje y corriente de rodilla ($V_{ZK}$ e $I_{ZK}$), 
 que aseguran que el dispositivo esté efectivamente regulando sin sobrepasar su capacidad de disipación de energía.
 
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.35\textwidth]{IMAGENES/ReguladorBasico.png}
+\caption{Regulador básico con un diodo Zener.}
+\label{fig:Regulador }
+\end {center}
+\end{figure}
+
 El diodo Zener es utilizado como regulador de voltaje debido a su capacidad única de mantener un 
 voltaje casi constante ($V_Z$) a través de sus terminales, incluso cuando la corriente que lo atraviesa 
 varía significativamente. En un circuito de regulación, el Zener se conecta en paralelo con la carga ($R_L$). 
+
+
+Cuando el voltaje de la fuente supera el umbral de ruptura del diodo, este entra en conducción inversa, "absorbiendo" los cambios de corriente y fijando el potencial al valor nominal de su diseño. De esta manera, cualquier exceso de voltaje de la fuente cae en la resistencia en serie ($R_1$), protegiendo a la carga de sobretensiones y garantizando que reciba un voltaje estable, independientemente de si la fuente fluctúa o si la resistencia de carga cambia.
 
 \section{Materiales}
 
@@ -203,10 +220,12 @@ varía significativamente. En un circuito de regulación, el Zener se conecta en
 
 Para el circuito mostrado en la "Figura~\ref{fig:circuito_base1}”, emplearemos:
 \begin{itemize}
-    \item 1 Diodo 1N4001
-    \item 1 Diodo 1N4148
+    \item 1 protoboard
+    \item 1 Diodo 1N4740A
     \item 1 Resistencia de 220 $\Omega$
-    \item Protoboard
+    \item 1 Potenciometro de 220 $\Omega$
+    \item 1 Multimetro digital
+    \item 2 Puntas Banana Caiman
     \item Cable para protoboard
 \end{itemize}
 
@@ -655,14 +674,18 @@ Se comprobó que, al alcanzar el voltaje de ruptura nominal (aproximadamente 10 
 
 Las diferencias entre los valores teóricos y los medidos experimentalmente pueden atribuirse a tolerancias del fabricante, variaciones térmicas y errores instrumentales. Sin embargo, el comportamiento general coincide con el modelo teórico del diodo Zener.
     \item \textbf{Muñoz Reyes Arturo Yabet.}
-    \newline En conclusión, esta práctica comprobó de manera efectiva el comportamiento unidireccional y las características eléctricas de los diodos 1N4001 y 1N4148. Mediante mediciones se comprobó su funcionamiento en polarización directa e inversa, confirmando 
-    que requieren un voltaje de activación típico de entre 0.6 V y 0.7 V para conducir la corriente. Finalmente, las simulaciones con variaciones de temperatura demostraron la sensibilidad térmica de estos componentes, destacando que el diodo  1N4001 mantiene una 
-    mayor estabilidad frente al calor en comparación con el diodo 1N4148. Estos resultados subrayan la importancia de considerar tanto las especificaciones eléctricas como el comportamiento térmico al seleccionar semiconductores para aplicaciones en mecatrónica.
+    \newline En conclusión, el desarrollo de esta práctica permitió comprender el funcionamiento del diodo Zener y su aplicación principal para mantener un valor de tensión constante en un circuito. Al analizar sus zonas de operación, 
+    se comprobó que para estabilizar el voltaje es indispensable que trabaje en la zona inversa, garantizando que la corriente se mantenga dentro de sus límites operativos entre la corriente de codo Izk y 
+    la corriente máxima Izm para evitar rebasar su consumo de potencia. Por el contrario, si se llega a polarizar en directa, su comportamiento será simplemente el de un diodo rectificador normal. Asi mismo, 
+    al comprender dicho comportamiento se realizaron cálculos para determinar parámetros como la resistencia y el voltaje necesarios para tomar los límites operativos qué marca el fabricante.
 
     \item \textbf{Morales Vásquez Miguel Ehecatl.} 
-    \newline Tras la realización de esta práctica, se validó experimentalmente que el diodo semiconductor no presenta un comportamiento lineal, ya que requiere superar un voltaje de umbral (entre 0.5 y 0.7V para silicio) para permitir el flujo de corriente. 
-    A través del contraste entre los modelos 1N4001 y 1N4148, se comprobó que mientras el primero es óptimo para rectificación de potencia por su capacidad de corriente, el segundo destaca en aplicaciones de alta frecuencia debido a su reducido tiempo de recuperación inversa. 
-    Finalmente, el uso del osciloscopio en modo XY y la aplicación de la Ecuación de Shockley permitieron verificar cómo variables externas, especialmente la temperatura, alteran la barrera de potencial y la corriente de fuga, consolidando la comprensión de estos dispositivos en condiciones reales de operación
+    \newline En conclusión, el desarrollo de esta práctica permitió validar el funcionamiento del diodo Zener como un elemento fundamental para la regulación de tensión, comprobando que su capacidad de estabilización 
+    depende estrictamente de operar en la región de ruptura inversa. Durante el análisis, se verificó que para mantener un voltaje constante es indispensable que la corriente circule entre los límites operativos de codo 
+    ($I_{ZK}$) y máxima ($I_{ZM}$), evitando así exceder la potencia de disipación térmica del dispositivo, mientras que bajo polarización directa su comportamiento se reduce al de un diodo rectificador convencional. Finalmente, 
+    la integración de los modelos de ajuste lineal y el uso de parámetros del fabricante permitieron calcular con precisión la resistencia de carga y el voltaje necesarios, demostrando que la consideración de la resistencia 
+    dinámica ($Z_Z$) es crítica para predecir el comportamiento real del regulador frente a variaciones en el circuito.
+
 
 \end{itemize}
 
@@ -685,7 +708,13 @@ Las diferencias entre los valores teóricos y los medidos experimentalmente pued
 
 \appendices
 \section{Evidencias}
-
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Firma_P3.jpeg}
+\caption{Evaluaci´on en laboratorio.}
+\label{Firma Canul}
+\end {center}
+\end{figure}
 
 
 
