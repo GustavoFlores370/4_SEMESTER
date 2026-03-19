@@ -1,14 +1,15 @@
 # Fdb version 4
-["biber build/1MV12_FE_P03_FCGM_MRAY_MVME"] 0 "build/1MV12_FE_P03_FCGM_MRAY_MVME.bcf" "build/1MV12_FE_P03_FCGM_MRAY_MVME.bbl" "build/1MV12_FE_P03_FCGM_MRAY_MVME" 1773898609.01997 0
+["biber build/1MV12_FE_P03_FCGM_MRAY_MVME"] 0 "build/1MV12_FE_P03_FCGM_MRAY_MVME.bcf" "build/1MV12_FE_P03_FCGM_MRAY_MVME.bbl" "build/1MV12_FE_P03_FCGM_MRAY_MVME" 1773898843.01488 0
   "build/1MV12_FE_P03_FCGM_MRAY_MVME.bcf" 0 -1 0 "pdflatex"
   "example_bib.bib" 0 -1 0 ""
   (generated)
   "build/1MV12_FE_P03_FCGM_MRAY_MVME.bbl"
   "build/1MV12_FE_P03_FCGM_MRAY_MVME.blg"
   (rewritten before read)
-["pdflatex"] 1773898607.30679 "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P03/1MV12_FE_P03_FCGM_MRAY_MVME.tex" "build/1MV12_FE_P03_FCGM_MRAY_MVME.pdf" "1MV12_FE_P03_FCGM_MRAY_MVME" 1773898609.02101 0
-  "1MV12_FE_P03_FCGM_MRAY_MVME.tex" 1773898606 32074 012354fce4bf208d1f2797db861593c3 ""
+["pdflatex"] 1773898840.99904 "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P03/1MV12_FE_P03_FCGM_MRAY_MVME.tex" "build/1MV12_FE_P03_FCGM_MRAY_MVME.pdf" "1MV12_FE_P03_FCGM_MRAY_MVME" 1773898843.01571 0
+  "1MV12_FE_P03_FCGM_MRAY_MVME.tex" 1773898840 33072 59b36ebda391a0bd02a6f0bae51841f6 ""
   "C:/Users/gusfl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1771791479 132483 2e52014374ddd3923615883c91895bfe ""
+  "C:/Users/gusfl/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0900.pk" 1773898630 10472 d37d4c0d5db4b1af91bdc39686f38d2f ""
   "C:/Users/gusfl/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1744831132 13148213 1cd3a947c02a3b6b0072ce30da7c46ab ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmb7t.tfm" 1136793854 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -20,6 +21,7 @@
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmrc7t.tfm" 1136793854 2680 312a2d12b1f1df8ee0212e7ba1962402 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmri7t.tfm" 1136793854 2288 f478fc8fed18759effb59f3dad7f3084 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmri8r.tfm" 1136793854 4640 532ca3305aad10cc01d769f3f91f1029 ""
+  "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm0900.tfm" 993062508 1444 b1efc6b76338296f8076c1701e4660f3 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1234365220 996 a18840b13b499c08ac2de96a99eda4bc ""
@@ -104,20 +106,23 @@
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty" 1730400552 14552 27664839421e418b87f56fa4c6f66b1a ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1730400552 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/gusfl/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
+  "IMAGENES/CaracteristicasZener.png" 1773895756 122596 8555092f8e8f5592c04e51e512334382 ""
   "IMAGENES/CircuitoBase.png" 1773898177 10585 24bb93427100942cf10694f5f2b06e12 ""
   "IMAGENES/CircuitosAproximados_Zener.png" 1773895756 44328 d279171b9864e50927ef05a98814b3d8 ""
   "IMAGENES/Curva_Caracteristica.png" 1773897829 24593 dc765dabe7341de34c98b552ea21e808 ""
+  "IMAGENES/Firma_P3.jpeg" 1773898625 156748 973b14b4d33bcac31282a82c0dbf5c9a ""
   "IMAGENES/RegionZener.png" 1773895756 35523 61d45ed44c69e00d153e98cc755f8edb ""
+  "IMAGENES/ReguladorBasico.png" 1773898625 27912 4273adbfe79cf6651b2a247fbb573a26 ""
   "IMAGENES/Resistencia_Corriente.png" 1773897874 27010 3222e2542bfdba7e824acabede200d5f ""
   "IMAGENES/SIM_1.png" 1773895756 10416 58433c87fee29c0d153150201b52c983 ""
   "IMAGENES/SIM_2.png" 1773895756 18626 9024d92443d595c015a121442e6cb3fd ""
   "IMAGENES/SIM_3.png" 1773895756 16523 f303471e9bb1f5e3e1b3522362461160 ""
   "IMAGENES/SIM_4.png" 1773895756 15626 66cec5504dfa92d8267e3b00be89af7e ""
   "IMAGENES/Unión pn polarizada en inversa.png" 1773895756 81342 3e1e8486f8de85d029aa7ac8b8e34e60 ""
-  "build/1MV12_FE_P03_FCGM_MRAY_MVME.aux" 1773898608 7293 9e5dcff0d91801b56de479e41b84eae7 "pdflatex"
+  "build/1MV12_FE_P03_FCGM_MRAY_MVME.aux" 1773898842 7684 9f417e497e31b0d70982bef6c9cedc24 "pdflatex"
   "build/1MV12_FE_P03_FCGM_MRAY_MVME.bbl" 0 -1 0 "biber build/1MV12_FE_P03_FCGM_MRAY_MVME"
-  "build/1MV12_FE_P03_FCGM_MRAY_MVME.run.xml" 1773898608 2564 9d3d72439d493c1b8c507e3b78889f28 "pdflatex"
-  "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P03/1MV12_FE_P03_FCGM_MRAY_MVME.tex" 1773898606 32074 012354fce4bf208d1f2797db861593c3 ""
+  "build/1MV12_FE_P03_FCGM_MRAY_MVME.run.xml" 1773898842 2564 9d3d72439d493c1b8c507e3b78889f28 "pdflatex"
+  "c:/Users/gusfl/Downloads/4_SEMESTER/FUNDAMENTOS_ELECTRONICA/P03/1MV12_FE_P03_FCGM_MRAY_MVME.tex" 1773898840 33072 59b36ebda391a0bd02a6f0bae51841f6 ""
   (generated)
   "build/1MV12_FE_P03_FCGM_MRAY_MVME.aux"
   "build/1MV12_FE_P03_FCGM_MRAY_MVME.bcf"

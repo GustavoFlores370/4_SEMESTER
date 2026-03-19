@@ -607,63 +607,6 @@ En conclusión, los cácluculos teóricos son una buena herramienta para aproxim
 resistencia dinámica del componente para predecir las caídas de voltaje reales y las corrientes que fluirán por el circuito, para así evitar daños en los componentes o un mal funcionamiento del circuito.
 
 
-\section*{a) Análisis de las regiones directa e inversa}
-
-Analizar las variaciones de las regiones inversas y directas que existen en ambos 
-diodos, y describir lo observado a medida que aumenta la temperatura.
-
-En la región inversa de ambos diodos, a simple vista la corriente parece mantenerse como 
-una línea recta constante en $0\,A$. Sin embargo, al ampliar la escala dentro de la simulación, 
-se nota la presencia de pequeñas corrientes de fuga (la línea no es completamente plana). 
-
-En el caso del 1N4148, a medida que aumenta la temperatura, la corriente inversa 
-comienza a incrementarse incluso antes de llegar a los $0\,V$.
-
-Por otro lado, en las regiones directas se puede apreciar cómo en el 1N4001 la corriente 
-crece de manera estable. Además, es evidente que, a mayor temperatura, el diodo 
-disminuye su barrera de potencial y no necesita tanto voltaje para empezar a conducir 
-corriente.
-
-\section*{b) Comparación del comportamiento térmico}
-
-Comparar el comportamiento de ambos diodos y determinar cuál tiene un 
-comportamiento más lineal con respecto a la temperatura.
-
-Se puede observar en las gráficas cómo las curvas del 1N4001 se mantienen prácticamente 
-paralelas entre sí en todos los casos de temperatura; es decir, mantiene un comportamiento 
-lineal constante sin importar los incrementos térmicos. 
-
-Por otro lado, el 1N4148 no se mantiene constante, sino que la pendiente de la curva cambia 
-drásticamente entre cada variación de temperatura.
-
-En conclusión, el diodo 1N4001 tiene un comportamiento más lineal y predecible con 
-respecto a la temperatura en su región de conducción. Esto se debe a que es un diodo 
-rectificador de potencia (diseñado para manejar mayores corrientes y disipar calor de forma 
-estable), mientras que el 1N4148 es un diodo de pequeña señal y conmutación rápida, cuya 
-unión es más pequeña y, por ende, más sensible a cambios térmicos drásticos.
-
-\section*{d) Rangos de operación y aplicaciones}
-
-\subsection*{Diodo Rectificador 1N4001}
-
-\begin{itemize}
-    \item \textbf{Rango de temperatura de operación (según hoja de datos):} $-55\,^{\circ}C$ a $+150\,^{\circ}C$ (temperatura de la unión).
-    \item \textbf{Aplicaciones:} Uso general. Está diseñado para rectificar corriente alterna a 
-    corriente directa a bajas frecuencias (como en fuentes de alimentación de 50/60 Hz), 
-    protección contra polaridad inversa y en circuitos donde se manejan corrientes de 
-    hasta $1\,A$ y voltajes de conmutación no muy rápidos.
-\end{itemize}
-
-\subsection*{Diodo de Señal 1N4148}
-
-\begin{itemize}
-    \item \textbf{Rango de temperatura de operación (según hoja de datos):} $-65\,^{\circ}C$ a $+150\,^{\circ}C$ 
-    (en algunos empaques de vidrio soporta hasta $+200\,^{\circ}C$).
-    \item \textbf{Aplicaciones:} Conmutación rápida (\textit{fast switching}). Se utiliza en procesamiento de 
-    señales de alta frecuencia, circuitos lógicos digitales, multiplicadores de voltaje de 
-    pequeña señal y en sistemas donde se requiere que el diodo cambie de estado (de 
-    conducir a no conducir) en tiempos muy cortos (nanosegundos).
-\end{itemize}
 
 \section{Conclusiones}
 \begin{itemize}
