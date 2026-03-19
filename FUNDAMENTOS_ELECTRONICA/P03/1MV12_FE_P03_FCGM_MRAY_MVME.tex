@@ -97,7 +97,88 @@
 
 
 \section{Marco teórico}
+\subsection{Region Zener}
+Un diodo es un dispositivo electrónico no lineal compuesto por la unión de materiales 
+semiconductores tipo P y tipo N. Al aplicarle un voltaje inverso suficientemente alto, 
+ocurre un cambio abrupto en sus características eléctricas, este punto se denomina 
+potencial Zener ($V_Z$) y se puede ver representado en la Figura 1. 
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.40\textwidth]{IMAGENES/RegionZener.png}
+\caption{Region Zener.}
+\label{fig:region Zener}
+\end {center}
+\end{figure}
 
+A medida que se incrementa el voltaje en inversa aumenta la velocidad de los portadores
+minoritarios (huecos en el material n y electrones en el p), lo que provoca adquieran
+suficiente energía cinética para liberar electrones adicionales mediante colisiones,
+disparando la corriente de saturación en inversa. Este fenómeno es conocido como corriente
+de avalancha y ocurre en una región de ruptura .
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.30\textwidth]{IMAGENES/Unión pn polarizada en inversa.png}
+\caption{Union p-n en polarización inversa.}
+\label{fig:pn en inversa}
+\end {center}
+\end{figure}
+Es posible desplazar la región de ruptura (determinada por el potencial $V_Z$) hacia el eje 
+vertical de corriente ($I_D$) incrementando los niveles de dopaje en los materiales p y n. 
+Al aumentar la concentración de impurezas, se manifiesta el fenómeno de ruptura Zener, 
+el cual contribuye al cambio abrupto en las características eléctricas del dispositivo. 
+Este efecto es provocado por una reducción significativa en el ancho de la región de 
+agotamiento,  esto genera un campo eléctrico extremadamente intenso que logra extraer 
+electrones de los átomos. El cambio abrupto de las características eléctricas a cualquier 
+nivel debido a estos fenómenos se le llama región Zener.
+
+\subsection{Diodo Zener}
+Los diodos diseñados para operar en la región de ruptura se denominan diodos Zener. 
+Dependiendo del nivel de dopaje y el voltaje de diseño, predominará un fenómeno sobre otro, 
+el efecto zener es característico en dispositivos con $V_Z < 5V$, por otro lado, el efecto 
+de avalancha es el mecanismo dominante para $V_Z > 5V$.
+
+Existen diversas formas de modelar un diodo Zener para el análisis de redes, dependiendo 
+de la precisión requerida. Si se emplean aproximaciones de línea recta en cada punto de 
+inflexión (donde el dispositivo cambia sus características), es posible representar su 
+comportamiento mediante circuitos equivalentes según la zona de operación, como se ilustra 
+en la Figura 3.
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.40\textwidth]{IMAGENES/CircuitosAproximados_Zener.png}
+\caption{Union pn en polarización inversa}
+\label{fig:Circutios aproximados Zener}
+\end {center}
+\end{figure}
+
+También es posible modelar mediante un ajuste lineal que considera dos elementos críticos 
+en la región de ruptura representado en la Figura 4 con una fuente de tensión ideal ($V_Z$) 
+en serie con una resistencia dinámica o de codo, denominada resistencia Zener ($R_Z$). 
+Este modelo permite predecir con mayor exactitud las variaciones en el voltaje de salida 
+ante cambios en la corriente de entrada, ya que la pendiente de la recta (determinada por 1/$R_Z$) 
+refleja que el voltaje Zener no es estrictamente constante, sino que aumenta ligeramente con la 
+corriente de operación.
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.40\textwidth]{IMAGENES/CircuitosAproximados_Zener.png}
+\caption{Union pn en polarización inversa}
+\label{fig:Zener grafica ideal }
+\end {center}
+\end{figure}
+
+\subsection{Diodo zener como regulador de voltaje}
+A diferencia de un diodo conductor, que se daña al alcanzar su Voltaje Pico Inverso (PIV) 
+porque no tolera la potencia disipada en forma de calor, el diodo Zener está diseñado 
+para operar en la región de ruptura. Mientras que al diodo normal no le interesa entrar 
+en esta zona, el Zener la utiliza para regular voltaje, Es vital respetar los valores en 
+el "codo" de la curva, conocidos como voltaje y corriente de rodilla ($V_{ZK}$ e $I_{ZK}$), 
+que aseguran que el dispositivo esté efectivamente regulando sin sobrepasar su capacidad de disipación de energía.
+
+El diodo Zener es utilizado como regulador de voltaje debido a su capacidad única de mantener un 
+voltaje casi constante ($V_Z$) a través de sus terminales, incluso cuando la corriente que lo atraviesa 
+varía significativamente. En un circuito de regulación, el Zener se conecta en paralelo con la carga ($R_L$). 
 
 \section{Materiales}
 
