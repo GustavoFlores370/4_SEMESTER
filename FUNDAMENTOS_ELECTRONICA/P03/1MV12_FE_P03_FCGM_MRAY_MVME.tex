@@ -192,6 +192,15 @@ varía significativamente. En un circuito de regulación, el Zener se conecta en
 \end{figure}
 \end{comment}
 
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/CircuitoBase.png}
+\caption{Circuito a analizar.}
+\label{fig:circuito_base1}
+\end {center}
+\end{figure}
+
+
 Para el circuito mostrado en la "Figura~\ref{fig:circuito_base1}”, emplearemos:
 \begin{itemize}
     \item 1 Diodo 1N4001
@@ -202,239 +211,263 @@ Para el circuito mostrado en la "Figura~\ref{fig:circuito_base1}”, emplearemos
 \end{itemize}
 
 \section{Análisis y Resultados del circuito}
-\subsection{Características Básicas.}
-En esta primera sección se mostrarán los resultados obtenidos de realizar las mediciones básicas que caracterizan a cada uno de los diodos, como los es Voltaje de Umbral, medido con la función de 
-prueba de diododos del multímetro para una polarización directa y una invesa para ambos casos. Además de medir la impedancia presente en el diodo para ambas fases mencionadas anteriormente.
+\subsection{Análisis con V1 variable.}
+Para la primera parte de la práctica analizaremos el comportamiento del diodo zener ante una fuente variable, a continuación se presentan los valores
+obtenidos:
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{vi (V)} & \textbf{VD zener (V)} & \textbf{I circuito (mA)} & \textbf{R zener ($\Omega$)}\\ \hline
+-2 & -0.71 & -5.3 & 0.134\\ \hline
+-1.5 & -0.69 & -3.4 & 0.202\\ \hline
+-1 & -0.66 & -1.4 & 0.471\\ \hline
+1 & 1 & 0 & $\infty$\\ \hline
+4 & 3.99 & 0 & $\infty$\\ \hline
+8 & 8 & 0 & $\infty$\\ \hline
+9 & 9 & 0 & $\infty$\\ \hline
+9.5 & 9.5 & 0 & $\infty$\\ \hline
+10 & 10 & 0 & $\infty$\\ \hline
+10.5 & 10.11 & 1.7 & 5.947\\ \hline
+12 & 10.17 & 8 & 1.271\\ \hline
+15 & 10.46 & 19.7 & 0.530\\ \hline
+20 & 10.54 & 41.8 & 0.252\\ \hline
+\end{tabularx}
+\caption{Resultados del comportamiento del diodo zener 1N4740A.}
+\label{tablaZener1}
+\end{table}
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Curva_Caracteristica.png}
+\caption{Curva característica de diodo zener.}
+\label{fig:curvacarac}
+\end {center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Resistencia_Corriente.png}
+\caption{Curva Voltaje vs Resistencia del diodo.}
+\label{fig:curvacarac1}
+\end {center}
+\end{figure}
+
+Basado en la curva característica obtenida en la "Figura 7" las gráficas realizadas, se identifican tres regiones de operación fundamentales:
+\begin{description}
+    \item 1. Región de Polarización Directa ($V_D > 0.7$ V):
+    El Zener actúa como un diodo de silicio convencional. Permite el flujo de corriente una vez superado el voltaje de barrera (aprox. 0.7 V). En esta zona, no presenta propiedades de regulación.
+    
+    \item 2. Región de Corte ($0 < V_D < V_Z$):
+    El diodo está polarizado en inversa pero no ha alcanzado su voltaje de ruptura. La corriente es despreciable ($\approx 0$ mA) y la resistencia interna es extremadamente alta (tendiendo a infinito). El dispositivo se comporta como un interruptor abierto.
+    
+    \item 3. Región de Ruptura Zener ($V_D \approx V_Z$):
+    Es la zona de operación principal para esta práctica. Al alcanzar los 10 V, la resistencia dinámica cae drásticamente, permitiendo que la corriente aumente significativamente mientras el voltaje se mantiene casi constante.
+    
+    \begin{itemize}
+        \item \textbf{Punto de Codo ($I_{ZK}$):} Mínima corriente para iniciar la regulación.
+        \item \textbf{Punto de Prueba ($I_{ZT}$):} Punto de operación nominal (25 mA).
+        \item \textbf{Límite Térmico ($I_{ZM}$):} Máxima corriente permitida antes de exceder la potencia de 1 W.
+    \end{itemize}
+\end{description}
+
+
+
+\subsection{Cálculo de $R_L$ mínima y máxima}
+
+Para este circuito, la fuente y la resistencia de control son fijas 
+($V_1 = 25\,\text{V}$, $R_1 = 100\,\Omega$).
+
+\subsubsection{Cálculo de corriente total y voltaje en $R_1$}
+
+\begin{align*}
+V_{R_1} &= V_1 - V_{DZ} = 25\,\text{V} - 10\,\text{V} = 15\,\text{V} \\
+I_T &= \frac{V_{R_1}}{R_1} = \frac{15\,\text{V}}{100\,\Omega} = 150\,\text{mA}
+\end{align*}
+
+\subsubsection{Para $R_L$ mínima ($I_{ZK} = 0.25\,\text{mA}$)}
+
+\begin{align*}
+I_{L(\text{max})} &= I_T - I_{ZK} = 150\,\text{mA} - 0.25\,\text{mA} = 149.75\,\text{mA} \\
+R_{L(\text{min})} &= \frac{V_{DZ}}{I_{L(\text{max})}} 
+= \frac{10\,\text{V}}{149.75\,\text{mA}} 
+\approx 66.78\,\Omega \\
+P_L &= 10\,\text{V} \cdot 149.75\,\text{mA} \approx 1.5\,\text{W} \\
+P_{DZ} &= 10\,\text{V} \cdot 0.25\,\text{mA} = 2.5\,\text{mW} \\
+P_{R_1} &= 15\,\text{V} \cdot 150\,\text{mA} = 2.25\,\text{W}
+\end{align*}
+
+\subsubsection{Para $R_L$ máxima ($I_{ZM} = 91\,\text{mA}$)}
+
+\begin{align*}
+I_{L(\text{min})} &= I_T - I_{ZM} = 150\,\text{mA} - 91\,\text{mA} = 59\,\text{mA} \\
+R_{L(\text{max})} &= \frac{V_{DZ}}{I_{L(\text{min})}} 
+= \frac{10\,\text{V}}{59\,\text{mA}} 
+\approx 169.49\,\Omega \\
+P_L &= 10\,\text{V} \cdot 59\,\text{mA} = 0.59\,\text{W} \\
+P_{DZ} &= 10\,\text{V} \cdot 91\,\text{mA} = 910\,\text{mW}
+\end{align*}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|X|X|X|X|}
+\hline
+\textbf{Condición} & \textbf{Corrientes} & \textbf{Potencias} & \textbf{Voltajes}\\ \hline
+\textbf{Para $RL_{min}$} & $IL=149.75$ mA & $PL=1.49$ W & $VL=10$ V \\ 
+(66.7 $\Omega$) & $IDZ=0.25$ mA & $PDZ=2.5$ mW & $VDZ=10$ V \\ 
+& $IT=150$ mA & $PR_{C}=2.25$ W & $VR_{C}=15$ V \\ \hline
+\textbf{Para $RL_{max}$} & $IL=59$ mA & $PL=588$ mW & $VL=10$ V \\ 
+(169 $\Omega$) & $IDZ=91$ mA & $PDZ=910$ mW & $VDZ=10$ V \\ 
+& $IT=150$ mA & $PR_{C}=2.25$ W & $VR_{C}=15$ V \\ \hline
+\end{tabularx}
+\caption{Resultados de los valores obtenidos en los cálculos ($R_L$ variable).}
+\label{tablaCalculosRL}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|X|X|X|X|}
+\hline
+\textbf{Condición} & \textbf{Corrientes} & \textbf{Potencias} & \textbf{Voltajes}\\ \hline
+\textbf{Para $RL_{min}$} & $IL=149.12$ mA & $PL=1.48$ W & $VL=9.95$ V \\ 
+(66.7 $\Omega$) & $IDZ=1.403$ mA & $PDZ=13.95$ mW & $VDZ=9.95$ V \\ 
+& $IT=150.53$ mA & $PR_{C}=2.26$ W & $VR_{C}=15.05$ V \\ \hline
+\textbf{Para $RL_{max}$} & $IL=59.35$ mA & $PL=595$ mW & $VL=10.03$ V \\ 
+(169 $\Omega$) & $IDZ=90.34$ mA & $PDZ=906.2$ mW & $VDZ=10.03$ V \\ 
+& $IT=149.7$ mA & $PR_{C}=2.24$ W & $VR_{C}=14.97$ V \\ \hline
+\end{tabularx}
+\caption{Resultados de los valores obtenidos en la simulación ($R_L$ variable).}
+\label{tablaSimulacionRL}
+\end{table}
+
+
+\subsection{Cálculo de $V_1$ mínima y máxima}
+
+Para este circuito, la carga es fija ($R_2 = 400\,\Omega$) y la corriente de carga es constante:
+
+\begin{equation*}
+I_L = \frac{V_{DZ}}{R_2} = \frac{10\,\text{V}}{400\,\Omega} = 25\,\text{mA}
+\end{equation*}
+
+\subsubsection{Para $V_1$ mínima ($I_{ZK} = 0.25\,\text{mA}$)}
+
+\begin{align*}
+I_T &= I_{ZK} + I_L = 0.25\,\text{mA} + 25\,\text{mA} = 25.25\,\text{mA} \\
+V_{R_1} &= I_T \cdot R_1 = 25.25\,\text{mA} \cdot 100\,\Omega = 2.525\,\text{V} \\
+V_{1(\text{min})} &= V_{DZ} + V_{R_1} 
+= 10\,\text{V} + 2.525\,\text{V} = 12.525\,\text{V} \\
+P_{R_1} &= 2.525\,\text{V} \cdot 25.25\,\text{mA} 
+\approx 63.8\,\text{mW}
+\end{align*}
+
+\subsubsection{Para $V_1$ máxima ($I_{ZM} = 91\,\text{mA}$)}
+
+\begin{align*}
+I_T &= I_{ZM} + I_L = 91\,\text{mA} + 25\,\text{mA} = 116\,\text{mA} \\
+V_{R_1} &= I_T \cdot R_1 = 116\,\text{mA} \cdot 100\,\Omega = 11.6\,\text{V} \\
+V_{1(\text{max})} &= V_{DZ} + V_{R_1} 
+= 10\,\text{V} + 11.6\,\text{V} = 21.6\,\text{V} \\
+P_{R_1} &= 11.6\,\text{V} \cdot 116\,\text{mA} 
+\approx 1.34\,\text{W}
+\end{align*}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|X|X|X|X|}
+\hline
+\textbf{Condición} & \textbf{Corrientes} & \textbf{Potencias} & \textbf{Voltajes}\\ \hline
+\textbf{Para $V1_{min}$} & $IL=25$ mA & $PL=0.25$ W & $VL=10$ V \\ 
+(12.525 V) & $IDZ=0.25$ mA & $PDZ=2.5$ mW & $VDZ=10$ V \\ 
+& $IT=25.25$ mA & $PR_{C}=63.75$ mW & $VR_{C}=2.525$ V \\ \hline
+\textbf{Para $V1_{max}$} & $IL=25$ mA & $PL=0.25$ W & $VL=10$ V \\ 
+(21.6 V) & $IDZ=91$ mA & $PDZ=0.91$ W & $VDZ=10$ V \\ 
+& $IT=116$ mA & $PR_{C}=1.34$ W & $VR_{C}=11.6$ V \\ \hline
+\end{tabularx}
+\caption{Resultados de los valores obtenidos del análisis ($V_1$ variable).}
+\label{tablaAnalisisV1}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|X|X|X|X|}
+\hline
+\textbf{Condición} & \textbf{Corrientes} & \textbf{Potencias} & \textbf{Voltajes}\\ \hline
+\textbf{Para $V1_{min}$} & $IL=24.81$ mA & $PL=246$ mW & $VL=9.925$ V \\ 
+(12.525 V) & $IDZ=1.185$ mA & $PDZ=11$ mW & $VDZ=9.925$ V \\ 
+& $IT=25.99$ mA & $PR_{C}=67$ mW & $VR_{C}=2.6$ V \\ \hline
+\textbf{Para $V1_{max}$} & $IL=25.09$ mA & $PL=251$ mW & $VL=10.037$ V \\ 
+(21.6 V) & $IDZ=90.53$ mA & $PDZ=908$ mW & $VDZ=10.037$ V \\ 
+& $IT=115.62$ mA & $PR_{C}=1.33$ W & $VR_{C}=11.56$ V \\ \hline
+\end{tabularx}
+\caption{Resultados obtenidos en la simulación ($V_1$ variable).}
+\label{tablaSimulacionV1}
+\end{table}
+
+
+\subsection{Cálculo de $V_1$ para polarizar en $I_{ZT}$}
+
+Buscamos el punto de prueba especificado ($I_{ZT} = 25\,\text{mA}$) con una carga 
+$R_2 = 600\,\Omega$.
+
+\begin{align*}
+I_L &= \frac{10\,\text{V}}{600\,\Omega} \approx 16.67\,\text{mA} \\
+I_T &= I_L + I_{ZT} = 16.67\,\text{mA} + 25\,\text{mA} = 41.67\,\text{mA} \\
+V_{R_1} &= 41.67\,\text{mA} \cdot 100\,\Omega \approx 4.167\,\text{V} \\
+V_1 &= V_{DZ} + V_{R_1} 
+= 10\,\text{V} + 4.167\,\text{V} = 14.167\,\text{V}
+\end{align*}
+
+\subsubsection{Cálculo de Potencias}
+
+\begin{align*}
+P_L &= 10\,\text{V} \cdot 16.67\,\text{mA} \approx 166.7\,\text{mW} \\
+P_{R_1} &= 4.167\,\text{V} \cdot 41.67\,\text{mA} \approx 173.6\,\text{mW} \\
+P_{DZ} &= 10\,\text{V} \cdot 25\,\text{mA} = 250\,\text{mW}
+\end{align*}
 
 \begin{table}[H]
 \centering
 \begin{tabularx}{\columnwidth}{|c|X|X|X|}
 \hline
-\textbf{Diodo} & \textbf{Voltaje de Umbral (V)} & \textbf{Resistencia ($\Omega$)}\\ \hline
-1N4001 & 0.544 & 0\\ \hline
-1N4148 & 0.540 & 0\\ \hline
+\textbf{Valores calculados} & \multicolumn{3}{c|}{$V_1 = 14.167\,\text{V}$} \\ \hline
+
+$I_L = 16.67\,\text{mA}$ 
+& $I_{DZ} = I_{ZT} = 25\,\text{mA}$ 
+& $I_T = 41.67\,\text{mA}$ 
+& \\ \hline
+
+$P_L = 0.16\,\text{W}$ 
+& $P_{DZ} = 0.25\,\text{W}$ 
+& $P_{R_{\text{control}}} = 0.173\,\text{W}$ 
+& \\ \hline
+
+$V_L = 10\,\text{V}$ 
+& $V_{DZ} = 10\,\text{V}$ 
+& $V_{R_{\text{control}}} = 4.167\,\text{V}$ 
+& \\ \hline
+
+\textbf{Valores reales (medidos)} 
+& \multicolumn{3}{c|}{$V_1 = 14.167\,\text{V}$ (con $R_L = 680\,\Omega$)} \\ \hline
+
+$I_L = 15.8\,\text{mA}$ 
+& $I_{DZ} = 22.2\,\text{mA}$ 
+& $I_T = 37.6\,\text{mA}$ 
+& \\ \hline
+
+$P_L = 165\,\text{mW}$ 
+& $P_{DZ} = 233\,\text{mW}$ 
+& $P_{R_{\text{control}}} = 135.36\,\text{mW}$ 
+& \\ \hline
+
+$V_L = 10.5\,\text{V}$ 
+& $V_{DZ} = 10.51\,\text{V}$ 
+& $V_{R_{\text{control}}} = 3.6\,\text{V}$ 
+& \\ \hline
+
 \end{tabularx}
-\caption{Mediciones Básicas en Polaridad Directa.}
-\label{PolaridadDirecta}
+\caption{Tabla 6. Registro de los valores calculados y medidos.}
+\label{tablaFigura7}
 \end{table}
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|}
-\hline
-\textbf{Diodo} & \textbf{Voltaje de Umbral (V)} & \textbf{Resistencia ($\Omega$)}\\ \hline
-1N4001 & 0 & 1.80M\\ \hline
-1N4148 & 0 & 1.74M\\ \hline
-\end{tabularx}
-\caption{Mediciones Básicas en Polaridad Inversa.}
-\label{PolaridadInversa}
-\end{table}
-Esta parte es importante, pues con estas mediciones nos podemos dar cuenta si alguno de nuestro componentes está dañado, pues si registramos lecturas de Voltaje de Umbral 
-fuera del rango 0.5V - 0.7V o si registramos una resistencia pequeña en la polarización inversa como lo indica la tabla del fabricante véase Tabla \ref{tablaComparacionDiodos}. 
-
-\subsection{Polarización Directa}
-Para esta primera parte se realizaron las mediciones de voltaje, corriente y resistencia estática de los diodos dada una polarización directa.
-Partiendo de los valores de $V_D$ y $I_D$ es fácil calcular la resistencia estática del diodo, partiendo de la ley de ohm, obtenemos:
-\begin{equation}
-R_{\text{estática}} = \frac{V_D}{I_D}
-\end{equation}
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
-\hline
-\textbf{V1 (V)} & \textbf{$I_D$ (mA)} & \textbf{$V_D$ (V)} & \textbf{$V_\text{R1}$ (V)} & \textbf{$R_\text{Estatica}$ (Ohms)}\\ \hline
-0.0 & 0.000 & 0.000  & 0.000 &  INFINITA\\ \hline
-0.3 & 0.000 & 0.286  & 0.000 &  INFINITA\\ \hline
-0.5 & 0.092 & 0.477  & 0.021 &  5184.8\\ \hline
-0.7 & 0.342 & 0.536  & 0.074 &  1567.3\\ \hline
-1.0 & 1.191 & 0.596  & 0.257 &  500.42\\ \hline
-1.5 & 3.730 & 0.651  & 0.805 &  174.53\\ \hline
-2.0 & 5.780 & 0.678  & 1.238 &  117.3\\ \hline
-3.0 & 10.02 & 0.696  & 2.160 &  69.461\\ \hline
-5.0 & 18.55 & 0.720  & 3.990 &  38.814\\ \hline
-7.0 & 27.50 & 0.740  & 5.880 &  26.909\\ \hline
-10.0& 40.90 & 0.750  & 8.690 &  19.337\\ \hline
-\end{tabularx}
-\caption{Tabla de mediciones del diodo 1N4001.}
-\label{tablaDiodo4001}
-\end{table}
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
-\hline
-\textbf{V1 (V)} & \textbf{$I_D$ (mA)} & \textbf{$V_D$ (V)} & \textbf{$V_\text{R1}$ (V)} & \textbf{$R_\text{Estatica}$ (Ohms)}\\ \hline
-0.0 & 0.000 & 0.000  & 0.000 &  INFINITA\\ \hline
-0.3 & 0.000 & 0.300  & 0.000 &  INFINITA\\ \hline
-0.5 & 0.080 & 0.479  & 0.020 &  5184.8\\ \hline
-0.7 & 0.560 & 0.570  & 0.127 &  1567.3\\ \hline
-1.0 & 1.650 & 0.623  & 0.375 &  500.42\\ \hline
-1.5 & 3.650 & 0.662  & 0.825 &  174.53\\ \hline
-2.0 & 5.780 & 0.686  & 1.300 &  117.3\\ \hline
-3.0 & 9.990 & 0.718  & 2.250 &  69.461\\ \hline
-5.0 & 18.63 & 0.750  & 4.180 &  38.814\\ \hline
-7.0 & 27.40 & 0.780  & 6.130 &  26.909\\ \hline
-10.0& 40.70 & 0.810  & 9.060 &  18.337\\ \hline
-\end{tabularx}
-\caption{Tabla de mediciones del diodo 1N4148.}
-\label{tablaDiodo4148}
-\end{table}
-
-Los resultados mostrados son comprobables visualizando el circuito equivalente, pues, como sabemos el diodo se comporta como circuito abierto
-hasta alcanzar su voltaje de umbral (aproximadamente 0.7V para diodos de silicio), después de esto, el diodo se comporta como un corto circuito, lo que se refleja en las tablas anteriores.
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/CE_POLARIDA_DIRECTA.jpeg}
-\caption{Circuito Equivalente con Polaridad Directa.}
-\label{fig:ce_polaridad_directa}
-\end {center}
-\end{figure}
-\end{comment}
-
-Dado el circuito mostrado en la "Figura~\ref{fig:ce_polaridad_directa}", podemos hacer un análisis de mallas para comprobar los valores obtenido en el voltaje de resistencia.
-\[
-- V_1 + V_D + V_R = 0
-\]
-\begin{equation}
-V_R = V_1 - V_D
-\end{equation}
-
-Los resultados obtenidos para ambos diodos son bastante similares, lo cual es un resultado predecible, pues, ambos diodos son de silicio por lo que el voltaje de umbral
-es parecido. Para visualizar de el comportamiento de cada uno de los diodos y el flujo de corriente conforme aumenta el voltaje en diodo se muestra la siguiente gráfica:
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.28\textwidth]{IMAGENES/I-V_DIODO40001.jpeg}
-\caption{Diagrama $V_D$-$I_D$ (IN4001) en polaridad directa.}
-\label{fig:iv_diodo4001_directa}
-\end {center}
-\end{figure}
-
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.28\textwidth]{IMAGENES/I-V_DIODO4148.jpeg}
-\caption{Diagrama $V_D$-$I_D$ (IN4148) en polaridad directa.}
-\label{fig:iv_diodo4148_directa}
-\end {center}
-\end{figure}
-\end{comment}
-
-En las gráficas de la "Figura~\ref{fig:iv_diodo4001_directa}" y la "Figura~\ref{fig:iv_diodo4148_directa}", se puede observar el comportamiento típico de un diodo, donde, al alcanzar el voltaje de umbral, la corriente comienza a aumentar exponencialmente, lo que se refleja en la curva característica del diodo.
-Existe una ligrea diferencia entre las curvas del diodo 1N4001 y el 1N4148, esto se debe a que como vimos en la información del fabricante, el diodo 1N4148 es un diodo de conmutación rápida.
-
-
-
-\subsection{Polarización Inversa}
-
-Una vez reallizadas las mediciones con polaridad directa, se invirtió la polaridad de la fuente variable para visualizar en las mediciones el comportamiento
-del diodo en polaridad inversa. Obteniendo los siguientes resultados:
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
-\hline
-\textbf{V1 (V)} & \textbf{$I_D$ (mA)} & \textbf{$V_D$ (V)} & \textbf{$V_\text{R1}$ (V)} & \textbf{$R_\text{Estatica}$ (Ohms)}\\ \hline
--0.2 & 0.000 & -0.18  & 0.000 &  INFINITA\\ \hline
--1.0 & 0.000 & -0.99  & 0.000 &  INFINITA\\ \hline
--1.5 & 0.000 & -1.47  & 0.000 &  INFINITA\\ \hline
--2.0 & 0.000 & -1.99  & 0.000 &  INFINITA\\ \hline
--10.0 & 0.000 & -9.96  & 0.000 & INFINITA\\ \hline
-\end{tabularx}
-\caption{Tabla de mediciones del diodo 1N4001 con polaridad inversa.}
-\label{tablaDiodo4001Inv}
-\end{table}
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
-\hline
-\textbf{V1 (V)} & \textbf{$I_D$ (mA)} & \textbf{$V_D$ (V)} & \textbf{$V_\text{R1}$ (V)} & \textbf{$R_\text{Estatica}$ (Ohms)}\\ \hline
--0.2 & 0.000 & -0.20  & 0.000 &  INFINITA\\ \hline
--1.0 & 0.000 & -0.99  & 0.000 &  INFINITA\\ \hline
--1.5 & 0.000 & -1.498  & 0.000 &  INFINITA\\ \hline
--2.0 & 0.000 & -1.99  & 0.000 &  INFINITA\\ \hline
--10.0 & 0.000 & -9.99  & 0.000 & INFINITA\\ \hline
-\end{tabularx}
-\caption{Tabla de mediciones del diodo 1N4148 con polaridad inversa.}
-\label{tablaDiodo4148Inv}
-\end{table}
-
-
-Los datos anteriores son comprobables visualizando el circuito equivalente al invertir la polaridad de la fuente, pues, como sabemos el diodo 
-se comporta como un circuito abierto (no circula corriente), podemos hacer un análisis de mallas para comprobar que el voltaje en el diodo es igual al voltaje de la fuente, y que no hay caída de voltaje en la resistencia, lo que se refleja en las tablas anteriores.
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/CE_POLARIDAD_INVERSA.jpeg}
-\caption{Circuito Equivalente con Polaridad Inversa.}
-\label{fig:ce_polaridad_inversa}
-\end {center}
-\end{figure}
-\end{comment}
-
-\[
-- V_1 + V_D + I R = 0
-\]
-Como el diodo está polarizado en inversa:
-\[
-I = 0
-\]
-\[
-- V_1 + V_D = 0
-\]
-\begin{equation}
-V_D = V_1
-\end{equation}
-Las gráficas $V_D$ vs $I_D$ para esta fase de polarización son evidentes al ver que para todo tiempo en ciclo negativo no existe corriente en diodo
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.3\textwidth]{IMAGENES/I-V_DIODO40001_INVERSO.jpeg}
-\caption{Diagrama $I_D$-$V_D$ del diodo 1N4001 en polaridad inversa.}
-\label{fig:iv_diodo4001_inversa}
-\end {center}
-\end{figure}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.3\textwidth]{IMAGENES/I-V_DIODO4148_INVERSO.jpeg}
-\caption{Diagrama $I_D$-$V_D$ del diodo 1N4148 en polaridad inversa.}
-\label{fig:iv_diodo4148_inversa}
-\end {center}
-\end{figure}
-\end{comment}
-Cabe aclarar que las gráficas de la "Figura~\ref{fig:iv_diodo4001_inversa}" y la "Figura~\ref{fig:iv_diodo4148_inversa}" son gráficas que muestran el comportamiento ideal de un diodo ante una polarización 
-inversa, pues, como lo veremos en la siguiente sección, en la realidad, el diodo presenta una corriente de fuga que altera el comportamiento ideal mostrado en las gráficas anteriores, sin embargo, esta corriente de fuga es tan pequeña que no se refleja en las mediciones realizadas.
-
-\subsection{Respuesta del Diodo en el Osciloscopio}
-
-Para el circuito propuesto anteriormente se modificó para su análisis en el osciloscopio, se retiró la fuente variable y se conectó al generador de funciones 
-con una señal de entrada de 10 Vpp, a una frecuencia de 1kHz y con un C.T del 99\%.
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/OSCILOSCOPIO_1.jpeg}
-\caption{Respuesta del diodo en función del tiempo.}
-\label{fig:osc_tiempo}
-\end {center}
-\end{figure}
-\end{comment}
-En la "Figura~\ref{fig:osc_tiempo}", se puede observar en azul la señal de entrada del generador de funciones, y en amarillo el comportamiento del voltaje en el diodo.
-Analizando la señal se puede observar y corroborar de los datos calculados el comportamiento del diodo, donde para ciclos de polaridad directa el diodo alcanza una caída de 
-tensión aproxima de 0.7V, mientras que para la polaridad inversa el voltaje en diodo es el mismo que el voltaje de la fuente.
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/OSCILOSCOPIO_XY.jpeg}
-\caption{Gráfica de voltaje vs corriente del diodo en osciloscopio.}
-\label{fig:osc_xy}
-\end {center}
-\end{figure}
-\end{comment}
-En la "Figura~\ref{fig:osc_xy}", podemos observar un comportamiento similar a las "Figura~\ref{fig:iv_diodo4001_directa}" y "Figura~\ref{fig:iv_diodo4148_directa}" para la fase de 
-polaridad directa, sin embargo, recordemos que el osciloscopio no mide de manera directa corrientes, por lo que observamos en el eje y de la gráfica en realidad es el voltaje en la resistencia que es directamente proporcional 
-a la corriente del circuito. 
 
 \section{Simulación}
 
@@ -616,13 +649,11 @@ unión es más pequeña y, por ende, más sensible a cambios térmicos drástico
 \section{Conclusiones}
 \begin{itemize}
     \item \textbf{Flores Cornejo Gustavo Mauricio.}
-    \newline En la presente práctica se pone en evidencia el comportamiento de 2 tipos de diodos de silicio, por lo que su comportamiento, como se puede ver en el desarrollo de la 
-    práctica, es muy similar. Esta práctica sirve como base para comprender mucha de la parte teórica del diodo, como lo es su variación de parámetros al alterar la temperatura, además de visualizar el comportamiento de un diodo 
-    real y comparalo con el comportamiento ideal. Como lo vimos en la sección del osciloscopio podemos observar una diagonal que representa el comportamiento del diodo cuando se encunetra polarizado inversamente, aquí retomamos el concepto 
-    de la corriente de fuga que presenta el diodo. Mientras que el diodo ideal presenta una transición abrupta entre conducción y no conducción, el diodo real muestra una curva exponencial en la región directa y pequeñas corrientes en la región inversa. Como se observó en la sección del osciloscopio, la presencia de una línea diagonal en la región de polarización inversa retoma el concepto de la corriente de fuga, demostrando que el dispositivo no se comporta como un interruptor perfecto.
+    \newline En la presente práctica se analizó el comportamiento eléctrico del diodo Zener mediante la obtención experimental de su curva característica corriente–voltaje (I–V). Los resultados permitieron observar claramente las dos regiones principales de operación del dispositivo: la región de polarización directa, donde el diodo se comporta de manera similar a un diodo convencional de silicio, y la región de polarización inversa, donde ocurre el fenómeno de ruptura Zener.
 
-Finalmente, el análisis comparativo permitió entender que, aunque ambos diodos están fabricados en silicio, su diseño y aplicación influyen en su sensibilidad térmica y comportamiento eléctrico.
-    
+Se comprobó que, al alcanzar el voltaje de ruptura nominal (aproximadamente 10 V en este caso), el diodo mantiene un voltaje prácticamente constante aun cuando la corriente inversa aumenta considerablemente. Esta propiedad confirma su función principal como regulador de voltaje. Asimismo, se observó que la resistencia dinámica en la zona de ruptura disminuye a medida que la corriente aumenta, lo cual indica una mejor capacidad de regulación en esa región de operación.
+
+Las diferencias entre los valores teóricos y los medidos experimentalmente pueden atribuirse a tolerancias del fabricante, variaciones térmicas y errores instrumentales. Sin embargo, el comportamiento general coincide con el modelo teórico del diodo Zener.
     \item \textbf{Muñoz Reyes Arturo Yabet.}
     \newline En conclusión, esta práctica comprobó de manera efectiva el comportamiento unidireccional y las características eléctricas de los diodos 1N4001 y 1N4148. Mediante mediciones se comprobó su funcionamiento en polarización directa e inversa, confirmando 
     que requieren un voltaje de activación típico de entre 0.6 V y 0.7 V para conducir la corriente. Finalmente, las simulaciones con variaciones de temperatura demostraron la sensibilidad térmica de estos componentes, destacando que el diodo  1N4001 mantiene una 

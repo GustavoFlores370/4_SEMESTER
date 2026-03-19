@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  16 MAR 2026 15:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  18 MAR 2026 23:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -557,123 +557,246 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\gusfl\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-)) Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:circuito_base1' on page 1 undefined on input line 114.
-
-
-Underfull \hbox (badness 2150) in paragraph at lines 125--127
-[]\OT1/ptm/m/n/10 En esta primera secci[]on se mostrar[]an los re-sul-ta-dos
- []
-
-
-LaTeX Warning: Reference `tablaComparacionDiodos' on page 1 undefined on input line 152.
-
-
+))
+<IMAGENES/RegionZener.png, id=1, 320.19624pt x 303.1325pt>
+File: IMAGENES/RegionZener.png Graphic file (type png)
+<use IMAGENES/RegionZener.png>
+Package pdftex.def Info: IMAGENES/RegionZener.png  used on input line 107.
+(pdftex.def)             Requested size: 206.39685pt x 195.40102pt.
+<IMAGENES/Unión pn polarizada en inversa.png, id=3, 324.21124pt x 242.9075pt>
+File: IMAGENES/Unión pn polarizada en inversa.png Graphic file (type png)
+<use IMAGENES/Unión pn polarizada en inversa.png>
+Package pdftex.def Info: IMAGENES/Unión pn polarizada en inversa.png  used on input line 121.
+(pdftex.def)             Requested size: 154.80157pt x 115.9827pt.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--177
-[]|$\OML/cmm/m/it/8 R[]$
- []
+<IMAGENES/CircuitosAproximados_Zener.png, id=4, 523.9575pt x 350.81062pt>
+File: IMAGENES/CircuitosAproximados_Zener.png Graphic file (type png)
+<use IMAGENES/CircuitosAproximados_Zener.png>
+Package pdftex.def Info: IMAGENES/CircuitosAproximados_Zener.png  used on input line 149.
+(pdftex.def)             Requested size: 206.39685pt x 138.19128pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
-[]|$\OML/cmm/m/it/8 R[]$
- []
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:ce_polaridad_directa' on page 1 undefined on input line 215.
-
-Excluding 'comment' comment.
 
 [1{C:/Users/gusfl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
-]
+ <./IMAGENES/RegionZener.png> <./IMAGENES/Unión pn polarizada en inversa.png>]
+File: IMAGENES/CircuitosAproximados_Zener.png Graphic file (type png)
+<use IMAGENES/CircuitosAproximados_Zener.png>
+Package pdftex.def Info: IMAGENES/CircuitosAproximados_Zener.png  used on input line 165.
+(pdftex.def)             Requested size: 206.39685pt x 138.19128pt.
+ Excluding 'comment' comment.
+<IMAGENES/CircuitoBase.png, id=18, 334.24875pt x 169.38281pt>
+File: IMAGENES/CircuitoBase.png Graphic file (type png)
+<use IMAGENES/CircuitoBase.png>
+Package pdftex.def Info: IMAGENES/CircuitoBase.png  used on input line 197.
+(pdftex.def)             Requested size: 232.19843pt x 117.6703pt.
 
-LaTeX Warning: Reference `fig:iv_diodo4001_directa' on page 2 undefined on input line 243.
+
+<IMAGENES/Curva_Caracteristica.png, id=19, 693.34032pt x 451.6875pt>
+File: IMAGENES/Curva_Caracteristica.png Graphic file (type png)
+<use IMAGENES/Curva_Caracteristica.png>
+Package pdftex.def Info: IMAGENES/Curva_Caracteristica.png  used on input line 242.
+(pdftex.def)             Requested size: 232.19843pt x 151.26971pt.
+<IMAGENES/Resistencia_Corriente.png, id=20, 682.04813pt x 456.20438pt>
+File: IMAGENES/Resistencia_Corriente.png Graphic file (type png)
+<use IMAGENES/Resistencia_Corriente.png>
+Package pdftex.def Info: IMAGENES/Resistencia_Corriente.png  used on input line 250.
+(pdftex.def)             Requested size: 232.19843pt x 155.3093pt.
 
 
-LaTeX Warning: Reference `fig:iv_diodo4148_directa' on page 2 undefined on input line 243.
+[2 <./IMAGENES/CircuitosAproximados_Zener.png> <./IMAGENES/CircuitoBase.png> <./IMAGENES/Curva_Caracteristica.png>]
+Underfull \vbox (badness 5817) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--263
-[]|$\OML/cmm/m/it/8 R[]$
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 322--322
+[]|$\OML/cmm/m/it/8 PL \OT1/cmr/m/n/8 = 588$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--278
-[]|$\OML/cmm/m/it/8 R[]$
+Underfull \hbox (badness 1997) in paragraph at lines 322--322
+[]|$\OML/cmm/m/it/8 IDZ \OT1/cmr/m/n/8 = 91$
  []
 
-Excluding 'comment' comment. Excluding 'comment' comment.
 
-LaTeX Warning: Reference `fig:iv_diodo4001_inversa' on page 2 undefined on input line 326.
-
-
-LaTeX Warning: Reference `fig:iv_diodo4148_inversa' on page 2 undefined on input line 326.
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+[]|$\OML/cmm/m/it/8 PDZ \OT1/cmr/m/n/8 =
+ []
 
 
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:osc_tiempo' on page 2 undefined on input line 342.
-
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `fig:osc_xy' on page 2 undefined on input line 354.
+Underfull \hbox (badness 2635) in paragraph at lines 338--338
+[]|$\OML/cmm/m/it/8 PL \OT1/cmr/m/n/8 = 595$
+ []
 
 
-LaTeX Warning: Reference `fig:iv_diodo4001_directa' on page 2 undefined on input line 354.
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+[]|$\OML/cmm/m/it/8 PDZ \OT1/cmr/m/n/8 =
+ []
 
 
-LaTeX Warning: Reference `fig:iv_diodo4148_directa' on page 2 undefined on input line 354.
-
-Excluding 'comment' comment.
-
-[2]
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+[]|$\OML/cmm/m/it/8 VDZ \OT1/cmr/m/n/8 =
+ []
 
 
-LaTeX Warning: Empty bibliography on input line 500.
+
+[3 <./IMAGENES/Resistencia_Corriente.png>]
+Underfull \hbox (badness 1997) in paragraph at lines 385--385
+[]|$\OML/cmm/m/it/8 IDZ \OT1/cmr/m/n/8 = 91$
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--508
+Underfull \hbox (badness 2635) in paragraph at lines 401--401
+[]|$\OML/cmm/m/it/8 PL \OT1/cmr/m/n/8 = 246$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--401
+[]|$\OML/cmm/m/it/8 VDZ \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 401--401
+[]|$\OML/cmm/m/it/8 PR[] \OT1/cmr/m/n/8 = 67$
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 401--401
+[]|$\OML/cmm/m/it/8 PL \OT1/cmr/m/n/8 = 251$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--401
+[]|$\OML/cmm/m/it/8 VDZ \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]|$\OML/cmm/m/it/8 I[] \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+\OML/cmm/m/it/8 I[] \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]|$\OML/cmm/m/it/8 I[] \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]|$\OML/cmm/m/it/8 P[] \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]|$\OML/cmm/m/it/8 V[] \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]|$\OML/cmm/m/it/8 I[] \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]|$\OML/cmm/m/it/8 I[] \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]|$\OML/cmm/m/it/8 P[] \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]|$\OML/cmm/m/it/8 V[] \OT1/cmr/m/n/8 =
+ []
+
+
+Underfull \vbox (badness 2205) has occurred while \output is active []
+
+
+
+<IMAGENES/SIM_1.png, id=40, 488.57532pt x 221.32687pt>
+File: IMAGENES/SIM_1.png Graphic file (type png)
+<use IMAGENES/SIM_1.png>
+Package pdftex.def Info: IMAGENES/SIM_1.png  used on input line 481.
+(pdftex.def)             Requested size: 232.19843pt x 105.18875pt.
+<IMAGENES/SIM_2.png, id=41, 706.13812pt x 411.03563pt>
+File: IMAGENES/SIM_2.png Graphic file (type png)
+<use IMAGENES/SIM_2.png>
+Package pdftex.def Info: IMAGENES/SIM_2.png  used on input line 506.
+(pdftex.def)             Requested size: 232.19843pt x 135.15924pt.
+
+
+[4 <./IMAGENES/SIM_1.png> <./IMAGENES/SIM_2.png>]
+Underfull \hbox (badness 2253) in paragraph at lines 533--534
+[]\OT1/ptm/m/n/10 Simulaci[]on con voltaje m[]^^Pnimo cal-cu-lado $\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 1[] =
+ []
+
+<IMAGENES/SIM_3.png, id=48, 644.4075pt x 374.90062pt>
+File: IMAGENES/SIM_3.png Graphic file (type png)
+<use IMAGENES/SIM_3.png>
+Package pdftex.def Info: IMAGENES/SIM_3.png  used on input line 537.
+(pdftex.def)             Requested size: 232.19843pt x 135.08997pt.
+<IMAGENES/SIM_4.png, id=49, 631.60968pt x 374.90062pt>
+File: IMAGENES/SIM_4.png Graphic file (type png)
+<use IMAGENES/SIM_4.png>
+Package pdftex.def Info: IMAGENES/SIM_4.png  used on input line 562.
+(pdftex.def)             Requested size: 232.19843pt x 137.82437pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+
+
+[5 <./IMAGENES/SIM_3.png> <./IMAGENES/SIM_4.png>]
+
+
+LaTeX Warning: Empty bibliography on input line 710.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 717--718
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4001-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--511
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4148-
  []
 
 
 
-[3] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P03\build\1MV12_FE_P03_FCGM_MRAY_MVME.aux)
+[6] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P03\build\1MV12_FE_P03_FCGM_MRAY_MVME.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to '1MV12_FE_P03_FCGM_MRAY_MVME.run.xml'.
 \openout1 = `1MV12_FE_P03_FCGM_MRAY_MVME.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12532 strings out of 469959
- 239102 string characters out of 5469834
- 1077735 words of memory out of 5000000
- 39206 multiletter control sequences out of 15000+600000
- 669332 words of font info for 109 fonts, out of 8000000 for 9000
+ 12626 strings out of 469959
+ 241808 string characters out of 5469834
+ 1085072 words of memory out of 5000000
+ 39295 multiletter control sequences out of 15000+600000
+ 671506 words of font info for 114 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 63i,14n,66p,1268b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P03\build\1MV12_FE_P03_FCGM_MRAY_MVME.pdf (3 pages, 159625 bytes).
+ 63i,16n,66p,1268b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P03\build\1MV12_FE_P03_FCGM_MRAY_MVME.pdf (6 pages, 408732 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
+ 133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
