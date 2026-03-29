@@ -1,0 +1,1003 @@
+%% Lab Report for EEET2493_labreport_template.tex
+%% V1.0
+%% 2019/01/16
+%% This is the template for a Lab report following an IEEE paper. Modified by Francisco Tovar after Michael Sheel original document.
+
+
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+\documentclass[journal]{IEEEtran}
+
+% *** CITATION PACKAGES ***
+\usepackage[style=ieee]{biblatex} 
+\bibliography{example_bib.bib}    %your file created using JabRef
+
+% *** MATH PACKAGES ***
+\usepackage{amsmath}
+\usepackage{comment}
+
+\usepackage{tabularx} % en el preámbulo
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf, textfont=normalfont}
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+\usepackage{url}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{graphicx}  %needed to include png, eps figures
+\usepackage{float}  % used to fix location of images i.e.\begin{figure}[H]
+
+\begin{document}
+
+% paper title
+\title{Polarización del Transistor BJT\\ \small{Práctica No. 4}}
+
+% author names and affiliations
+\author{
+    \IEEEauthorblockN{Flores Cornejo Gustavo Mauricio, Muñoz Reyes Arturo Yabed, Morales Vásquez Miguel Ehecatl}\\
+    \IEEEauthorblockA{\textit{Unidad Profesional Interdisciplinaria en Ingeniería y Tecnologías Avanzadas, IPN}}
+}
+        
+% The report headers
+\markboth{1MV12 Fundamentos de Electrónica. Práctica 4, Abril 2026}%do not delete next lines
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract}
+    This laboratory practice analyzes the behavior of semiconductor diodes in three fundamental electronic circuits: half-wave rectifiers, full-wave rectifiers, and clipping circuits. The objective is to observe how diodes allow current to flow in only one direction and how this property can be used to convert alternating current (AC) into pulsating direct current (DC) and to limit voltage 
+    levels in electrical signals. Through circuit implementation and signal analysis, the output waveforms of each configuration are studied and compared with theoretical expectations. The experiment demonstrates the practical applications of diodes in power conversion and signal conditioning within electronic systems.
+\end{abstract}
+
+\section{Introducción}
+% Here we have the typical use of a "W" for an initial drop letter
+% and "RITE" in caps to complete the first word.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+\IEEEPARstart{E}n la práctica pasada se revisó y desarrolló el comportamiento del diodo como componente rectificador de señales. Observamos cómo para corrientes en un sentido específico y para voltajes mayores a 0.7V el diodo se comporta como un interruptor idealmente (puesto en práctica observamos que existe una caída de tensión de 0.7V para diodos de silicio).
+Entonces, partiendo de esto sabemos que podemos alterar el comportamiento de la señal de salida con ayudad de estos componentes. En la presente práctica se desglosa la importancia y el funcionamiento de los diodos como elementos rectificadores de media y de onda completa además de su función como recortadores. Para ello es importante tener en claro los conceptos básicos
+del comportamiento del diodo observado en la práctica pasada además de apoyarnos de la teoría para comprender qué son los rectificadores y los recortadores. Para los rectificadores es importante recalcar su uso en diferentes dispositivos, pues, en ocasiones deseamos que dada una señal variable en el tiempo obtengamos a la salida únicamente la fase positiva, para ello se amplean este
+tipo de arreglos donde se mantiene a la salida un voltaje positivo y para fases negativas se "elimina" el voltaje. En cuanto a los rectificadores de onda completa en vez de "eliminar" el voltaje negativo del sistema lo invierte para obtener a la salida un voltaje positivo, es decir, modifica en su totalidad la onda de entrada.
+Para los Recortadores son redes que se emplean para "recortar" una parte de una señal sin distorsionar la parte restante de la forma de onda aplicada.
+
+\section{Objetivos}
+1. Analizar y comprobar el comportamiento de los diodos como rectificadores de media
+onda y onda completa.
+
+2. Implementar un rectificador de onda completa con puente de diodos con y sin
+derivación central.
+\section{Marco teórico}
+\subsection{El diodo semiconductor}
+
+Un diodo es un dispositivo electrónico semiconductor formado por la unión de dos materiales tipo P y N, conocida como unión PN. Su principal característica es que permite el paso de corriente eléctrica principalmente en un solo sentido, lo cual lo convierte en un elemento fundamental para la rectificación de señales.
+
+Cuando el diodo se conecta en polarización directa, la barrera de potencial disminuye y permite el flujo de corriente. En cambio, cuando se encuentra en polarización inversa, la barrera aumenta y la corriente es prácticamente nula, excepto por una pequeña corriente de fuga.
+
+El comportamiento corriente-voltaje del diodo puede describirse mediante la ecuación de Shockley:
+
+\begin{equation}
+I_D = I_S \left( e^{\frac{V_D}{nV_T}} - 1 \right)
+\end{equation}
+
+donde:
+
+\begin{itemize}
+\item $I_D$ = corriente a través del diodo
+\item $I_S$ = corriente de saturación inversa
+\item $V_D$ = voltaje en el diodo
+\item $n$ = factor de idealidad (entre 1 y 2)
+\item $V_T$ = voltaje térmico (aproximadamente 26 mV a temperatura ambiente)
+\end{itemize}
+
+Debido a su capacidad de conducir en un solo sentido, los diodos se utilizan en aplicaciones como rectificadores, limitadores o recortadores de señal, reguladores y detectores de señal.
+
+\subsection{Rectificador de media onda}
+
+Un rectificador de media onda es el circuito más simple para convertir una señal alterna (AC) en una señal unidireccional (DC). Este circuito utiliza un solo diodo conectado en serie con una carga.
+
+Durante el semiciclo positivo de la señal de entrada, el diodo se polariza directamente y permite el paso de corriente hacia la carga. Durante el semiciclo negativo, el diodo se polariza inversamente y bloquea el flujo de corriente.
+
+Si la señal de entrada es sinusoidal, puede representarse como:
+
+\begin{equation}
+v_i(t) = V_m \sin(\omega t)
+\label{eq:sin}
+\end{equation}
+
+Entonces el voltaje de salida del rectificador de media onda es:
+
+\begin{equation}
+v_o(t)=
+\begin{cases}
+V_m \sin(\omega t), & \text{si } \sin(\omega t) > 0 \\
+0, & \text{si } \sin(\omega t) < 0
+\end{cases}
+\end{equation}
+
+El valor promedio del voltaje de salida está dado por:
+
+\begin{equation}
+V_{DC} = \frac{V_m}{\pi}
+\end{equation}
+
+donde $V_m$ es el valor máximo de la señal de entrada.
+
+Este tipo de rectificador tiene la desventaja de utilizar solo la mitad de la señal de entrada, por lo que su eficiencia es relativamente baja.
+
+\subsection{Rectificador de onda completa}
+
+El rectificador de onda completa permite aprovechar ambos semiciclos de la señal de entrada, produciendo una señal pulsante que siempre es positiva.
+
+Existen dos configuraciones principales: el rectificador con transformador con derivación central y el rectificador tipo puente de diodos. En el caso del puente rectificador, cuatro diodos se conectan de tal manera que durante cada semiciclo dos diodos conducen mientras los otros dos permanecen en polarización inversa.
+
+El voltaje de salida puede expresarse como:
+
+\begin{equation}
+v_o(t) = |V_m \sin(\omega t)|
+\end{equation}
+
+El valor promedio del voltaje rectificado es:
+
+\begin{equation}
+V_{DC} = \frac{2V_m}{\pi}
+\end{equation}
+
+Comparado con el rectificador de media onda, este circuito duplica aproximadamente el voltaje promedio, además de mejorar la eficiencia del proceso de rectificación.
+
+Otra ventaja importante es que la frecuencia del rizado en la salida es el doble de la frecuencia de entrada, lo que facilita el filtrado para obtener una señal más cercana a una corriente continua.
+
+\subsection{Diodos como recortadores}
+
+Los circuitos recortadores, también llamados limitadores o \textit{clippers}, utilizan diodos para eliminar o limitar ciertas partes de una señal eléctrica sin alterar significativamente el resto de la forma de onda.
+
+El principio de operación se basa en que el diodo conduce únicamente cuando el voltaje supera un cierto nivel, lo que permite cortar la señal por encima o por debajo de un determinado voltaje.
+
+Para un recortador simple con diodo ideal, la salida puede representarse como:
+
+\begin{equation}
+v_o(t)=
+\begin{cases}
+v_i(t), & \text{si } v_i(t) < V_{ref} \\
+V_{ref}, & \text{si } v_i(t) \ge V_{ref}
+\end{cases}
+\end{equation}
+
+donde $V_{ref}$ es el voltaje de referencia que determina el nivel de recorte.
+
+En diodos reales debe considerarse el voltaje de conducción, aproximadamente:
+
+\begin{equation}
+V_D \approx 0.7 \, \text{V}
+\end{equation}
+
+para diodos de silicio.
+
+Los circuitos recortadores pueden clasificarse en recortadores positivos, que eliminan la parte positiva de la señal, recortadores negativos, que eliminan la parte negativa, y recortadores sesgados, que utilizan una fuente de referencia para establecer un nivel de recorte distinto de cero.
+
+Estos circuitos se emplean en protección de circuitos, acondicionamiento de señales y limitación de voltaje en sistemas electrónicos.
+\subsection{Cálculo de voltajes en señales eléctricas}
+
+\subsubsection{Cálculo del voltaje RMS}
+
+El valor eficaz o \textit{Root Mean Square} (RMS) de una señal eléctrica representa el valor equivalente de voltaje continuo que produciría la misma potencia en una resistencia que una señal alterna. Este valor es ampliamente utilizado para caracterizar señales periódicas en sistemas eléctricos y electrónicos.
+
+El voltaje RMS de una señal periódica se define como:
+
+\begin{equation}
+V_{rms} = \sqrt{\frac{1}{T}\int_{0}^{T} v^2(t)\, dt}
+\end{equation}
+
+donde:
+
+\begin{itemize}
+\item $v(t)$ es la señal de voltaje en función del tiempo
+\item $T$ es el periodo de la señal
+\end{itemize}
+
+Para una señal sinusoidal definida como en la ecuación \ref{eq:sin}.
+
+el voltaje RMS es:
+
+\begin{equation}
+V_{rms} = \frac{V_m}{\sqrt{2}}
+\end{equation}
+
+donde $V_m$ es el valor máximo o amplitud de la señal.
+
+
+\subsubsection{Voltaje Promedio de Rectificador de media onda}
+El voltaje promedio representa el valor medio de una señal durante un periodo completo.
+
+En un rectificador de media onda solo se aprovecha un semiciclo de la señal sinusoidal. El voltaje promedio se calcula mediante:
+
+\begin{equation}
+V_{DC} = \frac{1}{T}\int_{0}^{T} v_o(t)\, dt
+\end{equation}
+
+Para una señal sinusoidal rectificada de media onda el resultado es:
+
+\begin{equation}
+V_{DC} = \frac{V_m}{\pi}
+\end{equation}
+
+donde $V_m$ es el valor máximo de la señal de entrada.
+
+\subsubsection{Voltaje Promedio deRectificador de onda completa}
+
+En el rectificador de onda completa se utilizan ambos semiciclos de la señal de entrada. En este caso el voltaje promedio es:
+
+\begin{equation}
+V_{DC} = \frac{2V_m}{\pi}
+\end{equation}
+
+Este valor es aproximadamente el doble del obtenido en el rectificador de media onda, lo que permite una conversión más eficiente de corriente alterna a corriente continua.
+
+\subsubsection{Voltaje RMS de una señal compuesta (AC + DC)}
+
+Una señal compuesta puede estar formada por una componente de corriente continua (DC) y una componente de corriente alterna (AC). En este caso, el voltaje RMS total se calcula considerando ambas contribuciones.
+
+La expresión general es:
+
+\begin{equation}
+V_{rms} = \sqrt{V_{DC}^{2} + V_{AC(rms)}^{2}}
+\end{equation}
+
+donde:
+
+\begin{itemize}
+\item $V_{DC}$ es el valor de la componente continua
+\item $V_{AC(rms)}$ es el valor RMS de la componente alterna
+\end{itemize}
+
+Este cálculo es importante en circuitos donde las señales tienen un desplazamiento de nivel o \textit{offset} de corriente continua.
+
+\subsection{Voltaje RMS de una señal rectificada}
+
+Cuando una señal sinusoidal se rectifica, su valor RMS cambia dependiendo del tipo de rectificación.
+
+Para una señal sinusoidal rectificada de media onda, el voltaje RMS es:
+
+\begin{equation}
+V_{rms} = \frac{V_m}{2}
+\end{equation}
+
+Mientras que para una señal rectificada de onda completa el voltaje RMS es igual al de la señal sinusoidal original:
+
+\begin{equation}
+V_{rms} = \frac{V_m}{\sqrt{2}}
+\end{equation}
+
+Esto ocurre porque en la rectificación de onda completa se conservan ambos semiciclos de la señal, únicamente invirtiendo el semiciclo negativo.
+\section{Materiales}
+
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Prueba.jpg}
+\caption{Circuito Rectificador de Onda Completa con derivación central con dos diodos 1.}
+\label{fig:circuito_base1}
+\end {center}
+\end{figure}
+
+
+Para el circuito mostrado en la "Figura~\ref{fig:circuito_base1}”, emplearemos:
+\begin{itemize}
+    \item 4 Diodos 1N4002
+    \item 4 Resistencias de 330 $\Omega$
+    \item 1 Resistencia de 1 $\Omega$
+    \item 1 Transformador reductor con derivación central a 12 Vrms
+    \item 1 Protoboard
+    \item Cable para protoboard
+\end{itemize}
+
+En la "Figura~\ref{fig:circuito_base1}", podemos observar que se utilizan diodos 1N4001, por cuestiones de practicidad y de seguridad se emplearán diodos 1N4002 que soportan hata un voltaje inverso de 100V y una
+corriente de hasta 1A. Cabe aclarar, que el circuito mostrado se propone como un rectificador de media onda, sin embargo, al conectar la derivación central del transformador y colocar los diodos como se muestra obtenemos 
+en realidad un rectificador de onda completa.
+
+\section{Análisis y Resultados}
+\subsection{Comprtamiento del transformador}
+En esta sección se presentan y analizan las mediciones fundamentales del transformador reductor. Iniciamos con la 
+identificación de los devanados (primario y secundario) y su derivación central a partir de la medición de sus resistencias. 
+Posteriormente, con el equipo energizado, se documentan los voltajes RMS para determinar su relación de transformación. 
+Finalmente, se verifica el desfasamiento de 180 grados entre las terminales, comprobando la suma de potenciales de extremo a extremo.
+
+Para la caracterización inicial sin energizar, se midió la resistencia de las terminales para identificar los devanados. 
+El devanado primario registró una resistencia de 112.4 $\Omega $. Por su parte, el devanado secundario presentó una resistencia total 
+de 1.8 $\Omega $ medido de extremo a extremo. Al medir desde los extremos hacia la derivación central, se obtuvo una lectura de 0.9 $\Omega $, 
+lo cual representa exactamente la mitad de la medición total y confirma la simetría del componente.
+
+Posteriormente, al conectar el transformador a la toma de corriente de 120 $Vrms$ , se registró un voltaje de salida en el primario de $V_p = 120 Vrms$ (igual al de la fuente)
+y en el secundario presentó un voltaje de $V_s = 13.21 Vrms$ de extremo a extremo. Con los datos obtenidos, podemos determinar el valor de la relacion de transformación (n)
+del componente, para esto se calculó la proporción entre el voltaje suministrado al devanado primario ($Vp$) y el voltaje medido en el devanado secundario ($V_s$). Obtenemos:
+
+\[
+        n = \frac{V_p}{V_s} = \frac{120}{13.21} = {9.08}
+\]
+
+Con esto podemos observar la relación de reducción, es decir, el cálculo arroja una relación de transformación de aproximadamente 9:1. Lo cual indica físicamente que por cada 9 espiras 
+en el devanado primario, existe 1 espira en el secundario, confirmando la naturaleza reductora del transformador utilizado.
+
+Al utilizar la derivación central del secundario como punto de referencia común (tierra) para el osciloscopio, se midieron simultáneamente los voltajes de las dos terminales restantes. 
+Se pudo comprobar gráficamente un desfasamiento exacto de 180 grados  entre ambas señales como se muestra en la "Figura~\ref{fig:desfasamiento}".
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/TRANSFORMADOR.png}
+\caption{Desfasamiento de 180 grados en el transformador.}
+\label{fig:desfasamiento}
+\end {center}
+\end{figure}
+\end{comment}
+
+Este desfasamiento ocurre debido a la polaridad relativa inducida en la bobina. Según la Ley de Faraday, el flujo magnético alterno induce una diferencia de potencial a lo largo de 
+todo el devanado secundario. Al "anclar" el centro físico de la bobina a 0V, el voltaje total se divide en dos mitades. En el instante en que la terminal superior es empujada hacia un 
+potencial positivo máximo, la terminal inferior es forzada hacia un potencial negativo máximo de la misma magnitud para mantener la diferencia de potencial total. El resultado son dos 
+señales senoidales que son el "espejo" la una de la otra.
+
+Para corroborar la relación entre las señales, se procedió a medir con el osciloscopio la señal de extremo a extremo del secundario, omitiendo la derivación central.Cálculos teóricos: 
+Por Ley de Voltajes de Kirchhoff, el voltaje total ($V_{total}$) es la diferencia de potencial entre la terminal superior ($V_A$) y la terminal inferior ($V_B$). Como se demostró en el inciso anterior 
+que están desfasadas 180°, se cumple que $V_B(t) = -V_A(t)$. Por lo tanto, la sumatoria es:
+
+\[
+        V_{total} = V_A - V_B = V_A - (-V_A)
+\]
+\[
+        V_{total} = 2V_A
+\]
+
+Como se observó en la medición anterior, el voltaje pico en ambos canales respecto a la derivación central es de aproximadamente 9.3 V. Por consiguiente, por principio de suma de potenciales, la medición 
+de extremo a extremo en el devanado secundario debe reflejar una amplitud equivalente al doble, alcanzando un valor pico cercano a los 18.6 V. Esta relación teórica se verifica de manera experimental en 
+la Figura \ref{fig:comprobacion}
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Comprobacion.png}
+\caption{Medicion de extremo a extremo en el transformador.}
+\label{fig:comprobacion}
+\end {center}
+\end{figure}
+\end{comment}
+
+Al analizar la gráfica obtenida en el osciloscopio, la amplitud de la señal senoidal es exactamente el doble de la amplitud que se visualizó al medir solo una mitad contra la derivación central. 
+Esto valida de forma práctica el principio de superposición y la naturaleza del desfasamiento de 180 grados inducido magnéticamente.
+
+\subsection{Análisis del comportamiento del circuito 1}
+En esta sección se evalúa el comportamiento de los diodos rectificadores utilizando la configuración de la Figura 1. Se determinaron los valores teóricos y prácticos del voltaje en la resistencia 
+de carga ($R_1$), así como el voltaje de pico inverso (PIV) que soportan los semiconductores en estado de no conducción.
+
+Para calcular el valtaje de la resistencia $R_1$, tomamos en cuenta los datos de las mediciones previas del transformador, en el cual se determinó que el voltaje eficaz total es de 13.21 Vrms (de extremo a extremo). 
+Al utilizar la derivación central como referencia común, el voltaje eficaz para cada mitad del secundario es de 6.605 $V_{rms}$. El voltaje pico ($V_p$) proporcionado por cada canal hacia los diodos se calcula como:
+
+\[
+        V_p = 6.605 \cdot \sqrt{2}  = 9.34V
+\]
+
+Considerando el modelo práctico del diodo de silicio, el cual presenta una caída de tensión de aproximadamente 0.7V en polarización directa, el voltaje pico teórico esperado en la resistencia de carga ($V_{R1}$) es:
+
+\[
+    V_{R1} = 9.34 \text{ V} - 0.7 \text{ V} = 8.64 \text{ V}
+\]
+
+Al realizar la medición del voltaje $V_{R1}$ utilizando el osciloscopio, se obtuvieron los resultados de la forma de onda que se muestran en la Figura \ref{fig:voltajeResistencia}.
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeResistencia.png}
+\caption{Voltaje en la resistencia $R_1$}
+\label{fig:voltajeResistencia}
+\end {center}
+\end{figure}
+\end{comment}
+
+La "Figura~\ref{fig:voltajeResistencia}" demuestra lo que anteriormente se mencionaba, si bien el circuito se propone como un ejemplo de rectificador de media onda, podemos observar que para toda la onda sinusoidal de entrada 
+se rectifica en un voltaje positivo. En otras palabras, el circuito propuesto es en realidad un rectificar de onda completa, dado que para la fase positiva el diodo 1 permite conducir la correinte y para la fase negativa el diodo 2
+es el que permite el paso de corriente en el mismo sentido a la resistencia R1.
+
+Para validar experimentalmente el análisis matemático, se efectuaron mediciones adicionales empleando un multímetro. A continuación, en la "Tabla~\ref{tablaComparativa}", se presenta una comparativa que contrasta 
+los valores teóricos calculados para el voltaje en la resistencia de carga $R_1$ con las mediciones experimentales obtenidas tanto en el osciloscopio como con el multímetro.
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Datos obtenidos} & \textbf{$V_prom$ (V)} & \textbf{$V_{rms}$ (V)} & \textbf{$V_{pp}$ (V)}\\ \hline
+Multímetro & 5.17 & 5.89  & 8.03\\ \hline
+Cálculos & 5.50 & 6.10  & 8.64\\ \hline
+Osciloscopio & 5.464 & 6.107 & 8.560\\ \hline
+\end{tabularx}
+\caption{Comparacion de voltajes calculados y medidos de $R_1$.}
+\label{tablaComparativa}
+\end{table}
+
+Ahora vamos a comprobar el voltaje inverso de ambos diodos dentro del circuito. Para esto utilizamos la ley de kirchoff (dos mallas), para realizar el análisis para D1 tenemos que hacerlo desde el semiciclo negativo, ya 
+que es donde este no conduce. En este estado, el diodo $D_1$ entra en estado de bloqueo ($I_{D1}=0$), mientras que el diodo $D_2$ conduce, asumiendo una caída de tensión típica de $V_{D2} = 0.7 V$. Con esto establecemos la
+siguiente relación:
+
+\[
+    -V_1 - V_2 - V_{D1} + V_{D2} = 0
+\]
+Donde $V_1$ es el voltaje del primer inductor y $V_2$ es el del segundo inductor.
+
+Sustituyendo los valores ya anteriormente calculados ($V_1 = V_1 = 9.34 V_{rms}$). Obtenemos
+
+\[
+    V_{D1} = -2(9.34)+0.5 = -17.98 V
+\]
+
+Por lo tanto, el voltaje inverso teórico que soporta el semiconductor en estado de no conducción es de aproximadamente $-17.98 \text{ V}$. (La de ambos diodos)
+
+Para demostrar experimentalmente este comportamiento en el osciloscopio, se configuró la función matemática (MATH) para calcular la diferencia de potencial, estableciendo el Canal A en el cátodo y el Canal B en el ánodo 
+del diodo (A-B). Los resultados de esta configuración se observan en la "Figura~\ref{fig:voltajeInverso}" y en la "Figura~\ref{fig:zoomvoltajeInverso}".
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeInverso_Circuito2.jpg} 
+\caption{Medición diferencial del voltaje en el diodo $D_1$.}
+\label{fig:voltajeInverso}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje_D1.png} 
+\caption{Acercamiento en la medición diferencial del voltaje en el diodo $D_1$.}
+\label{fig:zoomvoltajeInverso}
+\end{center}
+\end{figure}
+\end{comment}
+
+Los resultados son los esperados, para la fase positiva el diodo $D_1$ circula corriente por lo que veremos en el osciloscopio
+la típica caída de tensión de 0.7V, y para la fase negativa el diodo no circula corriente por lo que veremos el PIV que es aproximadamente 
+el mismo qu el voltaje de entrada.
+
+A continuación, se presenta una tabla comparativa entre el valor teórico calculado y la medición extraída del osciloscopio.
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|}
+\hline
+\textbf{Método de obtención} & \textbf{Voltaje Inverso (V)} \\ \hline
+Cálculo Teórico & -17.98 \\ \hline
+Osciloscopio (MATH) & -18.20 \\ \hline
+\end{tabularx}
+\caption{Comparación del voltaje inverso en el diodo $D_1$.}
+\label{tab:comparacion_PIV}
+\end{table}
+
+Para complementar la caracterización del semiconductor, se procedió a determinar la corriente que atraviesa el diodo $D_1$ durante su estado de conducción (semiciclo positivo).
+La corriente pico ($I_{D1}$) en el circuito se define por la Ley de Ohm, considerando el voltaje pico en la carga ($V_R1$) y el valor de la resistencia $R_1$ ($220 \Omega$ ). Tomando el voltaje pico real previamente calculado (8.64 V), se tiene:
+\[
+    I_{D1 } = \frac{V_{R1}}{220} = \frac{8.64}{220} = 0.0392 A
+\]
+
+Dado que cada diodo en esta configuración conduce únicamente durante medio ciclo de la señal alterna, la corriente promedio ($I_{prom}$) y la corriente eficaz ($I_{rms}$) que soporta individualmente el componente se calculan con las fórmulas 
+de rectificación de media onda:
+
+\[
+    I_{prom} = \frac{I_{D1}}{\pi} = \frac{0.0392}{\pi} = 12.47 mA
+\]
+
+\[
+    I_{rms} = \frac{I_{D1}}{2} = \frac{0.0392}{2} = 19.60 mA
+\]
+
+Debido a que el osciloscopio mide diferencias de potencial y no corriente directa, se implementó una técnica de medición indirecta. Se insertó una resistencia de prueba de $1 \ \Omega$ en serie con el diodo $D_1$ . Por la Ley de Ohm ($V = I \cdot R$), 
+al ser la resistencia igual a la unidad, el voltaje medido diferencialmente en sus terminales es numéricamente igual a la corriente que fluye por la rama. Podemos observar la grafica en la "Figura~\ref{fig:corrienteDiodo}".
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/CorrienteDiodo.png} 
+\caption{Forma de onda de la corriente en el diodo $D_1$.}
+\label{fig:corrienteDiodo}
+\end{center}
+\end{figure}
+\end{comment}
+
+El diodo entra en conducción únicamente durante el semiciclo positivo de la señal de alimentación (trazo azul), alcanzando una amplitud máxima ligeramente inferior a una división completa (aproximadamente 40 mV). Dado que la resistencia de prueba es de 
+1 $\Omega$ , este valor se traduce directamente en una corriente pico de aproximadamente 40 mA, lo cual comprueba y valida el valor teórico calculado previamente de 39.2 mA.
+
+\subsection{Análisis de comportamiento del circuito 2}
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base2.png} 
+\caption{Circuito Rectificador de onda completa con derivación central con dos diodos 2.}
+\label{fig:circuitobase2}
+\end{center}
+\end{figure}
+\end{comment}
+
+Haciendo un análisis rápido en el segundo circuito podemos darnos cuenta que el su comportamiento no es muy diferente al anterior, ya que ambos mantienen la misma configuracion con la unica diferencia de que este último tiene los diodos con la polaridad invertida,
+lo cual nos indica que ahora el diodo $D_1$ conduce en el semiciclo negativo y el diodo $D_2$ en el positivo. Para comprobarlo, utilizamos el osciloscopio para ver el comportamineto del diodo $D_1$ de manera gráfica.
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/RECT_MEDIA_COM.jpeg} 
+\caption{Forma de onda de la corriente en el diodo $D_1$ en el circuito 2.}
+\label{fig:corrienteDiodo2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeInverso.png} 
+\caption{Acercamiento a la forma de onda de la corriente en el diodo $D_1$ en el circuito 2.}
+\label{fig:zoomcorrienteDiodo2}
+\end{center}
+\end{figure}
+\end{comment}
+
+Los valores teóricos esperados son exactamente los mismos. $V_{R1} = 8.64V$
+
+\subsection{Análisis de comportamiento del circuito 3}
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base3.png} 
+\caption{Circuito rectificador de onda completa sin derivación central}
+\label{fig:circuitobase3}
+\end{center}
+\end{figure}
+\end{comment}
+
+En esta sección se evalúa la topología de puente de Graetz (4 diodos). Esta configuración prescinde de la derivación central del transformador, utilizando el devanado secundario en su totalidad para alimentar la carga $R_1$.
+
+Al utilizar los extremos del secundario, el voltaje eficaz de entrada al puente es de 13.21 $V_{rms}$, lo que equivale a un voltaje pico total de: 
+
+\[
+    V = 13.21 V_{rms} \cdot \sqrt{2} = 18.68 V
+\]
+
+En un puente de diodos, la corriente siempre atraviesa dos semiconductores simultáneamente en cada semiciclo (D1 y D2 en el positivo; D3 y D4 en el negativo) . Por tanto, la caída de tensión en los diodos es de 1.4 V (0.7 V+0.7 V).
+El voltaje pico teórico en la resistencia de carga ($R_1 = 220 \Omega$) es:
+
+\[
+    V_{R1} = 18.68 V -1.4 V = 17.28 V
+\]
+
+Aplicando las ecuaciones matemáticas para una señal rectificada de onda completa, los valores teóricos esperados son:
+
+\[
+    V_{prom} = \frac{V_{R1}}{\pi} = \frac{17.28}{\pi} = 5.50 V
+\]
+
+\[
+    V_{rms} = \frac{V_{R1}}{2\sqrt{2}} = \frac{17.28}{\sqrt{2}} = 12.21 V
+\]
+
+Para las corrientes:
+
+\[
+    I_{prom} = \frac{V_{prom}}{220} = \frac{5.50}{220} = 0.025 A
+\]
+
+\[
+    I_{rms} = \frac{V_{rms}}{220} = \frac{12.21}{220} = 0.055 A
+\]
+
+Al analizarlo en el osciloscopio obtenemos las siguientes imagenes.
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje.png} 
+\caption{Voltaje en $R_1$ circuito 3}
+\label{fig:VoltajeR1}
+\end{center}
+\end{figure}
+\end{comment}
+
+Podemos observar la siguiente tabla que compara los resultados calculados y medidos con el osciloscopio y el multimetro
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Datos obtenidos} & \textbf{$V_{prom}$ (V)} & \textbf{$V_{rms}$ (V)} & \textbf{$V_{p}$ (V)}\\ \hline
+Multímetro & 5.38 & 11.59  & 16.39\\ \hline
+Cálculos & 5.50 & 12.21 & 17.28\\ \hline
+Osciloscopio & 5.41 & 12.02 & 17.0\\ \hline
+\end{tabularx}
+\caption{Comparacion de voltajes calculados y medidos de $R_1$.}
+\label{tablaComparativa2}
+\end{table}
+
+Durante el semiciclo en el que un par de diodos bloquea el paso de corriente (por ejemplo, $D_1$ apagado mientras $D_3$ y $D_4$ conducen), el voltaje inverso que debe soportar el diodo apagado se determina por mallas. 
+En la configuración de puente, el diodo en inversa queda en paralelo con el devanado secundario y el diodo que está conduciendo en esa misma rama. Obtenemos:
+
+\[
+    V_{D1} = V + V_D = 18.68 V - 0.7 V = 17.98 V 
+\]
+
+En el osciloscopio se puede ver de la siguiente manera:
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeD1_2.png} 
+\caption{Voltaje en $D_1$ circuito 3}
+\label{fig:VoltajeD1_3}
+\end{center}
+\end{figure}
+\end{comment}
+
+Como podemos observar la diferencia fundamental entre el circuito 1 con respecto al circuito 3, radica en la exigencia física para los componentes, es deci, que para proporcionar el mismo voltaje pico a la resistencia de carga, 
+los diodos en el circuito 1 deben ser capaces de soportar el doble de voltaje inverso en comparación con los diodos del puente en el circuito 3. El puente de diodos es más eficiente en este aspecto porque permite usar diodos con una menor 
+especificación de voltaje inverso máximo.
+
+\subsection{Análisis de comportamiento del circuito 4}
+
+Este circuito también corresponde a un rectificador de onda completa con 4 diodos, la diferencia es que ahora lo analizaramenos el comportamiento de este utilizando la derivacion central del transformador
+como la tierra.
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base4.png} 
+\caption{Circuito rectificador de onda completa con derivación central}
+\label{fig:circuitobase4}
+\end{center}
+\end{figure}
+\end{comment}
+
+Se hace la aclaración de que para el circuito mostrado en la "Figura~\ref{fig:circuitobase4}" se propone una resistencia de 100 $\Omega$, sin mebargo, la empleada en laboratorio fue una resistencia de 82 $\Omega$, por lo que los cálculos y lo mostrado en
+el osciloscopio será con base a este valor.
+Es de inmediato notar que la resistencia $R_1$ y $R_2$ se encuentran en paralelo, esta aclaración facilitará el análisis del circuuito para conocer los voltajes en las resistencias que a priori sabemos que es el mismo.
+Mediante mallas calculamos los voltajes:
+
+Ecuaciones de malla:
+
+\[
+-9.34V + 0.7 + V_{R1} = 0
+\]
+
+\[
+-9.34V - V_{R2} + 0.7 = 0
+\]
+
+Despejando:
+
+\[
+V_{R1} = 8.64V
+\]
+
+\[
+V_{R2} = -8.64V
+\]
+
+Corrientes:
+
+\[
+I_{R1} = \frac{8.64}{220} = 0.039A = 39\,mA
+\]
+
+\[
+I_{R2} = \frac{8.64}{82} = 0.105A = 105\,mA
+\]
+
+
+Analizando los voltajes RMS y promedio obtenemos:
+Para onda completa:
+
+\subsubsection{Voltaje Promedio.}
+\[
+V_{prom} = \frac{2}{\pi} V_m = \frac{2}{\pi}(8.64V)
+\]
+\[
+V_{prom} = 5.50V
+\]
+
+\subsubsection{Voltaje RMS.}
+El voltaje RMS se define para una señal sinusoidal como:
+\[
+V_{rms} = \frac{V_m}{\sqrt{2}} = \frac{8.64V}{\sqrt{2}}
+\]
+\[
+V_{rms} = 6.11V
+\]
+
+\subsubsection{Corriente promedio.}
+
+\[
+I_{R1prom} = \frac{V_{prom}}{R} = \frac{5.50\,\text{V}}{220\,\Omega}
+\]
+\[
+I_{R1prom} = 24.19_{mA}
+\]
+
+\[
+I_{R2prom} = \frac{V_{prom}}{R} = \frac{-5.50\,\text{V}}{82\,\Omega}
+\]
+\[
+I_{R2prom} = -66.84_{mA}
+\]
+
+\subsubsection{Corriente RMS}
+
+\[
+I_{R1rms} = \frac{V_{rms}}{R} = \frac{6.11\,\text{V}}{220\,\Omega}
+\]
+
+\[
+I_{R1rms} = 26.87_{mA}
+\]
+
+\[
+I_{R2rms} = \frac{V_{rms}}{R} = \frac{-6.11\,\text{V}}{82\,\Omega}
+\]
+
+\[
+I_{R2rms} = -74.24_{mA}
+\]
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeR1_R2_Circuito4.jpg} 
+\caption{Voltaje en $R_1$ y $R_2$}
+\label{fig:voltajeR1R2}
+\end{center}
+\end{figure}
+\end{comment}
+En la "Figura~\ref{fig:voltajeR1R2}" se comprueba lo esperado en los cálculos y análisis del circuito, la $R_2$ está polarizada inversamente respecto
+a la referencia, por lo que podemos visualizar un desfase de 180°.
+
+Los cálculos realizados son comprobables midiendo directamente con el multímetro. Veáse "Figura~\ref{fig:multímetro}" en Anéxos donde se muestra la manera de medición que 
+se tomó para medir corriente.
+Cabe mencionar que para medir la corriente rms con el multímetro es necesario medir primero corriente en AC y después medir corriente en DC, para poder aplicar la siguiente 
+fórmula:
+\begin{equation}
+I_{\mathrm{RMS}} = \sqrt{I_{\mathrm{DC}}^{2} + I_{\mathrm{AC,RMS}}^{2}}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Datos obtenidos} & \textbf{$I_{prom}$ (mA)} & \textbf{$I_{rms}$ (mA)} & \textbf{$I_p$ (mA)}\\ \hline
+Multímetro  & 23.30 & 26.69 & 37.75\\ \hline
+Cálculos    & 24.19 & 27.77 & 39.00\\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de corrientes en $R_1$.}
+\label{tablaComparativa3}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\columnwidth}{|c|X|X|X|}
+\hline
+\textbf{Datos obtenidos} & \textbf{$I_{prom}$ (mA)} & \textbf{$I_{rms}$ (mA)} & \textbf{$I_p$ (mA)}\\ \hline
+Multímetro  & -60.74 & -69.62 & -98.46\\ \hline
+Cálculos    & -66.84 & -74.24 & -105.0\\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de corrientes en $R_2$.}
+\label{tablaComparativa4}
+\end{table}
+
+Una vez analizado el comportamiento de este circuito rectificador de onda completa, no está de más analizar el comportamiento del 
+diodo para cuando se comporta como circuito abierto y para cuando se comporta como corto, a priori podemos decir que el comportamiento esperado es 
+que para fases donde el diodo conduce vamos a obervar una caída de tensión de 0.7V para diodos de silicio y para fases donde el diodo no conuce vamos
+a observar aproximadamente el voltaje de la fuente.
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeDiodo_circuito4.jpg} 
+\caption{Voltaje en $D_1$.}
+\label{fig:voltajeD1}
+\end{center}
+\end{figure}
+\end{comment}
+
+Analíticamente podemos corroborar el voltaje inverso pico, sabemos que en el $D_1$ en el cátodo tenemos un voltaje 
+equivalente al entregado por la fuente y en ánodo tenemos el voltaje de la resistencia, por lo que procedemos:
+
+\[
+V_k = 9.34V
+\]
+\[
+V_A = -8.64V
+\]
+\[
+V_D = V_k - V_A
+\]
+\[
+V_D = 9.34 - (-8.64)
+\]
+\[
+V_D = 17.98V
+\]
+
+
+
+\section{Simulación}
+La gráfica muestra la potencia instantánea en la resistencia $R_1$. Al ser un rectificador de onda completa, la frecuencia de la potencia se duplica respecto a la de la fuente ($120\text{ Hz}$), ya que tanto el semiciclo positivo como el negativo entregan energía a la carga. Se observa un valor pico de potencia cercano a los $11\text{ W}$ y una forma de onda senoidal desplazada (siempre positiva), lo que indica que no hay flujo de potencia negativo hacia la fuente; toda la energía es consumida por la resistencia en forma de pulsos continuos de corriente directa pulsante.
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Simulacion1.jpeg} 
+\caption{Potencia en $R_1$.}
+\label{fig:potenciaInstantaneR1}
+\end{center}
+\end{figure}
+\end{comment}
+
+En esta simulación se confirma la naturaleza cuadrática de la potencia ($P = \frac{V^2}{R}$). Los valles de la gráfica llegan exactamente a $0\text{ W}$, coincidiendo con los puntos de cruce por cero del voltaje de entrada, mientras que los puntos máximos representan el instante de mayor transferencia energética. Al no existir un filtro capacitivo, la potencia es puramente pulsante, lo que significa que el valor promedio de la potencia (potencia media) será aproximadamente la mitad del valor pico observado ($\approx 5.5\text{ W}$), validando el comportamiento teórico de una carga resistiva bajo rectificación total.
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Simulacion2.jpeg} 
+\caption{Transferencia de potencia a $R_1$.}
+\label{fig:transferenciaDePotenciaR1}
+\end{center}
+\end{figure}
+\end{comment}
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/SIMULACION_4001.jpeg}
+\caption{Simulación del diodo 1N4001 con variación de temperatura.}
+\label{fig:sim_4001}
+\end {center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/SIMULACION_4148.jpeg}
+\caption{Simulación del diodo 1N4148 con variación de temperatura.}
+\label{fig:sim_4148}
+\end {center}
+\end{figure}
+\end{comment}
+
+\section{Conclusiones}
+\begin{itemize}
+    \item \textbf{Flores Cornejo Gustavo Mauricio.}
+    \newline En la presente práctica se revisó el usos de diodos como componentes rectificadores de media onda, de onda completa y como recortadores. Apoyándonos de la parte teórica revisada en clase podemos hacer un análisis teórico para poder corroborar los resultados 
+    mostrados en laboratorio. Esta práctica fue importante porque pudimos visualizar cómo el uso de estos componentes alteran la onda de salida a nuestra conveniencia eliminando o modificando alguna de las fases de nuestra señal sinusoidal. Para poder visualizar la corriente que circulaba por el diodo cuando
+    este conducía fue necesario utilizar una resistencia de 1 ohm, esto con la finalidad de medir el voltaje en esa resistencia que por ley de ohm era directamente proporcional a la corriente que fluctuaba por el diodo.
+    Además, fue úti utilizar el transformador para poder realizar mediciones de rms, promedio y pico además de darnos la facilidad de poder utilizar la derivación central.
+    \newline 
+    \item \textbf{Muñoz Reyes Arturo Yabet.}
+    \newline En conclusión, esta práctica nos permitió comprobar físicamente los comportamientos de los transformadores y diodos. Logramos medir la reducción de voltaje y ver el desfasamiento de 180 grados en el osciloscopio dentro del transformador. Comprobamos que los rectificadores de onda completa son más eficientes porque aprovechan todo el ciclo de la fuente, y notamos que el voltaje cae un poco más al usar un puente de diodos (hay un momento pequeño que no da voltaje). Al final, nuestros cálculos matemáticos nos ayudron a entender mejor cómo se comportan estos componentes de manera ideal y lo logramos contrastar con un comportamiento real (qué tiene ciertas pérdidas por diversos factores)
+    \newline 
+    \item \textbf{Morales Vásquez Miguel Ehecatl.} 
+    \newline En esta práctica se validó de manera experimental la versatilidad del diodo semiconductor en aplicaciones de rectificación y acondicionamiento de señales. A través de la implementación de los circuitos de media onda y onda completa, fue posible contrastar la teoría matemática con el comportamiento real de los componentes, observando que factores como la caída de tensión interna del diodo ($\approx 0.7\text{ V}$) y las pérdidas en el transformador generan variaciones sutiles pero importantes en los valores RMS y promedio calculados. Un aprendizaje clave fue el uso de la derivación central y el puente de diodos, donde se demostró que la rectificación de onda completa ofrece una transferencia de potencia más constante y eficiente al aprovechar ambos semiciclos de la señal senoidal. Finalmente, el uso de técnicas de medición indirecta para la corriente y el análisis de voltajes inversos permitieron comprender las limitaciones operativas de los diodos, habilidades fundamentales para el diseño de fuentes de alimentación y sistemas de control de potencia en la ingeniería mecatrónica.
+
+\end{itemize}
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+\appendices
+\section{Evidencias}
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Medicion_Multimetro.jpg} 
+\caption{Medición con Multímetro los voltajes y corrientes en $R_1$ y $R_2$.}
+\label{fig:multímetro}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Corriente_Multimetro.jpg} 
+\caption{Lectura de corriente en $R_1$.}
+\label{fig:corrientemultímetro}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/EVALUACION_LAB.jpeg} 
+\caption{Evaluación en laboratorio.}
+\label{fig:evaluación}
+\end{center}
+\end{figure}
+\end{comment}
+
+\begin{comment}
+\begin{figure}[H]%[!ht]
+\begin {center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/EVIDENCIA.jpeg}
+\caption{Evidencia de evaluación de práctica.}
+\label{fig:evidencia}
+\end {center}
+\end{figure}
+\end{comment}
+
+
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+%use following command to generate the list of cited references
+
+\printbibliography
+
+\begin{thebibliography}{00}
+\bibitem{boylestad}
+R. L. Boylestad and L. Nashelsky, \textit{Electronic Devices and Circuit Theory}, 10th ed. Upper Saddle River, NJ, USA: Prentice Hall, 2009.
+
+\bibitem{1N4001}
+onsemi, ``1N4001 -- 1.0 A Standard Recovery Rectifier,'' Datasheet, 2023. [Online]. Available: https://www.onsemi.com/pdf/datasheet/1n4001-d.pdf. [Accessed: Feb. 24, 2026].
+
+\bibitem{1N4148}
+onsemi, ``1N4148 -- Small Signal Switching Diode,'' Datasheet, 2023. [Online]. Available: https://www.onsemi.com/pdf/datasheet/1n4148-d.pdf. [Accessed: Feb. 24, 2026].
+\end{thebibliography}
+
+% that's all folks
+\end{document}
