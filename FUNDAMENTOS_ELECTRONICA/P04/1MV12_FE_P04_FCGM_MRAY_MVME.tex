@@ -46,17 +46,21 @@
 
 % *** MATH PACKAGES ***
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{comment}
+\usepackage{amssymb} % Este paquete contiene el símbolo \approxeq
 
 \usepackage{tabularx} % en el preámbulo
 \usepackage{caption}
 \captionsetup{font=small, labelfont=bf, textfont=normalfont}
+
 
 % *** PDF, URL AND HYPERLINK PACKAGES ***
 \usepackage{url}
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 \usepackage{graphicx}  %needed to include png, eps figures
+\usepackage{subcaption}
 \usepackage{float}  % used to fix location of images i.e.\begin{figure}[H]
 
 \begin{document}
@@ -80,242 +84,369 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-    This laboratory practice analyzes the behavior of semiconductor diodes in three fundamental electronic circuits: half-wave rectifiers, full-wave rectifiers, and clipping circuits. The objective is to observe how diodes allow current to flow in only one direction and how this property can be used to convert alternating current (AC) into pulsating direct current (DC) and to limit voltage 
-    levels in electrical signals. Through circuit implementation and signal analysis, the output waveforms of each configuration are studied and compared with theoretical expectations. The experiment demonstrates the practical applications of diodes in power conversion and signal conditioning within electronic systems.
+    This paper analyzes the behavior and operation of the Bipolar Junction Transistor (BJT) under a fixed bias configuration. 
+    Using NPN 2N2222 transistors, the terminals were identified, and the operating regions—cutoff, saturation, and active—were experimentally determined. 
+    The flow of collector ($I_C$) and base ($I_B$) currents was examined, alongside the variation of the $\beta$ parameter under different voltage and resistance levels. 
+    The results, obtained through direct measurements and simulations, allowed for a comparison between real values and manufacturer specifications, confirming the 
+    BJT's utility as a switch and linear amplifier in DC electronic circuits.
 \end{abstract}
 
 \section{Introducción}
-% Here we have the typical use of a "W" for an initial drop letter
-% and "RITE" in caps to complete the first word.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
+    % Here we have the typical use of a "W" for an initial drop letter
+    % and "RITE" in caps to complete the first word.
+    % You must have at least 2 lines in the paragraph with the drop letter
+    % (should never be an issue)
 
-\IEEEPARstart{E}n la práctica pasada se revisó y desarrolló el comportamiento del diodo como componente rectificador de señales. Observamos cómo para corrientes en un sentido específico y para voltajes mayores a 0.7V el diodo se comporta como un interruptor idealmente (puesto en práctica observamos que existe una caída de tensión de 0.7V para diodos de silicio).
-Entonces, partiendo de esto sabemos que podemos alterar el comportamiento de la señal de salida con ayudad de estos componentes. En la presente práctica se desglosa la importancia y el funcionamiento de los diodos como elementos rectificadores de media y de onda completa además de su función como recortadores. Para ello es importante tener en claro los conceptos básicos
-del comportamiento del diodo observado en la práctica pasada además de apoyarnos de la teoría para comprender qué son los rectificadores y los recortadores. Para los rectificadores es importante recalcar su uso en diferentes dispositivos, pues, en ocasiones deseamos que dada una señal variable en el tiempo obtengamos a la salida únicamente la fase positiva, para ello se amplean este
-tipo de arreglos donde se mantiene a la salida un voltaje positivo y para fases negativas se "elimina" el voltaje. En cuanto a los rectificadores de onda completa en vez de "eliminar" el voltaje negativo del sistema lo invierte para obtener a la salida un voltaje positivo, es decir, modifica en su totalidad la onda de entrada.
-Para los Recortadores son redes que se emplean para "recortar" una parte de una señal sin distorsionar la parte restante de la forma de onda aplicada.
+    \IEEEPARstart{D}urante el periodo de 1904 a 1947, el tubo de vacío fue el componente electrónico de mayor interés y 
+    desarrollo, debido a su capacidad de amplificar señales analógicas, impulsado significativamente por la industria de la radio y televisión
+    en sus años posteriores. Sin embargo en 1947, la aparición del transistor  marcaría un cambio importante en la industria
+    de la electrónica.  Este nuevo dispositivo de estado sólido de tres terminales ofrecía grandes ventajas frente a su antecesor:
+    dimensiones más pequeñas, menor peso, baja disipación de calor y fundamentalmente,  una mayor eficiencia energética al consumir
+    una fracción de la potencia requerida por las válvulas de vacío.
+ 
+    Gracias a estas propiedades y a su versatilidad para operar como interruptor electrónico, el transistor se integró rápidamente en 
+    a arquitectura de los sistemas informáticos. La evolución en las técnicas de diseño y fabricación ha permitido reducir su escala de 
+    centímetros a nanómetros, facilitando la construcción de microprocesadores de alta densidad. Este avance ha sido el pilar tecnológico 
+    que dio paso a la computación móvil, los sistemas embebidos y los dispositivos de control que definen la tecnología contemporánea.
 
 \section{Objetivos}
-1. Analizar y comprobar el comportamiento de los diodos como rectificadores de media
-onda y onda completa.
+    \subsection{Objetivo General}
+    Explicar el funcionamiento del transistor BJT con una configuración de polarización fija y  diseñar circuitos que provean algún comportamiento deseado.
 
-2. Implementar un rectificador de onda completa con puente de diodos con y sin
-derivación central.
+    \subsection{Objetivos Particulares}
+    \begin{enumerate}
+        \item Identificar el colector, base y emisor del transistor.
+        \item Comprender el flujo de las corrientes de colector y base.
+        \item Analizar y comprender el comportamiento de la beta ante variaciones de voltaje. 
+        \item Comprender el funcionamiento de las zonas de corte-saturación.
+    \end{enumerate}
+
 \section{Marco teórico}
-\subsection{El diodo semiconductor}
-
-Un diodo es un dispositivo electrónico semiconductor formado por la unión de dos materiales tipo P y N, conocida como unión PN. Su principal característica es que permite el paso de corriente eléctrica principalmente en un solo sentido, lo cual lo convierte en un elemento fundamental para la rectificación de señales.
-
-Cuando el diodo se conecta en polarización directa, la barrera de potencial disminuye y permite el flujo de corriente. En cambio, cuando se encuentra en polarización inversa, la barrera aumenta y la corriente es prácticamente nula, excepto por una pequeña corriente de fuga.
-
-El comportamiento corriente-voltaje del diodo puede describirse mediante la ecuación de Shockley:
-
-\begin{equation}
-I_D = I_S \left( e^{\frac{V_D}{nV_T}} - 1 \right)
-\end{equation}
-
-donde:
-
-\begin{itemize}
-\item $I_D$ = corriente a través del diodo
-\item $I_S$ = corriente de saturación inversa
-\item $V_D$ = voltaje en el diodo
-\item $n$ = factor de idealidad (entre 1 y 2)
-\item $V_T$ = voltaje térmico (aproximadamente 26 mV a temperatura ambiente)
-\end{itemize}
-
-Debido a su capacidad de conducir en un solo sentido, los diodos se utilizan en aplicaciones como rectificadores, limitadores o recortadores de señal, reguladores y detectores de señal.
-
-\subsection{Rectificador de media onda}
-
-Un rectificador de media onda es el circuito más simple para convertir una señal alterna (AC) en una señal unidireccional (DC). Este circuito utiliza un solo diodo conectado en serie con una carga.
-
-Durante el semiciclo positivo de la señal de entrada, el diodo se polariza directamente y permite el paso de corriente hacia la carga. Durante el semiciclo negativo, el diodo se polariza inversamente y bloquea el flujo de corriente.
-
-Si la señal de entrada es sinusoidal, puede representarse como:
-
-\begin{equation}
-v_i(t) = V_m \sin(\omega t)
-\label{eq:sin}
-\end{equation}
-
-Entonces el voltaje de salida del rectificador de media onda es:
-
-\begin{equation}
-v_o(t)=
-\begin{cases}
-V_m \sin(\omega t), & \text{si } \sin(\omega t) > 0 \\
-0, & \text{si } \sin(\omega t) < 0
-\end{cases}
-\end{equation}
-
-El valor promedio del voltaje de salida está dado por:
-
-\begin{equation}
-V_{DC} = \frac{V_m}{\pi}
-\end{equation}
-
-donde $V_m$ es el valor máximo de la señal de entrada.
-
-Este tipo de rectificador tiene la desventaja de utilizar solo la mitad de la señal de entrada, por lo que su eficiencia es relativamente baja.
-
-\subsection{Rectificador de onda completa}
-
-El rectificador de onda completa permite aprovechar ambos semiciclos de la señal de entrada, produciendo una señal pulsante que siempre es positiva.
-
-Existen dos configuraciones principales: el rectificador con transformador con derivación central y el rectificador tipo puente de diodos. En el caso del puente rectificador, cuatro diodos se conectan de tal manera que durante cada semiciclo dos diodos conducen mientras los otros dos permanecen en polarización inversa.
-
-El voltaje de salida puede expresarse como:
-
-\begin{equation}
-v_o(t) = |V_m \sin(\omega t)|
-\end{equation}
-
-El valor promedio del voltaje rectificado es:
-
-\begin{equation}
-V_{DC} = \frac{2V_m}{\pi}
-\end{equation}
-
-Comparado con el rectificador de media onda, este circuito duplica aproximadamente el voltaje promedio, además de mejorar la eficiencia del proceso de rectificación.
-
-Otra ventaja importante es que la frecuencia del rizado en la salida es el doble de la frecuencia de entrada, lo que facilita el filtrado para obtener una señal más cercana a una corriente continua.
-
-\subsection{Diodos como recortadores}
-
-Los circuitos recortadores, también llamados limitadores o \textit{clippers}, utilizan diodos para eliminar o limitar ciertas partes de una señal eléctrica sin alterar significativamente el resto de la forma de onda.
-
-El principio de operación se basa en que el diodo conduce únicamente cuando el voltaje supera un cierto nivel, lo que permite cortar la señal por encima o por debajo de un determinado voltaje.
-
-Para un recortador simple con diodo ideal, la salida puede representarse como:
-
-\begin{equation}
-v_o(t)=
-\begin{cases}
-v_i(t), & \text{si } v_i(t) < V_{ref} \\
-V_{ref}, & \text{si } v_i(t) \ge V_{ref}
-\end{cases}
-\end{equation}
-
-donde $V_{ref}$ es el voltaje de referencia que determina el nivel de recorte.
-
-En diodos reales debe considerarse el voltaje de conducción, aproximadamente:
-
-\begin{equation}
-V_D \approx 0.7 \, \text{V}
-\end{equation}
-
-para diodos de silicio.
-
-Los circuitos recortadores pueden clasificarse en recortadores positivos, que eliminan la parte positiva de la señal, recortadores negativos, que eliminan la parte negativa, y recortadores sesgados, que utilizan una fuente de referencia para establecer un nivel de recorte distinto de cero.
-
-Estos circuitos se emplean en protección de circuitos, acondicionamiento de señales y limitación de voltaje en sistemas electrónicos.
-\subsection{Cálculo de voltajes en señales eléctricas}
-
-\subsubsection{Cálculo del voltaje RMS}
-
-El valor eficaz o \textit{Root Mean Square} (RMS) de una señal eléctrica representa el valor equivalente de voltaje continuo que produciría la misma potencia en una resistencia que una señal alterna. Este valor es ampliamente utilizado para caracterizar señales periódicas en sistemas eléctricos y electrónicos.
-
-El voltaje RMS de una señal periódica se define como:
-
-\begin{equation}
-V_{rms} = \sqrt{\frac{1}{T}\int_{0}^{T} v^2(t)\, dt}
-\end{equation}
-
-donde:
-
-\begin{itemize}
-\item $v(t)$ es la señal de voltaje en función del tiempo
-\item $T$ es el periodo de la señal
-\end{itemize}
-
-Para una señal sinusoidal definida como en la ecuación \ref{eq:sin}.
-
-el voltaje RMS es:
-
-\begin{equation}
-V_{rms} = \frac{V_m}{\sqrt{2}}
-\end{equation}
-
-donde $V_m$ es el valor máximo o amplitud de la señal.
-
-
-\subsubsection{Voltaje Promedio de Rectificador de media onda}
-El voltaje promedio representa el valor medio de una señal durante un periodo completo.
-
-En un rectificador de media onda solo se aprovecha un semiciclo de la señal sinusoidal. El voltaje promedio se calcula mediante:
-
-\begin{equation}
-V_{DC} = \frac{1}{T}\int_{0}^{T} v_o(t)\, dt
-\end{equation}
-
-Para una señal sinusoidal rectificada de media onda el resultado es:
-
-\begin{equation}
-V_{DC} = \frac{V_m}{\pi}
-\end{equation}
-
-donde $V_m$ es el valor máximo de la señal de entrada.
-
-\subsubsection{Voltaje Promedio deRectificador de onda completa}
-
-En el rectificador de onda completa se utilizan ambos semiciclos de la señal de entrada. En este caso el voltaje promedio es:
-
-\begin{equation}
-V_{DC} = \frac{2V_m}{\pi}
-\end{equation}
-
-Este valor es aproximadamente el doble del obtenido en el rectificador de media onda, lo que permite una conversión más eficiente de corriente alterna a corriente continua.
-
-\subsubsection{Voltaje RMS de una señal compuesta (AC + DC)}
-
-Una señal compuesta puede estar formada por una componente de corriente continua (DC) y una componente de corriente alterna (AC). En este caso, el voltaje RMS total se calcula considerando ambas contribuciones.
-
-La expresión general es:
-
-\begin{equation}
-V_{rms} = \sqrt{V_{DC}^{2} + V_{AC(rms)}^{2}}
-\end{equation}
-
-donde:
-
-\begin{itemize}
-\item $V_{DC}$ es el valor de la componente continua
-\item $V_{AC(rms)}$ es el valor RMS de la componente alterna
-\end{itemize}
-
-Este cálculo es importante en circuitos donde las señales tienen un desplazamiento de nivel o \textit{offset} de corriente continua.
-
-\subsection{Voltaje RMS de una señal rectificada}
-
-Cuando una señal sinusoidal se rectifica, su valor RMS cambia dependiendo del tipo de rectificación.
-
-Para una señal sinusoidal rectificada de media onda, el voltaje RMS es:
-
-\begin{equation}
-V_{rms} = \frac{V_m}{2}
-\end{equation}
-
-Mientras que para una señal rectificada de onda completa el voltaje RMS es igual al de la señal sinusoidal original:
-
-\begin{equation}
-V_{rms} = \frac{V_m}{\sqrt{2}}
-\end{equation}
-
-Esto ocurre porque en la rectificación de onda completa se conservan ambos semiciclos de la señal, únicamente invirtiendo el semiciclo negativo.
+    \subsection{El transitor BJT}
+        Un transistor de unión bipolar (BJT, por sus siglas en inglés) es un dispositivo semiconductor 
+        constituido por tres capas de material dopado, las cuales forman dos uniones P-N y, por consiguiente, 
+        dos regiones de agotamiento o empobrecimiento. Dependiendo de la configuración de estas capas, 
+        el dispositivo se clasifica en tipo NPN (dos capas de material tipo $n$ y una central tipo $p$) 
+        o tipo PNP (dos capas tipo $p$ y una central tipo $n$), tal como se ilustra en la Figura 1. 
+        Sus terminales se identifican como Emisor (E), Base (B) y Colector (C).
+        
+        \begin{figure}[H] % SIN asterisco y con H mayúscula
+        \centering
+            % --- Subfigura (a) NPN ---
+            \begin{subfigure}[b]{0.47\columnwidth} % 45% de la COLUMNA
+                \centering
+                \includegraphics[width=\textwidth]{IMAGENES/Transistor_NPN.png}
+                \caption{Transistor npn.}
+                \label{fig:npn}
+            \end{subfigure}
+            \hfill % Esto las separa un poco dentro de la columna
+            % --- Subfigura (b) PNP ---
+            \begin{subfigure}[b]{0.45\columnwidth} % 45% de la COLUMNA
+                \centering
+                \includegraphics[width=\textwidth]{IMAGENES/Transistor_PNP.png}
+                \caption{Transistor pnp.}
+                \label{fig:pnp}
+            \end{subfigure}
+    
+            % --- Pie de foto principal ---
+            \caption{Configuraciones básicas del transistor de unión bipolar.}
+            \label{fig:bjt_types}
+        \end{figure}
+   
+        Constructivamente, el emisor presenta un nivel de dopaje elevado para maximizar la inyección de portadores,
+        la base cuenta con un dopaje ligero y un espesor reducido, mientras que el colector posee un dopaje intermedio. 
+        El término 'bipolar' hace referencia a que el mecanismo de conducción y la inyección de carga dependen del flujo tanto de electrones como de huecos.
+
+    \subsection{Portadores de carga}
+        El funcionamiento del BJT se basa en la interacción de los portadores de carga, los cuales se definen como las partículas elementales encargadas del 
+        transporte de corriente eléctrica en el semiconductor. En un material tipo $n$ (negative) el electrón se denomina portador mayoritario debido a su abundancia, 
+        mientras que el hueco actúa como portador minoritario. Por el contrario, en un material tipo $p$ (positive) el hueco es el portador mayoritario y el electrón el minoritario. 
+    
+    \subsection{Region de empobrecimiento}
+        La unión de estos materiales da origen a la región de empobrecimiento, una zona carente de portadores libres que se forma debido a la 
+        recombinación de electrones y huecos en la interfaz. Este proceso deja tras de sí iones dopantes fijos (positivos en el lado $n$ y negativos en el lado $p$),
+        lo que establece un campo eléctrico interno . Este campo genera una barrera de potencial que impide el flujo portadores mayoritarios.
+    
+    \subsection{Funcionamiento}
+        Tomando como ejemplo un transistor pnp y analizando el flujo de huecos (iones positivos), al polarizar la unión base-emisor
+        como se muestra en la Figura 2 se obtiene el mismo comportamiento al de un diodo polarizado en directa. En este estado, el ancho de la 
+        región de empobrecimiento se reduce permitiendo un flujo de huecos (portador mayoritario) del material p al n. Por otro lado, 
+        en la Figura 3 se muestra qué sucede si se polariza la unión base-emisor, la situación presentada es semejante a la de un diodo 
+        polarizado en inversa. La región de empobrecimiento se agranda impidiendo el paso de portadores mayoritarios, resultando únicamente en un flujo de portadores minoritarios.
+    
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.35\textwidth]{IMAGENES/Polarizacion_directa.png}
+            \caption{Unión polarizada en directa.
+}
+            \label{fig:pnp_direct}
+        \end{figure}
+
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.33\textwidth]{IMAGENES/Polarizacion_inversa.png}
+            \caption{Unión polarizada en inversa.}
+            \label{fig:pnp_inverse}
+        \end{figure}
+
+        Si se aplican ambos potenciales de polarización al transistor pnp y analizamos qué sucede notamos que el emisor al 
+        ser de un material tipo $p$, está saturado de huecos, los cuales son repelidos por el positivo de la fuente $V_{EE}$ provocando 
+        que pasen directamente al material tipo $n$. Recordando que el material tipo $n$ está poco dopado, no tiene tantos electrones 
+        para combinarse con los huevos por lo que solo una pequeña parte de estos podrá regresar al negativo de la fuente $V_{EE}$, 
+        como se indica en la Figura 4. Esos huecos sobrantes en la base pasan a convertirse en portadores minoritarios del material tipo $n$, 
+        esto es importante ya que como se mencionó anteriormente, un diodo en inversa sólo permite el flujo de portadores minoritarios.
+
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.35\textwidth]{IMAGENES/FlujoPortadores_pnp.png}
+            \caption{Flujo de portadores mayoritarios y minoritarios de un transistor pnp.}
+            \label{fig:flujoPortadores}
+        \end{figure}
+
+        Los huecos ahora convertidos en portadores minoritarios pasan con facilidad a través de la región de empobrecimiento hacia el colector, 
+        debido a que son empujados por el campo eléctrico formado en esta región por la polarización en inversa,  y a su vez, son atraídos por la 
+        terminal negativa de la fuente $V_{CC}$ , al llegar al colector estos mueren al combinarse con los electrones provenientes de la fuente. 
+        
+        Aplicando la ley de corrientes de Kirchhoff al transistor de la Figura 4.
+        \begin{equation}
+            I_E = I_C + I_B
+            \label{ec:correintesTransistor}
+        \end{equation}
+
+    \subsection{Corrente de Fuga}
+        La corriente en el colector no solo está compuesta por el flujo de huecos (portadores mayoritarios en el material p del colector),  
+        sino también de un flujo de portadores minoritarios llamada corriente de fuga y se le da el símbolo de $I_{CO}$. Esta corriente es 
+        análoga a la corriente de saturación de un diodo Is  y por lo tanto es sensible a la temperatura, 
+        dependiendo del caso puede afectar seriamente al uso del transistor, sin embargo generalmente puede ignorarse  ($I_{CO} \approx 0 $).
+        
+        La corriente total que pasa por el colector está determinada por:
+        \begin{equation*}
+            I_{C} = I_{C_{\text{mayoritarios}}} + I_{CO_{\text{minoritarios}}}
+            \label{eq:corriente_colector}
+        \end{equation*}
+    
+    \subsection{Configuración Emisor Común}
+        Existen tres configuraciones fundamentales para la operación de un transistor de unión bipolar (BJT): base común, colector común y 
+        emisor común. Para describir el comportamiento eléctrico de cada una, es necesario analizar dos conjuntos de curvas características:
+        las de entrada (parámetros de control) y las de salida (parámetros de carga).
+    
+        La configuración de Emisor Común es la más utilizada en la por su alta ganancia tanto en voltaje como en corriente, 
+        lo que le otorga una gran versatilidad para el diseño de amplificadores y circuitos de conmutación de potencia. Recibe su 
+        nombre debido a que la terminal del emisor sirve como punto de referencia común tanto para el circuito de entrada (Base) 
+        como para el de salida (Colector), vease en la Figura 5.
+
+        \begin{figure}[H]%[!ht]
+        \centering
+            % --- Subfigura (a) NPN ---
+            \begin{subfigure}[b]{0.47\columnwidth} % 45% de la COLUMNA
+                \centering
+                \includegraphics[width=\textwidth]{IMAGENES/EmisorComun_npn.png}
+                \caption{Transistor npn.}
+                \label{fig:Emisor_com_npn}
+            \end{subfigure}
+            \hfill % Esto las separa un poco dentro de la columna
+            % --- Subfigura (b) PNP ---
+            \begin{subfigure}[b]{0.47\columnwidth} % 45% de la COLUMNA
+                \centering
+                \includegraphics[width=\textwidth]{IMAGENES/EmisorComun_pnp.png}
+                \caption{Transistor pnp.}
+                \label{fig:Emisor_com_pnp}
+            \end{subfigure}
+            % --- Pie de foto principal ---
+            \caption{Configuraciones básicas del transistor de unión bipolar.}
+            \label{fig:emisorComun_types}
+        \end{figure}
+        El comportamiento del dispositivo se rige por la interacción entre sus mallas;  el circuito de entrada que 
+        relaciona la corriente de base ($I_B$) con el voltaje base-emisor ($V_{BE}$). Asi como el circuito de 
+        salida que relaciona la corriente de colector ($I_C$) con el voltaje colector-emisor ($V_{CE}$).
+
+    \subsection{El Parámetro Beta ($\beta$) como factor de amplificación}
+        En la configuración de emisor común, la relación entre la corriente de salida ($I_C$) y la corriente de entrada ($I_B$), 
+        denominada como beta ($\beta$), define la ganancia de corriente de CD. Este parámetro es fundamental, ya que representa el 
+        factor de amplificación del dispositivo; un pequeño incremento en la corriente de base produce un aumento significativamente 
+        mayor en el colector, permitiendo el control del flujo de potencia.
+
+        En general para cualquier configuración:
+        \begin{equation}
+            \beta = \frac{I_C}{I_B} 
+        \end{equation}
+
+        Desbejando el valor de $I_C$ se obtiene la relacion de amplificación antes mencionada: 
+        \begin{equation}
+            I_C= \beta I_B
+        \end{equation}
+
+        Sustituyendo en la ecuación \eqref{ec:correintesTransistor}:
+        \begin{equation}
+            I_E= (\beta + 1)I_B
+        \end{equation}
+
+        Obteniendo una relacion entre la coriente de entrada y la corriente del emisor ($I_E$). 
+        Dado que en la mayoría de transistores usualmente es un valor mucho mayor que 1 ($\beta \gg 1$), 
+        entonces podemos inferir una relación entre la corriente de colecor y la corriente del emisor.
+        \begin{equation*}
+            \beta + 1 \gg \beta
+        \end{equation*}
+        De forma muy aproximada:
+        \begin{equation*}
+            I_E \approx (\beta)I_B
+        \end{equation*}
+        Por lo tanto:
+        \begin{equation}
+            I_C \approxeq I_B
+        \end{equation}
+
+    \subsection{Curvas características del BJT en emisor común}
+        La curva característica de entrada representa la relación entre los parametros de entrada
+         ($V_{BE}$ e $I_B$), para distintos valores de voltaje colector-emisor ($V_{CE}$).
+        Como se ve en la Figura \ref{fig:carac_base} esta presenta un comportamiento exponencial similar al de un diodo polarizado en directa,
+        en el cual $I_B$ es prácticamente nula hasta que la tensión alcanza el voltaje de umbral o barrera.
+
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.34\textwidth]{IMAGENES/Caracteristicas_base.png}
+            \caption{Características de entrada para un transistor de silicio en emisor común.}
+            \label{fig:carac_base}
+        \end{figure}
+
+        Es decir, una vez que un transitor se "enciende", se puede suponer que el voltaje base-emisor sera:
+        \begin{equation}
+            V_{BE} = 0.7 V
+            \label{ec:Voltaje_BE}
+        \end{equation} 
+
+        Al observar la Figura \ref{fig:carac_salida}, se aprecia que $I_B$ se mide en $\mu$A mientras que $I_C$ en mA,
+        reflejando la amplificación del BJT. La pendiente positiva en las curvas de salida se debe que
+        al aumentar el voltaje en inversa $V_{CB}$, la región de empobrecimiento se expande hacia la base,
+        reduciendo su ancho efectivo. Esta disminución en el ancho de la base reduce la recombinación de portadores,
+        facilitando su paso al colector e incrementando ligeramente $I_C$ conforme aumenta $V_{CE}$
+
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.45\textwidth]{IMAGENES/Caracteristicas_salida.png}
+            \caption{Características de salida para un transistor de silicio en emisor común.}
+            \label{fig:carac_salida}
+        \end{figure}
+    
+    \subsection{Regiones de operación}
+        Para comprender visualmente cómo opera el transistor en cada una de las distintas regiones de la 
+        Figura \ref{fig:carac_salida}, es útil compararlo con el funcionamiento de un grifo de agua:
+
+        \begin{figure} [H]%[!ht]
+            \centering
+            \includegraphics[width=0.45\textwidth]{IMAGENES/Estados_transistor.png}
+            \caption{Ejemplo gráfico de las tres regiones de operación.}
+            \label{fig:estados_transitor}
+        \end{figure}
+
+        \subsubsection{Región de Corte (Grifo cerrado)}
+            En este estado, no hay una corriente aplicada en la base ($I_B = 0$). Al no haber "presion" que active el transistor,
+            el transistor impide el paso de la corriemte entre el colector y el emisor. Sin embargo, esta presente 
+            una pequeña llama corriente $I_{CEO}$ ocacionada por la corriente de fuga de la union en inversa ($I_{CO}$).
+
+        \subsubsection{Región Activa (Flujo controlado)}
+            Es la zona de amplificación lineal. Aquí, la apertura del grifo es proporcional a la fuerza aplicada en la perilla; es decir,
+            $I_C$ varía de forma lineal y proporcional a los cambios en $I_B$. La señal de salida sigue fielmente las variaciones 
+            de la entrada, pero a una escala mucho mayor.
+
+        \subsubsection{Región de Saturación (Grifo Abierto al Máximo)}
+            En este punto, por más que se incremente la corriente de base, el flujo en el colector ha alcanzado su límite máximo permitido
+            por la fuente de alimentación ($V_{CC}$) y las resistencias del circuito.
+
+    \subsection{Punto de operación Q}
+        El punto de operación, también llamado punto quiesciente (inmóvil o inactivo) representa un punto de la gráfica de características de salida (Fig \ref{fig:carac_salida}), 
+        este viene determinado por valores especificos de corriente de colector y voltaje de colector-emisor. Dependiendo de como queramos que funcione el transitor el punto Q se
+        hubicara en distintas zonas de la gráfica.
+            
+    \subsection{El transistor como aplificador}
+        Para emplear el transistor en aplicaciones de amplificación, es necesario que el punto de operación (punto Q) se ubique aproximadamente en la zona media de la región activa.
+        Esta selección estratégica maximiza la excursión de la señal de salida, evitando recortes por saturación o corte que comprometan la fidelidad de la señal amplificada.
+
+    \subsection{Polarización Fija}
+        El término polarización se refiere a la aplicación de voltajes de corriente directa (CD) con el objetivo de establecer 
+        niveles fijos de corriente y voltaje que definan el estado operativo del dispositivo. Dentro de las distintas maneras de polarizar
+        un transitor, la mas elemental de ellas es la polarización fija, la cual se ejemplifica en la Figura \ref{fig:polarizacion_fija}.
+        \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{IMAGENES/Polarizacion_fija.png}
+            \caption{Polarización Fija.}
+            \label{fig:polarizacion_fija}
+        \end{figure}
+    
+    \subsection{Recta de Carga de CD}
+        La ubicación del punto Q se analiza mediante la recta de carga, una representación gráfica de la ecuación de malla del colector que interseca las curvas 
+        características del dispositivo. Esta recta delimita todos los posibles estados de funcionamiento ($I_C, V_{CE}$) que el 
+        transistor puede adoptar para una red de polarización y carga específicas.
+        \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.2\textwidth]{IMAGENES/Malla_colectorEmisor.png}
+            \caption{Malla colector-emisor.}
+            \label{fig:Malla_colectorEmisor}
+        \end{figure}
+
+        Si aplicamos la ley de voltajes de kirchoff a la malla de la Figura \ref{fig:Malla_colectorEmisor},
+        se obtiene la ecuación de la recta de carga
+        \begin{equation*}
+            V_{CE} + I_C R_C - V_{CC} = 0
+        \end{equation*}
+        \begin{equation}
+            V_{CE} =  V_{CC} + I_C R_C
+        \end{equation}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.45\textwidth]{IMAGENES/Recta_carga.png}
+            \caption{Recta de carga para la configuración de polarización fija.}
+            \label{fig:recta_carga}
+        \end{figure}
+
+    \subsection{Redes de Conmutación}
+        Cuando el objetivo no es la amplificación lineal, sino el control de cargas, el transistor se configura para 
+        operar exclusivamente en sus estados críticos. En este esquema, la base es excitada por una señal de control (como la salida de un microcontrolador),
+        lo que obliga al dispositivo a alternar entre las regiones de corte y saturación. En este modo de operación, conocido como conmutación (switch), 
+        el BJT actúa como un interruptor electrónico: en corte, el circuito permanece abierto e impide el paso de corriente; en saturación, el transistor 
+        permite el flujo máximo hacia la carga con una caída de tensión mínima ($V_{CE_{sat}}$).
+        \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.2\textwidth]{IMAGENES/Switching_transitor.jpg}
+            \caption{Configuración de un transitor para conmutación.}
+            \label{fig:switching_transitor.jpg}
+        \end{figure}
+
+    \subsection{Potencia Máxima}
+    La operación del transistor está restringida por la curva de potencia máxima disipada ($P_{max}$),
+    la cual representa el límite térmico que el dispositivo puede soportar sin sufrir daños permanentes.
+    Dada por la ecuación:
+    \begin{equation*}
+        P_{max} = V_{CE} I_C 
+    \end{equation*}
+
+    Para garantizar la integridad del componente, el punto de operación (punto Q) y la recta de carga 
+    deben situarse siempre por debajo de esta curva dada por el fabricante.
+
+    \subsection{Valores Nominales y Parámetro $h_{FE}$}
+    Para el diseño y análisis de circuitos con el BJT, es necesario consultar los valores nominales especificados por el fabricante.
+    Estos valores representan los límites que no deben excederse para evitar dañar del dispositivo. Para la configuración
+    emisor comun serian: $V_{CE_{max}} = V_{CEO}$, $I_{C_{max}}$ y $P_D = P_{max}$
+    
+    Por otro lado, la ganancia de corriente de $\beta$ se identifica en las hojas de datos como el parámetro $h_{FE}$ 
+    (parámetro híbrido de emisión común). Es importante notar que $h_{FE}$ no es un valor estático. Depende de la temperatura,
+    la corriente $I_C$ y las las tolerancias del fabricante.
+
+    \subsection{Relaciones importantes}
+    Recapitulando, para el análizis de cualquier configuración en CD sera necesario
+    tener presente las siguiente ralaciones básicas de un transistor:
+    \begin{equation}
+        V_{BE} = 0.7 V
+    \end{equation}
+    \begin{equation}
+        I_E = (\beta + 1) I_B \cong I_C
+    \end{equation}
+    \begin{equation}
+        I_C = \beta I_B
+    \end{equation}
+
+    
 \section{Materiales}
-
-
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Prueba.jpg}
-\caption{Circuito Rectificador de Onda Completa con derivación central con dos diodos 1.}
-\label{fig:circuito_base1}
-\end {center}
-\end{figure}
-
-
 Para el circuito mostrado en la "Figura~\ref{fig:circuito_base1}”, emplearemos:
 \begin{itemize}
     \item 4 Diodos 1N4002
