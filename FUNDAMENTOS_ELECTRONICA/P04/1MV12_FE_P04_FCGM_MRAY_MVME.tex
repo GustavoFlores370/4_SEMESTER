@@ -855,45 +855,66 @@ V_D = 17.98V
 
 
 \section{Simulación}
-La gráfica muestra la potencia instantánea en la resistencia $R_1$. Al ser un rectificador de onda completa, la frecuencia de la potencia se duplica respecto a la de la fuente ($120\text{ Hz}$), ya que tanto el semiciclo positivo como el negativo entregan energía a la carga. Se observa un valor pico de potencia cercano a los $11\text{ W}$ y una forma de onda senoidal desplazada (siempre positiva), lo que indica que no hay flujo de potencia negativo hacia la fuente; toda la energía es consumida por la resistencia en forma de pulsos continuos de corriente directa pulsante.
-\begin{comment}
+\subsection*{Simulación del Circuito a}
+En esta sección se recopilan los resultados obtenidos mediante la simulación de cada uno de los circuitos propuestos en la práctica. Para el circuito del inciso \textit{a}, se utilizaron los valores comerciales más cercanos a los calculados teóricamente; por lo tanto, se establecieron resistencias de $R_1 = 220 \, \Omega$ y $R_2 = 100 \, \Omega$. A continuación, se presenta una comparativa entre los resultados medidos físicamente y los simulados.
+
 \begin{figure}[H]%[!ht]
 \begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Simulacion1.jpeg} 
-\caption{Potencia en $R_1$.}
-\label{fig:potenciaInstantaneR1}
+\includegraphics[width=0.45\textwidth]{IMAGENES/SIM1.png} 
+\caption{Simulación del circuito a.}
+\label{fig:SIM1}
 \end{center}
 \end{figure}
-\end{comment}
 
-En esta simulación se confirma la naturaleza cuadrática de la potencia ($P = \frac{V^2}{R}$). Los valles de la gráfica llegan exactamente a $0\text{ W}$, coincidiendo con los puntos de cruce por cero del voltaje de entrada, mientras que los puntos máximos representan el instante de mayor transferencia energética. Al no existir un filtro capacitivo, la potencia es puramente pulsante, lo que significa que el valor promedio de la potencia (potencia media) será aproximadamente la mitad del valor pico observado ($\approx 5.5\text{ W}$), validando el comportamiento teórico de una carga resistiva bajo rectificación total.
-\begin{comment}
+Una vez realizado el análisis del circuito, se obtuvieron los siguientes resultados:
+
+\begin{table}[H]
+\centering
+\small 
+\begin{tabularx}{\columnwidth}{|c|X|X|X|X|X|X|X|X|}
+\hline
+\textbf{Datos} & \textbf{$I_B$ (mA)} & \textbf{$I_C$ (mA)} & \textbf{$V_{BE}$ (V)} & \textbf{$V_{BC}$ (V)} & \textbf{$V_{CE}$ (V)} & \textbf{$\beta$} & \textbf{$P$ (mW)} & \textbf{Pol.}\\ \hline
+Sim  & 18.5 & 148.4 & 0.916 & 0.456 & 0.46 & 8.02 & 85.21 & Sat.\\ \hline
+Med  & 18.4 & 133.6 & 0.833 & 0.753 & 0.08 & 7.26 & 26.05 & Sat. Profunda\\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de resultados del circuito a.}
+\label{tablaComparativa5}
+\end{table}
+
+Como se puede observar en la Tabla \ref{tablaComparativa5}, existe una gran congruencia entre los valores simulados y los medidos, destacando que en ambos escenarios el transistor BJT se encuentra operando en la zona de saturación. Esto se comprueba al notar que las uniones Base-Emisor ($V_{BE}$) y Base-Colector ($V_{BC}$) están polarizadas en directa (ambos voltajes son positivos). 
+Sin embargo, resalta una discrepancia en el voltaje Colector-Emisor ($V_{CE}$): el circuito físico medido presenta una caída de tensión de apenas 0.08 V, lo cual indica que el transistor real entró en un estado de saturación profunda, actuando de manera mucho más cercana a un interruptor ideal que el modelo de simulación de software (el cual arrojó 0.46 V). Como consecuencia directa de este bajo voltaje $V_{CE}$, la potencia disipada por el transistor físico ($P_{transistor}$) es significativamente menor (26.05 mW contra los 85.21 mW simulados), demostrando una mayor eficiencia térmica en la práctica que en la teoría debido a las características de conducción reales del componente físico.
+
+\subsection*{Simulación del Circuito b}
+Para el circuito \textit{b} se utilizaron directamente los valores obtenidos en los cálculos teóricos. A continuación se muestra la simulación realizada tomando en cuenta las resistencias de $R_1 = 48 \, \Omega$ y $R_2 = 26.8 \, \Omega$.
+
 \begin{figure}[H]%[!ht]
 \begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Simulacion2.jpeg} 
-\caption{Transferencia de potencia a $R_1$.}
-\label{fig:transferenciaDePotenciaR1}
+\includegraphics[width=0.45\textwidth]{IMAGENES/SIM2.png} 
+\caption{Simulación del circuito b.}
+\label{fig:SIM2}
 \end{center}
 \end{figure}
-\end{comment}
 
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/SIMULACION_4001.jpeg}
-\caption{Simulación del diodo 1N4001 con variación de temperatura.}
-\label{fig:sim_4001}
-\end {center}
-\end{figure}
+Los resultados obtenidos de la simulación se muestran a continuación y se comparan con los resultados teóricos obtenidos a partir de los cálculos analíticos:
 
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/SIMULACION_4148.jpeg}
-\caption{Simulación del diodo 1N4148 con variación de temperatura.}
-\label{fig:sim_4148}
-\end {center}
-\end{figure}
-\end{comment}
+\begin{table}[H]
+\centering
+\small 
+\begin{tabularx}{\columnwidth}{|c|X|X|X|X|X|X|X|X|}
+\hline
+\textbf{Datos} & \textbf{$I_B$ (mA)} & \textbf{$I_C$ (mA)} & \textbf{$V_{BE}$ (V)} & \textbf{$V_{BC}$ (V)} & \textbf{$V_{CE}$ (V)} & \textbf{$\beta$} & \textbf{$P_{trans.}$ (mW)} & \textbf{Zona Pol.}\\ \hline
+Calculado & 50.0 & 500.0 & 2.60 & 1.00 & 1.60 & 10.00 & 930 & Saturación \\ \hline
+Simulado  & 77.8 & 542.0 & 1.26 & 0.81 & 0.45 & 6.96 & 341 & Saturación \\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de resultados del circuito b.}
+\label{tablaComparativa6}
+\end{table}
+
+Como se puede observar en la Tabla \ref{tablaComparativa6}, existen diferencias notables entre el modelo teórico simplificado y el modelo computacional, aunque ambos confirman exitosamente que el transistor opera en la zona de saturación (con las uniones $V_{BE}$ y $V_{BC}$ polarizadas en directa). 
+
+La principal diferencia radica en los voltajes de juntura y, como consecuencia directa, en la potencia disipada. El cálculo teórico asumió valores extremos ($V_{BE} = 2.6$ V y $V_{CE} = 1.6$ V) para garantizar matemáticamente el estado de saturación, lo cual resulta en una disipación de potencia proyectada muy elevada (930 mW), acercándose peligrosamente al límite térmico de un transistor 2N2222 típico. 
+
+Sin embargo, el simulador, al utilizar modelos de semiconductores mucho más apegados a la realidad física, revela un comportamiento mucho más eficiente térmicamente. En la simulación, el voltaje $V_{BE}$ se estabiliza en 1.26 V y la caída en el canal principal ($V_{CE}$) es de apenas 0.45 V. Gracias a esta característica de conducción superior, la potencia real disipada por el transistor simulado es de 341 mW. Adicionalmente, se nota que para mantener esta alta demanda de corriente en el colector ($542$ mA), el circuito demanda una mayor corriente de base ($77.8$ mA) forzando la ganancia $\beta$ a un valor de 6.96, confirmando el comportamiento del transistor como un interruptor cerrado de estado sólido.
 
 \section{Conclusiones}
 \begin{itemize}
@@ -904,8 +925,8 @@ En esta simulación se confirma la naturaleza cuadrática de la potencia ($P = \
     Además, fue úti utilizar el transformador para poder realizar mediciones de rms, promedio y pico además de darnos la facilidad de poder utilizar la derivación central.
     \newline 
     \item \textbf{Muñoz Reyes Arturo Yabet.}
-    \newline En conclusión, esta práctica nos permitió comprobar físicamente los comportamientos de los transformadores y diodos. Logramos medir la reducción de voltaje y ver el desfasamiento de 180 grados en el osciloscopio dentro del transformador. Comprobamos que los rectificadores de onda completa son más eficientes porque aprovechan todo el ciclo de la fuente, y notamos que el voltaje cae un poco más al usar un puente de diodos (hay un momento pequeño que no da voltaje). Al final, nuestros cálculos matemáticos nos ayudron a entender mejor cómo se comportan estos componentes de manera ideal y lo logramos contrastar con un comportamiento real (qué tiene ciertas pérdidas por diversos factores)
-    \newline 
+    \newline En esta práctica se logró comprobar el comportamiento y las características operativas de un transistor BJT NPN 2N2222. Inicialmente, se verificó la estructura de sus uniones semiconductoras, comprobando que se requiere una correcta polarización directa entre la base y el emisor para permitir la conducción. A través de las distintas configuraciones del circuito, se analizó la relación directa entre la corriente de base y la corriente de colector, logrando identificar físicamente las zonas de corte, activa y de saturación. En esta última, se comprobó que el transistor actúa de forma similar a un interruptor cerrado, limitando su corriente no por la ganancia, sino por la red externa del circuito, ocasionando una caída abrupta en la $\beta$ forzada. 
+    Finalmente, la comparativa entre los modelos matemáticos teóricos, las simulaciones y las mediciones físicas demostró que los cálculos ideales tienden a proyectar escenarios más extremos (como en la disipación de potencia). Por lo que, el uso de simuladores avanzados y la consulta de las hojas de datos del fabricante son herramientas indispensables para dimensionar correctamente los componentes, prevenir fallas térmicas y garantizar la eficiencia real de los sistemas.
     \item \textbf{Morales Vásquez Miguel Ehecatl.} 
     \newline En esta práctica se validó de manera experimental la versatilidad del diodo semiconductor en aplicaciones de rectificación y acondicionamiento de señales. A través de la implementación de los circuitos de media onda y onda completa, fue posible contrastar la teoría matemática con el comportamiento real de los componentes, observando que factores como la caída de tensión interna del diodo ($\approx 0.7\text{ V}$) y las pérdidas en el transformador generan variaciones sutiles pero importantes en los valores RMS y promedio calculados. Un aprendizaje clave fue el uso de la derivación central y el puente de diodos, donde se demostró que la rectificación de onda completa ofrece una transferencia de potencia más constante y eficiente al aprovechar ambos semiciclos de la señal senoidal. Finalmente, el uso de técnicas de medición indirecta para la corriente y el análisis de voltajes inversos permitieron comprender las limitaciones operativas de los diodos, habilidades fundamentales para el diseño de fuentes de alimentación y sistemas de control de potencia en la ingeniería mecatrónica.
 
