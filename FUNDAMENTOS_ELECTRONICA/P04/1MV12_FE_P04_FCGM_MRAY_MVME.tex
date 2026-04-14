@@ -447,544 +447,383 @@
 
     
 \section{Materiales}
-Para el circuito mostrado en la "Figura~\ref{fig:circuito_base1}”, emplearemos:
+        \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{IMAGENES/Circuito_Base.png}
+            \caption{Circuito de polarización de transistor.}
+            \label{fig:circuito_base}
+        \end{figure}
+Para el circuito mostrado en la "Figura~\ref{fig:circuito_base}”, emplearemos:
 \begin{itemize}
-    \item 4 Diodos 1N4002
-    \item 4 Resistencias de 330 $\Omega$
-    \item 1 Resistencia de 1 $\Omega$
-    \item 1 Transformador reductor con derivación central a 12 Vrms
+    \item 1 Transistor NPN 2N2222
+    \item 1 Potenciometro de 500 k$\Omega$
+    \item 1 Resistencia de 330 $\Omega$ a 1/2W
+    \item 1 Resistencia de 220 $\Omega$ a 1/2W
+    \item 1 Resistencia de 100 $\Omega$ a 5W
     \item 1 Protoboard
     \item Cable para protoboard
+    \item 3 Multímetros (De preferencia)
 \end{itemize}
 
-En la "Figura~\ref{fig:circuito_base1}", podemos observar que se utilizan diodos 1N4001, por cuestiones de practicidad y de seguridad se emplearán diodos 1N4002 que soportan hata un voltaje inverso de 100V y una
-corriente de hasta 1A. Cabe aclarar, que el circuito mostrado se propone como un rectificador de media onda, sin embargo, al conectar la derivación central del transformador y colocar los diodos como se muestra obtenemos 
-en realidad un rectificador de onda completa.
 
 \section{Análisis y Resultados}
-\subsection{Comprtamiento del transformador}
-En esta sección se presentan y analizan las mediciones fundamentales del transformador reductor. Iniciamos con la 
-identificación de los devanados (primario y secundario) y su derivación central a partir de la medición de sus resistencias. 
-Posteriormente, con el equipo energizado, se documentan los voltajes RMS para determinar su relación de transformación. 
-Finalmente, se verifica el desfasamiento de 180 grados entre las terminales, comprobando la suma de potenciales de extremo a extremo.
-
-Para la caracterización inicial sin energizar, se midió la resistencia de las terminales para identificar los devanados. 
-El devanado primario registró una resistencia de 112.4 $\Omega $. Por su parte, el devanado secundario presentó una resistencia total 
-de 1.8 $\Omega $ medido de extremo a extremo. Al medir desde los extremos hacia la derivación central, se obtuvo una lectura de 0.9 $\Omega $, 
-lo cual representa exactamente la mitad de la medición total y confirma la simetría del componente.
-
-Posteriormente, al conectar el transformador a la toma de corriente de 120 $Vrms$ , se registró un voltaje de salida en el primario de $V_p = 120 Vrms$ (igual al de la fuente)
-y en el secundario presentó un voltaje de $V_s = 13.21 Vrms$ de extremo a extremo. Con los datos obtenidos, podemos determinar el valor de la relacion de transformación (n)
-del componente, para esto se calculó la proporción entre el voltaje suministrado al devanado primario ($Vp$) y el voltaje medido en el devanado secundario ($V_s$). Obtenemos:
-
-\[
-        n = \frac{V_p}{V_s} = \frac{120}{13.21} = {9.08}
-\]
-
-Con esto podemos observar la relación de reducción, es decir, el cálculo arroja una relación de transformación de aproximadamente 9:1. Lo cual indica físicamente que por cada 9 espiras 
-en el devanado primario, existe 1 espira en el secundario, confirmando la naturaleza reductora del transformador utilizado.
-
-Al utilizar la derivación central del secundario como punto de referencia común (tierra) para el osciloscopio, se midieron simultáneamente los voltajes de las dos terminales restantes. 
-Se pudo comprobar gráficamente un desfasamiento exacto de 180 grados  entre ambas señales como se muestra en la "Figura~\ref{fig:desfasamiento}".
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/TRANSFORMADOR.png}
-\caption{Desfasamiento de 180 grados en el transformador.}
-\label{fig:desfasamiento}
-\end {center}
-\end{figure}
-\end{comment}
-
-Este desfasamiento ocurre debido a la polaridad relativa inducida en la bobina. Según la Ley de Faraday, el flujo magnético alterno induce una diferencia de potencial a lo largo de 
-todo el devanado secundario. Al "anclar" el centro físico de la bobina a 0V, el voltaje total se divide en dos mitades. En el instante en que la terminal superior es empujada hacia un 
-potencial positivo máximo, la terminal inferior es forzada hacia un potencial negativo máximo de la misma magnitud para mantener la diferencia de potencial total. El resultado son dos 
-señales senoidales que son el "espejo" la una de la otra.
-
-Para corroborar la relación entre las señales, se procedió a medir con el osciloscopio la señal de extremo a extremo del secundario, omitiendo la derivación central.Cálculos teóricos: 
-Por Ley de Voltajes de Kirchhoff, el voltaje total ($V_{total}$) es la diferencia de potencial entre la terminal superior ($V_A$) y la terminal inferior ($V_B$). Como se demostró en el inciso anterior 
-que están desfasadas 180°, se cumple que $V_B(t) = -V_A(t)$. Por lo tanto, la sumatoria es:
-
-\[
-        V_{total} = V_A - V_B = V_A - (-V_A)
-\]
-\[
-        V_{total} = 2V_A
-\]
-
-Como se observó en la medición anterior, el voltaje pico en ambos canales respecto a la derivación central es de aproximadamente 9.3 V. Por consiguiente, por principio de suma de potenciales, la medición 
-de extremo a extremo en el devanado secundario debe reflejar una amplitud equivalente al doble, alcanzando un valor pico cercano a los 18.6 V. Esta relación teórica se verifica de manera experimental en 
-la Figura \ref{fig:comprobacion}
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Comprobacion.png}
-\caption{Medicion de extremo a extremo en el transformador.}
-\label{fig:comprobacion}
-\end {center}
-\end{figure}
-\end{comment}
-
-Al analizar la gráfica obtenida en el osciloscopio, la amplitud de la señal senoidal es exactamente el doble de la amplitud que se visualizó al medir solo una mitad contra la derivación central. 
-Esto valida de forma práctica el principio de superposición y la naturaleza del desfasamiento de 180 grados inducido magnéticamente.
-
-\subsection{Análisis del comportamiento del circuito 1}
-En esta sección se evalúa el comportamiento de los diodos rectificadores utilizando la configuración de la Figura 1. Se determinaron los valores teóricos y prácticos del voltaje en la resistencia 
-de carga ($R_1$), así como el voltaje de pico inverso (PIV) que soportan los semiconductores en estado de no conducción.
-
-Para calcular el valtaje de la resistencia $R_1$, tomamos en cuenta los datos de las mediciones previas del transformador, en el cual se determinó que el voltaje eficaz total es de 13.21 Vrms (de extremo a extremo). 
-Al utilizar la derivación central como referencia común, el voltaje eficaz para cada mitad del secundario es de 6.605 $V_{rms}$. El voltaje pico ($V_p$) proporcionado por cada canal hacia los diodos se calcula como:
-
-\[
-        V_p = 6.605 \cdot \sqrt{2}  = 9.34V
-\]
-
-Considerando el modelo práctico del diodo de silicio, el cual presenta una caída de tensión de aproximadamente 0.7V en polarización directa, el voltaje pico teórico esperado en la resistencia de carga ($V_{R1}$) es:
-
-\[
-    V_{R1} = 9.34 \text{ V} - 0.7 \text{ V} = 8.64 \text{ V}
-\]
-
-Al realizar la medición del voltaje $V_{R1}$ utilizando el osciloscopio, se obtuvieron los resultados de la forma de onda que se muestran en la Figura \ref{fig:voltajeResistencia}.
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeResistencia.png}
-\caption{Voltaje en la resistencia $R_1$}
-\label{fig:voltajeResistencia}
-\end {center}
-\end{figure}
-\end{comment}
-
-La "Figura~\ref{fig:voltajeResistencia}" demuestra lo que anteriormente se mencionaba, si bien el circuito se propone como un ejemplo de rectificador de media onda, podemos observar que para toda la onda sinusoidal de entrada 
-se rectifica en un voltaje positivo. En otras palabras, el circuito propuesto es en realidad un rectificar de onda completa, dado que para la fase positiva el diodo 1 permite conducir la correinte y para la fase negativa el diodo 2
-es el que permite el paso de corriente en el mismo sentido a la resistencia R1.
-
-Para validar experimentalmente el análisis matemático, se efectuaron mediciones adicionales empleando un multímetro. A continuación, en la "Tabla~\ref{tablaComparativa}", se presenta una comparativa que contrasta 
-los valores teóricos calculados para el voltaje en la resistencia de carga $R_1$ con las mediciones experimentales obtenidas tanto en el osciloscopio como con el multímetro.
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|}
-\hline
-\textbf{Datos obtenidos} & \textbf{$V_prom$ (V)} & \textbf{$V_{rms}$ (V)} & \textbf{$V_{pp}$ (V)}\\ \hline
-Multímetro & 5.17 & 5.89  & 8.03\\ \hline
-Cálculos & 5.50 & 6.10  & 8.64\\ \hline
-Osciloscopio & 5.464 & 6.107 & 8.560\\ \hline
-\end{tabularx}
-\caption{Comparacion de voltajes calculados y medidos de $R_1$.}
-\label{tablaComparativa}
-\end{table}
-
-Ahora vamos a comprobar el voltaje inverso de ambos diodos dentro del circuito. Para esto utilizamos la ley de kirchoff (dos mallas), para realizar el análisis para D1 tenemos que hacerlo desde el semiciclo negativo, ya 
-que es donde este no conduce. En este estado, el diodo $D_1$ entra en estado de bloqueo ($I_{D1}=0$), mientras que el diodo $D_2$ conduce, asumiendo una caída de tensión típica de $V_{D2} = 0.7 V$. Con esto establecemos la
-siguiente relación:
-
-\[
-    -V_1 - V_2 - V_{D1} + V_{D2} = 0
-\]
-Donde $V_1$ es el voltaje del primer inductor y $V_2$ es el del segundo inductor.
-
-Sustituyendo los valores ya anteriormente calculados ($V_1 = V_1 = 9.34 V_{rms}$). Obtenemos
-
-\[
-    V_{D1} = -2(9.34)+0.5 = -17.98 V
-\]
-
-Por lo tanto, el voltaje inverso teórico que soporta el semiconductor en estado de no conducción es de aproximadamente $-17.98 \text{ V}$. (La de ambos diodos)
-
-Para demostrar experimentalmente este comportamiento en el osciloscopio, se configuró la función matemática (MATH) para calcular la diferencia de potencial, estableciendo el Canal A en el cátodo y el Canal B en el ánodo 
-del diodo (A-B). Los resultados de esta configuración se observan en la "Figura~\ref{fig:voltajeInverso}" y en la "Figura~\ref{fig:zoomvoltajeInverso}".
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeInverso_Circuito2.jpg} 
-\caption{Medición diferencial del voltaje en el diodo $D_1$.}
-\label{fig:voltajeInverso}
-\end{center}
-\end{figure}
-
-
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje_D1.png} 
-\caption{Acercamiento en la medición diferencial del voltaje en el diodo $D_1$.}
-\label{fig:zoomvoltajeInverso}
-\end{center}
-\end{figure}
-\end{comment}
-
-Los resultados son los esperados, para la fase positiva el diodo $D_1$ circula corriente por lo que veremos en el osciloscopio
-la típica caída de tensión de 0.7V, y para la fase negativa el diodo no circula corriente por lo que veremos el PIV que es aproximadamente 
-el mismo qu el voltaje de entrada.
-
-A continuación, se presenta una tabla comparativa entre el valor teórico calculado y la medición extraída del osciloscopio.
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|}
-\hline
-\textbf{Método de obtención} & \textbf{Voltaje Inverso (V)} \\ \hline
-Cálculo Teórico & -17.98 \\ \hline
-Osciloscopio (MATH) & -18.20 \\ \hline
-\end{tabularx}
-\caption{Comparación del voltaje inverso en el diodo $D_1$.}
-\label{tab:comparacion_PIV}
-\end{table}
-
-Para complementar la caracterización del semiconductor, se procedió a determinar la corriente que atraviesa el diodo $D_1$ durante su estado de conducción (semiciclo positivo).
-La corriente pico ($I_{D1}$) en el circuito se define por la Ley de Ohm, considerando el voltaje pico en la carga ($V_R1$) y el valor de la resistencia $R_1$ ($220 \Omega$ ). Tomando el voltaje pico real previamente calculado (8.64 V), se tiene:
-\[
-    I_{D1 } = \frac{V_{R1}}{220} = \frac{8.64}{220} = 0.0392 A
-\]
-
-Dado que cada diodo en esta configuración conduce únicamente durante medio ciclo de la señal alterna, la corriente promedio ($I_{prom}$) y la corriente eficaz ($I_{rms}$) que soporta individualmente el componente se calculan con las fórmulas 
-de rectificación de media onda:
-
-\[
-    I_{prom} = \frac{I_{D1}}{\pi} = \frac{0.0392}{\pi} = 12.47 mA
-\]
-
-\[
-    I_{rms} = \frac{I_{D1}}{2} = \frac{0.0392}{2} = 19.60 mA
-\]
-
-Debido a que el osciloscopio mide diferencias de potencial y no corriente directa, se implementó una técnica de medición indirecta. Se insertó una resistencia de prueba de $1 \ \Omega$ en serie con el diodo $D_1$ . Por la Ley de Ohm ($V = I \cdot R$), 
-al ser la resistencia igual a la unidad, el voltaje medido diferencialmente en sus terminales es numéricamente igual a la corriente que fluye por la rama. Podemos observar la grafica en la "Figura~\ref{fig:corrienteDiodo}".
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/CorrienteDiodo.png} 
-\caption{Forma de onda de la corriente en el diodo $D_1$.}
-\label{fig:corrienteDiodo}
-\end{center}
-\end{figure}
-\end{comment}
-
-El diodo entra en conducción únicamente durante el semiciclo positivo de la señal de alimentación (trazo azul), alcanzando una amplitud máxima ligeramente inferior a una división completa (aproximadamente 40 mV). Dado que la resistencia de prueba es de 
-1 $\Omega$ , este valor se traduce directamente en una corriente pico de aproximadamente 40 mA, lo cual comprueba y valida el valor teórico calculado previamente de 39.2 mA.
-
-\subsection{Análisis de comportamiento del circuito 2}
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base2.png} 
-\caption{Circuito Rectificador de onda completa con derivación central con dos diodos 2.}
-\label{fig:circuitobase2}
-\end{center}
-\end{figure}
-\end{comment}
-
-Haciendo un análisis rápido en el segundo circuito podemos darnos cuenta que el su comportamiento no es muy diferente al anterior, ya que ambos mantienen la misma configuracion con la unica diferencia de que este último tiene los diodos con la polaridad invertida,
-lo cual nos indica que ahora el diodo $D_1$ conduce en el semiciclo negativo y el diodo $D_2$ en el positivo. Para comprobarlo, utilizamos el osciloscopio para ver el comportamineto del diodo $D_1$ de manera gráfica.
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/RECT_MEDIA_COM.jpeg} 
-\caption{Forma de onda de la corriente en el diodo $D_1$ en el circuito 2.}
-\label{fig:corrienteDiodo2}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeInverso.png} 
-\caption{Acercamiento a la forma de onda de la corriente en el diodo $D_1$ en el circuito 2.}
-\label{fig:zoomcorrienteDiodo2}
-\end{center}
-\end{figure}
-\end{comment}
-
-Los valores teóricos esperados son exactamente los mismos. $V_{R1} = 8.64V$
-
-\subsection{Análisis de comportamiento del circuito 3}
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base3.png} 
-\caption{Circuito rectificador de onda completa sin derivación central}
-\label{fig:circuitobase3}
-\end{center}
-\end{figure}
-\end{comment}
-
-En esta sección se evalúa la topología de puente de Graetz (4 diodos). Esta configuración prescinde de la derivación central del transformador, utilizando el devanado secundario en su totalidad para alimentar la carga $R_1$.
-
-Al utilizar los extremos del secundario, el voltaje eficaz de entrada al puente es de 13.21 $V_{rms}$, lo que equivale a un voltaje pico total de: 
-
-\[
-    V = 13.21 V_{rms} \cdot \sqrt{2} = 18.68 V
-\]
-
-En un puente de diodos, la corriente siempre atraviesa dos semiconductores simultáneamente en cada semiciclo (D1 y D2 en el positivo; D3 y D4 en el negativo) . Por tanto, la caída de tensión en los diodos es de 1.4 V (0.7 V+0.7 V).
-El voltaje pico teórico en la resistencia de carga ($R_1 = 220 \Omega$) es:
-
-\[
-    V_{R1} = 18.68 V -1.4 V = 17.28 V
-\]
-
-Aplicando las ecuaciones matemáticas para una señal rectificada de onda completa, los valores teóricos esperados son:
-
-\[
-    V_{prom} = \frac{V_{R1}}{\pi} = \frac{17.28}{\pi} = 5.50 V
-\]
-
-\[
-    V_{rms} = \frac{V_{R1}}{2\sqrt{2}} = \frac{17.28}{\sqrt{2}} = 12.21 V
-\]
-
-Para las corrientes:
-
-\[
-    I_{prom} = \frac{V_{prom}}{220} = \frac{5.50}{220} = 0.025 A
-\]
-
-\[
-    I_{rms} = \frac{V_{rms}}{220} = \frac{12.21}{220} = 0.055 A
-\]
-
-Al analizarlo en el osciloscopio obtenemos las siguientes imagenes.
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje.png} 
-\caption{Voltaje en $R_1$ circuito 3}
-\label{fig:VoltajeR1}
-\end{center}
-\end{figure}
-\end{comment}
-
-Podemos observar la siguiente tabla que compara los resultados calculados y medidos con el osciloscopio y el multimetro
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|}
-\hline
-\textbf{Datos obtenidos} & \textbf{$V_{prom}$ (V)} & \textbf{$V_{rms}$ (V)} & \textbf{$V_{p}$ (V)}\\ \hline
-Multímetro & 5.38 & 11.59  & 16.39\\ \hline
-Cálculos & 5.50 & 12.21 & 17.28\\ \hline
-Osciloscopio & 5.41 & 12.02 & 17.0\\ \hline
-\end{tabularx}
-\caption{Comparacion de voltajes calculados y medidos de $R_1$.}
-\label{tablaComparativa2}
-\end{table}
-
-Durante el semiciclo en el que un par de diodos bloquea el paso de corriente (por ejemplo, $D_1$ apagado mientras $D_3$ y $D_4$ conducen), el voltaje inverso que debe soportar el diodo apagado se determina por mallas. 
-En la configuración de puente, el diodo en inversa queda en paralelo con el devanado secundario y el diodo que está conduciendo en esa misma rama. Obtenemos:
-
-\[
-    V_{D1} = V + V_D = 18.68 V - 0.7 V = 17.98 V 
-\]
-
-En el osciloscopio se puede ver de la siguiente manera:
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeD1_2.png} 
-\caption{Voltaje en $D_1$ circuito 3}
-\label{fig:VoltajeD1_3}
-\end{center}
-\end{figure}
-\end{comment}
-
-Como podemos observar la diferencia fundamental entre el circuito 1 con respecto al circuito 3, radica en la exigencia física para los componentes, es deci, que para proporcionar el mismo voltaje pico a la resistencia de carga, 
-los diodos en el circuito 1 deben ser capaces de soportar el doble de voltaje inverso en comparación con los diodos del puente en el circuito 3. El puente de diodos es más eficiente en este aspecto porque permite usar diodos con una menor 
-especificación de voltaje inverso máximo.
-
-\subsection{Análisis de comportamiento del circuito 4}
-
-Este circuito también corresponde a un rectificador de onda completa con 4 diodos, la diferencia es que ahora lo analizaramenos el comportamiento de este utilizando la derivacion central del transformador
-como la tierra.
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Circuito_Base4.png} 
-\caption{Circuito rectificador de onda completa con derivación central}
-\label{fig:circuitobase4}
-\end{center}
-\end{figure}
-\end{comment}
-
-Se hace la aclaración de que para el circuito mostrado en la "Figura~\ref{fig:circuitobase4}" se propone una resistencia de 100 $\Omega$, sin mebargo, la empleada en laboratorio fue una resistencia de 82 $\Omega$, por lo que los cálculos y lo mostrado en
-el osciloscopio será con base a este valor.
-Es de inmediato notar que la resistencia $R_1$ y $R_2$ se encuentran en paralelo, esta aclaración facilitará el análisis del circuuito para conocer los voltajes en las resistencias que a priori sabemos que es el mismo.
-Mediante mallas calculamos los voltajes:
-
-Ecuaciones de malla:
-
-\[
--9.34V + 0.7 + V_{R1} = 0
-\]
-
-\[
--9.34V - V_{R2} + 0.7 = 0
-\]
-
-Despejando:
-
-\[
-V_{R1} = 8.64V
-\]
-
-\[
-V_{R2} = -8.64V
-\]
-
-Corrientes:
-
-\[
-I_{R1} = \frac{8.64}{220} = 0.039A = 39\,mA
-\]
-
-\[
-I_{R2} = \frac{8.64}{82} = 0.105A = 105\,mA
-\]
-
-
-Analizando los voltajes RMS y promedio obtenemos:
-Para onda completa:
-
-\subsubsection{Voltaje Promedio.}
-\[
-V_{prom} = \frac{2}{\pi} V_m = \frac{2}{\pi}(8.64V)
-\]
-\[
-V_{prom} = 5.50V
-\]
-
-\subsubsection{Voltaje RMS.}
-El voltaje RMS se define para una señal sinusoidal como:
-\[
-V_{rms} = \frac{V_m}{\sqrt{2}} = \frac{8.64V}{\sqrt{2}}
-\]
-\[
-V_{rms} = 6.11V
-\]
-
-\subsubsection{Corriente promedio.}
-
-\[
-I_{R1prom} = \frac{V_{prom}}{R} = \frac{5.50\,\text{V}}{220\,\Omega}
-\]
-\[
-I_{R1prom} = 24.19_{mA}
-\]
-
-\[
-I_{R2prom} = \frac{V_{prom}}{R} = \frac{-5.50\,\text{V}}{82\,\Omega}
-\]
-\[
-I_{R2prom} = -66.84_{mA}
-\]
-
-\subsubsection{Corriente RMS}
-
-\[
-I_{R1rms} = \frac{V_{rms}}{R} = \frac{6.11\,\text{V}}{220\,\Omega}
-\]
-
-\[
-I_{R1rms} = 26.87_{mA}
-\]
-
-\[
-I_{R2rms} = \frac{V_{rms}}{R} = \frac{-6.11\,\text{V}}{82\,\Omega}
-\]
-
-\[
-I_{R2rms} = -74.24_{mA}
-\]
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeR1_R2_Circuito4.jpg} 
-\caption{Voltaje en $R_1$ y $R_2$}
-\label{fig:voltajeR1R2}
-\end{center}
-\end{figure}
-\end{comment}
-En la "Figura~\ref{fig:voltajeR1R2}" se comprueba lo esperado en los cálculos y análisis del circuito, la $R_2$ está polarizada inversamente respecto
-a la referencia, por lo que podemos visualizar un desfase de 180°.
-
-Los cálculos realizados son comprobables midiendo directamente con el multímetro. Veáse "Figura~\ref{fig:multímetro}" en Anéxos donde se muestra la manera de medición que 
-se tomó para medir corriente.
-Cabe mencionar que para medir la corriente rms con el multímetro es necesario medir primero corriente en AC y después medir corriente en DC, para poder aplicar la siguiente 
-fórmula:
-\begin{equation}
-I_{\mathrm{RMS}} = \sqrt{I_{\mathrm{DC}}^{2} + I_{\mathrm{AC,RMS}}^{2}}
-\end{equation}
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|}
-\hline
-\textbf{Datos obtenidos} & \textbf{$I_{prom}$ (mA)} & \textbf{$I_{rms}$ (mA)} & \textbf{$I_p$ (mA)}\\ \hline
-Multímetro  & 23.30 & 26.69 & 37.75\\ \hline
-Cálculos    & 24.19 & 27.77 & 39.00\\ \hline
-\end{tabularx}
-\caption{Tabla comparativa de corrientes en $R_1$.}
-\label{tablaComparativa3}
-\end{table}
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\columnwidth}{|c|X|X|X|}
-\hline
-\textbf{Datos obtenidos} & \textbf{$I_{prom}$ (mA)} & \textbf{$I_{rms}$ (mA)} & \textbf{$I_p$ (mA)}\\ \hline
-Multímetro  & -60.74 & -69.62 & -98.46\\ \hline
-Cálculos    & -66.84 & -74.24 & -105.0\\ \hline
-\end{tabularx}
-\caption{Tabla comparativa de corrientes en $R_2$.}
-\label{tablaComparativa4}
-\end{table}
-
-Una vez analizado el comportamiento de este circuito rectificador de onda completa, no está de más analizar el comportamiento del 
-diodo para cuando se comporta como circuito abierto y para cuando se comporta como corto, a priori podemos decir que el comportamiento esperado es 
-que para fases donde el diodo conduce vamos a obervar una caída de tensión de 0.7V para diodos de silicio y para fases donde el diodo no conuce vamos
-a observar aproximadamente el voltaje de la fuente.
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/VoltajeDiodo_circuito4.jpg} 
-\caption{Voltaje en $D_1$.}
-\label{fig:voltajeD1}
-\end{center}
-\end{figure}
-\end{comment}
-
-Analíticamente podemos corroborar el voltaje inverso pico, sabemos que en el $D_1$ en el cátodo tenemos un voltaje 
-equivalente al entregado por la fuente y en ánodo tenemos el voltaje de la resistencia, por lo que procedemos:
-
-\[
-V_k = 9.34V
-\]
-\[
-V_A = -8.64V
-\]
-\[
-V_D = V_k - V_A
-\]
-\[
-V_D = 9.34 - (-8.64)
-\]
-\[
-V_D = 17.98V
-\]
-
-
-
+    \subsection{Características Básicas del Transistor.}
+        En esta sección se analizarán parámetros medibles inmediatamente con multpimetro del transistor, esto con la finalidad de reconocer las terminales del mismo y su comportamiento a condiciones iniciales.
+        \begin{table}[H]
+            \centering
+            \small 
+            \begin{tabularx}{\columnwidth}{|c|X|X|X|}
+            \hline
+            \textbf{Parámetro} & \textbf{Polaridad Drecta} & \textbf{Polaridad Inversa} \\ \hline
+            $R_{CE}$  & $\infty$ & $\infty$\\ \hline
+            $R_{BE}$  & 3.72 M$\Omega$ & $\infty$\\ \hline
+            $R_{BC}$  & 3.70 M$\Omega$ & $\infty$\\ \hline
+            $V_{BE}$  & 0.668 V        & $\infty$\\ \hline
+            $V_{BC}$  & 0.667 V        & $\infty$\\ \hline
+            \end{tabularx}
+            \caption{Parámetros básicos en los terminales del transistor.}
+            \label{tabla:Parametros_Basicos.}
+        \end{table}
+    \subsection{Zonas: Activa, Saturación y Corte.}
+        Con el circuito mostrado en "Figura~\ref{fig:circuito_base}” tomaremos la fuente $V_1$ como una fuente variable además que la resistencia $R_1$ será reemplazada con el potenciometro para tener una resistencia variable.
+        Lo anterior con la finalidad de observar e identificar el comportamiento de las tres etapas características del transistor.
+        Los resultados obtenidos se muestran en la siguiente tabla:
+        \begin{table}[H]
+            \centering
+            \small 
+            \begin{tabularx}{\columnwidth}{|c|X|X|X|X|X|X|X|X|X|}
+            \hline
+            \textbf{$V_1$} & \textbf{$R_1$} & \textbf{$V_{BE}$} & \textbf{$I_B$} & \textbf{$V_{BC}$} & \textbf{$V_{CE}$} & \textbf{$I_C$} & \textbf{$\beta$} & \textbf{$V_{RC}$} & \textbf{Zona P.}\\ \hline
+            -5 & 5.56 k$\Omega$ & -5 & 0 & 14.98 & 10.0 & 0 & 0 & 0 & C \\ \hline
+            -3 & 5.56 k$\Omega$ & -2.99 & 0 & 9.35 & 10.0 & 0 & 0 & 0 & C \\ \hline
+            0 & 5.56 k$\Omega$ & 0 & 0 & 10.0 & 10.0 & 0 & 0 & 0 & C \\ \hline
+            5 & 5.56 k$\Omega$ & 0.72 & 0.9 mA & 0.67 & 0.07 & 30.6 mA & 34 & 9.93 & S \\ \hline
+            5 & 10.46 k$\Omega$ & 0.70 & 0.5 mA & 0.64 & 0.06 & 30.2 mA & 60.4 & 9.94 & S \\ \hline
+            5 & 15.7 k$\Omega$ & 0.71 & 0.3 mA & 0.61 & 0.09 & 30.7 mA & 102.3 & 9.91 & S \\ \hline
+            5 & 20.4 k$\Omega$ & 0.70 & 0.2 mA & 0.59 & 0.10 & 30.4 mA & 150.5 & 9.90 & S \\ \hline
+            5 & 30.4 k$\Omega$ & 0.71 & 0.2 mA & 0.55 & 0.15 & 29.7 mA & 148.5 & 9.49 & S \\ \hline
+            5 & 44.3 k$\Omega$ & 0.68 & 0.1 mA & -2.13 & 2.81 & 21.6 mA & 216 & 7.05 & A \\ \hline
+            5 & 70 k$\Omega$ & 0.66 & 64 $\mu$A & -4.71 & 4.58 & 16.2 mA & 253.1 & 5.28 & A \\ \hline
+            5 & 100 k$\Omega$ & 0.65 & 43 $\mu$A & -6.08 & 6.29 & 11 mA & 255.8 & 3.61 & A \\ \hline
+            5 & 150 k$\Omega$ & 0.64 & 29 $\mu$A & -7.08 & 7.49 & 7.3 mA & 251.7 & 2.42 & A \\ \hline
+            5 & 200 k$\Omega$ & 0.64 & 22 $\mu$A & -7.65 & 8.14 & 5.4 mA & 245.4 & 1.8 & A \\ \hline
+            5 & 300 k$\Omega$ & 0.64 & 15 $\mu$A & -8.17 & 8.78 & 3.3 mA & 220 & 1.17 & A \\ \hline
+            5 & 400 k$\Omega$ & 0.63 & 11 $\mu$A & -8.43 & 9.08 & 2.8 mA & 254.5 & 0.88 & A \\ \hline
+            5 & 443 k$\Omega$ & 0.63 & 10 $\mu$A & -8.52 & 9.17 & 2.4 mA & 290 & 0.80 & A \\ \hline
+
+            \end{tabularx}
+            \caption{Resultados medidos del transistor BJT.}
+            \label{tabla:Resultados_BJT}
+        \end{table}             
+
+        Es de inmediato notar que el $V_{BE}$ prácticamente en todos los casos es de 0.7 V, semejante al comportamiento de un diodo de silicio es polarización directa, de igual manera para $V_1$<0 el $V_{BE}$ es igual al voltaje de la fuente,
+        debido a que la conexicón base-emisor se comporta como un diodo polarizado inversamente. La beta calculada por:
+            \[
+            \beta = \frac{I_C}{I_B}
+            \]
+        Se observa de la expresión anterior que la beta es inversamente proporcional a la corriente que fluctúa por la base, a continuación se muestra el comportamiento de la $\beta$ en función de $I_B$.
+        \begin{figure}[H]%[!ht]
+            \begin{center}
+            \includegraphics[width=0.50\textwidth]{IMAGENES/Comportamiento_beta.png} 
+            \caption{Gráfica del comportamiento $\beta$.}
+            \label{fig:beta}
+            \end{center}
+        \end{figure}
+        Los valores obtenidos para $\beta$ coinciden con los esperados encontrados por el fabricante, veáse "Figura~\ref{fig:datasheet}” en la sección de apéndice, además del valor medido por multímetro que también se encuntra dentro del rango de operación.
+        Analizando el circuito y desarrollando mediante mallas podemos conocer el comportamiento de la $I_B$ en función de la resistencia $R_1$:
+            \[
+            - V_1 + I_B \cdot R_1 + V_{BE} = 0
+            \]
+            \[
+            I_B = \frac{V_1 - V_{BE}}{R_1}
+            \]
+        Podemos darnos cuenta que para valores pequeños de $R_1$ obtendremos una $I_B$ grande y a $R_1$ grandes obtendremos $I_B$ pequeñas, en la siguiente gráfica mostramos esta relación:
+        \begin{figure}[H]%[!ht]
+            \begin{center}
+            \includegraphics[width=0.50\textwidth]{IMAGENES/Corriente_vs_resistencia.png} 
+            \caption{Gráfica del comportamiento $I_B$.}
+            \label{fig:IVSR}
+            \end{center}
+        \end{figure}
+
+        Conocer esto nos sirve para entender el comportamiento de $V_{CE}$ pues éste depende totalmente del valor de $I_C$ y, a su vez, éste depende de la $I_B$, por lo que para la zona de corte observaremos el voltaje de la $V_2$=10V (Polarización Inversa), en la zona de Saturación veremos que 
+        el voltaje es 0V idealmente, aproximado a 0.2V en casos reales, debido que tanto las terminales Base-Emisor y Base-Colector están polarizados directamente (0.7V):
+        \[
+        V_{CE} = -V_{BC} + V_{BE}
+        \]
+        En síntesis, lo anteriormente mencionado se puede ver resumido en la siguiente gráfica:
+        \begin{figure}[H]%[!ht]
+            \begin{center}
+            \includegraphics[width=0.50\textwidth]{IMAGENES/Voltaje_vs_resistencia.png} 
+            \caption{Gráfica del comportamiento $V_{CE}$.}
+            \label{fig:VVSR}
+            \end{center}
+        \end{figure}   
+        La zona de saturación es la zona no lineal del comportamiento del transistor por lo que es importante conocer cómo funciona y las condiciones en las que se opera en dicha zona.
+        Ya hemos visto la relación que existe entre $I_B$ y $I_C$ y la $\beta$, sin embargo, esta relación funciona únicamente para la zona Activa, como podemos observar en la "Table II" la $I_C$ se mantiene en 30mA en saturación. Esto porque en la zona de saturación la beta no funje como amplificador, y la corriente se ve limitada por la carga del circuito:
+        \[
+        -V_2 + I_C \cdot R_2 + V_{CE} = 0
+        \]   
+        \[
+        I_C = \frac{V_2 - V_{CE}}{R_2}
+        \]
+        Observando los resultados obtenidos y la demostración anteriormente hecha podemos deducir las condiciones de la zona de saturación:
+        \[
+        V_{BE} \approx 0.7V
+        \]
+        \[
+        V_{BC} \approx 0.7V
+        \]
+        \[
+        V_{CE} \approx 0.2V
+        \]
+        \[
+        I_B \cdot \beta > I_C
+        \]
+        Dichos valores son comprobables y se encuentran dentro del tango indicado por el fabrcante, veáse "Figura~\ref{fig:datasheet_saturacion}” en el apartado de apéndices.
+        \newline
+        Cuando $I_B$ disminuye veremos que la unión Base-Colector se polariza inversamente entrando en la zona Activa lo cuál aumenta significativamente el $V_{CE}$.
+
+    \subsection{Cálculo de $R_1$ y $R_2$ con parámetros A.}
+        Siguiendo el análsis del circuito mostrado en la "Figura~\ref{fig:circuito_base}” se calcularán los valores de $R_1$ y $R_2$ bajo las siguientes condiciones:
+        \begin{itemize}
+            \item $V_{CE}$ = 0.4 V
+            \item $I_C$ = 150 mA
+            \item $I_B$ = 15mA
+            \item $V_{BE}$ = 1.3 V
+            \item $V_2$ = 15 V
+            \item $V_1$ = 5 V
+        \end{itemize}
+        \begin{figure}[H]%[!ht]
+            \begin{center}
+            \includegraphics[width=0.45\textwidth]{IMAGENES/Analisis_1.png} 
+            \caption{Circuito analizado.}
+            \label{fig:AS1}
+            \end{center}
+        \end{figure}
+
+        \subsubsection{Mallas}
+
+        \[
+        R_1 I_B + V_{BE} = V_1
+        \]
+
+        \[
+        R_2 I_C + V_{CE} = V_2
+        \]
+
+        \subsubsection{Cálculo de $R_1$}
+
+        \[
+        R_1 = \frac{V_1 - V_{BE}}{I_B}
+        \]
+
+        \[
+        R_1 = \frac{5 - 1.3}{15 \times 10^{-3}}
+        \]
+
+        \[
+        R_1 = 246.66\,\Omega
+        \]
+
+        \[
+        P_1 = I_B^2 R_1
+        \]
+
+        \[
+        P_1 = (15 \times 10^{-3})^2 (246.66)
+        \]
+
+        \[
+        P_1 = 0.05\,W
+        \]
+
+        \subsubsection{Cálculo de $R_2$}
+
+        \[
+        R_2 = \frac{V_2 - V_{CE}}{I_C}
+        \]
+
+        \[
+        R_2 = \frac{15 - 0.4}{150 \times 10^{-3}}
+        \]
+
+        \[
+        R_2 = 97.33\,\Omega
+        \]
+
+        \[
+        P_2 = I_C^2 R_2
+        \]
+
+        \[
+        P_2 = (150 \times 10^{-3})^2 (97.33)
+        \]
+
+        \[
+        P_2 = 2.18\,W
+        \]
+
+        \subsubsection{Cálculo de $\beta$}
+
+        \[
+        \beta = \frac{I_C}{I_B}
+        \]
+
+        \[
+        \beta = \frac{150\,mA}{15\,mA}
+        \]
+
+        \[
+        \beta = 10
+        \]
+
+        \subsubsection{Relación de voltajes}
+
+        \[
+        V_{CE} = V_{BE} - V_{BC}
+        \]
+
+        \[
+        V_{BC} = V_{BE} - V_{CE}
+        \]
+
+        \[
+        V_{BC} = 1.3 - 0.4
+        \]
+
+        \[
+        V_{BC} = 0.9\,V
+        \]
+        En mercado no encontraremos exactamente estos valores por lo que los valores utilizados para el armado del circuito se presentan en la siguiente tabla:
+            \begin{table}[H]
+                \centering
+                \small 
+                \begin{tabularx}{\columnwidth}{|c|X|X|X|}
+                \hline
+                \textbf{Parámetro} & \textbf{Calculado} & \textbf{Real} \\ \hline
+                $R_1$  & 244.66$\Omega$ & 220 $\Omega$\\ \hline
+                $P_1$  & 0.05 W & 1/2 W\\ \hline
+                $R_2$  & 97.33$\Omega$ & 100$\Omega$\\ \hline
+                $P_2$  & 2.18 W        & 5 W\\ \hline
+                \end{tabularx}
+                \caption{Cálculo de $R_1$ y $R_2$ comercicales parámetros A.}
+                \label{tabla:erres.}
+            \end{table}
+
+    \subsection{Cálculo de $R_1$ y $R_2$ con parámetros B.}
+        \begin{itemize}
+            \item $V_{CE}$ = 1.6 V
+            \item $I_C$ = 500 mA
+            \item $I_B$ = 50mA
+            \item $V_{BE}$ = 2.6 V
+            \item $V_2$ = 15 V
+            \item $V_1$ = 5 V
+        \end{itemize}
+        \subsubsection{Mallas}
+
+        \[
+        R_1 I_B + V_{BE} = V_1
+        \]
+
+        \[
+        R_2 I_C + V_{CE} = V_2
+        \]
+
+        \subsubsection{Cálculo de $R_1$}
+
+        \[
+        R_1 = \frac{V_1 - V_{BE}}{I_B}
+        \]
+
+        \[
+        R_1 = \frac{5 - 2.6}{50 \times 10^{-3}}
+        \]
+
+        \[
+        R_1 = 48\,\Omega
+        \]
+
+        \[
+        P_1 = I_B^2 R_1
+        \]
+
+        \[
+        P_1 = (50 \times 10^{-3})^2 (48)
+        \]
+
+        \[
+        P_1 = 0.12\,W
+        \]
+
+        \subsubsection{Cálculo de $R_2$}
+
+        \[
+        R_2 = \frac{V_2 - V_{CE}}{I_C}
+        \]
+
+        \[
+        R_2 = \frac{15 - 1.6}{500 \times 10^{-3}}
+        \]
+
+        \[
+        R_2 = 26.8\,\Omega
+        \]
+
+        \[
+        P_2 = I_C^2 R_2
+        \]
+
+        \[
+        P_2 = (500 \times 10^{-3})^2 (26.8)
+        \]
+
+        \[
+        P_2 = 6.7\,W
+        \]
+
+        \subsubsection{Relaciones de voltaje}
+
+        \[
+        V_{CE} = V_{BE} - V_{BC}
+        \]
+
+        \[
+        V_{BC} = V_{BE} - V_{CE}
+        \]
+
+        \[
+        V_{BC} = 2.6 - 1.6
+        \]
+
+        \[
+        V_{BC} = 1\,V
+        \]
+
+        \subsubsection{Cálculo de $\beta$}
+
+        \[
+        \beta = \frac{I_C}{I_B}
+        \]
+
+        \[
+        \beta = 10
+        \]
+           \begin{table}[H]
+                \centering
+                \small 
+                \begin{tabularx}{\columnwidth}{|c|X|X|X|}
+                \hline
+                \textbf{Parámetro} & \textbf{Calculado} & \textbf{Real} \\ \hline
+                $R_1$  & 244.66$\Omega$ & 220 $\Omega$\\ \hline
+                $P_1$  & 0.05 W & 1/2 W\\ \hline
+                $R_2$  & 97.33$\Omega$ & 100$\Omega$\\ \hline
+                $P_2$  & 2.18 W        & 5 W\\ \hline
+                \end{tabularx}
+                \caption{Cálculo de $R_1$ y $R_2$ comercicales parámetros A.}
+                \label{tabla:erres.}
+            \end{table}
+        
 \section{Simulación}
 \subsection*{Simulación del Circuito a}
 En esta sección se recopilan los resultados obtenidos mediante la simulación de cada uno de los circuitos propuestos en la práctica. Para el circuito del inciso \textit{a}, se utilizaron los valores comerciales más cercanos a los calculados teóricamente; por lo tanto, se establecieron resistencias de $R_1 = 220 \, \Omega$ y $R_2 = 100 \, \Omega$. A continuación, se presenta una comparativa entre los resultados medidos físicamente y los simulados.
@@ -1050,10 +889,9 @@ Sin embargo, el simulador, al utilizar modelos de semiconductores mucho más ape
 \section{Conclusiones}
 \begin{itemize}
     \item \textbf{Flores Cornejo Gustavo Mauricio.}
-    \newline En la presente práctica se revisó el usos de diodos como componentes rectificadores de media onda, de onda completa y como recortadores. Apoyándonos de la parte teórica revisada en clase podemos hacer un análisis teórico para poder corroborar los resultados 
-    mostrados en laboratorio. Esta práctica fue importante porque pudimos visualizar cómo el uso de estos componentes alteran la onda de salida a nuestra conveniencia eliminando o modificando alguna de las fases de nuestra señal sinusoidal. Para poder visualizar la corriente que circulaba por el diodo cuando
-    este conducía fue necesario utilizar una resistencia de 1 ohm, esto con la finalidad de medir el voltaje en esa resistencia que por ley de ohm era directamente proporcional a la corriente que fluctuaba por el diodo.
-    Además, fue úti utilizar el transformador para poder realizar mediciones de rms, promedio y pico además de darnos la facilidad de poder utilizar la derivación central.
+    \newline 
+    En la presente práctica sirvió para carcaterizar el comportamiento del transistor como un dispositivo amplificador y de control como interruptor. La práctica sirvió de primer contacto para entender las bases de su funcionamiento y el análsis de sus zonas de polarización como se muestran en el desarrollo del presente documento. Entender cada una de estas zonas es de suma importancia para poder ser utilizado de la manera adecuada cuando se requiera en proyectos.
+    Es importante resaltar que para esta práctica que tiene como finalidad analizar el Transistor BJT NPN 2222 tiene sus limitaciones (Valores máximos y mínimos de trabajo) que de superarlos podemos alterar el comportamiento deseado o simplemente dañar el dispositivo por ejemplo, podemos entrar en la ona Activa del transistor donde la corriente en conmutador es proporcional a $\beta$ veces la corriente de la base.
     \newline 
     \item \textbf{Muñoz Reyes Arturo Yabet.}
     \newline En esta práctica se logró comprobar el comportamiento y las características operativas de un transistor BJT NPN 2N2222. Inicialmente, se verificó la estructura de sus uniones semiconductoras, comprobando que se requiere una correcta polarización directa entre la base y el emisor para permitir la conducción. A través de las distintas configuraciones del circuito, se analizó la relación directa entre la corriente de base y la corriente de colector, logrando identificar físicamente las zonas de corte, activa y de saturación. En esta última, se comprobó que el transistor actúa de forma similar a un interruptor cerrado, limitando su corriente no por la ganancia, sino por la red externa del circuito, ocasionando una caída abrupta en la $\beta$ forzada. 
@@ -1082,42 +920,22 @@ Sin embargo, el simulador, al utilizar modelos de semiconductores mucho más ape
 
 \appendices
 \section{Evidencias}
+    \begin{figure}[H]%[!ht]
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{IMAGENES/Beta_datasheet.png} 
+    \caption{Datasheet de $\beta$ del transistor 2N2222.}
+    \label{fig:datasheet}
+    \end{center}
+    \end{figure}
 
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Medicion_Multimetro.jpg} 
-\caption{Medición con Multímetro los voltajes y corrientes en $R_1$ y $R_2$.}
-\label{fig:multímetro}
-\end{center}
-\end{figure}
+    \begin{figure}[H]%[!ht]
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{IMAGENES/Datasheet_Saturacion.png} 
+    \caption{Datasheet de zona de Saturación del transistor 2N2222.}
+    \label{fig:datasheet_saturacion}
+    \end{center}
+    \end{figure}
 
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/Corriente_Multimetro.jpg} 
-\caption{Lectura de corriente en $R_1$.}
-\label{fig:corrientemultímetro}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/EVALUACION_LAB.jpeg} 
-\caption{Evaluación en laboratorio.}
-\label{fig:evaluación}
-\end{center}
-\end{figure}
-\end{comment}
-
-\begin{comment}
-\begin{figure}[H]%[!ht]
-\begin {center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/EVIDENCIA.jpeg}
-\caption{Evidencia de evaluación de práctica.}
-\label{fig:evidencia}
-\end {center}
-\end{figure}
-\end{comment}
 
 
 
