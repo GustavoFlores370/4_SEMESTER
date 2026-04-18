@@ -1,0 +1,974 @@
+%% Lab Report for EEET2493_labreport_template.tex
+%% V1.0
+%% 2019/01/16
+%% This is the template for a Lab report following an IEEE paper. Modified by Francisco Tovar after Michael Sheel original document.
+
+
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+\documentclass[journal]{IEEEtran}
+
+% *** CITATION PACKAGES ***
+\usepackage[style=ieee]{biblatex} 
+\bibliography{example_bib.bib}    %your file created using JabRef
+
+% *** MATH PACKAGES ***
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{amssymb} % Este paquete contiene el símbolo \approxeq
+
+\usepackage{tabularx} % en el preámbulo
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf, textfont=normalfont}
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+\usepackage{url}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{graphicx}  %needed to include png, eps figures
+\usepackage{subcaption}
+\usepackage{float}  % used to fix location of images i.e.\begin{figure}[H]
+
+\begin{document}
+
+% paper title
+\title{Polarización del Transistor BJT\\ \small{Práctica No. 4}}
+
+% author names and affiliations
+\author{
+    \IEEEauthorblockN{Flores Cornejo Gustavo Mauricio, Muñoz Reyes Arturo Yabed, Morales Vásquez Miguel Ehecatl}\\
+    \IEEEauthorblockA{\textit{Unidad Profesional Interdisciplinaria en Ingeniería y Tecnologías Avanzadas, IPN}}
+}
+        
+% The report headers
+\markboth{1MV12 Fundamentos de Electrónica. Práctica 4, Abril 2026}%do not delete next lines
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract}
+    This paper analyzes the behavior and operation of the Bipolar Junction Transistor (BJT) under a fixed bias configuration. 
+    Using NPN 2N2222 transistors, the terminals were identified, and the operating regions—cutoff, saturation, and active—were experimentally determined. 
+    The flow of collector ($I_C$) and base ($I_B$) currents was examined, alongside the variation of the $\beta$ parameter under different voltage and resistance levels. 
+    The results, obtained through direct measurements and simulations, allowed for a comparison between real values and manufacturer specifications, confirming the 
+    BJT's utility as a switch and linear amplifier in DC electronic circuits.
+\end{abstract}
+
+\section{Introducción}
+    % Here we have the typical use of a "W" for an initial drop letter
+    % and "RITE" in caps to complete the first word.
+    % You must have at least 2 lines in the paragraph with the drop letter
+    % (should never be an issue)
+
+    \IEEEPARstart{D}urante el periodo de 1904 a 1947, el tubo de vacío fue el componente electrónico de mayor interés y 
+    desarrollo, debido a su capacidad de amplificar señales analógicas, impulsado significativamente por la industria de la radio y televisión
+    en sus años posteriores. Sin embargo en 1947, la aparición del transistor  marcaría un cambio importante en la industria
+    de la electrónica.  Este nuevo dispositivo de estado sólido de tres terminales ofrecía grandes ventajas frente a su antecesor:
+    dimensiones más pequeñas, menor peso, baja disipación de calor y fundamentalmente,  una mayor eficiencia energética al consumir
+    una fracción de la potencia requerida por las válvulas de vacío.
+ 
+    Gracias a estas propiedades y a su versatilidad para operar como interruptor electrónico, el transistor se integró rápidamente en 
+    a arquitectura de los sistemas informáticos. La evolución en las técnicas de diseño y fabricación ha permitido reducir su escala de 
+    centímetros a nanómetros, facilitando la construcción de microprocesadores de alta densidad. Este avance ha sido el pilar tecnológico 
+    que dio paso a la computación móvil, los sistemas embebidos y los dispositivos de control que definen la tecnología contemporánea.
+
+\section{Objetivos}
+    \subsection{Objetivo General}
+    Explicar el funcionamiento del transistor BJT con una configuración de polarización fija y  diseñar circuitos que provean algún comportamiento deseado.
+
+    \subsection{Objetivos Particulares}
+    \begin{enumerate}
+        \item Identificar el colector, base y emisor del transistor.
+        \item Comprender el flujo de las corrientes de colector y base.
+        \item Analizar y comprender el comportamiento de la beta ante variaciones de voltaje. 
+        \item Comprender el funcionamiento de las zonas de corte-saturación.
+    \end{enumerate}
+
+\section{Marco teórico}
+    \subsection{El transitor BJT}
+        Un transistor de unión bipolar (BJT, por sus siglas en inglés) es un dispositivo semiconductor 
+        constituido por tres capas de material dopado, las cuales forman dos uniones P-N y, por consiguiente, 
+        dos regiones de agotamiento o empobrecimiento. Dependiendo de la configuración de estas capas, 
+        el dispositivo se clasifica en tipo NPN (dos capas de material tipo $n$ y una central tipo $p$) 
+        o tipo PNP (dos capas tipo $p$ y una central tipo $n$), tal como se ilustra en la Figura 1. 
+        Sus terminales se identifican como Emisor (E), Base (B) y Colector (C).
+        
+        \begin{figure}[H] % SIN asterisco y con H mayúscula
+        \centering
+            % --- Subfigura (a) NPN ---
+            \begin{subfigure}[b]{0.47\columnwidth} % 45% de la COLUMNA
+                \centering
+                \includegraphics[width=\textwidth]{IMAGENES/Transistor_NPN.png}
+                \caption{Transistor npn.}
+                \label{fig:npn}
+            \end{subfigure}
+            \hfill % Esto las separa un poco dentro de la columna
+            % --- Subfigura (b) PNP ---
+            \begin{subfigure}[b]{0.45\columnwidth} % 45% de la COLUMNA
+                \centering
+                \includegraphics[width=\textwidth]{IMAGENES/Transistor_PNP.png}
+                \caption{Transistor pnp.}
+                \label{fig:pnp}
+            \end{subfigure}
+    
+            % --- Pie de foto principal ---
+            \caption{Configuraciones básicas del transistor de unión bipolar.}
+            \label{fig:bjt_types}
+        \end{figure}
+   
+        Constructivamente, el emisor presenta un nivel de dopaje elevado para maximizar la inyección de portadores,
+        la base cuenta con un dopaje ligero y un espesor reducido, mientras que el colector posee un dopaje intermedio. 
+        El término 'bipolar' hace referencia a que el mecanismo de conducción y la inyección de carga dependen del flujo tanto de electrones como de huecos.
+
+    \subsection{Portadores de carga}
+        El funcionamiento del BJT se basa en la interacción de los portadores de carga, los cuales se definen como las partículas elementales encargadas del 
+        transporte de corriente eléctrica en el semiconductor. En un material tipo $n$ (negative) el electrón se denomina portador mayoritario debido a su abundancia, 
+        mientras que el hueco actúa como portador minoritario. Por el contrario, en un material tipo $p$ (positive) el hueco es el portador mayoritario y el electrón el minoritario. 
+    
+    \subsection{Region de empobrecimiento}
+        La unión de estos materiales da origen a la región de empobrecimiento, una zona carente de portadores libres que se forma debido a la 
+        recombinación de electrones y huecos en la interfaz. Este proceso deja tras de sí iones dopantes fijos (positivos en el lado $n$ y negativos en el lado $p$),
+        lo que establece un campo eléctrico interno . Este campo genera una barrera de potencial que impide el flujo portadores mayoritarios.
+    
+    \subsection{Funcionamiento}
+        Tomando como ejemplo un transistor pnp y analizando el flujo de huecos (iones positivos), al polarizar la unión base-emisor
+        como se muestra en la Figura 2 se obtiene el mismo comportamiento al de un diodo polarizado en directa. En este estado, el ancho de la 
+        región de empobrecimiento se reduce permitiendo un flujo de huecos (portador mayoritario) del material p al n. Por otro lado, 
+        en la Figura 3 se muestra qué sucede si se polariza la unión base-emisor, la situación presentada es semejante a la de un diodo 
+        polarizado en inversa. La región de empobrecimiento se agranda impidiendo el paso de portadores mayoritarios, resultando únicamente en un flujo de portadores minoritarios.
+    
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.35\textwidth]{IMAGENES/Polarizacion_directa.png}
+            \caption{Unión polarizada en directa.
+}
+            \label{fig:pnp_direct}
+        \end{figure}
+
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.33\textwidth]{IMAGENES/Polarizacion_inversa.png}
+            \caption{Unión polarizada en inversa.}
+            \label{fig:pnp_inverse}
+        \end{figure}
+
+        Si se aplican ambos potenciales de polarización al transistor pnp y analizamos qué sucede notamos que el emisor al 
+        ser de un material tipo $p$, está saturado de huecos, los cuales son repelidos por el positivo de la fuente $V_{EE}$ provocando 
+        que pasen directamente al material tipo $n$. Recordando que el material tipo $n$ está poco dopado, no tiene tantos electrones 
+        para combinarse con los huevos por lo que solo una pequeña parte de estos podrá regresar al negativo de la fuente $V_{EE}$, 
+        como se indica en la Figura 4. Esos huecos sobrantes en la base pasan a convertirse en portadores minoritarios del material tipo $n$, 
+        esto es importante ya que como se mencionó anteriormente, un diodo en inversa sólo permite el flujo de portadores minoritarios.
+
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.35\textwidth]{IMAGENES/FlujoPortadores_pnp.png}
+            \caption{Flujo de portadores mayoritarios y minoritarios de un transistor pnp.}
+            \label{fig:flujoPortadores}
+        \end{figure}
+
+        Los huecos ahora convertidos en portadores minoritarios pasan con facilidad a través de la región de empobrecimiento hacia el colector, 
+        debido a que son empujados por el campo eléctrico formado en esta región por la polarización en inversa,  y a su vez, son atraídos por la 
+        terminal negativa de la fuente $V_{CC}$ , al llegar al colector estos mueren al combinarse con los electrones provenientes de la fuente. 
+        
+        Aplicando la ley de corrientes de Kirchhoff al transistor de la Figura 4.
+        \begin{equation}
+            I_E = I_C + I_B
+            \label{ec:correintesTransistor}
+        \end{equation}
+
+    \subsection{Corrente de Fuga}
+        La corriente en el colector no solo está compuesta por el flujo de huecos (portadores mayoritarios en el material p del colector),  
+        sino también de un flujo de portadores minoritarios llamada corriente de fuga y se le da el símbolo de $I_{CO}$. Esta corriente es 
+        análoga a la corriente de saturación de un diodo Is  y por lo tanto es sensible a la temperatura, 
+        dependiendo del caso puede afectar seriamente al uso del transistor, sin embargo generalmente puede ignorarse  ($I_{CO} \approx 0 $).
+        
+        La corriente total que pasa por el colector está determinada por:
+        \begin{equation*}
+            I_{C} = I_{C_{\text{mayoritarios}}} + I_{CO_{\text{minoritarios}}}
+            \label{eq:corriente_colector}
+        \end{equation*}
+    
+    \subsection{Configuración Emisor Común}
+        Existen tres configuraciones fundamentales para la operación de un transistor de unión bipolar (BJT): base común, colector común y 
+        emisor común. Para describir el comportamiento eléctrico de cada una, es necesario analizar dos conjuntos de curvas características:
+        las de entrada (parámetros de control) y las de salida (parámetros de carga).
+    
+        La configuración de Emisor Común es la más utilizada en la por su alta ganancia tanto en voltaje como en corriente, 
+        lo que le otorga una gran versatilidad para el diseño de amplificadores y circuitos de conmutación de potencia. Recibe su 
+        nombre debido a que la terminal del emisor sirve como punto de referencia común tanto para el circuito de entrada (Base) 
+        como para el de salida (Colector), vease en la Figura 5.
+
+        \begin{figure}[H]%[!ht]
+        \centering
+            % --- Subfigura (a) NPN ---
+            \begin{subfigure}[b]{0.47\columnwidth} % 45% de la COLUMNA
+                \centering
+                \includegraphics[width=\textwidth]{IMAGENES/EmisorComun_npn.png}
+                \caption{Transistor npn.}
+                \label{fig:Emisor_com_npn}
+            \end{subfigure}
+            \hfill % Esto las separa un poco dentro de la columna
+            % --- Subfigura (b) PNP ---
+            \begin{subfigure}[b]{0.47\columnwidth} % 45% de la COLUMNA
+                \centering
+                \includegraphics[width=\textwidth]{IMAGENES/EmisorComun_pnp.png}
+                \caption{Transistor pnp.}
+                \label{fig:Emisor_com_pnp}
+            \end{subfigure}
+            % --- Pie de foto principal ---
+            \caption{Configuraciones básicas del transistor de unión bipolar.}
+            \label{fig:emisorComun_types}
+        \end{figure}
+        El comportamiento del dispositivo se rige por la interacción entre sus mallas;  el circuito de entrada que 
+        relaciona la corriente de base ($I_B$) con el voltaje base-emisor ($V_{BE}$). Asi como el circuito de 
+        salida que relaciona la corriente de colector ($I_C$) con el voltaje colector-emisor ($V_{CE}$).
+
+    \subsection{El Parámetro Beta ($\beta$) como factor de amplificación}
+        En la configuración de emisor común, la relación entre la corriente de salida ($I_C$) y la corriente de entrada ($I_B$), 
+        denominada como beta ($\beta$), define la ganancia de corriente de CD. Este parámetro es fundamental, ya que representa el 
+        factor de amplificación del dispositivo; un pequeño incremento en la corriente de base produce un aumento significativamente 
+        mayor en el colector, permitiendo el control del flujo de potencia.
+
+        En general para cualquier configuración:
+        \begin{equation}
+            \beta = \frac{I_C}{I_B} 
+        \end{equation}
+
+        Desbejando el valor de $I_C$ se obtiene la relacion de amplificación antes mencionada: 
+        \begin{equation}
+            I_C= \beta I_B
+        \end{equation}
+
+        Sustituyendo en la ecuación \eqref{ec:correintesTransistor}:
+        \begin{equation}
+            I_E= (\beta + 1)I_B
+        \end{equation}
+
+        Obteniendo una relacion entre la coriente de entrada y la corriente del emisor ($I_E$). 
+        Dado que en la mayoría de transistores usualmente es un valor mucho mayor que 1 ($\beta \gg 1$), 
+        entonces podemos inferir una relación entre la corriente de colecor y la corriente del emisor.
+        \begin{equation*}
+            \beta + 1 \gg \beta
+        \end{equation*}
+        De forma muy aproximada:
+        \begin{equation*}
+            I_E \approx (\beta)I_B
+        \end{equation*}
+        Por lo tanto:
+        \begin{equation}
+            I_C \approxeq I_B
+        \end{equation}
+
+    \subsection{Curvas características del BJT en emisor común}
+        La curva característica de entrada representa la relación entre los parametros de entrada
+         ($V_{BE}$ e $I_B$), para distintos valores de voltaje colector-emisor ($V_{CE}$).
+        Como se ve en la Figura \ref{fig:carac_base} esta presenta un comportamiento exponencial similar al de un diodo polarizado en directa,
+        en el cual $I_B$ es prácticamente nula hasta que la tensión alcanza el voltaje de umbral o barrera.
+
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.34\textwidth]{IMAGENES/Caracteristicas_base.png}
+            \caption{Características de entrada para un transistor de silicio en emisor común.}
+            \label{fig:carac_base}
+        \end{figure}
+
+        Es decir, una vez que un transitor se "enciende", se puede suponer que el voltaje base-emisor sera:
+        \begin{equation}
+            V_{BE} = 0.7 V
+            \label{ec:Voltaje_BE}
+        \end{equation} 
+
+        Al observar la Figura \ref{fig:carac_salida}, se aprecia que $I_B$ se mide en $\mu$A mientras que $I_C$ en mA,
+        reflejando la amplificación del BJT. La pendiente positiva en las curvas de salida se debe que
+        al aumentar el voltaje en inversa $V_{CB}$, la región de empobrecimiento se expande hacia la base,
+        reduciendo su ancho efectivo. Esta disminución en el ancho de la base reduce la recombinación de portadores,
+        facilitando su paso al colector e incrementando ligeramente $I_C$ conforme aumenta $V_{CE}$
+
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.45\textwidth]{IMAGENES/Caracteristicas_salida.png}
+            \caption{Características de salida para un transistor de silicio en emisor común.}
+            \label{fig:carac_salida}
+        \end{figure}
+    
+    \subsection{Regiones de operación}
+        Para comprender visualmente cómo opera el transistor en cada una de las distintas regiones de la 
+        Figura \ref{fig:carac_salida}, es útil compararlo con el funcionamiento de un grifo de agua:
+
+        \begin{figure} [H]%[!ht]
+            \centering
+            \includegraphics[width=0.45\textwidth]{IMAGENES/Estados_transistor.png}
+            \caption{Ejemplo gráfico de las tres regiones de operación.}
+            \label{fig:estados_transitor}
+        \end{figure}
+
+        \subsubsection{Región de Corte (Grifo cerrado)}
+            En este estado, no hay una corriente aplicada en la base ($I_B = 0$). Al no haber "presion" que active el transistor,
+            el transistor impide el paso de la corriemte entre el colector y el emisor. Sin embargo, esta presente 
+            una pequeña llama corriente $I_{CEO}$ ocacionada por la corriente de fuga de la union en inversa ($I_{CO}$).
+
+        \subsubsection{Región Activa (Flujo controlado)}
+            Es la zona de amplificación lineal. Aquí, la apertura del grifo es proporcional a la fuerza aplicada en la perilla; es decir,
+            $I_C$ varía de forma lineal y proporcional a los cambios en $I_B$. La señal de salida sigue fielmente las variaciones 
+            de la entrada, pero a una escala mucho mayor.
+
+        \subsubsection{Región de Saturación (Grifo Abierto al Máximo)}
+            En este punto, por más que se incremente la corriente de base, el flujo en el colector ha alcanzado su límite máximo permitido
+            por la fuente de alimentación ($V_{CC}$) y las resistencias del circuito.
+
+    \subsection{Punto de operación Q}
+        El punto de operación, también llamado punto quiesciente (inmóvil o inactivo) representa un punto de la gráfica de características de salida (Fig \ref{fig:carac_salida}), 
+        este viene determinado por valores especificos de corriente de colector y voltaje de colector-emisor. Dependiendo de como queramos que funcione el transitor el punto Q se
+        hubicara en distintas zonas de la gráfica.
+            
+    \subsection{El transistor como aplificador}
+        Para emplear el transistor en aplicaciones de amplificación, es necesario que el punto de operación (punto Q) se ubique aproximadamente en la zona media de la región activa.
+        Esta selección estratégica maximiza la excursión de la señal de salida, evitando recortes por saturación o corte que comprometan la fidelidad de la señal amplificada.
+
+    \subsection{Polarización Fija}
+        El término polarización se refiere a la aplicación de voltajes de corriente directa (CD) con el objetivo de establecer 
+        niveles fijos de corriente y voltaje que definan el estado operativo del dispositivo. Dentro de las distintas maneras de polarizar
+        un transitor, la mas elemental de ellas es la polarización fija, la cual se ejemplifica en la Figura \ref{fig:polarizacion_fija}.
+        \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{IMAGENES/Polarizacion_fija.png}
+            \caption{Polarización Fija.}
+            \label{fig:polarizacion_fija}
+        \end{figure}
+    
+    \subsection{Recta de Carga de CD}
+        La ubicación del punto Q se analiza mediante la recta de carga, una representación gráfica de la ecuación de malla del colector que interseca las curvas 
+        características del dispositivo. Esta recta delimita todos los posibles estados de funcionamiento ($I_C, V_{CE}$) que el 
+        transistor puede adoptar para una red de polarización y carga específicas.
+        \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.2\textwidth]{IMAGENES/Malla_colectorEmisor.png}
+            \caption{Malla colector-emisor.}
+            \label{fig:Malla_colectorEmisor}
+        \end{figure}
+
+        Si aplicamos la ley de voltajes de kirchoff a la malla de la Figura \ref{fig:Malla_colectorEmisor},
+        se obtiene la ecuación de la recta de carga
+        \begin{equation*}
+            V_{CE} + I_C R_C - V_{CC} = 0
+        \end{equation*}
+        \begin{equation}
+            V_{CE} =  V_{CC} + I_C R_C
+        \end{equation}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.45\textwidth]{IMAGENES/Recta_carga.png}
+            \caption{Recta de carga para la configuración de polarización fija.}
+            \label{fig:recta_carga}
+        \end{figure}
+
+    \subsection{Redes de Conmutación}
+        Cuando el objetivo no es la amplificación lineal, sino el control de cargas, el transistor se configura para 
+        operar exclusivamente en sus estados críticos. En este esquema, la base es excitada por una señal de control (como la salida de un microcontrolador),
+        lo que obliga al dispositivo a alternar entre las regiones de corte y saturación. En este modo de operación, conocido como conmutación (switch), 
+        el BJT actúa como un interruptor electrónico: en corte, el circuito permanece abierto e impide el paso de corriente; en saturación, el transistor 
+        permite el flujo máximo hacia la carga con una caída de tensión mínima ($V_{CE_{sat}}$).
+        \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.2\textwidth]{IMAGENES/Switching_transitor.jpg}
+            \caption{Configuración de un transitor para conmutación.}
+            \label{fig:switching_transitor.jpg}
+        \end{figure}
+
+    \subsection{Potencia Máxima}
+    La operación del transistor está restringida por la curva de potencia máxima disipada ($P_{max}$),
+    la cual representa el límite térmico que el dispositivo puede soportar sin sufrir daños permanentes.
+    Dada por la ecuación:
+    \begin{equation*}
+        P_{max} = V_{CE} I_C 
+    \end{equation*}
+
+    Para garantizar la integridad del componente, el punto de operación (punto Q) y la recta de carga 
+    deben situarse siempre por debajo de esta curva dada por el fabricante.
+
+    \subsection{Valores Nominales y Parámetro $h_{FE}$}
+    Para el diseño y análisis de circuitos con el BJT, es necesario consultar los valores nominales especificados por el fabricante.
+    Estos valores representan los límites que no deben excederse para evitar dañar del dispositivo. Para la configuración
+    emisor comun serian: $V_{CE_{max}} = V_{CEO}$, $I_{C_{max}}$ y $P_D = P_{max}$
+    
+    Por otro lado, la ganancia de corriente de $\beta$ se identifica en las hojas de datos como el parámetro $h_{FE}$ 
+    (parámetro híbrido de emisión común). Es importante notar que $h_{FE}$ no es un valor estático. Depende de la temperatura,
+    la corriente $I_C$ y las las tolerancias del fabricante.
+
+    \subsection{Relaciones importantes}
+    Recapitulando, para el análizis de cualquier configuración en CD sera necesario
+    tener presente las siguiente ralaciones básicas de un transistor:
+    \begin{equation}
+        V_{BE} = 0.7 V
+    \end{equation}
+    \begin{equation}
+        I_E = (\beta + 1) I_B \cong I_C
+    \end{equation}
+    \begin{equation}
+        I_C = \beta I_B
+    \end{equation}
+
+    
+\section{Materiales}
+        \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{IMAGENES/Circuito_Base.png}
+            \caption{Circuito de polarización de transistor.}
+            \label{fig:circuito_base}
+        \end{figure}
+Para el circuito mostrado en la "Figura~\ref{fig:circuito_base}”, emplearemos:
+\begin{itemize}
+    \item 1 Transistor NPN 2N2222
+    \item 1 Potenciometro de 500 k$\Omega$
+    \item 1 Resistencia de 330 $\Omega$ a 1/2W
+    \item 1 Resistencia de 220 $\Omega$ a 1/2W
+    \item 1 Resistencia de 100 $\Omega$ a 5W
+    \item 1 Protoboard
+    \item Cable para protoboard
+    \item 3 Multímetros (De preferencia)
+\end{itemize}
+
+
+\section{Análisis y Resultados}
+    \subsection{Características Básicas del Transistor.}
+        En esta sección se analizarán parámetros medibles inmediatamente con multpimetro del transistor, esto con la finalidad de reconocer las terminales del mismo y su comportamiento a condiciones iniciales.
+        \begin{table}[H]
+            \centering
+            \small 
+            \begin{tabularx}{\columnwidth}{|c|X|X|X|}
+            \hline
+            \textbf{Parámetro} & \textbf{Polaridad Drecta} & \textbf{Polaridad Inversa} \\ \hline
+            $R_{CE}$  & $\infty$ & $\infty$\\ \hline
+            $R_{BE}$  & 3.72 M$\Omega$ & $\infty$\\ \hline
+            $R_{BC}$  & 3.70 M$\Omega$ & $\infty$\\ \hline
+            $V_{BE}$  & 0.668 V        & $\infty$\\ \hline
+            $V_{BC}$  & 0.667 V        & $\infty$\\ \hline
+            \end{tabularx}
+            \caption{Parámetros básicos en los terminales del transistor.}
+            \label{tabla:Parametros_Basicos.}
+        \end{table}
+    \subsection{Zonas: Activa, Saturación y Corte.}
+        Con el circuito mostrado en "Figura~\ref{fig:circuito_base}” tomaremos la fuente $V_1$ como una fuente variable además que la resistencia $R_1$ será reemplazada con el potenciometro para tener una resistencia variable.
+        Lo anterior con la finalidad de observar e identificar el comportamiento de las tres etapas características del transistor.
+        Los resultados obtenidos se muestran en la siguiente tabla:
+        \begin{table}[H]
+            \centering
+            \small 
+            \begin{tabularx}{\columnwidth}{|c|X|X|X|X|X|X|X|X|X|}
+            \hline
+            \textbf{$V_1$} & \textbf{$R_1$} & \textbf{$V_{BE}$} & \textbf{$I_B$} & \textbf{$V_{BC}$} & \textbf{$V_{CE}$} & \textbf{$I_C$} & \textbf{$\beta$} & \textbf{$V_{RC}$} & \textbf{Zona P.}\\ \hline
+            -5 & 5.56 k$\Omega$ & -5 & 0 & 14.98 & 10.0 & 0 & 0 & 0 & C \\ \hline
+            -3 & 5.56 k$\Omega$ & -2.99 & 0 & 9.35 & 10.0 & 0 & 0 & 0 & C \\ \hline
+            0 & 5.56 k$\Omega$ & 0 & 0 & 10.0 & 10.0 & 0 & 0 & 0 & C \\ \hline
+            5 & 5.56 k$\Omega$ & 0.72 & 0.9 mA & 0.67 & 0.07 & 30.6 mA & 34 & 9.93 & S \\ \hline
+            5 & 10.46 k$\Omega$ & 0.70 & 0.5 mA & 0.64 & 0.06 & 30.2 mA & 60.4 & 9.94 & S \\ \hline
+            5 & 15.7 k$\Omega$ & 0.71 & 0.3 mA & 0.61 & 0.09 & 30.7 mA & 102.3 & 9.91 & S \\ \hline
+            5 & 20.4 k$\Omega$ & 0.70 & 0.2 mA & 0.59 & 0.10 & 30.4 mA & 150.5 & 9.90 & S \\ \hline
+            5 & 30.4 k$\Omega$ & 0.71 & 0.2 mA & 0.55 & 0.15 & 29.7 mA & 148.5 & 9.49 & S \\ \hline
+            5 & 44.3 k$\Omega$ & 0.68 & 0.1 mA & -2.13 & 2.81 & 21.6 mA & 216 & 7.05 & A \\ \hline
+            5 & 70 k$\Omega$ & 0.66 & 64 $\mu$A & -4.71 & 4.58 & 16.2 mA & 253.1 & 5.28 & A \\ \hline
+            5 & 100 k$\Omega$ & 0.65 & 43 $\mu$A & -6.08 & 6.29 & 11 mA & 255.8 & 3.61 & A \\ \hline
+            5 & 150 k$\Omega$ & 0.64 & 29 $\mu$A & -7.08 & 7.49 & 7.3 mA & 251.7 & 2.42 & A \\ \hline
+            5 & 200 k$\Omega$ & 0.64 & 22 $\mu$A & -7.65 & 8.14 & 5.4 mA & 245.4 & 1.8 & A \\ \hline
+            5 & 300 k$\Omega$ & 0.64 & 15 $\mu$A & -8.17 & 8.78 & 3.3 mA & 220 & 1.17 & A \\ \hline
+            5 & 400 k$\Omega$ & 0.63 & 11 $\mu$A & -8.43 & 9.08 & 2.8 mA & 254.5 & 0.88 & A \\ \hline
+            5 & 443 k$\Omega$ & 0.63 & 10 $\mu$A & -8.52 & 9.17 & 2.4 mA & 290 & 0.80 & A \\ \hline
+
+            \end{tabularx}
+            \caption{Resultados medidos del transistor BJT.}
+            \label{tabla:Resultados_BJT}
+        \end{table}             
+
+        Es de inmediato notar que el $V_{BE}$ prácticamente en todos los casos es de 0.7 V, semejante al comportamiento de un diodo de silicio es polarización directa, de igual manera para $V_1$<0 el $V_{BE}$ es igual al voltaje de la fuente,
+        debido a que la conexicón base-emisor se comporta como un diodo polarizado inversamente. La beta calculada por:
+            \[
+            \beta = \frac{I_C}{I_B}
+            \]
+        Se observa de la expresión anterior que la beta es inversamente proporcional a la corriente que fluctúa por la base, a continuación se muestra el comportamiento de la $\beta$ en función de $I_B$.
+        \begin{figure}[H]%[!ht]
+            \begin{center}
+            \includegraphics[width=0.50\textwidth]{IMAGENES/Comportamiento_beta.png} 
+            \caption{Gráfica del comportamiento $\beta$.}
+            \label{fig:beta}
+            \end{center}
+        \end{figure}
+        Los valores obtenidos para $\beta$ coinciden con los esperados encontrados por el fabricante, veáse "Figura~\ref{fig:datasheet}” en la sección de apéndice, además del valor medido por multímetro que también se encuntra dentro del rango de operación.
+        Analizando el circuito y desarrollando mediante mallas podemos conocer el comportamiento de la $I_B$ en función de la resistencia $R_1$:
+            \[
+            - V_1 + I_B \cdot R_1 + V_{BE} = 0
+            \]
+            \[
+            I_B = \frac{V_1 - V_{BE}}{R_1}
+            \]
+        Podemos darnos cuenta que para valores pequeños de $R_1$ obtendremos una $I_B$ grande y a $R_1$ grandes obtendremos $I_B$ pequeñas, en la siguiente gráfica mostramos esta relación:
+        \begin{figure}[H]%[!ht]
+            \begin{center}
+            \includegraphics[width=0.50\textwidth]{IMAGENES/Corriente_vs_resistencia.png} 
+            \caption{Gráfica del comportamiento $I_B$.}
+            \label{fig:IVSR}
+            \end{center}
+        \end{figure}
+
+        Conocer esto nos sirve para entender el comportamiento de $V_{CE}$ pues éste depende totalmente del valor de $I_C$ y, a su vez, éste depende de la $I_B$, por lo que para la zona de corte observaremos el voltaje de la $V_2$=10V (Polarización Inversa), en la zona de Saturación veremos que 
+        el voltaje es 0V idealmente, aproximado a 0.2V en casos reales, debido que tanto las terminales Base-Emisor y Base-Colector están polarizados directamente (0.7V):
+        \[
+        V_{CE} = -V_{BC} + V_{BE}
+        \]
+        En síntesis, lo anteriormente mencionado se puede ver resumido en la siguiente gráfica:
+        \begin{figure}[H]%[!ht]
+            \begin{center}
+            \includegraphics[width=0.50\textwidth]{IMAGENES/Voltaje_vs_resistencia.png} 
+            \caption{Gráfica del comportamiento $V_{CE}$.}
+            \label{fig:VVSR}
+            \end{center}
+        \end{figure}   
+        La zona de saturación es la zona no lineal del comportamiento del transistor por lo que es importante conocer cómo funciona y las condiciones en las que se opera en dicha zona.
+        Ya hemos visto la relación que existe entre $I_B$ y $I_C$ y la $\beta$, sin embargo, esta relación funciona únicamente para la zona Activa, como podemos observar en la "Table II" la $I_C$ se mantiene en 30mA en saturación. Esto porque en la zona de saturación la beta no funje como amplificador, y la corriente se ve limitada por la carga del circuito:
+        \[
+        -V_2 + I_C \cdot R_2 + V_{CE} = 0
+        \]   
+        \[
+        I_C = \frac{V_2 - V_{CE}}{R_2}
+        \]
+        Observando los resultados obtenidos y la demostración anteriormente hecha podemos deducir las condiciones de la zona de saturación:
+        \[
+        V_{BE} \approx 0.7V
+        \]
+        \[
+        V_{BC} \approx 0.7V
+        \]
+        \[
+        V_{CE} \approx 0.2V
+        \]
+        \[
+        I_B \cdot \beta > I_C
+        \]
+        Dichos valores son comprobables y se encuentran dentro del tango indicado por el fabrcante, veáse "Figura~\ref{fig:datasheet_saturacion}” en el apartado de apéndices.
+        \newline
+        Cuando $I_B$ disminuye veremos que la unión Base-Colector se polariza inversamente entrando en la zona Activa lo cuál aumenta significativamente el $V_{CE}$.
+
+    \subsection{Cálculo de $R_1$ y $R_2$ con parámetros A.}
+        Siguiendo el análsis del circuito mostrado en la "Figura~\ref{fig:circuito_base}” se calcularán los valores de $R_1$ y $R_2$ bajo las siguientes condiciones:
+        \begin{itemize}
+            \item $V_{CE}$ = 0.4 V
+            \item $I_C$ = 150 mA
+            \item $I_B$ = 15mA
+            \item $V_{BE}$ = 1.3 V
+            \item $V_2$ = 15 V
+            \item $V_1$ = 5 V
+        \end{itemize}
+        \begin{figure}[H]%[!ht]
+            \begin{center}
+            \includegraphics[width=0.45\textwidth]{IMAGENES/Analisis_1.png} 
+            \caption{Circuito analizado.}
+            \label{fig:AS1}
+            \end{center}
+        \end{figure}
+
+        \subsubsection{Mallas}
+
+        \[
+        R_1 I_B + V_{BE} = V_1
+        \]
+
+        \[
+        R_2 I_C + V_{CE} = V_2
+        \]
+
+        \subsubsection{Cálculo de $R_1$}
+
+        \[
+        R_1 = \frac{V_1 - V_{BE}}{I_B}
+        \]
+
+        \[
+        R_1 = \frac{5 - 1.3}{15 \times 10^{-3}}
+        \]
+
+        \[
+        R_1 = 246.66\,\Omega
+        \]
+
+        \[
+        P_1 = I_B^2 R_1
+        \]
+
+        \[
+        P_1 = (15 \times 10^{-3})^2 (246.66)
+        \]
+
+        \[
+        P_1 = 0.05\,W
+        \]
+
+        \subsubsection{Cálculo de $R_2$}
+
+        \[
+        R_2 = \frac{V_2 - V_{CE}}{I_C}
+        \]
+
+        \[
+        R_2 = \frac{15 - 0.4}{150 \times 10^{-3}}
+        \]
+
+        \[
+        R_2 = 97.33\,\Omega
+        \]
+
+        \[
+        P_2 = I_C^2 R_2
+        \]
+
+        \[
+        P_2 = (150 \times 10^{-3})^2 (97.33)
+        \]
+
+        \[
+        P_2 = 2.18\,W
+        \]
+
+        \subsubsection{Cálculo de $\beta$}
+
+        \[
+        \beta = \frac{I_C}{I_B}
+        \]
+
+        \[
+        \beta = \frac{150\,mA}{15\,mA}
+        \]
+
+        \[
+        \beta = 10
+        \]
+
+        \subsubsection{Relación de voltajes}
+
+        \[
+        V_{CE} = V_{BE} - V_{BC}
+        \]
+
+        \[
+        V_{BC} = V_{BE} - V_{CE}
+        \]
+
+        \[
+        V_{BC} = 1.3 - 0.4
+        \]
+
+        \[
+        V_{BC} = 0.9\,V
+        \]
+        En mercado no encontraremos exactamente estos valores por lo que los valores utilizados para el armado del circuito se presentan en la siguiente tabla:
+            \begin{table}[H]
+                \centering
+                \small 
+                \begin{tabularx}{\columnwidth}{|c|X|X|X|}
+                \hline
+                \textbf{Parámetro} & \textbf{Calculado} & \textbf{Real} \\ \hline
+                $R_1$  & 244.66$\Omega$ & 220 $\Omega$\\ \hline
+                $P_1$  & 0.05 W & 1/2 W\\ \hline
+                $R_2$  & 97.33$\Omega$ & 100$\Omega$\\ \hline
+                $P_2$  & 2.18 W        & 5 W\\ \hline
+                \end{tabularx}
+                \caption{Cálculo de $R_1$ y $R_2$ comercicales parámetros A.}
+                \label{tabla:erres.}
+            \end{table}
+
+    \subsection{Cálculo de $R_1$ y $R_2$ con parámetros B.}
+        \begin{itemize}
+            \item $V_{CE}$ = 1.6 V
+            \item $I_C$ = 500 mA
+            \item $I_B$ = 50mA
+            \item $V_{BE}$ = 2.6 V
+            \item $V_2$ = 15 V
+            \item $V_1$ = 5 V
+        \end{itemize}
+        \subsubsection{Mallas}
+
+        \[
+        R_1 I_B + V_{BE} = V_1
+        \]
+
+        \[
+        R_2 I_C + V_{CE} = V_2
+        \]
+
+        \subsubsection{Cálculo de $R_1$}
+
+        \[
+        R_1 = \frac{V_1 - V_{BE}}{I_B}
+        \]
+
+        \[
+        R_1 = \frac{5 - 2.6}{50 \times 10^{-3}}
+        \]
+
+        \[
+        R_1 = 48\,\Omega
+        \]
+
+        \[
+        P_1 = I_B^2 R_1
+        \]
+
+        \[
+        P_1 = (50 \times 10^{-3})^2 (48)
+        \]
+
+        \[
+        P_1 = 0.12\,W
+        \]
+
+        \subsubsection{Cálculo de $R_2$}
+
+        \[
+        R_2 = \frac{V_2 - V_{CE}}{I_C}
+        \]
+
+        \[
+        R_2 = \frac{15 - 1.6}{500 \times 10^{-3}}
+        \]
+
+        \[
+        R_2 = 26.8\,\Omega
+        \]
+
+        \[
+        P_2 = I_C^2 R_2
+        \]
+
+        \[
+        P_2 = (500 \times 10^{-3})^2 (26.8)
+        \]
+
+        \[
+        P_2 = 6.7\,W
+        \]
+
+        \subsubsection{Relaciones de voltaje}
+
+        \[
+        V_{CE} = V_{BE} - V_{BC}
+        \]
+
+        \[
+        V_{BC} = V_{BE} - V_{CE}
+        \]
+
+        \[
+        V_{BC} = 2.6 - 1.6
+        \]
+
+        \[
+        V_{BC} = 1\,V
+        \]
+
+        \subsubsection{Cálculo de $\beta$}
+
+        \[
+        \beta = \frac{I_C}{I_B}
+        \]
+
+        \[
+        \beta = 10
+        \]
+           \begin{table}[H]
+                \centering
+                \small 
+                \begin{tabularx}{\columnwidth}{|c|X|X|X|}
+                \hline
+                \textbf{Parámetro} & \textbf{Calculado} & \textbf{Real} \\ \hline
+                $R_1$  & 244.66$\Omega$ & 220 $\Omega$\\ \hline
+                $P_1$  & 0.05 W & 1/2 W\\ \hline
+                $R_2$  & 97.33$\Omega$ & 100$\Omega$\\ \hline
+                $P_2$  & 2.18 W        & 5 W\\ \hline
+                \end{tabularx}
+                \caption{Cálculo de $R_1$ y $R_2$ comercicales parámetros A.}
+                \label{tabla:erres.}
+            \end{table}
+        
+\section{Simulación}
+\subsection*{Simulación del Circuito a}
+En esta sección se recopilan los resultados obtenidos mediante la simulación de cada uno de los circuitos propuestos en la práctica. Para el circuito del inciso \textit{a}, se utilizaron los valores comerciales más cercanos a los calculados teóricamente; por lo tanto, se establecieron resistencias de $R_1 = 220 \, \Omega$ y $R_2 = 100 \, \Omega$. A continuación, se presenta una comparativa entre los resultados medidos físicamente y los simulados.
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/SIM1.png} 
+\caption{Simulación del circuito a.}
+\label{fig:SIM1}
+\end{center}
+\end{figure}
+
+Una vez realizado el análisis del circuito, se obtuvieron los siguientes resultados:
+
+\begin{table}[H]
+\centering
+\small 
+\begin{tabularx}{\columnwidth}{|c|X|X|X|X|X|X|X|X|}
+\hline
+\textbf{Datos} & \textbf{$I_B$ (mA)} & \textbf{$I_C$ (mA)} & \textbf{$V_{BE}$ (V)} & \textbf{$V_{BC}$ (V)} & \textbf{$V_{CE}$ (V)} & \textbf{$\beta$} & \textbf{$P$ (mW)} & \textbf{Pol.}\\ \hline
+Sim  & 18.5 & 148.4 & 0.916 & 0.456 & 0.46 & 8.02 & 85.21 & Sat.\\ \hline
+Med  & 18.4 & 133.6 & 0.833 & 0.753 & 0.08 & 7.26 & 26.05 & Sat. Profunda\\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de resultados del circuito a.}
+\label{tablaComparativa5}
+\end{table}
+
+Como se puede observar en la Tabla \ref{tablaComparativa5}, existe una gran congruencia entre los valores simulados y los medidos, destacando que en ambos escenarios el transistor BJT se encuentra operando en la zona de saturación. Esto se comprueba al notar que las uniones Base-Emisor ($V_{BE}$) y Base-Colector ($V_{BC}$) están polarizadas en directa (ambos voltajes son positivos). 
+Sin embargo, resalta una discrepancia en el voltaje Colector-Emisor ($V_{CE}$): el circuito físico medido presenta una caída de tensión de apenas 0.08 V, lo cual indica que el transistor real entró en un estado de saturación profunda, actuando de manera mucho más cercana a un interruptor ideal que el modelo de simulación de software (el cual arrojó 0.46 V). Como consecuencia directa de este bajo voltaje $V_{CE}$, la potencia disipada por el transistor físico ($P_{transistor}$) es significativamente menor (26.05 mW contra los 85.21 mW simulados), demostrando una mayor eficiencia térmica en la práctica que en la teoría debido a las características de conducción reales del componente físico.
+
+\subsection*{Simulación del Circuito b}
+Para el circuito \textit{b} se utilizaron directamente los valores obtenidos en los cálculos teóricos. A continuación se muestra la simulación realizada tomando en cuenta las resistencias de $R_1 = 48 \, \Omega$ y $R_2 = 26.8 \, \Omega$.
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/SIM2.png} 
+\caption{Simulación del circuito b.}
+\label{fig:SIM2}
+\end{center}
+\end{figure}
+
+Los resultados obtenidos de la simulación se muestran a continuación y se comparan con los resultados teóricos obtenidos a partir de los cálculos analíticos:
+
+\begin{table}[H]
+\centering
+\small 
+\begin{tabularx}{\columnwidth}{|c|X|X|X|X|X|X|X|X|}
+\hline
+\textbf{Datos} & \textbf{$I_B$ (mA)} & \textbf{$I_C$ (mA)} & \textbf{$V_{BE}$ (V)} & \textbf{$V_{BC}$ (V)} & \textbf{$V_{CE}$ (V)} & \textbf{$\beta$} & \textbf{$P_{trans.}$ (mW)} & \textbf{Zona Pol.}\\ \hline
+Calculado & 50.0 & 500.0 & 2.60 & 1.00 & 1.60 & 10.00 & 930 & Saturación \\ \hline
+Simulado  & 77.8 & 542.0 & 1.26 & 0.81 & 0.45 & 6.96 & 341 & Saturación \\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de resultados del circuito b.}
+\label{tablaComparativa6}
+\end{table}
+
+Como se puede observar en la Tabla \ref{tablaComparativa6}, existen diferencias notables entre el modelo teórico simplificado y el modelo computacional, aunque ambos confirman exitosamente que el transistor opera en la zona de saturación (con las uniones $V_{BE}$ y $V_{BC}$ polarizadas en directa). 
+
+La principal diferencia radica en los voltajes de juntura y, como consecuencia directa, en la potencia disipada. El cálculo teórico asumió valores extremos ($V_{BE} = 2.6$ V y $V_{CE} = 1.6$ V) para garantizar matemáticamente el estado de saturación, lo cual resulta en una disipación de potencia proyectada muy elevada (930 mW), acercándose peligrosamente al límite térmico de un transistor 2N2222 típico. 
+
+Sin embargo, el simulador, al utilizar modelos de semiconductores mucho más apegados a la realidad física, revela un comportamiento mucho más eficiente térmicamente. En la simulación, el voltaje $V_{BE}$ se estabiliza en 1.26 V y la caída en el canal principal ($V_{CE}$) es de apenas 0.45 V. Gracias a esta característica de conducción superior, la potencia real disipada por el transistor simulado es de 341 mW. Adicionalmente, se nota que para mantener esta alta demanda de corriente en el colector ($542$ mA), el circuito demanda una mayor corriente de base ($77.8$ mA) forzando la ganancia $\beta$ a un valor de 6.96, confirmando el comportamiento del transistor como un interruptor cerrado de estado sólido.
+
+\section{Conclusiones}
+\begin{itemize}
+    \item \textbf{Flores Cornejo Gustavo Mauricio.}
+    \newline 
+    En la presente práctica sirvió para carcaterizar el comportamiento del transistor como un dispositivo amplificador y de control como interruptor. La práctica sirvió de primer contacto para entender las bases de su funcionamiento y el análsis de sus zonas de polarización como se muestran en el desarrollo del presente documento. Entender cada una de estas zonas es de suma importancia para poder ser utilizado de la manera adecuada cuando se requiera en proyectos.
+    Es importante resaltar que para esta práctica que tiene como finalidad analizar el Transistor BJT NPN 2222 tiene sus limitaciones (Valores máximos y mínimos de trabajo) que de superarlos podemos alterar el comportamiento deseado o simplemente dañar el dispositivo por ejemplo, podemos entrar en la ona Activa del transistor donde la corriente en conmutador es proporcional a $\beta$ veces la corriente de la base. En la parte de simulación sirvió para observar el comportamiento del transistor frenre a los cambios de temperatura además que las gráficas
+    desarrolladas en el análisis donde veámos voltaje o resistencia contra corriente sirven para visualizar de manera fráfica más sencilla el comportamiento del transistor en sus tres zonas.
+    \newline 
+    \item \textbf{Muñoz Reyes Arturo Yabet.}
+    \newline En esta práctica se logró comprobar el comportamiento y las características operativas de un transistor BJT NPN 2N2222. Inicialmente, se verificó la estructura de sus uniones semiconductoras, comprobando que se requiere una correcta polarización directa entre la base y el emisor para permitir la conducción. A través de las distintas configuraciones del circuito, se analizó la relación directa entre la corriente de base y la corriente de colector, logrando identificar físicamente las zonas de corte, activa y de saturación. En esta última, se comprobó que el transistor actúa de forma similar a un interruptor cerrado, limitando su corriente no por la ganancia, sino por la red externa del circuito, ocasionando una caída abrupta en la $\beta$ forzada. 
+    Finalmente, la comparativa entre los modelos matemáticos teóricos, las simulaciones y las mediciones físicas demostró que los cálculos ideales tienden a proyectar escenarios más extremos (como en la disipación de potencia). Por lo que, el uso de simuladores avanzados y la consulta de las hojas de datos del fabricante son herramientas indispensables para dimensionar correctamente los componentes, prevenir fallas térmicas y garantizar la eficiencia real de los sistemas.
+    \item \textbf{Morales Vásquez Miguel Ehecatl.} 
+    \newline En esta práctica se validó de manera experimental la versatilidad del diodo semiconductor en aplicaciones de rectificación y acondicionamiento de señales. A través de la implementación de los circuitos de media onda y onda completa, fue posible contrastar la teoría matemática con el comportamiento real de los componentes, observando que factores como la caída de tensión interna del diodo ($\approx 0.7\text{ V}$) y las pérdidas en el transformador generan variaciones sutiles pero importantes en los valores RMS y promedio calculados. Un aprendizaje clave fue el uso de la derivación central y el puente de diodos, donde se demostró que la rectificación de onda completa ofrece una transferencia de potencia más constante y eficiente al aprovechar ambos semiciclos de la señal senoidal. Finalmente, el uso de técnicas de medición indirecta para la corriente y el análisis de voltajes inversos permitieron comprender las limitaciones operativas de los diodos, habilidades fundamentales para el diseño de fuentes de alimentación y sistemas de control de potencia en la ingeniería mecatrónica.
+
+\end{itemize}
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+\appendices
+\section{Evidencias}
+    \begin{figure}[H]%[!ht]
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{IMAGENES/Beta_datasheet.png} 
+    \caption{Datasheet de $\beta$ del transistor 2N2222.}
+    \label{fig:datasheet}
+    \end{center}
+    \end{figure}
+
+    \begin{figure}[H]%[!ht]
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{IMAGENES/Datasheet_Saturacion.png} 
+    \caption{Datasheet de zona de Saturación del transistor 2N2222.}
+    \label{fig:datasheet_saturacion}
+    \end{center}
+    \end{figure}
+
+
+
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+%use following command to generate the list of cited references
+
+\printbibliography
+
+\begin{thebibliography}{00}
+\bibitem{boylestad}
+R. L. Boylestad and L. Nashelsky, \textit{Electronic Devices and Circuit Theory}, 10th ed. Upper Saddle River, NJ, USA: Prentice Hall, 2009.
+
+\bibitem{1N4001}
+onsemi, ``1N4001 -- 1.0 A Standard Recovery Rectifier,'' Datasheet, 2023. [Online]. Available: https://www.onsemi.com/pdf/datasheet/1n4001-d.pdf. [Accessed: Feb. 24, 2026].
+
+\bibitem{1N4148}
+onsemi, ``1N4148 -- Small Signal Switching Diode,'' Datasheet, 2023. [Online]. Available: https://www.onsemi.com/pdf/datasheet/1n4148-d.pdf. [Accessed: Feb. 24, 2026].
+\end{thebibliography}
+
+% that's all folks
+\end{document}
