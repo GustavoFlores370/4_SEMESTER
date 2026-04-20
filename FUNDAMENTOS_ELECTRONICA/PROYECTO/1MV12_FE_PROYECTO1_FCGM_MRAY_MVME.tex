@@ -84,11 +84,13 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-    This paper analyzes the behavior and operation of the Bipolar Junction Transistor (BJT) under a fixed bias configuration. 
-    Using NPN 2N2222 transistors, the terminals were identified, and the operating regions—cutoff, saturation, and active—were experimentally determined. 
-    The flow of collector ($I_C$) and base ($I_B$) currents was examined, alongside the variation of the $\beta$ parameter under different voltage and resistance levels. 
-    The results, obtained through direct measurements and simulations, allowed for a comparison between real values and manufacturer specifications, confirming the 
-    BJT's utility as a switch and linear amplifier in DC electronic circuits.
+    This project details the development of a linear bipolar power supply designed to provide regulated positive 
+    and negative voltages. The process begins with mathematical sizing based on the nominal values of a center-tapped 
+    transformer, followed by a rectification stage and the calculation of filter capacitors to ensure a ripple voltage of less than 10\%
+    of the DC level. A regulation scheme was implemented using 78XX and 79XX integrated circuits, with specific load resistors 
+    calculated to evaluate the system at 75\% of its rated current. Experimental results, obtained through the use of an 
+    oscilloscope and a multimeter, demonstrate that the design meets the proposed regulation and stability criteria, validating 
+    the design methodology against the manufacturer's technical data.
 \end{abstract}
 
 \section{Introducción}
@@ -97,32 +99,33 @@
     % You must have at least 2 lines in the paragraph with the drop letter
     % (should never be an issue)
 
-    \IEEEPARstart{D}urante el periodo de 1904 a 1947, el tubo de vacío fue el componente electrónico de mayor interés y 
-    desarrollo, debido a su capacidad de amplificar señales analógicas, impulsado significativamente por la industria de la radio y televisión
-    en sus años posteriores. Sin embargo en 1947, la aparición del transistor  marcaría un cambio importante en la industria
-    de la electrónica.  Este nuevo dispositivo de estado sólido de tres terminales ofrecía grandes ventajas frente a su antecesor:
-    dimensiones más pequeñas, menor peso, baja disipación de calor y fundamentalmente,  una mayor eficiencia energética al consumir
-    una fracción de la potencia requerida por las válvulas de vacío.
- 
-    Gracias a estas propiedades y a su versatilidad para operar como interruptor electrónico, el transistor se integró rápidamente en 
-    a arquitectura de los sistemas informáticos. La evolución en las técnicas de diseño y fabricación ha permitido reducir su escala de 
-    centímetros a nanómetros, facilitando la construcción de microprocesadores de alta densidad. Este avance ha sido el pilar tecnológico 
-    que dio paso a la computación móvil, los sistemas embebidos y los dispositivos de control que definen la tecnología contemporánea.
+    \IEEEPARstart{L}as fuentes de alimentacion han sido un pilar fundamental en el diseño de sistemas electricos, donde la estabilidad
+    y fidelidad de la tensión de corriente directa (CD) son determinantes para el rendimiento y la integridad de los componentes. 
+    En el contexto de la infraestructura eléctrica convencional, es necesario transformar la tensión de corriente alterna (CA), 
+    proveniente de la red de distribución, en niveles de CD regulados que permitan el funcionamiento de dispositivos electrónicos de uso cotidiano e industrial.
+    
+    El presente reporte documenta el proceso integral de diseño, construcción y validación de una fuente de alimentación 
+    bipolar lineal fundamentada en reguladores integrados de las series 78XX y 79XX. El análisis técnico abarca desde la 
+    etapa de rectificación de onda completa y el dimensionamiento del filtrado capacitivo, hasta la etapa de regulación 
+    de voltaje bajo condiciones de carga controlada. Se pone especial énfasis en asegurar que parámetros críticos, 
+    como el voltaje de rizo (limitado a un máximo del 10\% de la CD) y la regulación de voltaje, cumplan estrictamente con los estándares 
+    de diseño propuestos y las especificaciones técnicas proporcionadas en las hojas de datos del fabricante.
 
 \section{Objetivos}
     \subsection{Objetivo General}
-    Explicar el funcionamiento del transistor BJT con una configuración de polarización fija y  diseñar circuitos que provean algún comportamiento deseado.
+    Diseñar y construir experimentalmente una fuente de alimentación bipolar lineal 
+    empleando reguladores integrados 78XX y 79XX, garantizando un suministro eléctrico estable y 
+    simétrico para aplicaciones electrónicas de baja potencia.
 
     \subsection{Objetivos Particulares}
     \begin{enumerate}
-        \item Identificar el colector, base y emisor del transistor.
-        \item Comprender el flujo de las corrientes de colector y base.
-        \item Analizar y comprender el comportamiento de la beta ante variaciones de voltaje. 
-        \item Comprender el funcionamiento de las zonas de corte-saturación.
+        \item Calcular y dimensionar los componentes críticos del sistema (capacitores de filtro y resistencias de carga) bajo criterios de diseño que limiten el voltaje de rizo a un máximo del 10\%.
+        \item Verificar mediante instrumentación (multímetro y osciloscopio) que los voltajes de salida y los niveles de rizo se mantengan dentro de los márgenes de operación nominales bajo condiciones de carga al 75\% de la capacidad del circuito integrado.
+        \item Evaluar el porcentaje de regulación de voltaje del sistema para comparar el desempeño experimental frente a las características típicas especificadas por el fabricante en las hojas de datos.
     \end{enumerate}
 
 \section{Marco teórico}
-    \subsection{El transitor BJT}
+    \subsection{Fuente de alimentación lineal}
         Un transistor de unión bipolar (BJT, por sus siglas en inglés) es un dispositivo semiconductor 
         constituido por tres capas de material dopado, las cuales forman dos uniones P-N y, por consiguiente, 
         dos regiones de agotamiento o empobrecimiento. Dependiendo de la configuración de estas capas, 
