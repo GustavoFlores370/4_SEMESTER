@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  21 APR 2026 14:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  23 APR 2026 04:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -573,23 +573,23 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\gusfl\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 89.
- (C:\Users\gusfl\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 132.
+(C:\Users\gusfl\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 89.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 132.
  (C:\Users\gusfl\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
 <IMAGENES/PRUEBA.png, id=1, 816.04875pt x 839.38594pt>
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 138.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 141.
 (pdftex.def)             Requested size: 118.4403pt x 121.81671pt.
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 146.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 149.
 (pdftex.def)             Requested size: 113.39923pt x 116.64229pt.
 
 
@@ -599,1056 +599,236 @@ Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 146.
  <./IMAGENES/PRUEBA.png>]
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 179.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 182.
 (pdftex.def)             Requested size: 180.60315pt x 185.76697pt.
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 187.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 190.
 (pdftex.def)             Requested size: 170.28094pt x 175.14914pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 201.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 204.
 (pdftex.def)             Requested size: 180.60315pt x 185.76697pt.
 
 
 [2]
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 243.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 246.
 (pdftex.def)             Requested size: 118.4403pt x 121.81671pt.
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 251.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 254.
 (pdftex.def)             Requested size: 118.4403pt x 121.81671pt.
 
 
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 307.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 310.
 (pdftex.def)             Requested size: 175.43811pt x 180.45164pt.
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 326.
-(pdftex.def)             Requested size: 232.19843pt x 238.84323pt.
 
 
 [3]
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 337.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 329.
+(pdftex.def)             Requested size: 232.19843pt x 238.84323pt.
+File: IMAGENES/PRUEBA.png Graphic file (type png)
+<use IMAGENES/PRUEBA.png>
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 340.
 (pdftex.def)             Requested size: 232.19843pt x 238.84323pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 371.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 374.
 (pdftex.def)             Requested size: 206.39685pt x 212.2923pt.
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 382.
-(pdftex.def)             Requested size: 103.19843pt x 106.13974pt.
 
 
 [4]
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 397.
-(pdftex.def)             Requested size: 232.19843pt x 238.84323pt.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 385.
+(pdftex.def)             Requested size: 103.19843pt x 106.13974pt.
 File: IMAGENES/PRUEBA.png Graphic file (type png)
 <use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 410.
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 400.
+(pdftex.def)             Requested size: 232.19843pt x 238.84323pt.
+
+
+File: IMAGENES/PRUEBA.png Graphic file (type png)
+<use IMAGENES/PRUEBA.png>
+Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 413.
 (pdftex.def)             Requested size: 103.19843pt x 106.13974pt.
 
 
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 452.
-(pdftex.def)             Requested size: 206.39685pt x 212.2923pt.
-
-
 [5]
-Overfull \hbox (4.34486pt too wide) in paragraph at lines 514--514
-[]|$\OML/cmm/m/it/9 V[]$| 
- []
-
-
-Overfull \hbox (4.34293pt too wide) in paragraph at lines 514--514
-[]|$\OML/cmm/m/it/9 V[]$| 
- []
-
-
-Overfull \hbox (4.21585pt too wide) in paragraph at lines 514--514
-[]|$\OML/cmm/m/it/9 V[]$| 
- []
-
-
-Overfull \hbox (4.05125pt too wide) in paragraph at lines 514--514
-[]|$\OML/cmm/m/it/9 V[]$| 
- []
-
-
-Overfull \hbox (6.89142pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/b/n/9 Zona
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 5.56
- []
-
-
-Overfull \hbox (7.13455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 14.98| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 10.0| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 5.56
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 -
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-\OT1/ptm/m/n/9 2.99| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 9.35| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 10.0| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 5.56
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 10.0| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 10.0| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 5.56
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.72| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.9
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.67| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.07| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 30.6
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 9.93| 
- []
-
-
-Overfull \hbox (7.13455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 10.46
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.70| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.5
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.64| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.06| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 30.2
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 60.4| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 9.94| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 15.7
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.71| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.3
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.61| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.09| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 30.7
- []
-
-
-Overfull \hbox (7.13455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 102.3| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 9.91| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 20.4
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.70| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.2
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.59| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.10| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 30.4
- []
-
-
-Overfull \hbox (7.13455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 150.5| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 9.90| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 30.4
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.71| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.2
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.55| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.15| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 29.7
- []
-
-
-Overfull \hbox (7.13455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 148.5| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 9.49| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 44.3
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.68| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.1
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 -
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-\OT1/ptm/m/n/9 2.13| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 2.81| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 21.6
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 7.05| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 70
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.66| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 64
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 -
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-\OT1/ptm/m/n/9 4.71| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 4.58| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 16.2
- []
-
-
-Overfull \hbox (7.13455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 253.1| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 5.28| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.65| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 43
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 -
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-\OT1/ptm/m/n/9 6.08| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 6.29| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 11
- []
-
-
-Overfull \hbox (7.13455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 255.8| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 3.61| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.64| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 29
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 -
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-\OT1/ptm/m/n/9 7.08| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 7.49| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 7.3
- []
+<IMAGENES/Circuito_base.jpeg, id=30, 1369.115pt x 628.3475pt>
+File: IMAGENES/Circuito_base.jpeg Graphic file (type jpg)
+<use IMAGENES/Circuito_base.jpeg>
+Package pdftex.def Info: IMAGENES/Circuito_base.jpeg  used on input line 455.
+(pdftex.def)             Requested size: 206.39685pt x 94.71785pt.
 
 
-Overfull \hbox (7.13455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 251.7| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 2.42| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.64| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 22
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 -
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-\OT1/ptm/m/n/9 7.65| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 8.14| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 5.4
- []
-
-
-Overfull \hbox (7.13455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 245.4| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.64| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 15
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 -
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-\OT1/ptm/m/n/9 8.17| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 8.78| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 3.3
- []
 
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 1.17| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.63| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 11
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 -
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-\OT1/ptm/m/n/9 8.43| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 9.08| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 2.8
- []
-
-
-Overfull \hbox (7.13455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 254.5| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.88| 
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.63| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 10
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 -
- []
-
-
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-\OT1/ptm/m/n/9 8.52| 
+Underfull \hbox (badness 1776) in paragraph at lines 483--485
+\OT1/ptm/m/n/10 La pr[]actica nos pide que para la re-sisten-cia de carga
  []
 
+<IMAGENES/Rectificado.png, id=31, 1204.5pt x 897.3525pt>
+File: IMAGENES/Rectificado.png Graphic file (type png)
+<use IMAGENES/Rectificado.png>
+Package pdftex.def Info: IMAGENES/Rectificado.png  used on input line 524.
+(pdftex.def)             Requested size: 232.19843pt x 172.97708pt.
 
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 9.17| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 2.4
- []
 
+[6 <./IMAGENES/Circuito_base.jpeg>]
+<IMAGENES/Voltaje_rizo.jpeg, id=36, 523.20468pt x 394.47375pt>
+File: IMAGENES/Voltaje_rizo.jpeg Graphic file (type jpg)
+<use IMAGENES/Voltaje_rizo.jpeg>
+Package pdftex.def Info: IMAGENES/Voltaje_rizo.jpeg  used on input line 568.
+(pdftex.def)             Requested size: 232.19843pt x 175.06174pt.
 
-Overfull \hbox (2.63455pt too wide) in paragraph at lines 514--514
-[]|\OT1/ptm/m/n/9 0.80| 
- []
 
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 580.
+(C:\Users\gusfl\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+<IMAGENES/Osciloscopio_Positivo.jpeg, id=37, 551.05875pt x 413.29407pt>
+File: IMAGENES/Osciloscopio_Positivo.jpeg Graphic file (type jpg)
+<use IMAGENES/Osciloscopio_Positivo.jpeg>
+Package pdftex.def Info: IMAGENES/Osciloscopio_Positivo.jpeg  used on input line 601.
+(pdftex.def)             Requested size: 232.19843pt x 174.14989pt.
 
+Underfull \vbox (badness 1755) has occurred while \output is active []
 
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 527.
-(pdftex.def)             Requested size: 258.0pt x 265.38138pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 527--528
- [] 
- []
 
+[7 <./IMAGENES/Rectificado.png> <./IMAGENES/Voltaje_rizo.jpeg>]
+<IMAGENES/Osciloscopio_Negativo.jpeg, id=44, 1505.625pt x 1114.1625pt>
+File: IMAGENES/Osciloscopio_Negativo.jpeg Graphic file (type jpg)
+<use IMAGENES/Osciloscopio_Negativo.jpeg>
+Package pdftex.def Info: IMAGENES/Osciloscopio_Negativo.jpeg  used on input line 612.
+(pdftex.def)             Requested size: 232.19843pt x 171.82635pt.
+<IMAGENES/Multimetro_Positivo.jpeg, id=45, 963.6pt x 1284.8pt>
+File: IMAGENES/Multimetro_Positivo.jpeg Graphic file (type jpg)
+<use IMAGENES/Multimetro_Positivo.jpeg>
+Package pdftex.def Info: IMAGENES/Multimetro_Positivo.jpeg  used on input line 624.
+(pdftex.def)             Requested size: 232.19843pt x 309.59338pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[6]
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 543.
-(pdftex.def)             Requested size: 258.0pt x 265.38138pt.
+<IMAGENES/Multimetro_Negativo.jpeg, id=46, 963.6pt x 1284.8pt>
+File: IMAGENES/Multimetro_Negativo.jpeg Graphic file (type jpg)
+<use IMAGENES/Multimetro_Negativo.jpeg>
+Package pdftex.def Info: IMAGENES/Multimetro_Negativo.jpeg  used on input line 632.
+(pdftex.def)             Requested size: 232.19843pt x 309.59338pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 543--544
- [] 
+Underfull \hbox (badness 1721) in paragraph at lines 650--650
+[]|\OT1/ptm/b/n/9 Valor Cal-
  []
 
+
+Underfull \hbox (badness 3343) in paragraph at lines 650--650
+[]|\OT1/ptm/b/n/9 Valor Me-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--650
+[]|\OT1/ptm/b/n/9 Diferencia
+ []
+
+
+
+[8 <./IMAGENES/Osciloscopio_Positivo.jpeg> <./IMAGENES/Osciloscopio_Negativo.jpeg> <./IMAGENES/Multimetro_Positivo.jpeg> <./IMAGENES/Multimetro_Negativo.jpeg>]
+Underfull \hbox (badness 4518) in paragraph at lines 664--671
+[]\OT1/ptm/m/n/10 unicamente en par[]ametros de sal-ida de-sea-dos no
+ []
+
+
+Underfull \hbox (badness 1824) in paragraph at lines 664--671
+\OT1/ptm/m/n/10 es lo que nor-mal-mente de-sar-rol-lamos en ejer-ci-cios
+ []
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 664--671
+\OT1/ptm/m/n/10 y otras pr[]acticas. Adem[]as, para este proyecto fue
+ []
+
+
+Underfull \hbox (badness 3088) in paragraph at lines 664--671
+\OT1/ptm/m/n/10 al com-por-tamiento de la fuente. Tambi[]en fue un
+ []
+
+
+Underfull \hbox (badness 2582) in paragraph at lines 664--671
+\OT1/ptm/m/n/10 de los el-e-men-tos que la com-po-nen por sep-a-rado,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--671
+
+ []
+
+
+
+<IMAGENES/Datasheet_LM7809.jpeg, id=50, 1365.1pt x 1098.1025pt>
+File: IMAGENES/Datasheet_LM7809.jpeg Graphic file (type jpg)
+<use IMAGENES/Datasheet_LM7809.jpeg>
+Package pdftex.def Info: IMAGENES/Datasheet_LM7809.jpeg  used on input line 700.
+(pdftex.def)             Requested size: 232.19843pt x 186.77548pt.
+<IMAGENES/Datasheet_LM7909.jpeg, id=51, 1290.8225pt x 1064.97874pt>
+File: IMAGENES/Datasheet_LM7909.jpeg Graphic file (type jpg)
+<use IMAGENES/Datasheet_LM7909.jpeg>
+Package pdftex.def Info: IMAGENES/Datasheet_LM7909.jpeg  used on input line 708.
+(pdftex.def)             Requested size: 232.19843pt x 191.55789pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 557.
-(pdftex.def)             Requested size: 258.0pt x 265.38138pt.
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 557--558
- [] 
- []
-
+[9 <./IMAGENES/Datasheet_LM7809.jpeg>]
+<IMAGENES/Datasheet_1N5402.png, id=59, 598.48593pt x 421.575pt>
+File: IMAGENES/Datasheet_1N5402.png Graphic file (type png)
+<use IMAGENES/Datasheet_1N5402.png>
+Package pdftex.def Info: IMAGENES/Datasheet_1N5402.png  used on input line 716.
+(pdftex.def)             Requested size: 232.19843pt x 163.55803pt.
+<IMAGENES/Evidencia.jpeg, id=60, 1126.2075pt x 1505.625pt>
+File: IMAGENES/Evidencia.jpeg Graphic file (type jpg)
+<use IMAGENES/Evidencia.jpeg>
+Package pdftex.def Info: IMAGENES/Evidencia.jpeg  used on input line 724.
+(pdftex.def)             Requested size: 232.19843pt x 310.42412pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[7]
 
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 599.
-(pdftex.def)             Requested size: 232.19843pt x 238.84323pt.
+LaTeX Warning: Empty bibliography on input line 750.
 
 
-[8]
-
-
-
-[9]
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 833.
-(pdftex.def)             Requested size: 232.19843pt x 238.84323pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 849--849
-[]|$\OML/cmm/m/it/9 I[]$
- []
-
-
-Overfull \hbox (5.23833pt too wide) in paragraph at lines 849--849
-\OT1/ptm/b/n/9 (mA)| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 849--849
-[]|$\OML/cmm/m/it/9 I[]$
- []
-
-
-Overfull \hbox (5.23833pt too wide) in paragraph at lines 849--849
-\OT1/ptm/b/n/9 (mA)| 
- []
-
-
-Overfull \hbox (2.70978pt too wide) in paragraph at lines 849--849
-[]|$\OML/cmm/m/it/9 V[]$
- []
-
-
-Overfull \hbox (2.70784pt too wide) in paragraph at lines 849--849
-[]|$\OML/cmm/m/it/9 V[]$
- []
-
-
-Overfull \hbox (2.58076pt too wide) in paragraph at lines 849--849
-[]|$\OML/cmm/m/it/9 V[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 849--849
-[]|$\OML/cmm/m/it/9 P$
- []
-
-
-Overfull \hbox (7.74036pt too wide) in paragraph at lines 849--849
-\OT1/ptm/b/n/9 (mW)| 
- []
-
-
-Overfull \hbox (0.99947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 18.5| 
- []
-
-
-Overfull \hbox (5.49947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 148.4| 
- []
-
-
-Overfull \hbox (5.49947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 0.916| 
- []
-
-
-Overfull \hbox (5.49947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 0.456| 
- []
-
-
-Overfull \hbox (0.99947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 0.46| 
- []
-
-
-Overfull \hbox (0.99947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 8.02| 
- []
-
-
-Overfull \hbox (5.49947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 85.21| 
- []
-
-
-Overfull \hbox (0.99947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 18.4| 
- []
-
-
-Overfull \hbox (5.49947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 133.6| 
- []
-
-
-Overfull \hbox (5.49947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 0.833| 
- []
-
-
-Overfull \hbox (5.49947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 0.753| 
- []
-
-
-Overfull \hbox (0.99947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 0.08| 
- []
-
-
-Overfull \hbox (0.99947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 7.26| 
- []
-
-
-Overfull \hbox (5.49947pt too wide) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 26.05| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 849--849
-[]|\OT1/ptm/m/n/9 Sat.
- []
-
-
-Overfull \hbox (0.74733pt too wide) in paragraph at lines 849--849
-\OT1/ptm/m/n/9 Pro-
- []
-
-
-Overfull \hbox (5.74237pt too wide) in paragraph at lines 849--849
-\OT1/ptm/m/n/9 funda| 
- []
-
-
-
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 862.
-(pdftex.def)             Requested size: 232.19843pt x 238.84323pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 878--878
-[]|$\OML/cmm/m/it/9 I[]$
- []
-
-
-Overfull \hbox (7.05067pt too wide) in paragraph at lines 878--878
-\OT1/ptm/b/n/9 (mA)| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 878--878
-[]|$\OML/cmm/m/it/9 I[]$
- []
-
-
-Overfull \hbox (7.05067pt too wide) in paragraph at lines 878--878
-\OT1/ptm/b/n/9 (mA)| 
- []
-
-
-Overfull \hbox (4.52213pt too wide) in paragraph at lines 878--878
-[]|$\OML/cmm/m/it/9 V[]$
- []
-
-
-Overfull \hbox (4.52019pt too wide) in paragraph at lines 878--878
-[]|$\OML/cmm/m/it/9 V[]$
- []
-
-
-Overfull \hbox (4.39311pt too wide) in paragraph at lines 878--878
-[]|$\OML/cmm/m/it/9 V[]$
- []
-
-
-Overfull \hbox (14.45438pt too wide) in paragraph at lines 878--878
-[]|$\OML/cmm/m/it/9 P[]$
- []
-
-
-Overfull \hbox (9.5527pt too wide) in paragraph at lines 878--878
-\OT1/ptm/b/n/9 (mW)| 
- []
-
-
-Overfull \hbox (7.06868pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/b/n/9 Zona
- []
-
-
-Overfull \hbox (1.63274pt too wide) in paragraph at lines 878--878
-\OT1/ptm/b/n/9 Pol.| 
- []
-
-
-Overfull \hbox (2.81181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 50.0| 
- []
-
-
-Overfull \hbox (7.31181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 500.0| 
- []
-
-
-Overfull \hbox (2.81181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 2.60| 
- []
-
-
-Overfull \hbox (2.81181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 1.00| 
- []
-
-
-Overfull \hbox (2.81181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 1.60| 
- []
-
-
-Overfull \hbox (7.31181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 10.00| 
- []
-
-
-Overfull \hbox (0.56181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 930| 
- []
-
-
-Overfull \hbox (25.55435pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 Saturaci[]on| 
- []
-
-
-Overfull \hbox (2.81181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 77.8| 
- []
-
-
-Overfull \hbox (7.31181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 542.0| 
- []
-
-
-Overfull \hbox (2.81181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 1.26| 
- []
-
-
-Overfull \hbox (2.81181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 0.81| 
- []
-
-
-Overfull \hbox (2.81181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 0.45| 
- []
-
-
-Overfull \hbox (2.81181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 6.96| 
- []
-
-
-Overfull \hbox (0.56181pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 341| 
- []
-
-
-Overfull \hbox (25.55435pt too wide) in paragraph at lines 878--878
-[]|\OT1/ptm/m/n/9 Saturaci[]on| 
- []
-
-
-
-[10]
-Underfull \hbox (badness 2393) in paragraph at lines 891--897
-\OT1/ptm/m/n/10 En la pre-sente pr[]actica sirvi[]o para car-ca-teri-zar el
- []
-
-
-Underfull \hbox (badness 3168) in paragraph at lines 891--897
-\OT1/ptm/m/n/10 com-por-tamiento del tran-sis-tor como un dis-pos-i-tivo
- []
-
-
-Underfull \hbox (badness 2384) in paragraph at lines 891--897
-\OT1/ptm/m/n/10 sirvi[]o de primer con-tacto para en-ten-der las bases
- []
-
-
-Underfull \hbox (badness 1960) in paragraph at lines 891--897
-\OT1/ptm/m/n/10 man-era fr[]afica m[]as sen-cilla el com-por-tamiento del
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 891--897
-
- []
-
-
-
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 926.
-(pdftex.def)             Requested size: 232.19843pt x 238.84323pt.
-File: IMAGENES/PRUEBA.png Graphic file (type png)
-<use IMAGENES/PRUEBA.png>
-Package pdftex.def Info: IMAGENES/PRUEBA.png  used on input line 934.
-(pdftex.def)             Requested size: 232.19843pt x 238.84323pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[11]
-
-LaTeX Warning: Empty bibliography on input line 960.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 967--968
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4001-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 970--971
+Underfull \hbox (badness 10000) in paragraph at lines 760--761
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4148-
  []
 
 
 
-
-
-[12
-
-] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\PROYECTO\build\1MV12_FE_PROYECTO1_FCGM_MRAY_MVME.aux)
+[10 <./IMAGENES/Datasheet_LM7909.jpeg> <./IMAGENES/Datasheet_1N5402.png> <./IMAGENES/Evidencia.jpeg>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\PROYECTO\build\1MV12_FE_PROYECTO1_FCGM_MRAY_MVME.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -1658,17 +838,17 @@ Package logreq Info: Writing requests to '1MV12_FE_PROYECTO1_FCGM_MRAY_MVME.run.
 
  ) 
 Here is how much of TeX's memory you used:
- 13210 strings out of 469959
- 248371 string characters out of 5469834
- 1091891 words of memory out of 5000000
- 39863 multiletter control sequences out of 15000+600000
- 670858 words of font info for 118 fonts, out of 8000000 for 9000
+ 13310 strings out of 469959
+ 251571 string characters out of 5469834
+ 1063826 words of memory out of 5000000
+ 39959 multiletter control sequences out of 15000+600000
+ 671172 words of font info for 119 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 63i,13n,66p,1279b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\PROYECTO\build\1MV12_FE_PROYECTO1_FCGM_MRAY_MVME.pdf (12 pages, 1130431 bytes).
+ 63i,11n,66p,1279b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\PROYECTO\build\1MV12_FE_PROYECTO1_FCGM_MRAY_MVME.pdf (10 pages, 3761809 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
+ 132 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

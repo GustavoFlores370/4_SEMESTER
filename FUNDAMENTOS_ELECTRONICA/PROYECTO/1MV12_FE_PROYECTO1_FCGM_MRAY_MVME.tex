@@ -452,8 +452,8 @@
 \section{Materiales}
         \begin{figure} [H]
             \centering
-            \includegraphics[width=0.4\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Circuito de polarización de transistor.}
+            \includegraphics[width=0.4\textwidth]{IMAGENES/Circuito_base.jpeg}
+            \caption{Circuito de fuente bipolar lineal.}
             \label{fig:circuito_base}
         \end{figure}
 Para el circuito mostrado en la "Figura~\ref{fig:circuito_base}”, emplearemos:
@@ -463,439 +463,210 @@ Para el circuito mostrado en la "Figura~\ref{fig:circuito_base}”, emplearemos:
     \item 2 Capcaitores Electrolíticos de 4700$\mu$F.
     \item 2 Capacitores Cerámicos de 0.33$\mu$F.
     \item 2 Capacitores Cerámicos de 0.10$\mu$F.
-    \item 1 Regulador de Voltaje Lineal LF7809.
-    \item 1 Regulador de Voltaje Lineal LF7909.
+    \item 1 Regulador de Voltaje Lineal LM7809.
+    \item 1 Regulador de Voltaje Lineal LM7909.
     \item 2 Resistencias de 18$\Omega$ a 10W.
 \end{itemize}
 
 
 \section{Análisis y Resultados}
-    \subsection{Características Básicas del Transistor.}
-        En esta sección se analizarán parámetros medibles inmediatamente con multpimetro del transistor, esto con la finalidad de reconocer las terminales del mismo y su comportamiento a condiciones iniciales.
-        \begin{table}[H]
-            \centering
-            \small 
-            \begin{tabularx}{\columnwidth}{|c|X|X|X|}
-            \hline
-            \textbf{Parámetro} & \textbf{Polaridad Drecta} & \textbf{Polaridad Inversa} \\ \hline
-            $R_{CE}$  & $\infty$ & $\infty$\\ \hline
-            $R_{BE}$  & 3.72 M$\Omega$ & $\infty$\\ \hline
-            $R_{BC}$  & 3.70 M$\Omega$ & $\infty$\\ \hline
-            $V_{BE}$  & 0.668 V        & $\infty$\\ \hline
-            $V_{BC}$  & 0.667 V        & $\infty$\\ \hline
-            \end{tabularx}
-            \caption{Parámetros básicos en los terminales del transistor.}
-            \label{tabla:Parametros_Basicos.}
-        \end{table}
-    \subsection{Zonas: Activa, Saturación y Corte.}
-        Con el circuito mostrado en "Figura~\ref{fig:circuito_base}” tomaremos la fuente $V_1$ como una fuente variable además que la resistencia $R_1$ será reemplazada con el potenciometro para tener una resistencia variable.
-        Lo anterior con la finalidad de observar e identificar el comportamiento de las tres etapas características del transistor.
-        Los resultados obtenidos se muestran en la siguiente tabla:
-        \begin{table}[H]
-            \centering
-            \small 
-            \begin{tabularx}{\columnwidth}{|c|X|X|X|X|X|X|X|X|X|}
-            \hline
-            \textbf{$V_1$} & \textbf{$R_1$} & \textbf{$V_{BE}$} & \textbf{$I_B$} & \textbf{$V_{BC}$} & \textbf{$V_{CE}$} & \textbf{$I_C$} & \textbf{$\beta$} & \textbf{$V_{RC}$} & \textbf{Zona P.}\\ \hline
-            -5 & 5.56 k$\Omega$ & -5 & 0 & 14.98 & 10.0 & 0 & 0 & 0 & C \\ \hline
-            -3 & 5.56 k$\Omega$ & -2.99 & 0 & 9.35 & 10.0 & 0 & 0 & 0 & C \\ \hline
-            0 & 5.56 k$\Omega$ & 0 & 0 & 10.0 & 10.0 & 0 & 0 & 0 & C \\ \hline
-            5 & 5.56 k$\Omega$ & 0.72 & 0.9 mA & 0.67 & 0.07 & 30.6 mA & 34 & 9.93 & S \\ \hline
-            5 & 10.46 k$\Omega$ & 0.70 & 0.5 mA & 0.64 & 0.06 & 30.2 mA & 60.4 & 9.94 & S \\ \hline
-            5 & 15.7 k$\Omega$ & 0.71 & 0.3 mA & 0.61 & 0.09 & 30.7 mA & 102.3 & 9.91 & S \\ \hline
-            5 & 20.4 k$\Omega$ & 0.70 & 0.2 mA & 0.59 & 0.10 & 30.4 mA & 150.5 & 9.90 & S \\ \hline
-            5 & 30.4 k$\Omega$ & 0.71 & 0.2 mA & 0.55 & 0.15 & 29.7 mA & 148.5 & 9.49 & S \\ \hline
-            5 & 44.3 k$\Omega$ & 0.68 & 0.1 mA & -2.13 & 2.81 & 21.6 mA & 216 & 7.05 & A \\ \hline
-            5 & 70 k$\Omega$ & 0.66 & 64 $\mu$A & -4.71 & 4.58 & 16.2 mA & 253.1 & 5.28 & A \\ \hline
-            5 & 100 k$\Omega$ & 0.65 & 43 $\mu$A & -6.08 & 6.29 & 11 mA & 255.8 & 3.61 & A \\ \hline
-            5 & 150 k$\Omega$ & 0.64 & 29 $\mu$A & -7.08 & 7.49 & 7.3 mA & 251.7 & 2.42 & A \\ \hline
-            5 & 200 k$\Omega$ & 0.64 & 22 $\mu$A & -7.65 & 8.14 & 5.4 mA & 245.4 & 1.8 & A \\ \hline
-            5 & 300 k$\Omega$ & 0.64 & 15 $\mu$A & -8.17 & 8.78 & 3.3 mA & 220 & 1.17 & A \\ \hline
-            5 & 400 k$\Omega$ & 0.63 & 11 $\mu$A & -8.43 & 9.08 & 2.8 mA & 254.5 & 0.88 & A \\ \hline
-            5 & 443 k$\Omega$ & 0.63 & 10 $\mu$A & -8.52 & 9.17 & 2.4 mA & 290 & 0.80 & A \\ \hline
+Para el desarrollo de los cálculos utilizados para obtener los valores comerciales de cada componente del circuito anteriormente mostrado se procedió con las expresiones propuestas por el Boylestad, cabe aclarar que los valores calculados no son mas que eso, valores que en
+mercado no existen, por lo que el análisis se hará en dos partes: Valores teóricos y Valores reales.
+    \subsection{Valores Teóricos.}  
 
-            \end{tabularx}
-            \caption{Resultados medidos del transistor BJT.}
-            \label{tabla:Resultados_BJT}
-        \end{table}             
-
-        Es de inmediato notar que el $V_{BE}$ prácticamente en todos los casos es de 0.7 V, semejante al comportamiento de un diodo de silicio es polarización directa, de igual manera para $V_1$<0 el $V_{BE}$ es igual al voltaje de la fuente,
-        debido a que la conexicón base-emisor se comporta como un diodo polarizado inversamente. La beta calculada por:
-            \[
-            \beta = \frac{I_C}{I_B}
-            \]
-        Se observa de la expresión anterior que la beta es inversamente proporcional a la corriente que fluctúa por la base, a continuación se muestra el comportamiento de la $\beta$ en función de $I_B$.
-        \begin{figure}[H]%[!ht]
-            \begin{center}
-            \includegraphics[width=0.50\textwidth]{IMAGENES/PRUEBA.png} 
-            \caption{Gráfica del comportamiento $\beta$.}
-            \label{fig:beta}
-            \end{center}
-        \end{figure}
-        Los valores obtenidos para $\beta$ coinciden con los esperados encontrados por el fabricante, veáse "Figura~\ref{fig:datasheet}” en la sección de apéndice, además del valor medido por multímetro que también se encuntra dentro del rango de operación.
-        Analizando el circuito y desarrollando mediante mallas podemos conocer el comportamiento de la $I_B$ en función de la resistencia $R_1$:
-            \[
-            - V_1 + I_B \cdot R_1 + V_{BE} = 0
-            \]
-            \[
-            I_B = \frac{V_1 - V_{BE}}{R_1}
-            \]
-        Podemos darnos cuenta que para valores pequeños de $R_1$ obtendremos una $I_B$ grande y a $R_1$ grandes obtendremos $I_B$ pequeñas, en la siguiente gráfica mostramos esta relación:
-        \begin{figure}[H]%[!ht]
-            \begin{center}
-            \includegraphics[width=0.50\textwidth]{IMAGENES/PRUEBA.png} 
-            \caption{Gráfica del comportamiento $I_B$.}
-            \label{fig:IVSR}
-            \end{center}
-        \end{figure}
-
-        Conocer esto nos sirve para entender el comportamiento de $V_{CE}$ pues éste depende totalmente del valor de $I_C$ y, a su vez, éste depende de la $I_B$, por lo que para la zona de corte observaremos el voltaje de la $V_2$=10V (Polarización Inversa), en la zona de Saturación veremos que 
-        el voltaje es 0V idealmente, aproximado a 0.2V en casos reales, debido que tanto las terminales Base-Emisor y Base-Colector están polarizados directamente (0.7V):
+    Dado que se escogió el circuito integrado LM7809 gran parte de nuestras consideraciones en los cálculos provienen de las características especificadas por el fabricante de 
+    este componente, veáse "Figura~\ref{fig:datasheet_LM7809}" en el apéndice para más información.
+    Con este circuito integrado tenemos un $V_{salida}$=9V, una de las especificaciones de la práctica es que la corriente que circule por la carga sea del 75\% de nuestra corriente máxima. Si bien el LM7809 soporta corrientes de
+    hasta 1.5A no se trabajará con dicha corriente, pues la máxima suministrada por nuestro transformador es de 1A. Entonces por ley de ohm tenemos:
         \[
-        V_{CE} = -V_{BC} + V_{BE}
+        R_L = \frac{V_{out}}{0.75(I_{max})} = \frac{9}{0.75(1)} = 12\,\Omega
         \]
-        En síntesis, lo anteriormente mencionado se puede ver resumido en la siguiente gráfica:
-        \begin{figure}[H]%[!ht]
-            \begin{center}
-            \includegraphics[width=0.50\textwidth]{IMAGENES/PRUEBA.png} 
-            \caption{Gráfica del comportamiento $V_{CE}$.}
-            \label{fig:VVSR}
-            \end{center}
-        \end{figure}   
-        La zona de saturación es la zona no lineal del comportamiento del transistor por lo que es importante conocer cómo funciona y las condiciones en las que se opera en dicha zona.
-        Ya hemos visto la relación que existe entre $I_B$ y $I_C$ y la $\beta$, sin embargo, esta relación funciona únicamente para la zona Activa, como podemos observar en la "Table II" la $I_C$ se mantiene en 30mA en saturación. Esto porque en la zona de saturación la beta no funje como amplificador, y la corriente se ve limitada por la carga del circuito:
-        \[
-        -V_2 + I_C \cdot R_2 + V_{CE} = 0
-        \]   
-        \[
-        I_C = \frac{V_2 - V_{CE}}{R_2}
-        \]
-        Observando los resultados obtenidos y la demostración anteriormente hecha podemos deducir las condiciones de la zona de saturación:
-        \[
-        V_{BE} \approx 0.7V
-        \]
-        \[
-        V_{BC} \approx 0.7V
-        \]
-        \[
-        V_{CE} \approx 0.2V
-        \]
-        \[
-        I_B \cdot \beta > I_C
-        \]
-        Dichos valores son comprobables y se encuentran dentro del tango indicado por el fabrcante, veáse "Figura~\ref{fig:datasheet_saturacion}” en el apartado de apéndices.
-        \newline
-        Cuando $I_B$ disminuye veremos que la unión Base-Colector se polariza inversamente entrando en la zona Activa lo cuál aumenta significativamente el $V_{CE}$.
-
-    \subsection{Cálculo de $R_1$ y $R_2$ con parámetros A.}
-        Siguiendo el análsis del circuito mostrado en la "Figura~\ref{fig:circuito_base}” se calcularán los valores de $R_1$ y $R_2$ bajo las siguientes condiciones:
-        \begin{itemize}
-            \item $V_{CE}$ = 0.4 V
-            \item $I_C$ = 150 mA
-            \item $I_B$ = 15mA
-            \item $V_{BE}$ = 1.3 V
-            \item $V_2$ = 15 V
-            \item $V_1$ = 5 V
-        \end{itemize}
-        \begin{figure}[H]%[!ht]
-            \begin{center}
-            \includegraphics[width=0.45\textwidth]{IMAGENES/PRUEBA.png} 
-            \caption{Circuito analizado.}
-            \label{fig:AS1}
-            \end{center}
-        \end{figure}
-
-        \subsubsection{Mallas}
+    La práctica nos pide que para la resistencia de carga adquiramos un valor del 50\% por arriba de lo calculado, por lo que tenemos:
 
         \[
-        R_1 I_B + V_{BE} = V_1
+        R_{L\ \text{real}} = 12\,\Omega + 0.5(12) = 18\,\Omega
         \]
 
         \[
-        R_2 I_C + V_{CE} = V_2
+        P = V \cdot I_{\text{carga}} = 9(0.75) = 6.75\,W
         \]
+    El valor comercial es de 10W.
 
-        \subsubsection{Cálculo de $R_1$}
+    Si revisamos la datasheet del circuito integrado encontraremos que existe un consumo de corriente y una caída de tesión definidas por el fabricante, en este caso veremos que la $I_{CI}$=8mA, por lo que la corriente total se define como:
+        \[
+        I_{\text{carga total}} = I_{CI} + I_{\text{carga}} = 8\,mA + 0.75\,A = 0.758\,A
+        \]
+    El voltaje rizo es un parámetro fundamental en la construcción de esta fuente, la práctica nos pide que el valor de éste sea del 10\% del $V_{cd}$, el cuál es el voltaje posterior al rectificado (puente de diodos).
+    De esta manera, se midió el voltaje pico entregado por el transformador y, recordando, cómo es la rectificación de onda completa con derivación central (Donde el voltaje de salida es el de entrada menos la caída de tensión de un diodo) tenemos lo
+    siguiente:
 
         \[
-        R_1 = \frac{V_1 - V_{BE}}{I_B}
-        \]
-
-        \[
-        R_1 = \frac{5 - 1.3}{15 \times 10^{-3}}
-        \]
-
-        \[
-        R_1 = 246.66\,\Omega
-        \]
-
-        \[
-        P_1 = I_B^2 R_1
+        V_{cd} = V_{in} - V_D = 16.97V -1.2V
         \]
 
         \[
-        P_1 = (15 \times 10^{-3})^2 (246.66)
+        V_{cd} = 15.77V
         \]
-
+        Véase "Figura~\ref{fig:datasheet_1N5402}" en el apéndice para corroborar la caída de tensión considerados en los cálculos.
         \[
-        P_1 = 0.05\,W
+        V_r = 0.10\,V_{cd} = 0.10(15.77) = 1.577\,V
         \]
 
-        \subsubsection{Cálculo de $R_2$}
-
+        La expresión para calcular la capacitancia del capacitor de filtro está dada por la siguiente expresión:
         \[
-        R_2 = \frac{V_2 - V_{CE}}{I_C}
+        C = \frac{I_{\text{carga total}}}{f \cdot V_{r\ max}} 
         \]
-
-        \[
-        R_2 = \frac{15 - 0.4}{150 \times 10^{-3}}
-        \]
-
-        \[
-        R_2 = 97.33\,\Omega
-        \]
-
-        \[
-        P_2 = I_C^2 R_2
-        \]
-
-        \[
-        P_2 = (150 \times 10^{-3})^2 (97.33)
-        \]
-
-        \[
-        P_2 = 2.18\,W
-        \]
-
-        \subsubsection{Cálculo de $\beta$}
-
-        \[
-        \beta = \frac{I_C}{I_B}
-        \]
-
-        \[
-        \beta = \frac{150\,mA}{15\,mA}
-        \]
-
-        \[
-        \beta = 10
-        \]
-
-        \subsubsection{Relación de voltajes}
-
-        \[
-        V_{CE} = V_{BE} - V_{BC}
-        \]
-
-        \[
-        V_{BC} = V_{BE} - V_{CE}
-        \]
-
-        \[
-        V_{BC} = 1.3 - 0.4
-        \]
-
-        \[
-        V_{BC} = 0.9\,V
-        \]
-        En mercado no encontraremos exactamente estos valores por lo que los valores utilizados para el armado del circuito se presentan en la siguiente tabla:
-            \begin{table}[H]
-                \centering
-                \small 
-                \begin{tabularx}{\columnwidth}{|c|X|X|X|}
-                \hline
-                \textbf{Parámetro} & \textbf{Calculado} & \textbf{Real} \\ \hline
-                $R_1$  & 244.66$\Omega$ & 220 $\Omega$\\ \hline
-                $P_1$  & 0.05 W & 1/2 W\\ \hline
-                $R_2$  & 97.33$\Omega$ & 100$\Omega$\\ \hline
-                $P_2$  & 2.18 W        & 5 W\\ \hline
-                \end{tabularx}
-                \caption{Cálculo de $R_1$ y $R_2$ comercicales parámetros A.}
-                \label{tabla:erresa.}
-            \end{table}
-
-    \subsection{Cálculo de $R_1$ y $R_2$ con parámetros B.}
-        \begin{itemize}
-            \item $V_{CE}$ = 1.6 V
-            \item $I_C$ = 500 mA
-            \item $I_B$ = 50mA
-            \item $V_{BE}$ = 2.6 V
-            \item $V_2$ = 15 V
-            \item $V_1$ = 5 V
-        \end{itemize}
-        \subsubsection{Mallas}
-
-        \[
-        R_1 I_B + V_{BE} = V_1
-        \]
-
-        \[
-        R_2 I_C + V_{CE} = V_2
-        \]
-
-        \subsubsection{Cálculo de $R_1$}
-
-        \[
-        R_1 = \frac{V_1 - V_{BE}}{I_B}
-        \]
-
-        \[
-        R_1 = \frac{5 - 2.6}{50 \times 10^{-3}}
-        \]
-
-        \[
-        R_1 = 48\,\Omega
-        \]
-
-        \[
-        P_1 = I_B^2 R_1
-        \]
-
-        \[
-        P_1 = (50 \times 10^{-3})^2 (48)
-        \]
-
-        \[
-        P_1 = 0.12\,W
-        \]
-
-        \subsubsection{Cálculo de $R_2$}
-
-        \[
-        R_2 = \frac{V_2 - V_{CE}}{I_C}
-        \]
-
-        \[
-        R_2 = \frac{15 - 1.6}{500 \times 10^{-3}}
-        \]
-
-        \[
-        R_2 = 26.8\,\Omega
-        \]
-
-        \[
-        P_2 = I_C^2 R_2
-        \]
-
-        \[
-        P_2 = (500 \times 10^{-3})^2 (26.8)
-        \]
-
-        \[
-        P_2 = 6.7\,W
-        \]
-
-        \subsubsection{Relaciones de voltaje}
-
-        \[
-        V_{CE} = V_{BE} - V_{BC}
-        \]
-
-        \[
-        V_{BC} = V_{BE} - V_{CE}
-        \]
-
-        \[
-        V_{BC} = 2.6 - 1.6
-        \]
-
-        \[
-        V_{BC} = 1\,V
-        \]
-
-        \subsubsection{Cálculo de $\beta$}
-
-        \[
-        \beta = \frac{I_C}{I_B}
-        \]
-
-        \[
-        \beta = 10
-        \]
-           \begin{table}[H]
-                \centering
-                \small 
-                \begin{tabularx}{\columnwidth}{|c|X|X|X|}
-                \hline
-                \textbf{Parámetro} & \textbf{Calculado} & \textbf{Real} \\ \hline
-                $R_1$  & 244.66$\Omega$ & 220 $\Omega$\\ \hline
-                $P_1$  & 0.05 W & 1/2 W\\ \hline
-                $R_2$  & 97.33$\Omega$ & 100$\Omega$\\ \hline
-                $P_2$  & 2.18 W        & 5 W\\ \hline
-                \end{tabularx}
-                \caption{Cálculo de $R_1$ y $R_2$ comercicales parámetros A.}
-                \label{tabla:erres.}
-            \end{table}
         
+        Para la frecuencia es de inmediato notar que el valor se duplica basándonos en la frecuencia de salida del transformador, como sabemos, la función del puente de diodos es rectificar la señal del transformador,
+        es decir, hacer positiva la parte negativa de la señal de salida, al hacer esto reducimos el periodo de la señal a la mitad, es decir, estamos duplicando la frecuencia como se puede observar en la siguiente imagen:
+        \begin{figure}[H]%[!ht]
+        \begin{center}
+        \includegraphics[width=0.45\textwidth]{IMAGENES/Rectificado.png} 
+        \caption{Rectificación de Onda completa (120Hz).}
+        \label{fig:Rectificado}
+        \end{center}
+        \end{figure}
+
+        Entonces, la expresión que define la capacitancia queda determinada con los siguientes valores:
+        \[
+        C = \frac{0.758}{120(1.577)} = 4005.49\,\mu F
+        \]
+
+        El valor más cercano en el mercado es de:
+        \[
+        C=4700\mu F
+        \]
+        \subsection{Valores Reales.}
+        Con los cálculos anteriores logramos definir los componentes a utilizar basándonos en la disponibilidad del mercado, entonces ahora obtendremos los valores reales esperados en práctica con los componentes seleccionados.
+        \[
+        I_R = \frac{V}{R} = \frac{9}{18} = 500\,mA
+        \]
+        Considerando el valor de la resistencia real a utilizar, podemos encontrar el valor de la corriente que circulara por el circuito integrado, que es de 500mA, lo cuál nos deja un gran margen respecto a los valores máximos y mínimos 
+        que indica el fabricante.
+
+        \[
+        P_R = (9)(500 \times 10^{-3}) = 4.5\,W 
+        \]
+
+        \[
+        \quad \text{(por seguridad debe ser el doble)}
+        \]
+
+        \[
+        I_{\text{carga total}} = I_{CI} + I_{\text{control}} 
+        = 8\,mA + 500\,mA = 508\,mA 
+        \]
+
+        \[
+        V_r = \frac{0.508}{120(0.0047)} \approx 0.9007\,V_{pp} 
+        \]
+        El valor del voltaje de rizo queda comprobado con lo medido del osciloscopio, recordemos que la función del capacitor es "Linealizar" la señal de salida, esto se logra debido a que al capacitor no le da tiempo de cargarse o descargarse
+        por lo que en los intervalos de tiempo donde la onda sinuidal natural del transformador varía (disminuye o aumenta) es donde el capacitor se descarga formando "rampas en esos intervalos". Lo anterior queda mejor descrito con la siguiente imagen:
+
+        \begin{figure}[H]%[!ht]
+        \begin{center}
+        \includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje_rizo.jpeg} 
+        \caption{Voltaje Rizo.}
+        \label{fig:VoltajeRizo}
+        \end{center}
+        \end{figure}
+
+        El $V_R$ medido en osciloscopio fue de 0.840V, lo cuál se aproxima a lo esperado en los cálculos, además de cumplir con el criterio de $V_R \leq 0.10 V_{cd}$
+        Si bien el circuito integrado trabaja dentro del rango de corriente esperado, existe una pérdida significante de voltaje entre la entrada y salida del mismo, estamos hablando de que a la entrada el regulador
+        recibe 18.22V, de los cuáles sólo 9V dará a la salida más los aproximados 2V de caída de tensión mínima que presenta el circuito integrado. Todo ese voltaje se desprende en 
+        forma de calor, por lo que es ncesario calcular y adquirir disipadores para incrementar el tiempo de trabajo de la fuente.
+
+        \begin{itemize}
+            \item $T_A$ = 25°C
+            \item $T_j{max}$ = 100°C (recomendable)
+            \item $\theta_{jc}$ = 5 °C/W.
+            \item $\theta_{cs}$ = 0.5 °C/W
+    \end{itemize}
+        \[
+        P_{CI} = (18.22 - 9)(0.508) = 4.68\,W
+        \]
+
+        \[
+        T_J = T_A + P_D(\theta_{JC} + \theta_{CS} + \theta_{SA})
+        \]
+
+        \[
+        \theta_{SA} = \frac{100 - 25}{4.68} - 5 - 0.5 = 10.52\,^\circ C/W
+        \]
+
+    \subsection{Resultados.}
+    Una vez construido el circuito en físico se procedió a realizar mediciones de voltaje de salida para corroborar que todo funcionase de manera adecuada:
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Osciloscopio_Positivo.jpeg} 
+\caption{Medición de la terminal positiva.}
+\label{fig:osc_pos}
+\end{center}
+\end{figure}
+Como se logra apreciar, el voltaje de salida en la terminal positiva es aproximado a los 9V que se esperaban, es importante recalcar que el desarrollo de esta práctica considera
+parámetros "complicados" para la fuente, pues para esto estamos utilizando la resistencia de carga mínima en la que la fuente puede operar de manera adecuada, sin exigir más corriente de la que el transformador
+o el regulador pueden entregar. 
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Osciloscopio_Negativo.jpeg} 
+\caption{Medición de la terminal negativa.}
+\label{fig:osc_neg}
+\end{center}
+\end{figure}
+En este caso, la terminal negativa nos da un voltaje un poco por debajo de los -9V esperados, esto se debe al debanado del transformador, ya que la corriente y tensión 
+no se distribuyeron homogéneamente en cada una de las terminales por lo que pudimos observar que en un devanado teníamos mayor voltaje de entrada que en el otro debanado.
+
+Para ambos casos se observa que el voltaje de salida es aproximadamente el esperado (9V). A continuación se muestran las mediciones realizadas 
+con multímetro con el fin de reafirmar los valores obtenidos a la salida del regulador.
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Multimetro_Positivo.jpeg} 
+\caption{Medición en multímetro de la terminal positiva.}
+\label{fig:mult_pos}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]%[!ht]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{IMAGENES/Multimetro_Negativo.jpeg} 
+\caption{Medición en multímetro de la terminal negativa.}
+\label{fig:mult_neg}
+\end{center}
+\end{figure}
+
+A continuación se muestra en la tabla de manera resumida los valores obtenidos en la prueba de la fuente:
+\begin{table}[H]
+\centering
+\small 
+\begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
+\hline
+\textbf{Parámetro} & \textbf{Valor Calculado} & \textbf{Valor Medido} & \textbf{Diferencia \%} \\ \hline
+$V_{out}(+)$sin carga & 9V & 9V &   0\\ \hline
+$V_{out}(+)$con carga & 9V & 9.6V &  6.67 \\ \hline
+$V_{out}(-)$sin carga & -9V & -9V &    0 \\ \hline
+$V_{out}(-)$con carga & -9V & -8.3V &     7.78  \\ \hline
+$V_R$ & 0.9007V & 0.840V &     6.74 \\ \hline
+\end{tabularx}
+\caption{Tabla comparativa de resultados de la fuente bipolar lineal.}
+\label{tablaComparativaFUENTE}
+\end{table}
+
+Donde la diferencia porcentual está definida como:
+\[
+\text{Error \%} = \frac{|\text{valor medido} - \text{valor calculado}|}{|\text{valor calculado}|} \times 100
+\]
+
 \section{Simulación}
-\subsection*{Simulación del Circuito a}
-En esta sección se recopilan los resultados obtenidos mediante la simulación de cada uno de los circuitos propuestos en la práctica. Para el circuito del inciso \textit{a}, se utilizaron los valores comerciales más cercanos a los calculados teóricamente; por lo tanto, se establecieron resistencias de $R_1 = 220 \, \Omega$ y $R_2 = 100 \, \Omega$. A continuación, se presenta una comparativa entre los resultados medidos físicamente y los simulados.
-
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/PRUEBA.png} 
-\caption{Simulación del circuito a.}
-\label{fig:SIM1}
-\end{center}
-\end{figure}
-
-Una vez realizado el análisis del circuito, se obtuvieron los siguientes resultados:
-
-\begin{table}[H]
-\centering
-\small 
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|X|X|X|X|}
-\hline
-\textbf{Datos} & \textbf{$I_B$ (mA)} & \textbf{$I_C$ (mA)} & \textbf{$V_{BE}$ (V)} & \textbf{$V_{BC}$ (V)} & \textbf{$V_{CE}$ (V)} & \textbf{$\beta$} & \textbf{$P$ (mW)} & \textbf{Pol.}\\ \hline
-Sim  & 18.5 & 148.4 & 0.916 & 0.456 & 0.46 & 8.02 & 85.21 & Sat.\\ \hline
-Med  & 18.4 & 133.6 & 0.833 & 0.753 & 0.08 & 7.26 & 26.05 & Sat. Profunda\\ \hline
-\end{tabularx}
-\caption{Tabla comparativa de resultados del circuito a.}
-\label{tablaComparativa5}
-\end{table}
-
-Como se puede observar en la Tabla \ref{tablaComparativa5}, existe una gran congruencia entre los valores simulados y los medidos, destacando que en ambos escenarios el transistor BJT se encuentra operando en la zona de saturación. Esto se comprueba al notar que las uniones Base-Emisor ($V_{BE}$) y Base-Colector ($V_{BC}$) están polarizadas en directa (ambos voltajes son positivos). 
-Sin embargo, resalta una discrepancia en el voltaje Colector-Emisor ($V_{CE}$): el circuito físico medido presenta una caída de tensión de apenas 0.08 V, lo cual indica que el transistor real entró en un estado de saturación profunda, actuando de manera mucho más cercana a un interruptor ideal que el modelo de simulación de software (el cual arrojó 0.46 V). Como consecuencia directa de este bajo voltaje $V_{CE}$, la potencia disipada por el transistor físico ($P_{transistor}$) es significativamente menor (26.05 mW contra los 85.21 mW simulados), demostrando una mayor eficiencia térmica en la práctica que en la teoría debido a las características de conducción reales del componente físico.
-
-\subsection*{Simulación del Circuito b}
-Para el circuito \textit{b} se utilizaron directamente los valores obtenidos en los cálculos teóricos. A continuación se muestra la simulación realizada tomando en cuenta las resistencias de $R_1 = 48 \, \Omega$ y $R_2 = 26.8 \, \Omega$.
-
-\begin{figure}[H]%[!ht]
-\begin{center}
-\includegraphics[width=0.45\textwidth]{IMAGENES/PRUEBA.png} 
-\caption{Simulación del circuito b.}
-\label{fig:SIM2}
-\end{center}
-\end{figure}
-
-Los resultados obtenidos de la simulación se muestran a continuación y se comparan con los resultados teóricos obtenidos a partir de los cálculos analíticos:
-
-\begin{table}[H]
-\centering
-\small 
-\begin{tabularx}{\columnwidth}{|c|X|X|X|X|X|X|X|X|}
-\hline
-\textbf{Datos} & \textbf{$I_B$ (mA)} & \textbf{$I_C$ (mA)} & \textbf{$V_{BE}$ (V)} & \textbf{$V_{BC}$ (V)} & \textbf{$V_{CE}$ (V)} & \textbf{$\beta$} & \textbf{$P_{trans.}$ (mW)} & \textbf{Zona Pol.}\\ \hline
-Calculado & 50.0 & 500.0 & 2.60 & 1.00 & 1.60 & 10.00 & 930 & Saturación \\ \hline
-Simulado  & 77.8 & 542.0 & 1.26 & 0.81 & 0.45 & 6.96 & 341 & Saturación \\ \hline
-\end{tabularx}
-\caption{Tabla comparativa de resultados del circuito b.}
-\label{tablaComparativa6}
-\end{table}
-
-Como se puede observar en la Tabla \ref{tablaComparativa6}, existen diferencias notables entre el modelo teórico simplificado y el modelo computacional, aunque ambos confirman exitosamente que el transistor opera en la zona de saturación (con las uniones $V_{BE}$ y $V_{BC}$ polarizadas en directa). 
-
-La principal diferencia radica en los voltajes de juntura y, como consecuencia directa, en la potencia disipada. El cálculo teórico asumió valores extremos ($V_{BE} = 2.6$ V y $V_{CE} = 1.6$ V) para garantizar matemáticamente el estado de saturación, lo cual resulta en una disipación de potencia proyectada muy elevada (930 mW), acercándose peligrosamente al límite térmico de un transistor 2N2222 típico. 
-
-Sin embargo, el simulador, al utilizar modelos de semiconductores mucho más apegados a la realidad física, revela un comportamiento mucho más eficiente térmicamente. En la simulación, el voltaje $V_{BE}$ se estabiliza en 1.26 V y la caída en el canal principal ($V_{CE}$) es de apenas 0.45 V. Gracias a esta característica de conducción superior, la potencia real disipada por el transistor simulado es de 341 mW. Adicionalmente, se nota que para mantener esta alta demanda de corriente en el colector ($542$ mA), el circuito demanda una mayor corriente de base ($77.8$ mA) forzando la ganancia $\beta$ a un valor de 6.96, confirmando el comportamiento del transistor como un interruptor cerrado de estado sólido.
 
 \section{Conclusiones}
 \begin{itemize}
     \item \textbf{Flores Cornejo Gustavo Mauricio.}
     \newline 
-    En la presente práctica sirvió para carcaterizar el comportamiento del transistor como un dispositivo amplificador y de control como interruptor. La práctica sirvió de primer contacto para entender las bases de su funcionamiento y el análsis de sus zonas de polarización como se muestran en el desarrollo del presente documento. Entender cada una de estas zonas es de suma importancia para poder ser utilizado de la manera adecuada cuando se requiera en proyectos.
-    Es importante resaltar que para esta práctica que tiene como finalidad analizar el Transistor BJT NPN 2222 tiene sus limitaciones (Valores máximos y mínimos de trabajo) que de superarlos podemos alterar el comportamiento deseado o simplemente dañar el dispositivo por ejemplo, podemos entrar en la ona Activa del transistor donde la corriente en conmutador es proporcional a $\beta$ veces la corriente de la base. En la parte de simulación sirvió para observar el comportamiento del transistor frenre a los cambios de temperatura además que las gráficas
-    desarrolladas en el análisis donde veámos voltaje o resistencia contra corriente sirven para visualizar de manera fráfica más sencilla el comportamiento del transistor en sus tres zonas.
+    El desarrollo de este proyecto fue algo complicado en un principio, pues diseñar un circuito basándonos únicamente en parámetros de salida deseados no es lo que normalmente desarrollamos en ejercicios y otras prácticas. Además, para este proyecto fue necesario tener varios parámetros a considerar que de no prestar la suficiente atención afectaban directamente al comportamiento de la fuente.
+    También fue un tema complicado la cuestión de disipación de calor, mantener al circuito integrado estable para soportar el tiempo de duración de la evaluación fue complicado considerando que la variación de los resultados dependía en gran medida a la temperatura de los componentes. El proyecto me ayudó a comprender y participar en el funcionamiento de una fuente lineal, además de poder visualizar vario elementos en uno solo 
+    (diodos como rectificadores, capacitor como filtro y regulador como ajuste a voltaje de salida).
+    En general resulta una muy buena práctica para poner en práctica la teoría conocida de los elementos que la componen por separado, además de tener que investigar otras consideraciones que no tenías en cuenta antes, como lo es la variación térmica.
     \newline 
     \item \textbf{Muñoz Reyes Arturo Yabet.}
     \newline En esta práctica se logró comprobar el comportamiento y las características operativas de un transistor BJT NPN 2N2222. Inicialmente, se verificó la estructura de sus uniones semiconductoras, comprobando que se requiere una correcta polarización directa entre la base y el emisor para permitir la conducción. A través de las distintas configuraciones del circuito, se analizó la relación directa entre la corriente de base y la corriente de colector, logrando identificar físicamente las zonas de corte, activa y de saturación. En esta última, se comprobó que el transistor actúa de forma similar a un interruptor cerrado, limitando su corriente no por la ganancia, sino por la red externa del circuito, ocasionando una caída abrupta en la $\beta$ forzada. 
@@ -926,17 +697,33 @@ Sin embargo, el simulador, al utilizar modelos de semiconductores mucho más ape
 \section{Evidencias}
     \begin{figure}[H]%[!ht]
     \begin{center}
-    \includegraphics[width=0.45\textwidth]{IMAGENES/PRUEBA.png} 
-    \caption{Datasheet de $\beta$ del transistor 2N2222.}
-    \label{fig:datasheet}
+    \includegraphics[width=0.45\textwidth]{IMAGENES/Datasheet_LM7809.jpeg} 
+    \caption{Datasheet del circuito integrado LM7809.}
+    \label{fig:datasheet_LM7809}
     \end{center}
     \end{figure}
 
     \begin{figure}[H]%[!ht]
     \begin{center}
-    \includegraphics[width=0.45\textwidth]{IMAGENES/PRUEBA.png} 
-    \caption{Datasheet de zona de Saturación del transistor 2N2222.}
-    \label{fig:datasheet_saturacion}
+    \includegraphics[width=0.45\textwidth]{IMAGENES/Datasheet_LM7909.jpeg} 
+    \caption{Datasheet del circuito integrado LM7909.}
+    \label{fig:datasheet_LM7909}
+    \end{center}
+    \end{figure}
+
+    \begin{figure}[H]%[!ht]
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{IMAGENES/Datasheet_1N5402.png} 
+    \caption{Datasheet del diodo 1N5402.}
+    \label{fig:datasheet_1N5402}
+    \end{center}
+    \end{figure}
+
+    \begin{figure}[H]%[!ht]
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{IMAGENES/Evidencia.jpeg} 
+    \caption{Evidencia de entrega.}
+    \label{fig:evidencia}
     \end{center}
     \end{figure}
 
