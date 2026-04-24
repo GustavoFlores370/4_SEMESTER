@@ -126,327 +126,89 @@
 
 \section{Marco teórico}
     \subsection{Fuente de alimentación lineal}
-        Un transistor de unión bipolar (BJT, por sus siglas en inglés) es un dispositivo semiconductor 
-        constituido por tres capas de material dopado, las cuales forman dos uniones P-N y, por consiguiente, 
-        dos regiones de agotamiento o empobrecimiento. Dependiendo de la configuración de estas capas, 
-        el dispositivo se clasifica en tipo NPN (dos capas de material tipo $n$ y una central tipo $p$) 
-        o tipo PNP (dos capas tipo $p$ y una central tipo $n$), tal como se ilustra en la Figura 1. 
-        Sus terminales se identifican como Emisor (E), Base (B) y Colector (C).
+        Una fuente de alimentación lineal es un sistema diseñado para convertir una tensión elevada de 
+        corriente alterna (CA) en una tensión estabilizada de corriente directa (CD). Su nombre proviene del
+        funcionamiento de sus componentes activos, a diferencia de las fuentes conmutadas, los reguladores
+        ajustan su conducción para dicipar el exeso de energía en forma de calor. Este sistema se compone 
+        de cinco etapas principales, las cuales son ejemplificadas en la Figura \ref{fig:diagrama_fuente} 
+        por medio de un diagrama de bloques donde se aprecian los distintos niveles de voltaje en cada etapa. 
+
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.48\textwidth]{IMAGENES/Diagrama_fuente.png}
+            \caption{Diagrama de bloques que muestra las partes de una fuente de alimentación, tomado de Boylestad [1].}
+            \label{fig:diagrama_fuente}
+        \end{figure}
+       
+    \subsection{Transformador}
+        El proceso inicia en el transformador, un dispositivo basado en la inducción electromagnética que reduce
+        el nivel de tensión de la red eléctrica al valor requerido por el diseño. Es un factor crítico de diseño 
+        considerar los parámetros de la red de suministro según la región geográfica. En la mayor parte de América, 
+        el valor nominal es de 127 V rms a 60 Hz, mientras que en regiones como Europa y Oceanía, el estándar oscila entre 220-240 V rms a 50 Hz.
+        Asi mismo, debe considerarse un voltaje de salida del debanado secundario que sea adecuado para los fines de la fuente y la carga.
+
+    \subsection{Rectificador de onda completa}
+        Una vez que el voltaje ha sido reducido por el transformador, la señal de CA debe convertirse en una señal unidireccional. 
+        Este proceso se lleva a cabo en la etapa de rectificación, donde se utiliza un rectificador de onda completa (cuatro diodos dispuestos en forma de puente)
+        para asegurar que tanto el semiciclo positivo como el negativo de la onda senoidal contribuyan a la salida de corriente directa.
         
-        \begin{figure}[H] % SIN asterisco y con H mayúscula
+        Dado que la fuente desarrollada en este trabajo es de tipo bipolar, el puente de diodos debe ser conectado al transformador
+        como se muestra en la Figura \ref{fig:Rectificador_diagrama}. De esta manera logramos suministrar simultáneamente tensiones de salida positivas y negativas con respecto a una referencia 
+        común o tierra (GND). Esta configuración es posible gracias al aprovechamiento de la derivación central del transformador, la cual permite establecer un punto de 
+        potencial cero a partir del cual se rectifican y regulan dos ramas independientes.
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.45\textwidth]{IMAGENES/Rectificador_diagrama.png}
+            \caption{Rectificador de onda completa con derivación central para dos tensiones de entrada a la carga.}
+            \label{fig:Rectificador_diagrama}
+        \end{figure}
+
+
+    \subsection{Filtro Capacitivo}
+    La salida del rectificador consiste en una serie de pulsos de voltaje que no son aptos para alimentar circuitos electrónicos sensibles. Para suavizar esta señal,
+    se conecta un capacitor de filtro en paralelo. Este componente almacena energía durante el pico de voltaje y la libera cuando la señal del rectificador desciende,
+    reduciendo significativamente las variaciones de tensión. El resultado es una señal de CD con un componente de corriente alterna residual conocido como voltaje de rizo ($V_{r}$).
+    
+    \subsection{Voltaje de rizo}
+    De acuerdo con el análisis de Boylestad, el comportamiento del filtro capacitivo se define por dos intervalos críticos de operación dentro del ciclo de rectificación de onda completa, observese en Figura \ref{fig:Voltaje_rizo}. 
+    En el primer intervalo ($T_1$), los diodos entran en conducción para cargar el capacitor hasta el valor de tensión pico ($V_m$). Posteriormente, durante el intervalo de descarga ($T_2$), 
+    la tensión del rectificador decrece por debajo de $V_m$, obligando al capacitor a suministrar la energía almacenada a la carga. Dado que este ciclo se repite en cada semiciclo de la señal de entrada, 
+    la frecuencia de la forma de onda resultante es el doble de la frecuencia de red ($2f$), lo que permite obtener un nivel de corriente directa ($V_{CD}$) con una componente de rizo residual ($V_r$) minimizada,
+    cuya magnitud depende directamente de la constante de tiempo del circuito.s
+        \begin{figure}[H]%[!ht]
+            \centering
+            \includegraphics[width=0.45\textwidth]{IMAGENES/Voltaje_rizo.png}
+            \caption{Voltaje de salida aproximado de un circuito de filtro de capacitor, modificado de Boylestad [1].}
+            \label{fig:Voltaje_rizo}
+        \end{figure}
+        La relación entre el voltaje rizo y la capacitancia del capacitor esta dada por: 
+        \begin{equation*}
+            C = \frac{I_{carga}}{f \cdot V_{r\_(p-p)}}
+        \end{equation*}
+    \subsection{Corrientes de pico en el diodo}
+    Como se menciono con anterioridad, en una configuración de filtrado capacitivo, la conducción del diodo se restringe exclusivamente al breve intervalo de tiempo ($T_1$) en el que el voltaje del secundario del transformador excede la tensión almacenada en el capacitor. Debido a que el condensador debe recuperar en este lapso toda la carga suministrada a la carga durante el resto del ciclo ($T_2$), la corriente fluye en forma de pulsos estrechos de gran magnitud conocidos como corrientes de pico. Como se observa en la Figura \ref{fig:formas_onda_diodo}, existe una relación crítica de diseño: a mayor capacitancia, menor será el ángulo de conducción y, consecuentemente, mayor será la intensidad del pico de corriente. Por tanto, es imperativo evitar el sobredimensionamiento excesivo de los capacitores, ya que, aunque reducen eficazmente el voltaje de rizo, pueden someter a los diodos a un estrés térmico que supere su capacidad de corriente de pico repetitivo ($I_{FRM}$), comprometiendo la integridad del rectificador.
+    \begin{figure}[H]
         \centering
-            % --- Subfigura (a) NPN ---
-            \begin{subfigure}[b]{0.47\columnwidth} % 45% de la COLUMNA
-                \centering
-                \includegraphics[width=\textwidth]{IMAGENES/PRUEBA.png}
-                \caption{Transistor npn.}
-                \label{fig:npn}
-            \end{subfigure}
-            \hfill % Esto las separa un poco dentro de la columna
-            % --- Subfigura (b) PNP ---
-            \begin{subfigure}[b]{0.45\columnwidth} % 45% de la COLUMNA
-                \centering
-                \includegraphics[width=\textwidth]{IMAGENES/PRUEBA.png}
-                \caption{Transistor pnp.}
-                \label{fig:pnp}
-            \end{subfigure}
-    
-            % --- Pie de foto principal ---
-            \caption{Configuraciones básicas del transistor de unión bipolar.}
-            \label{fig:bjt_types}
+        \includegraphics[width=0.48\textwidth]{IMAGENES/Corrientes_pico.png}
+        \caption{Formas de onda del voltaje de salida (rizo) y de la corriente pulsante del diodo en un rectificador con filtro capacitivo, tomado de Boylestad [1].}
+        \label{fig:formas_onda_diodo}
         \end{figure}
-   
-        Constructivamente, el emisor presenta un nivel de dopaje elevado para maximizar la inyección de portadores,
-        la base cuenta con un dopaje ligero y un espesor reducido, mientras que el colector posee un dopaje intermedio. 
-        El término 'bipolar' hace referencia a que el mecanismo de conducción y la inyección de carga dependen del flujo tanto de electrones como de huecos.
 
-    \subsection{Portadores de carga}
-        El funcionamiento del BJT se basa en la interacción de los portadores de carga, los cuales se definen como las partículas elementales encargadas del 
-        transporte de corriente eléctrica en el semiconductor. En un material tipo $n$ (negative) el electrón se denomina portador mayoritario debido a su abundancia, 
-        mientras que el hueco actúa como portador minoritario. Por el contrario, en un material tipo $p$ (positive) el hueco es el portador mayoritario y el electrón el minoritario. 
-    
-    \subsection{Region de empobrecimiento}
-        La unión de estos materiales da origen a la región de empobrecimiento, una zona carente de portadores libres que se forma debido a la 
-        recombinación de electrones y huecos en la interfaz. Este proceso deja tras de sí iones dopantes fijos (positivos en el lado $n$ y negativos en el lado $p$),
-        lo que establece un campo eléctrico interno . Este campo genera una barrera de potencial que impide el flujo portadores mayoritarios.
-    
-    \subsection{Funcionamiento}
-        Tomando como ejemplo un transistor pnp y analizando el flujo de huecos (iones positivos), al polarizar la unión base-emisor
-        como se muestra en la Figura 2 se obtiene el mismo comportamiento al de un diodo polarizado en directa. En este estado, el ancho de la 
-        región de empobrecimiento se reduce permitiendo un flujo de huecos (portador mayoritario) del material p al n. Por otro lado, 
-        en la Figura 3 se muestra qué sucede si se polariza la unión base-emisor, la situación presentada es semejante a la de un diodo 
-        polarizado en inversa. La región de empobrecimiento se agranda impidiendo el paso de portadores mayoritarios, resultando únicamente en un flujo de portadores minoritarios.
-    
+    \subsection{Regulación Lineal}
+        La etapa final es la regulación, donde se emplean circuitos integrados de las familias 78XX (para voltajes positivos) y 79XX (para voltajes negativos). Estos dispositivos actúan de forma 
+        analógica, ajustando su resistencia interna para mantener un voltaje de salida constante independientemente de las variaciones en la carga o en el voltaje de entrada. Para asegurar la 
+        estabilidad del regulador, las hojas de datos del fabricante especifican la inclusión de capacitores de desacoplo en la entrada y salida del dispositivo, como se ilustra en la Figura \ref{fig:capacitores_regulador}.
         \begin{figure}[H]%[!ht]
             \centering
-            \includegraphics[width=0.35\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Unión polarizada en directa.
-}
-            \label{fig:pnp_direct}
+            \includegraphics[width=0.45\textwidth]{IMAGENES/78XX_diagrama.png}
+            \caption{Configuración recomendada por el fabricante para un regulador de la serie 78XX, modificado de Boylestad [1].}
+            \label{fig:capacitores_regulador}
         \end{figure}
+        Es de suma importancia respetar estos valores, ya que los parámetros de regulación y rechazo de rizo especificados en la hoja de datos se garantizan únicamente bajo estas condiciones de implementación.
+    \subsection{Especificaciones de los Reguladores Integrados}
+    El desempeño de los reguladores de las familias 78XX y 79XX está condicionado por parámetros fundamentales descritos en sus hojas de especificaciones. Entre estos destacan la tolerancia en el voltaje nominal de salida, la regulación de carga y las protecciones contra sobrecorriente. Un factor crítico de diseño es el \textit{dropout voltage} o voltaje de desconexión, el cual impone una diferencia mínima de potencial (típicamente 2 V) entre la entrada y la salida para asegurar un funcionamiento estable. Ignorar este margen resultaría en una pérdida de regulación, permitiendo que el rizo del capacitor se transfiera directamente a la carga.
 
-        \begin{figure}[H]%[!ht]
-            \centering
-            \includegraphics[width=0.33\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Unión polarizada en inversa.}
-            \label{fig:pnp_inverse}
-        \end{figure}
 
-        Si se aplican ambos potenciales de polarización al transistor pnp y analizamos qué sucede notamos que el emisor al 
-        ser de un material tipo $p$, está saturado de huecos, los cuales son repelidos por el positivo de la fuente $V_{EE}$ provocando 
-        que pasen directamente al material tipo $n$. Recordando que el material tipo $n$ está poco dopado, no tiene tantos electrones 
-        para combinarse con los huevos por lo que solo una pequeña parte de estos podrá regresar al negativo de la fuente $V_{EE}$, 
-        como se indica en la Figura 4. Esos huecos sobrantes en la base pasan a convertirse en portadores minoritarios del material tipo $n$, 
-        esto es importante ya que como se mencionó anteriormente, un diodo en inversa sólo permite el flujo de portadores minoritarios.
-
-        \begin{figure}[H]%[!ht]
-            \centering
-            \includegraphics[width=0.35\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Flujo de portadores mayoritarios y minoritarios de un transistor pnp.}
-            \label{fig:flujoPortadores}
-        \end{figure}
-
-        Los huecos ahora convertidos en portadores minoritarios pasan con facilidad a través de la región de empobrecimiento hacia el colector, 
-        debido a que son empujados por el campo eléctrico formado en esta región por la polarización en inversa,  y a su vez, son atraídos por la 
-        terminal negativa de la fuente $V_{CC}$ , al llegar al colector estos mueren al combinarse con los electrones provenientes de la fuente. 
-        
-        Aplicando la ley de corrientes de Kirchhoff al transistor de la Figura 4.
-        \begin{equation}
-            I_E = I_C + I_B
-            \label{ec:correintesTransistor}
-        \end{equation}
-
-    \subsection{Corrente de Fuga}
-        La corriente en el colector no solo está compuesta por el flujo de huecos (portadores mayoritarios en el material p del colector),  
-        sino también de un flujo de portadores minoritarios llamada corriente de fuga y se le da el símbolo de $I_{CO}$. Esta corriente es 
-        análoga a la corriente de saturación de un diodo Is  y por lo tanto es sensible a la temperatura, 
-        dependiendo del caso puede afectar seriamente al uso del transistor, sin embargo generalmente puede ignorarse  ($I_{CO} \approx 0 $).
-        
-        La corriente total que pasa por el colector está determinada por:
-        \begin{equation*}
-            I_{C} = I_{C_{\text{mayoritarios}}} + I_{CO_{\text{minoritarios}}}
-            \label{eq:corriente_colector}
-        \end{equation*}
-    
-    \subsection{Configuración Emisor Común}
-        Existen tres configuraciones fundamentales para la operación de un transistor de unión bipolar (BJT): base común, colector común y 
-        emisor común. Para describir el comportamiento eléctrico de cada una, es necesario analizar dos conjuntos de curvas características:
-        las de entrada (parámetros de control) y las de salida (parámetros de carga).
-    
-        La configuración de Emisor Común es la más utilizada en la por su alta ganancia tanto en voltaje como en corriente, 
-        lo que le otorga una gran versatilidad para el diseño de amplificadores y circuitos de conmutación de potencia. Recibe su 
-        nombre debido a que la terminal del emisor sirve como punto de referencia común tanto para el circuito de entrada (Base) 
-        como para el de salida (Colector), vease en la Figura 5.
-
-        \begin{figure}[H]%[!ht]
-        \centering
-            % --- Subfigura (a) NPN ---
-            \begin{subfigure}[b]{0.47\columnwidth} % 45% de la COLUMNA
-                \centering
-                \includegraphics[width=\textwidth]{IMAGENES/PRUEBA.png}
-                \caption{Transistor npn.}
-                \label{fig:Emisor_com_npn}
-            \end{subfigure}
-            \hfill % Esto las separa un poco dentro de la columna
-            % --- Subfigura (b) PNP ---
-            \begin{subfigure}[b]{0.47\columnwidth} % 45% de la COLUMNA
-                \centering
-                \includegraphics[width=\textwidth]{IMAGENES/PRUEBA.png}
-                \caption{Transistor pnp.}
-                \label{fig:Emisor_com_pnp}
-            \end{subfigure}
-            % --- Pie de foto principal ---
-            \caption{Configuraciones básicas del transistor de unión bipolar.}
-            \label{fig:emisorComun_types}
-        \end{figure}
-        El comportamiento del dispositivo se rige por la interacción entre sus mallas;  el circuito de entrada que 
-        relaciona la corriente de base ($I_B$) con el voltaje base-emisor ($V_{BE}$). Asi como el circuito de 
-        salida que relaciona la corriente de colector ($I_C$) con el voltaje colector-emisor ($V_{CE}$).
-
-    \subsection{El Parámetro Beta ($\beta$) como factor de amplificación}
-        En la configuración de emisor común, la relación entre la corriente de salida ($I_C$) y la corriente de entrada ($I_B$), 
-        denominada como beta ($\beta$), define la ganancia de corriente de CD. Este parámetro es fundamental, ya que representa el 
-        factor de amplificación del dispositivo; un pequeño incremento en la corriente de base produce un aumento significativamente 
-        mayor en el colector, permitiendo el control del flujo de potencia.
-
-        En general para cualquier configuración:
-        \begin{equation}
-            \beta = \frac{I_C}{I_B} 
-        \end{equation}
-
-        Desbejando el valor de $I_C$ se obtiene la relacion de amplificación antes mencionada: 
-        \begin{equation}
-            I_C= \beta I_B
-        \end{equation}
-
-        Sustituyendo en la ecuación \eqref{ec:correintesTransistor}:
-        \begin{equation}
-            I_E= (\beta + 1)I_B
-        \end{equation}
-
-        Obteniendo una relacion entre la coriente de entrada y la corriente del emisor ($I_E$). 
-        Dado que en la mayoría de transistores usualmente es un valor mucho mayor que 1 ($\beta \gg 1$), 
-        entonces podemos inferir una relación entre la corriente de colecor y la corriente del emisor.
-        \begin{equation*}
-            \beta + 1 \gg \beta
-        \end{equation*}
-        De forma muy aproximada:
-        \begin{equation*}
-            I_E \approx (\beta)I_B
-        \end{equation*}
-        Por lo tanto:
-        \begin{equation}
-            I_C \approxeq I_B
-        \end{equation}
-
-    \subsection{Curvas características del BJT en emisor común}
-        La curva característica de entrada representa la relación entre los parametros de entrada
-         ($V_{BE}$ e $I_B$), para distintos valores de voltaje colector-emisor ($V_{CE}$).
-        Como se ve en la Figura \ref{fig:carac_base} esta presenta un comportamiento exponencial similar al de un diodo polarizado en directa,
-        en el cual $I_B$ es prácticamente nula hasta que la tensión alcanza el voltaje de umbral o barrera.
-
-        \begin{figure}[H]%[!ht]
-            \centering
-            \includegraphics[width=0.34\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Características de entrada para un transistor de silicio en emisor común.}
-            \label{fig:carac_base}
-        \end{figure}
-
-        Es decir, una vez que un transitor se "enciende", se puede suponer que el voltaje base-emisor sera:
-        \begin{equation}
-            V_{BE} = 0.7 V
-            \label{ec:Voltaje_BE}
-        \end{equation} 
-
-        Al observar la Figura \ref{fig:carac_salida}, se aprecia que $I_B$ se mide en $\mu$A mientras que $I_C$ en mA,
-        reflejando la amplificación del BJT. La pendiente positiva en las curvas de salida se debe que
-        al aumentar el voltaje en inversa $V_{CB}$, la región de empobrecimiento se expande hacia la base,
-        reduciendo su ancho efectivo. Esta disminución en el ancho de la base reduce la recombinación de portadores,
-        facilitando su paso al colector e incrementando ligeramente $I_C$ conforme aumenta $V_{CE}$
-
-        \begin{figure}[H]%[!ht]
-            \centering
-            \includegraphics[width=0.45\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Características de salida para un transistor de silicio en emisor común.}
-            \label{fig:carac_salida}
-        \end{figure}
-    
-    \subsection{Regiones de operación}
-        Para comprender visualmente cómo opera el transistor en cada una de las distintas regiones de la 
-        Figura \ref{fig:carac_salida}, es útil compararlo con el funcionamiento de un grifo de agua:
-
-        \begin{figure} [H]%[!ht]
-            \centering
-            \includegraphics[width=0.45\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Ejemplo gráfico de las tres regiones de operación.}
-            \label{fig:estados_transitor}
-        \end{figure}
-
-        \subsubsection{Región de Corte (Grifo cerrado)}
-            En este estado, no hay una corriente aplicada en la base ($I_B = 0$). Al no haber "presion" que active el transistor,
-            el transistor impide el paso de la corriemte entre el colector y el emisor. Sin embargo, esta presente 
-            una pequeña llama corriente $I_{CEO}$ ocacionada por la corriente de fuga de la union en inversa ($I_{CO}$).
-
-        \subsubsection{Región Activa (Flujo controlado)}
-            Es la zona de amplificación lineal. Aquí, la apertura del grifo es proporcional a la fuerza aplicada en la perilla; es decir,
-            $I_C$ varía de forma lineal y proporcional a los cambios en $I_B$. La señal de salida sigue fielmente las variaciones 
-            de la entrada, pero a una escala mucho mayor.
-
-        \subsubsection{Región de Saturación (Grifo Abierto al Máximo)}
-            En este punto, por más que se incremente la corriente de base, el flujo en el colector ha alcanzado su límite máximo permitido
-            por la fuente de alimentación ($V_{CC}$) y las resistencias del circuito.
-
-    \subsection{Punto de operación Q}
-        El punto de operación, también llamado punto quiesciente (inmóvil o inactivo) representa un punto de la gráfica de características de salida (Fig \ref{fig:carac_salida}), 
-        este viene determinado por valores especificos de corriente de colector y voltaje de colector-emisor. Dependiendo de como queramos que funcione el transitor el punto Q se
-        hubicara en distintas zonas de la gráfica.
-            
-    \subsection{El transistor como aplificador}
-        Para emplear el transistor en aplicaciones de amplificación, es necesario que el punto de operación (punto Q) se ubique aproximadamente en la zona media de la región activa.
-        Esta selección estratégica maximiza la excursión de la señal de salida, evitando recortes por saturación o corte que comprometan la fidelidad de la señal amplificada.
-
-    \subsection{Polarización Fija}
-        El término polarización se refiere a la aplicación de voltajes de corriente directa (CD) con el objetivo de establecer 
-        niveles fijos de corriente y voltaje que definan el estado operativo del dispositivo. Dentro de las distintas maneras de polarizar
-        un transitor, la mas elemental de ellas es la polarización fija, la cual se ejemplifica en la Figura \ref{fig:polarizacion_fija}.
-        \begin{figure} [H]
-            \centering
-            \includegraphics[width=0.4\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Polarización Fija.}
-            \label{fig:polarizacion_fija}
-        \end{figure}
-    
-    \subsection{Recta de Carga de CD}
-        La ubicación del punto Q se analiza mediante la recta de carga, una representación gráfica de la ecuación de malla del colector que interseca las curvas 
-        características del dispositivo. Esta recta delimita todos los posibles estados de funcionamiento ($I_C, V_{CE}$) que el 
-        transistor puede adoptar para una red de polarización y carga específicas.
-        \begin{figure} [H]
-            \centering
-            \includegraphics[width=0.2\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Malla colector-emisor.}
-            \label{fig:Malla_colectorEmisor}
-        \end{figure}
-
-        Si aplicamos la ley de voltajes de kirchoff a la malla de la Figura \ref{fig:Malla_colectorEmisor},
-        se obtiene la ecuación de la recta de carga
-        \begin{equation*}
-            V_{CE} + I_C R_C - V_{CC} = 0
-        \end{equation*}
-        \begin{equation}
-            V_{CE} =  V_{CC} + I_C R_C
-        \end{equation}
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.45\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Recta de carga para la configuración de polarización fija.}
-            \label{fig:recta_carga}
-        \end{figure}
-
-    \subsection{Redes de Conmutación}
-        Cuando el objetivo no es la amplificación lineal, sino el control de cargas, el transistor se configura para 
-        operar exclusivamente en sus estados críticos. En este esquema, la base es excitada por una señal de control (como la salida de un microcontrolador),
-        lo que obliga al dispositivo a alternar entre las regiones de corte y saturación. En este modo de operación, conocido como conmutación (switch), 
-        el BJT actúa como un interruptor electrónico: en corte, el circuito permanece abierto e impide el paso de corriente; en saturación, el transistor 
-        permite el flujo máximo hacia la carga con una caída de tensión mínima ($V_{CE_{sat}}$).
-        \begin{figure} [H]
-            \centering
-            \includegraphics[width=0.2\textwidth]{IMAGENES/PRUEBA.png}
-            \caption{Configuración de un transitor para conmutación.}
-            \label{fig:switching_transitor.jpg}
-        \end{figure}
-
-    \subsection{Potencia Máxima}
-    La operación del transistor está restringida por la curva de potencia máxima disipada ($P_{max}$),
-    la cual representa el límite térmico que el dispositivo puede soportar sin sufrir daños permanentes.
-    Dada por la ecuación:
-    \begin{equation*}
-        P_{max} = V_{CE} I_C 
-    \end{equation*}
-
-    Para garantizar la integridad del componente, el punto de operación (punto Q) y la recta de carga 
-    deben situarse siempre por debajo de esta curva dada por el fabricante.
-
-    \subsection{Valores Nominales y Parámetro $h_{FE}$}
-    Para el diseño y análisis de circuitos con el BJT, es necesario consultar los valores nominales especificados por el fabricante.
-    Estos valores representan los límites que no deben excederse para evitar dañar del dispositivo. Para la configuración
-    emisor comun serian: $V_{CE_{max}} = V_{CEO}$, $I_{C_{max}}$ y $P_D = P_{max}$
-    
-    Por otro lado, la ganancia de corriente de $\beta$ se identifica en las hojas de datos como el parámetro $h_{FE}$ 
-    (parámetro híbrido de emisión común). Es importante notar que $h_{FE}$ no es un valor estático. Depende de la temperatura,
-    la corriente $I_C$ y las las tolerancias del fabricante.
-
-    \subsection{Relaciones importantes}
-    Recapitulando, para el análizis de cualquier configuración en CD sera necesario
-    tener presente las siguiente ralaciones básicas de un transistor:
-    \begin{equation}
-        V_{BE} = 0.7 V
-    \end{equation}
-    \begin{equation}
-        I_E = (\beta + 1) I_B \cong I_C
-    \end{equation}
-    \begin{equation}
-        I_C = \beta I_B
-    \end{equation}
 
     
 \section{Materiales}
@@ -719,10 +481,10 @@ Para esta sección nos basaremos en el circuito mostrado en la "Figura~\ref{fig:
     En general resulta una muy buena práctica para poner en práctica la teoría conocida de los elementos que la componen por separado, además de tener que investigar otras consideraciones que no tenías en cuenta antes, como lo es la variación térmica.
     \newline 
     \item \textbf{Muñoz Reyes Arturo Yabet.}
-    \newline En esta práctica se logró comprobar el comportamiento y las características operativas de un transistor BJT NPN 2N2222. Inicialmente, se verificó la estructura de sus uniones semiconductoras, comprobando que se requiere una correcta polarización directa entre la base y el emisor para permitir la conducción. A través de las distintas configuraciones del circuito, se analizó la relación directa entre la corriente de base y la corriente de colector, logrando identificar físicamente las zonas de corte, activa y de saturación. En esta última, se comprobó que el transistor actúa de forma similar a un interruptor cerrado, limitando su corriente no por la ganancia, sino por la red externa del circuito, ocasionando una caída abrupta en la $\beta$ forzada. 
-    Finalmente, la comparativa entre los modelos matemáticos teóricos, las simulaciones y las mediciones físicas demostró que los cálculos ideales tienden a proyectar escenarios más extremos (como en la disipación de potencia). Por lo que, el uso de simuladores avanzados y la consulta de las hojas de datos del fabricante son herramientas indispensables para dimensionar correctamente los componentes, prevenir fallas térmicas y garantizar la eficiencia real de los sistemas.
+    \newline El desarrollo de la presente fuente bipolar lineal representó un desafío técnico significativo, al transicionar de la resolución de ejercicios teóricos hacia un diseño basado estrictamente en parámetros de salida predefinidos. Durante la etapa experimental, se evidenció que la estabilidad del sistema no depende únicamente del cálculo ideal de los componentes, sino de factores críticos de implementación, siendo la disipación térmica el obstáculo más complejo. Se determinó que la elevación de temperatura en los reguladores 78XX y 79XX afecta directamente la precisión de la tensión de salida, lo que subraya la importancia de una gestión térmica adecuada para mantener el punto de operación estable durante pruebas prolongadas. En conclusión, el proyecto permitió integrar de forma sistémica el comportamiento de semiconductores, filtros capacitivos y circuitos integrados, reforzando que un diseño exitoso requiere considerar variables físicas reales, como la variación térmica y las tolerancias de los componentes, más allá de las aproximaciones matemáticas convencionales.
+    
     \item \textbf{Morales Vásquez Miguel Ehecatl.} 
-    \newline En esta práctica se validó de manera experimental la versatilidad del diodo semiconductor en aplicaciones de rectificación y acondicionamiento de señales. A través de la implementación de los circuitos de media onda y onda completa, fue posible contrastar la teoría matemática con el comportamiento real de los componentes, observando que factores como la caída de tensión interna del diodo ($\approx 0.7\text{ V}$) y las pérdidas en el transformador generan variaciones sutiles pero importantes en los valores RMS y promedio calculados. Un aprendizaje clave fue el uso de la derivación central y el puente de diodos, donde se demostró que la rectificación de onda completa ofrece una transferencia de potencia más constante y eficiente al aprovechar ambos semiciclos de la señal senoidal. Finalmente, el uso de técnicas de medición indirecta para la corriente y el análisis de voltajes inversos permitieron comprender las limitaciones operativas de los diodos, habilidades fundamentales para el diseño de fuentes de alimentación y sistemas de control de potencia en la ingeniería mecatrónica.
+    \newline El desarrollo de la fuente bipolar lineal representó una experiencia de gran valor tanto en el aspecto teórico como en la parte práctica, ya que permitió enfrentar un diseño real a partir de parámetros de salida previamente establecidos, alejándose de los ejercicios convencionales donde la mayoría de las variables suelen estar definidas desde el inicio. Durante el proceso se comprobó que el correcto funcionamiento de la fuente no depende únicamente de los cálculos matemáticos, sino también de factores físicos que influyen directamente en el desempeño del circuito, como la disipación térmica, las tolerancias de los componentes y la estabilidad de los reguladores de voltaje. La temperatura en los circuitos integrados 78XX y 79XX fue uno de los aspectos más críticos, debido a que su incremento afectaba la regulación y precisión de la salida, haciendo indispensable una adecuada gestión térmica mediante disipadores y una correcta selección de componentes. Asimismo, el proyecto permitió integrar de forma práctica el funcionamiento conjunto de diodos rectificadores, capacitores de filtrado, transformador y reguladores lineales, logrando una visión más completa del comportamiento de una fuente de alimentación. En conclusión, esta práctica reforzó la importancia de considerar no solo el diseño ideal, sino también las condiciones reales de operación, consolidando conocimientos fundamentales de electrónica de potencia y diseño de fuentes lineales.
 
 \end{itemize}
 
