@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  23 APR 2026 04:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  23 APR 2026 19:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -751,84 +751,119 @@ Underfull \hbox (badness 10000) in paragraph at lines 650--650
 
 
 [8 <./IMAGENES/Osciloscopio_Positivo.jpeg> <./IMAGENES/Osciloscopio_Negativo.jpeg> <./IMAGENES/Multimetro_Positivo.jpeg> <./IMAGENES/Multimetro_Negativo.jpeg>]
-Underfull \hbox (badness 4518) in paragraph at lines 664--671
+<IMAGENES/Simulacion_SalidaConCarga.jpeg, id=50, 1326.9575pt x 684.5575pt>
+File: IMAGENES/Simulacion_SalidaConCarga.jpeg Graphic file (type jpg)
+<use IMAGENES/Simulacion_SalidaConCarga.jpeg>
+Package pdftex.def Info: IMAGENES/Simulacion_SalidaConCarga.jpeg  used on input line 666.
+(pdftex.def)             Requested size: 232.19843pt x 119.77846pt.
+<IMAGENES/Simulacion_SalidaSinCarga.jpeg, id=51, 1314.9125pt x 701.62125pt>
+File: IMAGENES/Simulacion_SalidaSinCarga.jpeg Graphic file (type jpg)
+<use IMAGENES/Simulacion_SalidaSinCarga.jpeg>
+Package pdftex.def Info: IMAGENES/Simulacion_SalidaSinCarga.jpeg  used on input line 674.
+(pdftex.def)             Requested size: 232.19843pt x 123.88826pt.
+<IMAGENES/Simulacion_rizo_teorico.jpeg, id=52, 1512.65125pt x 868.24374pt>
+File: IMAGENES/Simulacion_rizo_teorico.jpeg Graphic file (type jpg)
+<use IMAGENES/Simulacion_rizo_teorico.jpeg>
+Package pdftex.def Info: IMAGENES/Simulacion_rizo_teorico.jpeg  used on input line 682.
+(pdftex.def)             Requested size: 232.19843pt x 133.27805pt.
+
+
+<IMAGENES/Simulacion_realSalidaConCarga.jpeg, id=53, 1369.115pt x 714.67pt>
+File: IMAGENES/Simulacion_realSalidaConCarga.jpeg Graphic file (type jpg)
+<use IMAGENES/Simulacion_realSalidaConCarga.jpeg>
+Package pdftex.def Info: IMAGENES/Simulacion_realSalidaConCarga.jpeg  used on input line 691.
+(pdftex.def)             Requested size: 232.19843pt x 121.19785pt.
+<IMAGENES/Simulacion_realSalidaSinCarga.jpeg, id=54, 1437.37pt x 714.67pt>
+File: IMAGENES/Simulacion_realSalidaSinCarga.jpeg Graphic file (type jpg)
+<use IMAGENES/Simulacion_realSalidaSinCarga.jpeg>
+Package pdftex.def Info: IMAGENES/Simulacion_realSalidaSinCarga.jpeg  used on input line 699.
+(pdftex.def)             Requested size: 232.19843pt x 115.45093pt.
+<IMAGENES/Simulacion_rizo_real.jpeg, id=55, 1502.61375pt x 916.42375pt>
+File: IMAGENES/Simulacion_rizo_real.jpeg Graphic file (type jpg)
+<use IMAGENES/Simulacion_rizo_real.jpeg>
+Package pdftex.def Info: IMAGENES/Simulacion_rizo_real.jpeg  used on input line 707.
+(pdftex.def)             Requested size: 232.19843pt x 141.61072pt.
+
+Underfull \hbox (badness 4518) in paragraph at lines 714--721
 []\OT1/ptm/m/n/10 unicamente en par[]ametros de sal-ida de-sea-dos no
  []
 
 
-Underfull \hbox (badness 1824) in paragraph at lines 664--671
+Underfull \hbox (badness 1824) in paragraph at lines 714--721
 \OT1/ptm/m/n/10 es lo que nor-mal-mente de-sar-rol-lamos en ejer-ci-cios
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 664--671
+Underfull \hbox (badness 2150) in paragraph at lines 714--721
 \OT1/ptm/m/n/10 y otras pr[]acticas. Adem[]as, para este proyecto fue
  []
 
 
-Underfull \hbox (badness 3088) in paragraph at lines 664--671
+Underfull \hbox (badness 3088) in paragraph at lines 714--721
 \OT1/ptm/m/n/10 al com-por-tamiento de la fuente. Tambi[]en fue un
  []
 
 
-Underfull \hbox (badness 2582) in paragraph at lines 664--671
+Underfull \hbox (badness 2582) in paragraph at lines 714--721
 \OT1/ptm/m/n/10 de los el-e-men-tos que la com-po-nen por sep-a-rado,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 664--671
+Underfull \hbox (badness 10000) in paragraph at lines 714--721
 
  []
 
 
 
-<IMAGENES/Datasheet_LM7809.jpeg, id=50, 1365.1pt x 1098.1025pt>
+[9 <./IMAGENES/Simulacion_SalidaConCarga.jpeg> <./IMAGENES/Simulacion_SalidaSinCarga.jpeg> <./IMAGENES/Simulacion_rizo_teorico.jpeg> <./IMAGENES/Simulacion_realSalidaConCarga.jpeg> <./IMAGENES/Simulacion_realSalidaSinCarga.jpeg> <./IMAGENES/Simulacion_rizo_real.jpeg>]
+
+<IMAGENES/Datasheet_LM7809.jpeg, id=63, 1365.1pt x 1098.1025pt>
 File: IMAGENES/Datasheet_LM7809.jpeg Graphic file (type jpg)
 <use IMAGENES/Datasheet_LM7809.jpeg>
-Package pdftex.def Info: IMAGENES/Datasheet_LM7809.jpeg  used on input line 700.
+Package pdftex.def Info: IMAGENES/Datasheet_LM7809.jpeg  used on input line 750.
 (pdftex.def)             Requested size: 232.19843pt x 186.77548pt.
-<IMAGENES/Datasheet_LM7909.jpeg, id=51, 1290.8225pt x 1064.97874pt>
+<IMAGENES/Datasheet_LM7909.jpeg, id=64, 1290.8225pt x 1064.97874pt>
 File: IMAGENES/Datasheet_LM7909.jpeg Graphic file (type jpg)
 <use IMAGENES/Datasheet_LM7909.jpeg>
-Package pdftex.def Info: IMAGENES/Datasheet_LM7909.jpeg  used on input line 708.
+Package pdftex.def Info: IMAGENES/Datasheet_LM7909.jpeg  used on input line 758.
 (pdftex.def)             Requested size: 232.19843pt x 191.55789pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[9 <./IMAGENES/Datasheet_LM7809.jpeg>]
-<IMAGENES/Datasheet_1N5402.png, id=59, 598.48593pt x 421.575pt>
+<IMAGENES/Datasheet_1N5402.png, id=65, 598.48593pt x 421.575pt>
 File: IMAGENES/Datasheet_1N5402.png Graphic file (type png)
 <use IMAGENES/Datasheet_1N5402.png>
-Package pdftex.def Info: IMAGENES/Datasheet_1N5402.png  used on input line 716.
+Package pdftex.def Info: IMAGENES/Datasheet_1N5402.png  used on input line 766.
 (pdftex.def)             Requested size: 232.19843pt x 163.55803pt.
-<IMAGENES/Evidencia.jpeg, id=60, 1126.2075pt x 1505.625pt>
+
+Underfull \vbox (badness 1838) has occurred while \output is active []
+
+
+
+[10 <./IMAGENES/Datasheet_LM7809.jpeg> <./IMAGENES/Datasheet_LM7909.jpeg>]
+<IMAGENES/Evidencia.jpeg, id=69, 1126.2075pt x 1505.625pt>
 File: IMAGENES/Evidencia.jpeg Graphic file (type jpg)
 <use IMAGENES/Evidencia.jpeg>
-Package pdftex.def Info: IMAGENES/Evidencia.jpeg  used on input line 724.
+Package pdftex.def Info: IMAGENES/Evidencia.jpeg  used on input line 774.
 (pdftex.def)             Requested size: 232.19843pt x 310.42412pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Warning: Empty bibliography on input line 800.
 
 
-
-
-LaTeX Warning: Empty bibliography on input line 750.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
+Underfull \hbox (badness 10000) in paragraph at lines 807--808
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4001-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 760--761
+Underfull \hbox (badness 10000) in paragraph at lines 810--811
 \OT1/ptm/m/n/8 [On-line]. Avail-able: https://www.onsemi.com/pdf/datasheet/1n4148-
  []
 
 
 
-[10 <./IMAGENES/Datasheet_LM7909.jpeg> <./IMAGENES/Datasheet_1N5402.png> <./IMAGENES/Evidencia.jpeg>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\PROYECTO\build\1MV12_FE_PROYECTO1_FCGM_MRAY_MVME.aux)
+
+
+[11
+
+ <./IMAGENES/Datasheet_1N5402.png> <./IMAGENES/Evidencia.jpeg>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\PROYECTO\build\1MV12_FE_PROYECTO1_FCGM_MRAY_MVME.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -838,17 +873,17 @@ Package logreq Info: Writing requests to '1MV12_FE_PROYECTO1_FCGM_MRAY_MVME.run.
 
  ) 
 Here is how much of TeX's memory you used:
- 13310 strings out of 469959
- 251571 string characters out of 5469834
- 1063826 words of memory out of 5000000
- 39959 multiletter control sequences out of 15000+600000
+ 13358 strings out of 469959
+ 253623 string characters out of 5469834
+ 1061971 words of memory out of 5000000
+ 40007 multiletter control sequences out of 15000+600000
  671172 words of font info for 119 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  63i,11n,66p,1279b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\PROYECTO\build\1MV12_FE_PROYECTO1_FCGM_MRAY_MVME.pdf (10 pages, 3761809 bytes).
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\PROYECTO\build\1MV12_FE_PROYECTO1_FCGM_MRAY_MVME.pdf (11 pages, 4667882 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
+ 141 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
