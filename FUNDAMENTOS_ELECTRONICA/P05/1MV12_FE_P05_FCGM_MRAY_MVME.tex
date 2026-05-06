@@ -1,0 +1,243 @@
+%% Lab Report for EEET2493_labreport_template.tex
+%% V1.0
+%% 2019/01/16
+%% This is the template for a Lab report following an IEEE paper. Modified by Francisco Tovar after Michael Sheel original document.
+
+
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+\documentclass[journal]{IEEEtran}
+
+% *** CITATION PACKAGES ***
+\usepackage[style=ieee]{biblatex} 
+\bibliography{example_bib.bib}    %your file created using JabRef
+
+% *** MATH PACKAGES ***
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{comment}
+\usepackage{amssymb} % Este paquete contiene el símbolo \approxeq
+
+\usepackage{tabularx} % en el preámbulo
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf, textfont=normalfont}
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+\usepackage{url}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{graphicx}  %needed to include png, eps figures
+\usepackage{subcaption}
+\usepackage{float}  % used to fix location of images i.e.\begin{figure}[H]
+
+\begin{document}
+
+% paper title
+\title{Puente H\\ \small{Práctica No. 5}}
+
+% author names and affiliations
+\author{
+    \IEEEauthorblockN{Flores Cornejo Gustavo Mauricio, Muñoz Reyes Arturo Yabed, Morales Vásquez Miguel Ehecatl}\\
+    \IEEEauthorblockA{\textit{Unidad Profesional Interdisciplinaria en Ingeniería y Tecnologías Avanzadas, IPN}}
+}
+        
+% The report headers
+\markboth{1MV12 Fundamentos de Electrónica. Práctica 5, Mayo 2026}%do not delete next lines
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract}
+    This paper analyzes the behavior and operation of the Bipolar Junction Transistor (BJT) under a fixed bias configuration. 
+    Using NPN 2N2222 transistors, the terminals were identified, and the operating regions—cutoff, saturation, and active—were experimentally determined. 
+    The flow of collector ($I_C$) and base ($I_B$) currents was examined, alongside the variation of the $\beta$ parameter under different voltage and resistance levels. 
+    The results, obtained through direct measurements and simulations, allowed for a comparison between real values and manufacturer specifications, confirming the 
+    BJT's utility as a switch and linear amplifier in DC electronic circuits.
+\end{abstract}
+
+\section{Introducción}
+    % Here we have the typical use of a "W" for an initial drop letter
+    % and "RITE" in caps to complete the first word.
+    % You must have at least 2 lines in the paragraph with the drop letter
+    % (should never be an issue)
+
+    \IEEEPARstart{D}urante el periodo de 1904 a 1947, el tubo de vacío fue el componente electrónico de mayor interés y 
+    desarrollo, debido a su capacidad de amplificar señales analógicas, impulsado significativamente por la industria de la radio y televisión
+    en sus años posteriores. Sin embargo en 1947, la aparición del transistor  marcaría un cambio importante en la industria
+    de la electrónica.  Este nuevo dispositivo de estado sólido de tres terminales ofrecía grandes ventajas frente a su antecesor:
+    dimensiones más pequeñas, menor peso, baja disipación de calor y fundamentalmente,  una mayor eficiencia energética al consumir
+    una fracción de la potencia requerida por las válvulas de vacío.
+ 
+    Gracias a estas propiedades y a su versatilidad para operar como interruptor electrónico, el transistor se integró rápidamente en 
+    a arquitectura de los sistemas informáticos. La evolución en las técnicas de diseño y fabricación ha permitido reducir su escala de 
+    centímetros a nanómetros, facilitando la construcción de microprocesadores de alta densidad. Este avance ha sido el pilar tecnológico 
+    que dio paso a la computación móvil, los sistemas embebidos y los dispositivos de control que definen la tecnología contemporánea.
+
+\section{Objetivos}
+    \subsection{Objetivo General}
+    Explicar el funcionamiento del transistor BJT con una configuración de polarización fija y  diseñar circuitos que provean algún comportamiento deseado.
+
+    \subsection{Objetivos Particulares}
+    \begin{enumerate}
+        \item Identificar el colector, base y emisor del transistor.
+        \item Comprender el flujo de las corrientes de colector y base.
+        \item Analizar y comprender el comportamiento de la beta ante variaciones de voltaje. 
+        \item Comprender el funcionamiento de las zonas de corte-saturación.
+    \end{enumerate}
+
+\section{Marco teórico}
+    asd
+    
+\section{Materiales}
+        \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.4\textwidth]{IMAGENES/prueba.jpeg}
+            \caption{Circuito de polarización de transistor.}
+            \label{fig:circuito_base}
+        \end{figure}
+Para el circuito mostrado en la "Figura~\ref{fig:circuito_base}”, emplearemos:
+\begin{itemize}
+    \item 1 Transistor NPN 2N2222
+    \item 1 Potenciometro de 500 k$\Omega$
+    \item 1 Resistencia de 330 $\Omega$ a 1/2W
+    \item 1 Resistencia de 220 $\Omega$ a 1/2W
+    \item 1 Resistencia de 100 $\Omega$ a 5W
+    \item 1 Protoboard
+    \item Cable para protoboard
+    \item 3 Multímetros (De preferencia)
+\end{itemize}
+
+
+\section{Análisis y Resultados}
+    ibs
+
+
+\section{Simulación}
+    ASDASD
+
+
+\section{Conclusiones}
+\begin{itemize}
+    \item \textbf{Flores Cornejo Gustavo Mauricio.}
+    \newline 
+    En la presente práctica sirvió para carcaterizar el comportamiento del transistor como un dispositivo amplificador y de control como interruptor. La práctica sirvió de primer contacto para entender las bases de su funcionamiento y el análsis de sus zonas de polarización como se muestran en el desarrollo del presente documento. Entender cada una de estas zonas es de suma importancia para poder ser utilizado de la manera adecuada cuando se requiera en proyectos.
+    Es importante resaltar que para esta práctica que tiene como finalidad analizar el Transistor BJT NPN 2222 tiene sus limitaciones (Valores máximos y mínimos de trabajo) que de superarlos podemos alterar el comportamiento deseado o simplemente dañar el dispositivo por ejemplo, podemos entrar en la ona Activa del transistor donde la corriente en conmutador es proporcional a $\beta$ veces la corriente de la base. En la parte de simulación sirvió para observar el comportamiento del transistor frenre a los cambios de temperatura además que las gráficas
+    desarrolladas en el análisis donde veámos voltaje o resistencia contra corriente sirven para visualizar de manera fráfica más sencilla el comportamiento del transistor en sus tres zonas.
+    \newline 
+    \item \textbf{Muñoz Reyes Arturo Yabet.}
+    \newline En esta práctica se logró comprobar el comportamiento y las características operativas de un transistor BJT NPN 2N2222. Inicialmente, se verificó la estructura de sus uniones semiconductoras, comprobando que se requiere una correcta polarización directa entre la base y el emisor para permitir la conducción. A través de las distintas configuraciones del circuito, se analizó la relación directa entre la corriente de base y la corriente de colector, logrando identificar físicamente las zonas de corte, activa y de saturación. En esta última, se comprobó que el transistor actúa de forma similar a un interruptor cerrado, limitando su corriente no por la ganancia, sino por la red externa del circuito, ocasionando una caída abrupta en la $\beta$ forzada. 
+    Finalmente, la comparativa entre los modelos matemáticos teóricos, las simulaciones y las mediciones físicas demostró que los cálculos ideales tienden a proyectar escenarios más extremos (como en la disipación de potencia). Por lo que, el uso de simuladores avanzados y la consulta de las hojas de datos del fabricante son herramientas indispensables para dimensionar correctamente los componentes, prevenir fallas térmicas y garantizar la eficiencia real de los sistemas.
+    \item \textbf{Morales Vásquez Miguel Ehecatl.} 
+    \newline En esta práctica se validó de manera experimental la versatilidad del diodo semiconductor en aplicaciones de rectificación y acondicionamiento de señales. A través de la implementación de los circuitos de media onda y onda completa, fue posible contrastar la teoría matemática con el comportamiento real de los componentes, observando que factores como la caída de tensión interna del diodo ($\approx 0.7\text{ V}$) y las pérdidas en el transformador generan variaciones sutiles pero importantes en los valores RMS y promedio calculados. Un aprendizaje clave fue el uso de la derivación central y el puente de diodos, donde se demostró que la rectificación de onda completa ofrece una transferencia de potencia más constante y eficiente al aprovechar ambos semiciclos de la señal senoidal. Finalmente, el uso de técnicas de medición indirecta para la corriente y el análisis de voltajes inversos permitieron comprender las limitaciones operativas de los diodos, habilidades fundamentales para el diseño de fuentes de alimentación y sistemas de control de potencia en la ingeniería mecatrónica.
+
+\end{itemize}
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+\appendices
+\section{Evidencias}
+
+
+    \begin{figure}[H]%[!ht]
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{IMAGENES/prueba.jpeg} 
+    \caption{Datasheet de $\beta$ del transistor 2N2222.}
+    \label{fig:datasheet}
+    \end{center}
+    \end{figure}
+
+    \begin{figure}[H]%[!ht]
+    \begin{center}
+    \includegraphics[width=0.45\textwidth]{IMAGENES/prueba.jpeg} 
+    \caption{Datasheet de zona de Saturación del transistor 2N2222.}
+    \label{fig:datasheet_saturacion}
+    \end{center}
+    \end{figure}
+  
+
+
+
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+%use following command to generate the list of cited references
+
+\printbibliography
+
+\begin{thebibliography}{00}
+\bibitem{boylestad}
+R. L. Boylestad and L. Nashelsky, \textit{Electronic Devices and Circuit Theory}, 10th ed. Upper Saddle River, NJ, USA: Prentice Hall, 2009.
+
+\bibitem{1N4001}
+onsemi, ``1N4001 -- 1.0 A Standard Recovery Rectifier,'' Datasheet, 2023. [Online]. Available: https://www.onsemi.com/pdf/datasheet/1n4001-d.pdf. [Accessed: Feb. 24, 2026].
+
+\bibitem{1N4148}
+onsemi, ``1N4148 -- Small Signal Switching Diode,'' Datasheet, 2023. [Online]. Available: https://www.onsemi.com/pdf/datasheet/1n4148-d.pdf. [Accessed: Feb. 24, 2026].
+\end{thebibliography}
+
+% that's all folks
+\end{document}
