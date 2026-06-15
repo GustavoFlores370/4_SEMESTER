@@ -56,7 +56,8 @@
 
 
 % *** PDF, URL AND HYPERLINK PACKAGES ***
-\usepackage{url}
+\usepackage{url}  % Para que no marque error con las URLs de la bibliografía
+\usepackage{hyperref} % Opcional: hace que las citas tengan hipervínculos clickeables
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 \usepackage{graphicx}  %needed to include png, eps figures
@@ -92,57 +93,365 @@
 \end{abstract}
 
 \section{Introducción}
-    % Here we have the typical use of a "W" for an initial drop letter
-    % and "RITE" in caps to complete the first word.
-    % You must have at least 2 lines in the paragraph with the drop letter
-    % (should never be an issue)
 
-    \IEEEPARstart{D}urante el periodo de 1904 a 1947, el tubo de vacío fue el componente electrónico de mayor interés y 
-    desarrollo, debido a su capacidad de amplificar señales analógicas, impulsado significativamente por la industria de la radio y televisión
-    en sus años posteriores. Sin embargo en 1947, la aparición del transistor  marcaría un cambio importante en la industria
-    de la electrónica.  Este nuevo dispositivo de estado sólido de tres terminales ofrecía grandes ventajas frente a su antecesor:
-    dimensiones más pequeñas, menor peso, baja disipación de calor y fundamentalmente,  una mayor eficiencia energética al consumir
-    una fracción de la potencia requerida por las válvulas de vacío.
- 
-    Gracias a estas propiedades y a su versatilidad para operar como interruptor electrónico, el transistor se integró rápidamente en 
-    a arquitectura de los sistemas informáticos. La evolución en las técnicas de diseño y fabricación ha permitido reducir su escala de 
-    centímetros a nanómetros, facilitando la construcción de microprocesadores de alta densidad. Este avance ha sido el pilar tecnológico 
-    que dio paso a la computación móvil, los sistemas embebidos y los dispositivos de control que definen la tecnología contemporánea.
+    \IEEEPARstart{E}n el desarrollo de sistemas mecatrónicos y de automatización, el control bidireccional de actuadores de corriente continua (C.C) constituye uno de los pilares fundamentales de la interfaz entre las etapas de control digital y los sistemas electromecánicos de potencia. 
+    Los motores de C.C requieren inversiones en la polaridad de su alimentación para modificar su sentido de giro, una tarea que analógicamente se resuelve de forma eficiente mediante un circuito conocido como Puente H. 
+    
+    Aunque existen soluciones integradas comerciales en formato de circuito integrado (como el L293D o el L298N), el diseño e implementación de un Puente H a partir de 
+    componentes discretos permite comprender a fondo los fenómenos de conmutación, las caídas de tensión por saturación y las limitantes de corriente de las uniones 
+    semiconductoras. 
 
-\section{Objetivos}
+    Para aplicaciones de baja y mediana potencia, los transistores de unión bipolar (BJT) son ampliamente utilizados debido a sus bajas tensiones de saturación y su alta velocidad de respuesta en conmutación. En un puente H clásico, se emplean pares complementarios de transistores de potencia (NPN y PNP) encargados de direccionar el flujo de corriente principal hacia el motor. 
+    
+    No obstante, debido a que los transistores de potencia presentan ganancias de corriente ($\beta$) bajas en la región de saturación, las corrientes de base requeridas para conmutarlos suelen superar las capacidades de salida de los pines de un microcontrolador convencional. 
+    Por esta razón, el circuito demanda el acoplamiento de una etapa de pre-amplificación o control, constituida por transistores de pequeña señal de alta ganancia (como el 2N2222A). 
+    
+    El presente reporte detalla el análisis analítico, el diseño de mallas de corriente y la validación práctica de un circuito Puente H discreto implementado con transistores TIP31C y TIP32C.
+
+    \section{Objetivos}
     \subsection{Objetivo General}
-    Explicar el funcionamiento del transistor BJT con una configuración de polarización fija y  diseñar circuitos que provean algún comportamiento deseado.
+    Diseñar, analizar e implementar un circuito de potencia tipo Puente H mediante el uso de transistores bipolares de unión (BJT), con el fin de controlar el sentido de giro de un motor de corriente continua bajo condiciones de máxima carga, validando los cálculos analíticos frente al comportamiento real de los componentes en el laboratorio.
 
     \subsection{Objetivos Particulares}
     \begin{enumerate}
-        \item Identificar el colector, base y emisor del transistor.
-        \item Comprender el flujo de las corrientes de colector y base.
-        \item Analizar y comprender el comportamiento de la beta ante variaciones de voltaje. 
-        \item Comprender el funcionamiento de las zonas de corte-saturación.
+        \item Interpretar analíticamente las hojas de especificaciones técnicas (datasheets) de los transistores para extraer los parámetros críticos de saturación.
+        \item Desarrollar las ecuaciones de malla para calcular los valores de las resistencias limitadoras de base.
+        \item Evaluar el rendimiento del circuito midiendo las caídas de tensión reales.
+        \item Analizar y comprender el comportamiento de la beta en el circuito.
     \end{enumerate}
 
 \section{Marco teórico}
-    asd
+    \subsection{El Transistor Bipolar (BJT) en Conmutación}
+    Para comprender visualmente cómo opera el transistor en cada una de las distintas 
+    regiones de operación, es útil compararlo analógicamente con el funcionamiento de un grifo de agua hidráulico:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.45\textwidth]{IMAGENES/Estados_transistor.png}
+        \caption{Analogía hidráulica de las tres regiones de operación del BJT.}
+        \label{fig:estados_transitor}
+    \end{figure}
+
+    \subsubsection{Región de Corte (Grifo cerrado)}
+    En este estado, la unión base-emisor no supera el umbral de conducción, por lo que no se inyecta corriente a la base ($I_B = 0$). 
+    Al no existir un flujo de control que active el dispositivo, el transistor se comporta como un circuito abierto que impide el 
+    paso de la corriente principal entre el colector y el emisor, idealmente provocando que $I_C = 0$.
     
-\section{Materiales}
+    \subsubsection{Región Activa (Flujo controlado)}
+    Es la zona de amplificación lineal del componente. Aquí, la apertura del canal es proporcional a la corriente inyectada en la terminal de control; 
+    es decir, la corriente de colector ($I_C$) varía de forma lineal y proporcional a los cambios en la corriente de base ($I_B$). 
+    
+    Esta relación está gobernada por la ganancia de corriente de señal continua ($\beta$ o $h_{FE}$), modelada por la ecuación:
+    \begin{equation}
+        I_C = \beta \cdot I_B
+        \label{ec:region_activa}
+    \end{equation}
+
+    \subsubsection{Región de Saturación (Grifo abierto al máximo)}
+    En este punto, la corriente de base es lo suficientemente alta como para vencer la resistencia interna del silicio, provocando que ambas 
+    uniones (base-emisor y colector-base) se polaricen en directo. Por más que se incremente el valor de $I_B$, 
+    el flujo en el colector alcanza un límite máximo constante que ya no depende de la ganancia del semiconductor, 
+    sino que está restringido exclusivamente por la fuente de alimentación ($V_{CC}$) y la resistencia de carga 
+    del circuito ($R_L$). El transistor entra en saturación cuando se cumple la condición:
+
+    \begin{equation}
+        I_B > \frac{I_{C(\text{sat})}}{\beta_{\text{activa}}}
+        \label{ec:condicion_sat}
+    \end{equation}
+
+    Bajo esta condición, la tensión entre colector y emisor cae a su valor mínimo posible, 
+    denominado voltaje de saturación colector-emisor ($V_{CE(\text{sat})}$), 
+    el cual representa la pérdida interna del componente en estado de conducción plena.
+
+    \subsection{Redes de Conmutación y el Criterio de Saturación Forzada}
+    Cuando el objetivo del diseño no es la amplificación lineal de señales, sino el control de dispositivos de potencia, 
+    el BJT se configura para operar de forma binaria, alternando entre sus dos estados críticos: corte (bloqueo) y saturación (conducción). 
+    En este modo de operación, el dispositivo prescinde de la región activa para comportarse como un interruptor de estado sólido ideal.
+        
+    Para garantizar un correcto desempeño del Puente H, el diseño debe asegurar que los transistores entren en una saturación profunda. 
+    Esto se debe a que la ganancia de corriente real ($\beta$) de un transistor disminuye drásticamente a medida que el componente se 
+    calienta o maneja corrientes elevadas en el colector. Si el transistor opera cerca del límite de la región activa, 
+    el voltaje $V_{CE}$ aumentará, provocando severas pérdidas por disipación térmica:
+
+    \begin{equation*}
+        P_D = V_{CE(\text{sat})} \cdot I_C
+        \label{ec:potencia_disipada}
+    \end{equation*}
+
+    Para blindar el circuito ante estas variaciones, la ingeniería de diseño aplica el criterio de Beta Forzada ($\beta_{\text{sat}}$). 
+    Este método consiste en ignorar la $\beta$ nominal o de amplificación del datasheet y forzar un valor fijo, típicamente establecido en:
+
+    \begin{equation*}
+        \beta_{\text{forzada}} = 10
+        \label{ec:beta_forzada}
+    \end{equation*}
+
+    Al diseñar las mallas limitadoras de base inyectando una corriente calculada como $I_B = I_C / 10$, se suministra un exceso controlado de portadores de carga a la base. Esto garantiza que, incluso bajo condiciones de máxima carga mecánica en el motor o fluctuaciones en el voltaje de alimentación, el transistor permanecerá firmemente en saturación, manteniendo el voltaje $V_{CE(\text{sat})}$ en su nivel mínimo y protegiendo al semiconductor de daños por sobrecalentamiento.
+    
+    \subsection{Cargas Inductivas y Elementos de Protección}
+    El actuador electromecánico empleado en este circuito no se comporta como una carga puramente resistiva, sino como una carga inductiva compleja debido a los devanados de cobre que 
+    constituyen su armadura interna. De acuerdo con la ley de inducción de Faraday, una bobina almacena 
+    energía en forma de campo magnético mientras circula corriente a través de ella. 
+    
+    Sin embargo en el instante exacto en que los transistores del Puente H 
+    conmutan del estado de saturación al de corte para detener o invertir el sentido de giro del motor, al interrumpirse abruptamente el flujo de corriente, el campo magnético 
+    colapsa e induce una fuerza electromotriz (FEM) en forma de un transitorio de alta tensión inversa, dada por la ecuación diferencial:
+    \begin{equation*}
+        v_L(t) = L \frac{di(t)}{dt}
+        \label{ec:fuerza_contraelectromotriz}
+    \end{equation*}
+
+    Este pico de voltaje puede superar severamente la tensión de ruptura colector-emisor ($V_{CEO}$) de los transistores, 
+    destruyéndolos por avalancha térmica. Para mitigar este fenómeno, se integran \textbf{diodos de libre rueda} (\textit{flyback}) 
+    en paralelo con cada BJT. Polarizados en inversa durante la operación normal, estos diodos entran en conducción directa ante el colapso magnético, 
+    ofreciendo un camino seguro de baja impedancia para recircular la corriente residual. De este modo, se suprime el pico de alta tensión sujetando 
+    el transitorio a la caída segura de la unión PN ($V_F \approx 0.7\text{ V}$), protegiendo la integridad de la etapa de potencia.
+
+    \section{Materiales}
         \begin{figure} [H]
             \centering
-            \includegraphics[width=0.4\textwidth]{IMAGENES/prueba.jpeg}
-            \caption{Circuito de polarización de transistor.}
-            \label{fig:circuito_base}
+            \includegraphics[width=0.48\textwidth]{IMAGENES/Circuito_PunteH.png}
+            \caption{Circuito de un puente H.}
+            \label{fig:Circuito_PunteH}
         \end{figure}
-Para el circuito mostrado en la "Figura~\ref{fig:circuito_base}”, emplearemos:
-\begin{itemize}
-    \item 1 Transistor NPN 2N2222
-    \item 1 Potenciometro de 500 k$\Omega$
-    \item 1 Resistencia de 330 $\Omega$ a 1/2W
-    \item 1 Resistencia de 220 $\Omega$ a 1/2W
-    \item 1 Resistencia de 100 $\Omega$ a 5W
-    \item 1 Protoboard
-    \item Cable para protoboard
-    \item 3 Multímetros (De preferencia)
-\end{itemize}
+Para el circuito mostrado en la "Figura~\ref{fig:Circuito_PunteH}”, emplearemos:
+    \begin{itemize}
+        \item 2 transistores NPN 2N2222A
+        \item 2 transistores TIP31C
+        \item 2 transistores TIP32C
+        \item 1 motor DC de 12 a 120mA
+        \item 2 Resistencia de 330 $\Omega$ a 1/2W
+        \item 2 Resistencia de 220 $\Omega$ a 1/2W
+        \item 1 Protoboard
+        \item 3 multímetros digitales (De preferencia)
+        \item Cable para protoboard
+    \end{itemize}
 
+\section{Desarrollo}
+    \subsection{Parámetros de diseño Puente H}
+    Para facilitar el análisis se simplifico el circuito mostrado en la Figura \ref{fig:Circuito_PunteH} al analizar unicamente su comportamiento
+    en la configuración de avance. Bajo estas condiciones los transistores Q4 y Q5 estarán en corte actuando como circuitos abiertos,
+    por lo que es posible removerlos del diagrama. Asimismo, al sustituir la señal de control de avance y la línea de potencia $V_{CC}$ 
+    por sus fuentes de alimentación equivalentes, se obtiene un circuito más sencillo compuesto por tres mallas como se muestra en la Figura \ref{fig:Circuito_simplificado}.
+    
+    \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.48\textwidth]{IMAGENES/Mallas.png}
+            \caption{Circuito simplificado.}
+            \label{fig:Circuito_simplificado}
+    \end{figure}
+    
+    Una vez denotada la polarización de voltajes y corrientes en el circuito, como se muestra en la Figura \ref{fig:Polarización_puenteH}, 
+    se realizó el análisis de mallas siguiendo la convención de signos establecida. Cabe destacar que la dirección de las corrientes de 
+    malla se determinó considerando la orientación física de las flechas en la simbología de los transistores, así como las condiciones 
+    de polarización requeridas para activar y hacer girar el motor en el sentido deseado.
+    
+    \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.48\textwidth]{IMAGENES/Circuito_simplificado.png}
+            \caption{Polarización de transistor, resistores y fuentes en el circuito.}
+            \label{fig:Polarización_puenteH}
+    \end{figure}
+
+    Para la primera malla, la ecuación de voltaje de Kirchhoff es: 
+    \begin{equation}
+        V_{CC} - V_{CE_{2}} - V_{M} - V_{CE_{5}} = 0
+        \label{ec:Malla1}
+    \end{equation}
+    De manera similar, al analizar la segunda malla del circuito simplificado, se obtiene la siguiente expresión:
+    \begin{equation}
+        V_{CC} - V_{BE_{2}} - I_{B_{2}} R_{B_{2}} - V_{CE_{1}} - V_{BE_{5}} = 0
+        \label{ec:Malla2}
+    \end{equation}
+    Finalmente analizando la malla de control 3 se obtiene un sistema de tres ecuaciones:
+    \begin{equation}
+        V_{in} - I_{B_{1}} R_{B_{1}} - V_{BE_{1}} - V_{BE_{5}} = 0
+        \label{ec:Malla3}
+    \end{equation}
+
+    Donde se se obtiene un sistema de tres ecuaciones con dos incógnitas de diseño $R_{B_{2}}$ y $R_{B_{1}}$.
+
+    A partir de las pruebas iniciales realizadas al motor, y bajo la condición de máxima carga aplicada, 
+    se establecieron los parámetros de operación en $V_{\text{max}} = 10\text{ V}$ con una 
+    corriente de $I_{\text{max}} = 200\text{ mA}$ para el actuador. 
+
+    De igual modo se determinaron los parámetros correspondientes a cada transistor a partir 
+    de las especificaciones técnicas de sus respectivas hojas de datos. Si tomamos en cuenta 
+    que $I_M = I_{C2} = I_{C5}$ y una ganancia de saturación forzada $\beta = 10$, 
+    se establece que:
+
+    \begin{equation*}
+        I_{B} = \frac{I_{C}}{\beta}
+    \end{equation*}
+
+    \begin{equation*}
+        I_{B2} = \frac{I_{\text{max}}}{10} = \frac{200\text{ mA}}{10}
+    \end{equation*}
+
+    \begin{equation*}
+        I_{B2} = 20\text{ mA}
+    \end{equation*}
+
+    Observando el esquema de la Figura \ref{fig:Circuito_simplificado} se nota que la corriente 
+    de colector del transistor de control es suministrada por la base del transistor de potencia, 
+    por lo tanto $I_{C1} = I_{B2}$. Empleando la misma relación analítica y proponiendo un valor 
+    de $\beta = 10$ para asegurar la entrada en la región de saturación profunda del transistor 
+    de pequeña señal, se obtiene: 
+
+    \begin{equation*}
+        I_{B1} = \frac{I_{C1}}{10} = \frac{20\text{ mA}}{10}
+    \end{equation*}
+
+    \begin{equation*}
+        I_{B1} = 2\text{ mA}
+    \end{equation*}
+
+    Habiendo obtenido los valores de corriente de colector para cada uno de los transistores, 
+    se extrajeron los parámetros de tensiones de saturación directamente de las curvas típicas 
+    de los datasheets de los fabricantes (ver Anexo A) en base a la corriente máxima de 
+    diseño $I_{\text{max}} = 200\text{ mA}$ y las corrientes de base previamente calculadas. 
+    En la Tabla \ref{tab:voltajes_transistores} se presenta una recopilación limpia de estos 
+    valores de diseño.
+
+    \begin{table}[H]
+    \centering
+    \caption{Voltajes de operación de los transistores obtenidos de las hojas de datos y 
+    valor de ganancia propuesto.}
+    \label{tab:voltajes_transistores}
+    \begin{tabular}{ccccc}
+        \hline
+        \textbf{Transistor} & \textbf{Modelo} & \textbf{$V_{BE}$ (V)} & \textbf{$V_{CE}$ (V)} & \textbf{Beta ($\beta$)} \\ \hline
+        $Q_1, Q_6$          & 2N2222A         & 0.70                  & 0.10                  & 10                       \\ \hline
+        $Q_2, Q_4$          & TIP32C          & 0.76                  & 0.10                  & 10                       \\ \hline
+        $Q_3, Q_5$          & TIP31C          & 0.75                  & 0.05                  & 10                       \\ \hline
+    \end{tabular}
+    \end{table}
+
+    Una vez recopilados los datos necesarios de las hojas de especificaciones de los transistores, 
+    se procede a resolver el sistema de ecuaciones para determinar los valores comerciales de las 
+    resistencias de base $R_{B1}$ y $R_{B2}$. 
+    
+    Para este análisis se establece un voltaje de alimentación de potencia $V_{CC} = 10\text{ V}$ y un voltaje de activación de entrada $V_{in} = 5\text{ V}$. 
+    A partir de la ecuación \ref{ec:Malla1}, se calcula el voltaje real de operación que 
+    recibe el actuador acoplado ($V_M$), en base a las caídas de tensión por saturación de 
+    los transistores de potencia $Q_2$  y $Q_5$:
+
+    \begin{equation*}
+        V_{M} = V_{CC} - V_{CE_{2}} - V_{CE_{5}}
+    \end{equation*}
+    \begin{equation*}
+        V_{M} = 10\text{ V} - 0.20\text{ V} - 0.05\text{ V} = 9.75\text{ V}
+    \end{equation*}
+
+    A continuación, se realiza el despeje de la resistencia de base $R_{B2}$ a partir de la ecuación de malla (\ref{ec:Malla2}). 
+    \begin{equation*}
+        V_{CC} - V_{BE_{2}} - I_{B_{2}} R_{B_{2}} - V_{CE_{1}} - V_{BE_{5}} = 0
+    \end{equation*}
+
+    \begin{equation*}
+        R_{B2} = \frac{V_{CC} - V_{BE_{2}} - V_{CE_{1}} - V_{BE_{5}}}{I_{B_{2}}}
+    \end{equation*}
+
+    Sustituyendo los valores de tensión correspondientes y la corriente de base de 
+    diseño $I_{B2} = 20\text{ mA}$ ($0.02\text{ A}$):
+
+    \begin{equation*}
+        R_{B2} = \frac{10\text{ V} - 0.76\text{ V} - 0.10\text{ V} - 0.75\text{ V}}{0.02\text{ A}}
+    \end{equation*}
+
+    \begin{equation*}
+        R_{B2} = \frac{8.39\text{ V}}{0.02\text{ A}} = 419.5\text{ }\Omega
+    \end{equation*}
+
+    \begin{equation*}
+        P_{R_{B2}} = 8.39\text{ V} (0.02\text{ A}) = 0.1678\text{ W}
+    \end{equation*}
+
+    Por lo tanto, se selecciona un valor comercial estándar de $430\text{ }\Omega$ a 1/2 W para $R_{B2}$.
+
+    Finalmente, se analiza la malla de control de entrada (\ref{ec:Malla3}) para calcular la resistencia limitadora de base $R_{B1}$ del transistor 2N2222A, empleando la corriente calculada de $I_{B1} = 2\text{ mA}$ ($0.002\text{ A}$):
+
+    \begin{equation*}
+        V_{in} - I_{B_{1}} R_{B_{1}} - V_{BE_{1}} - V_{BE_{5}} = 0
+    \end{equation*}
+
+    \begin{equation*}
+        R_{B1} = \frac{V_{in} - V_{BE_{1}} - V_{BE_{5}}}{I_{B_{1}}}
+    \end{equation*}
+
+    Sustituyendo los valores numéricos correspondientes:
+
+    \begin{equation*}
+        R_{B1} = \frac{5\text{ V} - 0.70\text{ V} - 0.75\text{ V}}{0.002\text{ A}}
+    \end{equation*}
+
+    \begin{equation*}
+        R_{B1} = \frac{3.55\text{ V}}{0.002\text{ A}} = 1775\text{ }\Omega
+    \end{equation*}
+
+    \begin{equation*}
+        P_{R_{B1}} = 3.55\text{ V} ( 0.002\text{ A} )= 0.0071\text{ W}
+    \end{equation*}
+
+    Igualmente se selecciona el valor comercial estándar más cercano, siendo este de $1.8\text{ k}\Omega$ a 1/2W.
+    
+
+    \subsection{Dimensionamiento de los Diodos}
+    El análisis de protección se realiza bajo el escenario crítico de inversión de giro instantánea a máxima carga ($I_{\text{max}} = 200\text{ mA}$). 
+    Debido a que la corriente en una inductancia no puede cambiar abruptamente, al pasar los transistores a corte, el campo magnético del motor 
+    colapsa e induce una fuerza electromotriz (FEM) dada por $v_L(t) = L \, di/dt$. La corriente máxima acumulada 
+    se transfiere íntegramente hacia la red de protección, estableciendo la corriente pico directa en:
+    \begin{equation}
+        I_{F_{\text{pico}}} = I_{\text{max}} = 200\text{ mA}
+    \end{equation}
+
+    Aplicando un factor de seguridad del 100\% ($FS = 2$) para prevenir sobrecorrientes por atasco mecánico, se determina el 
+    requerimiento nominal continuo en $I_{F} = 400\text{ mA}$. 
+
+    Por otro lado, la activación de los diodos sujeta el transitorio inductivo sumando el voltaje de 
+    la fuente ($V_{CC} = 10\text{ V}$) y la caída de tensión directa del silicio ($V_F \approx 0.7\text{ V}$):
+    \begin{equation*}
+        V_{\text{transitorio}} = V_{CC} + V_{F}
+    \end{equation*}
+    \begin{equation*}
+        V_{\text{transitorio}} = 10\text{ V} + 0.7\text{ V}
+    \end{equation*}
+    \begin{equation*}
+        V_{\text{transitorio}} = 10.7\text{ V}
+    \end{equation*}
+
+    Bajo condiciones de bloqueo normal, los diodos en corte soportan directamente el voltaje de la fuente. Aplicando un factor de seguridad por picos en la línea, el voltaje inverso de ruptura repetitivo debe cumplir con $V_{RRM} \geq 20\text{ V}$. 
+
+    Con base en estos límites ($I_F \geq 400\text{ mA}$, $V_{RRM} \geq 20\text{ V}$), se selecciona el diodo comercial \textbf{1N4001} ($1.0\text{ A}$, $50\text{ V}$ de operación máxima). Dado que los transistores TIP31C y TIP32C poseen un voltaje de ruptura colector-emisor de $V_{CEO} = 100\text{ V}$, el transitorio fijado a $10.7\text{ V}$ garantiza que los semiconductores operen firmemente dentro de su zona de trabajo segura.
+
+    \subsection{Demostración de No Conducción en Estado de Avance}
+
+    Para demostrar analíticamente que los diodos de protección permanecen inactivos (bloqueados) durante la operación normal en avance del motor, se analiza el estado de polarización de sus uniones PN.
+
+    Cuando el Puente H se activa para el giro en avance, los transistores $Q_2$ (superior izquierdo, PNP) y $Q_5$ (inferior derecho, NPN) entran en saturación profunda. Esto provoca que el nodo del colector de $Q_2$ (conectado al ánodo del diodo superior $D_1$ y al cátodo del diodo inferior $D_3$) se eleve a un potencial casi igual al de la fuente:
+
+    \begin{equation*}
+        V_{A} = V_{CC} - V_{CE_{2}(\text{sat})}
+    \end{equation*}
+    \begin{equation*}
+        V_{A} = 10\text{ V} - 0.20\text{ V}
+    \end{equation*}
+    \begin{equation*}
+        V_{A} = 9.80\text{ V}
+    \end{equation*}
+
+    Simultáneamente, el colector de $Q_5$ (conectado al ánodo de $D_2$ y al cátodo de $D_4$) cae a un potencial de saturación mínimo respecto a tierra:
+
+    \begin{equation}
+        V_{B} = V_{CE_{5}(\text{sat})} = 0.05\text{ V}
+    \end{equation}
+
+    Analizando el estado de cada diodo bajo estas condiciones de voltaje:
+    \begin{itemize}
+        \item \textbf{Diodos Superiores ($D_1$ y $D_2$):} Sus cátodos están firmemente amarrados a $V_{CC} = 10\text{ V}$. Para $D_1$, el voltaje ánodo-cátodo es $V_{AK} = 9.80\text{ V} - 10\text{ V} = -0.20\text{ V}$. Al ser un valor negativo, el diodo experimenta una polarización inversa y se comporta como un circuito abierto.
+        \item \textbf{Diodos Inferiores ($D_3$ y $D_4$):} Sus ánodos están conectados directamente a la referencia de tierra ($0\text{ V}$). Para $D_4$, el voltaje de la unión es $V_{AK} = 0\text{ V} - 0.05\text{ V} = -0.05\text{ V}$. De igual forma, al no superar el umbral de conducción del silicio ($V_{\gamma} \approx 0.7\text{ V}$), los diodos permanecen en estado de corte.
+    \end{itemize}
+    
 
 \section{Análisis y Resultados}
     ibs
@@ -182,62 +491,52 @@ Para el circuito mostrado en la "Figura~\ref{fig:circuito_base}”, emplearemos:
 % you must declare a \section before using any
 % \subsection or using \label (\appendices by itself
 % starts a section numbered zero.)
-%
-
 
 \appendices
-\section{Evidencias}
+\section{Datasheets}
 
-
-    \begin{figure}[H]%[!ht]
-    \begin{center}
-    \includegraphics[width=0.45\textwidth]{IMAGENES/prueba.jpeg} 
-    \caption{Datasheet de $\beta$ del transistor 2N2222.}
-    \label{fig:datasheet}
-    \end{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.37\textwidth]{IMAGENES/CollectorEmitter_saturation_Tip32C.png} 
+    \caption{Collector emitter saturation voltage, Tip32C.}
+    \label{fig:CollectorEmitter_Tip32C}
     \end{figure}
 
-    \begin{figure}[H]%[!ht]
-    \begin{center}
-    \includegraphics[width=0.45\textwidth]{IMAGENES/prueba.jpeg} 
-    \caption{Datasheet de zona de Saturación del transistor 2N2222.}
-    \label{fig:datasheet_saturacion}
-    \end{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.37\textwidth]{IMAGENES/BaseEmitter_saturation_Tip32C.png} 
+    \caption{Base emitter saturation voltage, Tip32C.}
+    \label{fig:BaseEmitter_Tip32C}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.37\textwidth]{IMAGENES/CollectorEmitter_saturation_Tip31C.png} 
+    \caption{Collector emitter saturation voltage, Tip31C.}
+    \label{fig:CollectorEmitter_Tip31C}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.37\textwidth]{IMAGENES/BaseEmitter_saturation_Tip31C.png} 
+    \caption{Base emitter saturation voltage, Tip31C.}
+    \label{fig:BaseEmitter_Tip31C}
     \end{figure}
   
 
+\begin{thebibliography}{100}
 
+    \bibitem{boylestad}
+    R. L. Boylestad and L. Nashelsky, \textit{Electronic Devices and Circuit Theory}, 
+    10th ed. Upper Saddle River, NJ, USA: Prentice Hall, 2009.
 
+    \bibitem{datasheetTIP}
+    STMicroelectronics, ``TIP31C, TIP32C: Complementary power transistors,'' \textit{TIP32C Datasheet}, 
+    DocID4136 Rev 7, Jul. 2014. [Online]. Available: 
+    https://www.alldatasheet.com/html-pdf/556838/STMICROELECTRONICS/TIP32C/7790/4/TIP32C.html. [Accessed: Jun. 11, 2026].
 
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
-
-%use following command to generate the list of cited references
-
-\printbibliography
-
-\begin{thebibliography}{00}
-\bibitem{boylestad}
-R. L. Boylestad and L. Nashelsky, \textit{Electronic Devices and Circuit Theory}, 10th ed. Upper Saddle River, NJ, USA: Prentice Hall, 2009.
-
-\bibitem{1N4001}
-onsemi, ``1N4001 -- 1.0 A Standard Recovery Rectifier,'' Datasheet, 2023. [Online]. Available: https://www.onsemi.com/pdf/datasheet/1n4001-d.pdf. [Accessed: Feb. 24, 2026].
-
-\bibitem{1N4148}
-onsemi, ``1N4148 -- Small Signal Switching Diode,'' Datasheet, 2023. [Online]. Available: https://www.onsemi.com/pdf/datasheet/1n4148-d.pdf. [Accessed: Feb. 24, 2026].
 \end{thebibliography}
+
 
 % that's all folks
 \end{document}
