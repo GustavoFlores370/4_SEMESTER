@@ -121,6 +121,18 @@
     \end{enumerate}
 
 \section{Marco teórico}
+    \subsection{Puente H}
+        El puente H es una configuración electrónica utilizada para controlar motores de corriente directa (DC), principalmente cuando se requiere modificar el sentido de giro, detener el motor y, en determinadas configuraciones, controlar su velocidad mediante modulación por ancho de pulso (PWM). Su nombre proviene de la disposición de los elementos de conmutación alrededor de la carga, que forma aproximadamente la letra H.
+
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.45\textwidth]{IMAGENES/PuenteH_CIRCUITO_MARCOT.jpg}
+        \caption{Circuito del puente H.}
+        \label{fig:circuito_puenteh}
+        \end{figure}
+
+        Una de las principales ventajas del puente H es que permite invertir la polaridad aplicada a las terminales del motor sin necesidad de invertir físicamente las conexiones. Esto se consigue mediante la activación alternada de pares de transistores ubicados en las ramas diagonales del circuito.
+
     \subsection{El Transistor Bipolar (BJT) en Conmutación}
     Para comprender visualmente cómo opera el transistor en cada una de las distintas 
     regiones de operación, es útil compararlo analógicamente con el funcionamiento de un grifo de agua hidráulico:
@@ -454,8 +466,55 @@ Para el circuito mostrado en la "Figura~\ref{fig:Circuito_PunteH}”, emplearemo
     
 
 \section{Análisis y Resultados}
-    ibs
+    En la sección anterior se mostró de manera analítica, basándonos en las hojas de datos de cada uno de los componentes del circuito, los valores necesarios para trabajar en la región de saturación profunda y así garantizar el correcto funcionamiento del Puente H.
+    Una vez obtenidos los valores de las resistencias de base y los diodos de protección, se procedió a la implementación del circuito en un protoboard para realizar las mediciones físicas de voltaje y corriente en cada uno de los transistores y el motor, obteniendo los siguientes valores en la Tabla \ref{tabla:Valores_medidos}.
 
+    Algunas de las mediciones realizadas en laboratorio son las siguientes:
+
+    \begin{table}[H]
+    \centering
+    \small 
+    \begin{tabularx}{\columnwidth}{|c|X|X|}
+    \hline
+    \textbf{} & \textbf{2N2222A} & \textbf{TIP31C/TIP32C}\\ \hline
+    $V_{BE}$  & 0.76V & 0.750V\\ \hline
+    $V_{CE}$  & 0.20V & 25mV\\ \hline
+    $I_B$ & 19.9mA & 120mA \\ \hline
+    \end{tabularx}
+    \caption{Voltajes y corrientes medidos}
+    \label{tabla:Valores_medidos}
+    \end{table}
+
+    Conociendo estos valores es fácil deducir los valores de las betas de cada uno de los transistores; Partiendo de la siguiente ecuación:
+
+
+        \[
+        I_C = \beta I_B
+        \]
+
+        \[
+        \beta = \frac{I_C}{I_B}
+            = \frac{120\,\mathrm{mA}}{20\,\mathrm{mA}}
+        \]
+
+        \[
+        \beta = 6
+        \]
+
+    \begin{table}[H]
+    \centering
+    \small 
+    \begin{tabularx}{\columnwidth}{|c|X|X|X|X|}
+    \hline
+    \textbf{Transistor} & \textbf{Modelo} & \textbf{$\beta$ Datasheet} & \textbf{$\beta$ Calculado}\\ \hline
+    $Q_1$, $Q_6$  & 2N2222A & 10 & 12\\ \hline
+    $Q_2$, $Q_4$  & TIP32C &  10 & 6 \\ \hline
+    $Q_3$, $Q_5$  & TIP31C &  10 & 6 \\ \hline
+
+    \end{tabularx}
+    \caption{Valores de $\beta$ calculados a partir de las mediciones}
+    \label{tabla:Valores_beta}
+    \end{table}
 
 \section{Simulación}
     ASDASD
@@ -465,9 +524,12 @@ Para el circuito mostrado en la "Figura~\ref{fig:Circuito_PunteH}”, emplearemo
 \begin{itemize}
     \item \textbf{Flores Cornejo Gustavo Mauricio.}
     \newline 
-    En la presente práctica sirvió para carcaterizar el comportamiento del transistor como un dispositivo amplificador y de control como interruptor. La práctica sirvió de primer contacto para entender las bases de su funcionamiento y el análsis de sus zonas de polarización como se muestran en el desarrollo del presente documento. Entender cada una de estas zonas es de suma importancia para poder ser utilizado de la manera adecuada cuando se requiera en proyectos.
-    Es importante resaltar que para esta práctica que tiene como finalidad analizar el Transistor BJT NPN 2222 tiene sus limitaciones (Valores máximos y mínimos de trabajo) que de superarlos podemos alterar el comportamiento deseado o simplemente dañar el dispositivo por ejemplo, podemos entrar en la ona Activa del transistor donde la corriente en conmutador es proporcional a $\beta$ veces la corriente de la base. En la parte de simulación sirvió para observar el comportamiento del transistor frenre a los cambios de temperatura además que las gráficas
-    desarrolladas en el análisis donde veámos voltaje o resistencia contra corriente sirven para visualizar de manera fráfica más sencilla el comportamiento del transistor en sus tres zonas.
+    La presente práctica sirvió para observar de manera práctica la contrucción y comportamiento dados ciertos parámetros del diseño de un puente H.A pesar, de que existen componentes que sustituyen
+    o implementan de manefra más sencilla la funcionalidad del Puente H, es importante identificar la función de los transistores BJT así de la importancia de los diodos de protección en el circuito.
+    Esdecir, esta práctica sirvió para implementar los temas vistos hasta el momento. Durante el desarrollo de esta práctica fue necesario ajustarnos a los valores reales del motor que conseguimos, por lo que
+    tuvimos que rehacer y corrgeir en repetidas ocasiones los cálculos para aproximarnos de mejor manera a los valores reales de los componentes, además de que el esatdo de operación del motor fue utilizao bajo
+    un torque alto, aumentando así la corriente de operación del motor y alterando de igual manera los valores reales del circuito.
+    También fue interesante observar y analizar el comportamiento del transistor en su estado de saturación.
     \newline 
     \item \textbf{Muñoz Reyes Arturo Yabet.}
     \newline En esta práctica se logró comprobar el comportamiento y las características operativas de un transistor BJT NPN 2N2222. Inicialmente, se verificó la estructura de sus uniones semiconductoras, comprobando que se requiere una correcta polarización directa entre la base y el emisor para permitir la conducción. A través de las distintas configuraciones del circuito, se analizó la relación directa entre la corriente de base y la corriente de colector, logrando identificar físicamente las zonas de corte, activa y de saturación. En esta última, se comprobó que el transistor actúa de forma similar a un interruptor cerrado, limitando su corriente no por la ganancia, sino por la red externa del circuito, ocasionando una caída abrupta en la $\beta$ forzada. 

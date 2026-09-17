@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  16 SEP 2026 00:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.16)  16 SEP 2026 19:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -677,162 +677,160 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 90.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-<IMAGENES/Estados_transistor.png, id=87, 520.44438pt x 152.57pt>
-File: IMAGENES/Estados_transistor.png Graphic file (type png)
-<use IMAGENES/Estados_transistor.png>
-Package pdftex.def Info: IMAGENES/Estados_transistor.png  used on input line 130.
-(pdftex.def)             Requested size: 232.19843pt x 68.0692pt.
+<IMAGENES/PuenteH_CIRCUITO_MARCOT.jpg, id=91, 543.02875pt x 398.48875pt>
+File: IMAGENES/PuenteH_CIRCUITO_MARCOT.jpg Graphic file (type jpg)
+<use IMAGENES/PuenteH_CIRCUITO_MARCOT.jpg>
+Package pdftex.def Info: IMAGENES/PuenteH_CIRCUITO_MARCOT.jpg  used on input line 129.
+(pdftex.def)             Requested size: 232.19843pt x 170.39218pt.
 
 
 [1{C:/Users/gusfl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
- <./IMAGENES/Estados_transistor.png>]
+ <./IMAGENES/PuenteH_CIRCUITO_MARCOT.jpg>]
+<IMAGENES/Estados_transistor.png, id=109, 520.44438pt x 152.57pt>
+File: IMAGENES/Estados_transistor.png Graphic file (type png)
+<use IMAGENES/Estados_transistor.png>
+Package pdftex.def Info: IMAGENES/Estados_transistor.png  used on input line 142.
+(pdftex.def)             Requested size: 232.19843pt x 68.0692pt.
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 204--209
+
+Underfull \hbox (badness 3407) in paragraph at lines 216--221
 \OT1/ptm/m/n/10 de rup-tura colector-emisor ($\OML/cmm/m/it/10 V[]$\OT1/ptm/m/n/10 ) de los tran-si-s-tores,
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 204--209
+Underfull \hbox (badness 1688) in paragraph at lines 216--221
 \OT1/ptm/m/n/10 de-struy[]endolos por avalan-cha t[]ermica. Para mit-i-gar este
  []
 
-<IMAGENES/Circuito_PunteH.png, id=109, 1240.635pt x 689.07437pt>
+
+
+[2 <./IMAGENES/Estados_transistor.png>]
+<IMAGENES/Circuito_PunteH.png, id=123, 1240.635pt x 689.07437pt>
 File: IMAGENES/Circuito_PunteH.png Graphic file (type png)
 <use IMAGENES/Circuito_PunteH.png>
-Package pdftex.def Info: IMAGENES/Circuito_PunteH.png  used on input line 213.
+Package pdftex.def Info: IMAGENES/Circuito_PunteH.png  used on input line 225.
 (pdftex.def)             Requested size: 247.6778pt x 137.56007pt.
-
-
-[2 <./IMAGENES/Circuito_PunteH.png>]
-<IMAGENES/Mallas.png, id=124, 706.64pt x 504.88625pt>
+<IMAGENES/Mallas.png, id=127, 706.64pt x 504.88625pt>
 File: IMAGENES/Mallas.png Graphic file (type png)
 <use IMAGENES/Mallas.png>
-Package pdftex.def Info: IMAGENES/Mallas.png  used on input line 239.
+Package pdftex.def Info: IMAGENES/Mallas.png  used on input line 251.
 (pdftex.def)             Requested size: 247.6778pt x 176.95935pt.
-<IMAGENES/Circuito_simplificado.png, id=126, 717.17938pt x 531.9875pt>
-File: IMAGENES/Circuito_simplificado.png Graphic file (type png)
-<use IMAGENES/Circuito_simplificado.png>
-Package pdftex.def Info: IMAGENES/Circuito_simplificado.png  used on input line 251.
-(pdftex.def)             Requested size: 247.6778pt x 183.72258pt.
-
-
-
-
-[3 <./IMAGENES/Mallas.png> <./IMAGENES/Circuito_simplificado.png>]
-
-
-
-[4]
-Underfull \hbox (badness 2393) in paragraph at lines 466--472
-\OT1/ptm/m/n/10 En la pre-sente pr[]actica sirvi[]o para car-ca-teri-zar el
- []
-
-
-Underfull \hbox (badness 3168) in paragraph at lines 466--472
-\OT1/ptm/m/n/10 com-por-tamiento del tran-sis-tor como un dis-pos-i-tivo
- []
-
-
-Underfull \hbox (badness 2384) in paragraph at lines 466--472
-\OT1/ptm/m/n/10 sirvi[]o de primer con-tacto para en-ten-der las bases
- []
-
-
-Underfull \hbox (badness 1960) in paragraph at lines 466--472
-\OT1/ptm/m/n/10 man-era fr[]afica m[]as sen-cilla el com-por-tamiento del
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 466--472
-
- []
-
-
-
-<IMAGENES/CollectorEmitter_saturation_Tip32C.png, id=154, 400.99812pt x 379.91937pt>
-File: IMAGENES/CollectorEmitter_saturation_Tip32C.png Graphic file (type png)
-<use IMAGENES/CollectorEmitter_saturation_Tip32C.png>
-Package pdftex.def Info: IMAGENES/CollectorEmitter_saturation_Tip32C.png  used on input line 500.
-(pdftex.def)             Requested size: 190.91748pt x 180.88675pt.
-<IMAGENES/BaseEmitter_saturation_Tip32C.png, id=155, 395.4775pt x 376.90813pt>
-File: IMAGENES/BaseEmitter_saturation_Tip32C.png Graphic file (type png)
-<use IMAGENES/BaseEmitter_saturation_Tip32C.png>
-Package pdftex.def Info: IMAGENES/BaseEmitter_saturation_Tip32C.png  used on input line 507.
-(pdftex.def)             Requested size: 190.91748pt x 181.95479pt.
-
-Underfull \vbox (badness 1577) has occurred while \output is active []
-
-
-
-[5 <./IMAGENES/CollectorEmitter_saturation_Tip32C.png>]
-<IMAGENES/CollectorEmitter_saturation_Tip31C.png, id=164, 501.37312pt x 460.72125pt>
-File: IMAGENES/CollectorEmitter_saturation_Tip31C.png Graphic file (type png)
-<use IMAGENES/CollectorEmitter_saturation_Tip31C.png>
-Package pdftex.def Info: IMAGENES/CollectorEmitter_saturation_Tip31C.png  used on input line 514.
-(pdftex.def)             Requested size: 190.91748pt x 175.44145pt.
-<IMAGENES/BaseEmitter_saturation_Tip31C.png, id=165, 509.905pt x 464.23438pt>
-File: IMAGENES/BaseEmitter_saturation_Tip31C.png Graphic file (type png)
-<use IMAGENES/BaseEmitter_saturation_Tip31C.png>
-Package pdftex.def Info: IMAGENES/BaseEmitter_saturation_Tip31C.png  used on input line 521.
-(pdftex.def)             Requested size: 190.91748pt x 173.81828pt.
-<IMAGENES/PuenteH_Firma.jpeg, id=166, 1240.635pt x 1606.0pt>
-File: IMAGENES/PuenteH_Firma.jpeg Graphic file (type jpg)
-<use IMAGENES/PuenteH_Firma.jpeg>
-Package pdftex.def Info: IMAGENES/PuenteH_Firma.jpeg  used on input line 528.
-(pdftex.def)             Requested size: 190.91748pt x 247.13852pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
+<IMAGENES/Circuito_simplificado.png, id=129, 717.17938pt x 531.9875pt>
+File: IMAGENES/Circuito_simplificado.png Graphic file (type png)
+<use IMAGENES/Circuito_simplificado.png>
+Package pdftex.def Info: IMAGENES/Circuito_simplificado.png  used on input line 263.
+(pdftex.def)             Requested size: 247.6778pt x 183.72258pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--544
+
+[3 <./IMAGENES/Circuito_PunteH.png> <./IMAGENES/Mallas.png> <./IMAGENES/Circuito_simplificado.png>]
+
+
+
+[4]
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 525--534
+\OT1/ptm/m/n/10 que re-hacer y cor-rgeir en repeti-das oca-siones los
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--534
+
+ []
+
+
+
+[5]
+<IMAGENES/CollectorEmitter_saturation_Tip32C.png, id=167, 400.99812pt x 379.91937pt>
+File: IMAGENES/CollectorEmitter_saturation_Tip32C.png Graphic file (type png)
+<use IMAGENES/CollectorEmitter_saturation_Tip32C.png>
+Package pdftex.def Info: IMAGENES/CollectorEmitter_saturation_Tip32C.png  used on input line 562.
+(pdftex.def)             Requested size: 190.91748pt x 180.88675pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+<IMAGENES/BaseEmitter_saturation_Tip32C.png, id=168, 395.4775pt x 376.90813pt>
+File: IMAGENES/BaseEmitter_saturation_Tip32C.png Graphic file (type png)
+<use IMAGENES/BaseEmitter_saturation_Tip32C.png>
+Package pdftex.def Info: IMAGENES/BaseEmitter_saturation_Tip32C.png  used on input line 569.
+(pdftex.def)             Requested size: 190.91748pt x 181.95479pt.
+<IMAGENES/CollectorEmitter_saturation_Tip31C.png, id=169, 501.37312pt x 460.72125pt>
+File: IMAGENES/CollectorEmitter_saturation_Tip31C.png Graphic file (type png)
+<use IMAGENES/CollectorEmitter_saturation_Tip31C.png>
+Package pdftex.def Info: IMAGENES/CollectorEmitter_saturation_Tip31C.png  used on input line 576.
+(pdftex.def)             Requested size: 190.91748pt x 175.44145pt.
+<IMAGENES/BaseEmitter_saturation_Tip31C.png, id=170, 509.905pt x 464.23438pt>
+File: IMAGENES/BaseEmitter_saturation_Tip31C.png Graphic file (type png)
+<use IMAGENES/BaseEmitter_saturation_Tip31C.png>
+Package pdftex.def Info: IMAGENES/BaseEmitter_saturation_Tip31C.png  used on input line 583.
+(pdftex.def)             Requested size: 190.91748pt x 173.81828pt.
+
+
+[6 <./IMAGENES/CollectorEmitter_saturation_Tip32C.png> <./IMAGENES/BaseEmitter_saturation_Tip32C.png> <./IMAGENES/CollectorEmitter_saturation_Tip31C.png>]
+<IMAGENES/PuenteH_Firma.jpeg, id=183, 1240.635pt x 1606.0pt>
+File: IMAGENES/PuenteH_Firma.jpeg Graphic file (type jpg)
+<use IMAGENES/PuenteH_Firma.jpeg>
+Package pdftex.def Info: IMAGENES/PuenteH_Firma.jpeg  used on input line 590.
+(pdftex.def)             Requested size: 190.91748pt x 247.13852pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 603--606
 []\OT1/ptm/m/n/8 STMicroelectronics, ``TIP31C, TIP32C: Com-ple-men-tary power
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--544
+Underfull \hbox (badness 10000) in paragraph at lines 603--606
 \OT1/ptm/m/n/8 tran-sis-tors,'' \OT1/ptm/m/it/8 TIP32C Datasheet\OT1/ptm/m/n/8 , Do-cID4136 Rev 7, Jul.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--544
+Underfull \hbox (badness 10000) in paragraph at lines 603--606
 \OT1/ptm/m/n/8 2014. [On-line]. Avail-able: https://www.alldatasheet.com/html-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--544
+Underfull \hbox (badness 10000) in paragraph at lines 603--606
 \OT1/ptm/m/n/8 pdf/556838/STMICROELECTRONICS/TIP32C/7790/4/TIP32C.html.
  []
 
 
 
-[6 <./IMAGENES/BaseEmitter_saturation_Tip32C.png> <./IMAGENES/CollectorEmitter_saturation_Tip31C.png> <./IMAGENES/BaseEmitter_saturation_Tip31C.png> <./IMAGENES/PuenteH_Firma.jpeg>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P05\build\1MV12_FE_P05_FCGM_MRAY_MVME.aux)
+
+
+[7
+
+ <./IMAGENES/BaseEmitter_saturation_Tip31C.png> <./IMAGENES/PuenteH_Firma.jpeg>] (c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P05\build\1MV12_FE_P05_FCGM_MRAY_MVME.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
  ***********
 Package rerunfilecheck Info: File `1MV12_FE_P05_FCGM_MRAY_MVME.out' has not changed.
-(rerunfilecheck)             Checksum: 11691B8E2473FCA7DF097A9F607BBB2E;3958.
+(rerunfilecheck)             Checksum: E857B3F2518FA6EB7E548B665C7AF723;4059.
 Package logreq Info: Writing requests to '1MV12_FE_P05_FCGM_MRAY_MVME.run.xml'.
 \openout1 = `1MV12_FE_P05_FCGM_MRAY_MVME.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19453 strings out of 469959
- 346819 string characters out of 5469834
- 1167774 words of memory out of 5000000
- 45978 multiletter control sequences out of 15000+600000
+ 19473 strings out of 469959
+ 347361 string characters out of 5469834
+ 1167971 words of memory out of 5000000
+ 45993 multiletter control sequences out of 15000+600000
  672401 words of font info for 124 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 63i,10n,67p,1284b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 63i,11n,67p,1284b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/gusfl/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P05\build\1MV12_FE_P05_FCGM_MRAY_MVME.pdf (6 pages, 1259689 bytes).
+Output written on c:\Users\gusfl\Downloads\4_SEMESTER\FUNDAMENTOS_ELECTRONICA\P05\build\1MV12_FE_P05_FCGM_MRAY_MVME.pdf (7 pages, 1300282 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
+ 227 words of extra memory for PDF output out of 10000 (max. 10000000)
 
