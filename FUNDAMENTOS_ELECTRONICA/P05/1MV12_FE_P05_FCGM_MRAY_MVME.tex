@@ -458,8 +458,107 @@ Para el circuito mostrado en la "Figura~\ref{fig:Circuito_PunteH}”, emplearemo
 
 
 \section{Simulación}
-    ASDASD
+    Para evaluar el comportamiento del circuito, se realizó una simulación en el software Multisim, la cual se ilustra a continuación:
 
+    \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.48\textwidth]{IMAGENES/SIM.png}
+            \caption{Circuito de puente H simulado con valores reales.}
+            \label{fig:SIM1}
+    \end{figure}
+
+    Se utilizó una resistencia de 80 $\Omega$ para modelar las condiciones de máxima carga del motor empleado en el laboratorio. Cabe destactacar que estos valores mostrarán un resutado diferente al de las mediciones prácticas, debido a que el consumo de corriente real del motor varía dinámicamente en función de la carga mecánica aplicada.
+
+    \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.48\textwidth]{IMAGENES/SIM1.png}
+            \caption{Valores del motor simulado.}
+            \label{fig:SIM_motor}
+    \end{figure}
+
+    La Tabla~\ref{tab:motor_comparativa} presenta la comparación inicial de los parámetros de voltaje y corriente en el elemento de carga.
+
+    \begin{table}[H]
+    \centering
+    \caption{Comparación de voltajes y corrientes máximas en el motor.}
+    \label{tab:motor_comparativa}
+    \begin{tabular}{lcc}
+        \hline
+        \textbf{Valores} & \textbf{$V_{motor}$ (V)} & \textbf{$I_{motor}$ (mA)} \\ \hline
+        Simulados        & 10.49                    & 131.23                    \\ \hline
+        Medidos          & 10                       & 120                       \\ \hline
+    \end{tabular}
+    \end{table}
+
+    \subsection{Medición y análisis de los transistores}
+
+    A continuación, se examina el comportamiento operativo de cada transistor dentro del puente H, analizando las corrientes de base ($I_{base}$), colector ($I_{colector}$) y emisor ($I_{emisor}$) obtenidas en la simulación frente a las del laboratorio.
+
+    En primer lugar, la Figura~\ref{fig:Valores_TIP32C} y la Tabla~\ref{tab:TIP32C_comparativa} muestran los resultados correspondientes al transistor de potencia PNP TIP32C.
+
+    \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.48\textwidth]{IMAGENES/SIM2.png}
+            \caption{Valores del TIP32C.}
+            \label{fig:Valores_TIP32C}
+    \end{figure}
+
+    \begin{table}[H]
+    \centering
+    \caption{Comparación de corrientes en el TIP32C.}
+    \label{tab:TIP32C_comparativa}
+    \begin{tabular}{cccc}
+        \hline
+        \textbf{Valores} & \textbf{$I_{base}$ (mA)} & \textbf{$I_{colector}$ (mA)} & \textbf{$I_{emisor}$ (mA)} \\ \hline
+        Simulados        & 21.374                   & 131.234                      & 152.609                    \\ \hline
+        Medidos          & 10                       & 120                          & 120                        \\ \hline
+    \end{tabular}
+    \end{table}
+
+    Posteriormente, se evalúa el comportamiento del transistor de potencia NPN TIP31C.
+
+    \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.48\textwidth]{IMAGENES/SIM3.png}
+            \caption{Valores del TIP31C.}
+            \label{fig:Valores_TIP31C}
+    \end{figure}
+
+    \begin{table}[H]
+    \centering
+    \caption{Comparación de corrientes en el TIP31C.}
+    \label{tab:TIP31C_comparativa}
+    \begin{tabular}{cccc}
+        \hline
+        \textbf{Valores} & \textbf{$I_{base}$ (mA)} & \textbf{$I_{colector}$ (mA)} & \textbf{$I_{emisor}$ (mA)} \\ \hline
+        Simulados        & 23.346                   & 131.232                      & 154.578                    \\ \hline
+        Medidos          & 10                       & 120                          & 120                        \\ \hline
+    \end{tabular}
+    \end{table}
+
+    Finalmente, se presentan las condiciones de operación del transistor de control NPN 2N2222A.
+
+    \begin{figure} [H]
+            \centering
+            \includegraphics[width=0.48\textwidth]{IMAGENES/SIM4.png}
+            \caption{Valores del 2N2222A.}
+            \label{fig:Valores_2N2222A}
+    \end{figure}
+
+    \begin{table}[H]
+    \centering
+    \caption{Comparación de corrientes en el 2N2222A.}
+    \label{tab:2N2222A_comparativa}
+    \begin{tabular}{cccc}
+        \hline
+        \textbf{Valores} & \textbf{$I_{base}$ (mA)} & \textbf{$I_{colector}$ (mA)} & \textbf{$I_{emisor}$ (mA)} \\ \hline
+        Simulados        & 1.972                    & 21.374                       & 23.346                     \\ \hline
+        Medidos          & 10                       & 120                          & 120                        \\ \hline
+    \end{tabular}
+    \end{table}
+
+    Los datos obtenidos mediante la simulación exhiben una consistencia teórica rigurosa. En primer lugar, se verifica el cumplimiento exacto de la Ley de Corrientes de Kirchhoff ($I_{emisor} = I_{base} + I_{colector}$) en cada uno de los componentes semiconductores. En segundo lugar, se observa un acoplamiento idóneo entre las etapas de control y de potencia: la corriente de colector del transistor driver 2N2222A ($21.374\text{ mA}$) suministra con precisión la corriente de activación requerida por la base del TIP32C, mientras que su corriente 
+    de emisor ($23.346\text{ mA}$) comanda de forma directa la base del TIP31C. Este comportamiento ideal valida el diseño lógico del puente H y establece un marco de referencia sólido para el análisis de las desviaciones y efectos parásitos que se presenten en los datos experimentales.
 
 \section{Conclusiones}
 \begin{itemize}
@@ -470,8 +569,8 @@ Para el circuito mostrado en la "Figura~\ref{fig:Circuito_PunteH}”, emplearemo
     desarrolladas en el análisis donde veámos voltaje o resistencia contra corriente sirven para visualizar de manera fráfica más sencilla el comportamiento del transistor en sus tres zonas.
     \newline 
     \item \textbf{Muñoz Reyes Arturo Yabet.}
-    \newline En esta práctica se logró comprobar el comportamiento y las características operativas de un transistor BJT NPN 2N2222. Inicialmente, se verificó la estructura de sus uniones semiconductoras, comprobando que se requiere una correcta polarización directa entre la base y el emisor para permitir la conducción. A través de las distintas configuraciones del circuito, se analizó la relación directa entre la corriente de base y la corriente de colector, logrando identificar físicamente las zonas de corte, activa y de saturación. En esta última, se comprobó que el transistor actúa de forma similar a un interruptor cerrado, limitando su corriente no por la ganancia, sino por la red externa del circuito, ocasionando una caída abrupta en la $\beta$ forzada. 
-    Finalmente, la comparativa entre los modelos matemáticos teóricos, las simulaciones y las mediciones físicas demostró que los cálculos ideales tienden a proyectar escenarios más extremos (como en la disipación de potencia). Por lo que, el uso de simuladores avanzados y la consulta de las hojas de datos del fabricante son herramientas indispensables para dimensionar correctamente los componentes, prevenir fallas térmicas y garantizar la eficiencia real de los sistemas.
+    \newline Esta práctica nos deja en claro la función de los transistores bipolares (TIP32C, TIP31C y los excitadores 2N2222A) en la aplicación para un puente H los cuales actúan como interruptores electrónicos de estado sólido. Podemos obsevar que al recibir una señal de control en sus respectivas bases, estos semiconductores operan entre sus regiones de corte y saturación. Permitiendo habilitar pares diagonales específicos de transistores para conmutar la polaridad de la fuente principal de 10.7V sobre la carga central (R1), controlando así la dirección del flujo de corriente y el sentido del giro del motor.
+    Cabe destacar que determinar matemáticamente las mallas de entrada, las ganancias (Beta) y las corrientes de base necesarias permite dimensionar correctamente las resistencias limitadoras (R2, R3, R4, R5). La práctica nos deja ver que estos cálculos son fundamentales para garantizar que los transistores alcancen una saturación profunda, minimizando la disipación de calor y las caídas de tensión no deseadas, asegurando así un diseño eficiente y seguro antes de su implementación física.
     \item \textbf{Morales Vásquez Miguel Ehecatl.} 
     \newline En esta práctica se validó de manera experimental la versatilidad del diodo semiconductor en aplicaciones de rectificación y acondicionamiento de señales. A través de la implementación de los circuitos de media onda y onda completa, fue posible contrastar la teoría matemática con el comportamiento real de los componentes, observando que factores como la caída de tensión interna del diodo ($\approx 0.7\text{ V}$) y las pérdidas en el transformador generan variaciones sutiles pero importantes en los valores RMS y promedio calculados. Un aprendizaje clave fue el uso de la derivación central y el puente de diodos, donde se demostró que la rectificación de onda completa ofrece una transferencia de potencia más constante y eficiente al aprovechar ambos semiciclos de la señal senoidal. Finalmente, el uso de técnicas de medición indirecta para la corriente y el análisis de voltajes inversos permitieron comprender las limitaciones operativas de los diodos, habilidades fundamentales para el diseño de fuentes de alimentación y sistemas de control de potencia en la ingeniería mecatrónica.
 
